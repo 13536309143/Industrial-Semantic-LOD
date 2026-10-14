@@ -11,11 +11,19 @@ if "%POINTCLIP_CONDA_ENV%"=="" set "POINTCLIP_CONDA_ENV=PointCLIPV2_LOD"
 
 set "POINTNEXT_ROOT=%cd%\tools\pointnext_lod\PointNeXt"
 set "POINTNEXT_CFG=%POINTNEXT_ROOT%\cfgs\industrial_part\pointnext-s-14class-randomrot-8192-fast.yaml"
-set "POINTNEXT_CKPT=%POINTNEXT_ROOT%\log\industrial_part\industrial_part-train-pointnext-s-14class\checkpoint\industrial_part-train-pointnext-s-14class_ckpt_best.pth"
+if "%POINTNEXT_CKPT%"=="" set "POINTNEXT_CKPT=%cd%\models\pointnext\industrial-part-14class-best.pth"
 set "POINTNEXT_CLASSES=%cd%\tools\pointnext_lod\industrial_part_14classes.txt"
 
 set "POINTCLIP_ROOT=%cd%\tools\pointclipv2\PointCLIP_V2"
 set "POINTCLIP_PROMPTS=%cd%\tools\pointclipv2\industrial_open_vocab_prompts.json"
+
+if not exist "%POINTNEXT_CKPT%" (
+  echo Missing trained PointNeXt checkpoint:
+  echo   %POINTNEXT_CKPT%
+  echo Train the 14-class model and copy its best checkpoint here, or set POINTNEXT_CKPT.
+  echo See docs\guides\end-to-end.md for the complete workflow.
+  exit /b 1
+)
 
 if not exist "%RESOURCES_DIR%" (
   echo Missing resources directory:
@@ -147,8 +155,7 @@ echo ===== Done =====
 echo Generated fused LOD constraints in:
 echo   %OUT%
 echo.
-echo Delete old cache files before opening models if you want the runtime to rebuild with the fused policies:
-echo   del /f /q _downloaded_resources\*.glb.zippp
-echo   del /f /q _downloaded_resources\*.glb.zippp_partial
+echo Next, run renderer preprocessing with --processingonly 1 --autoloadcache 0 to build the policy-controlled LOD cache.
+echo Then open the scene in the renderer. See docs\guides\end-to-end.md for commands.
 
 endlocal

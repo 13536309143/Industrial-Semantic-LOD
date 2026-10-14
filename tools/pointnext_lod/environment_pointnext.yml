@@ -1,0 +1,32 @@
+name: gpt-pointnext
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  - numpy=1.26.4
+  - pytorch=2.2.0
+  - torchvision=0.17.0
+  - pytorch-cuda=12.1
+  - scipy
+  - scikit-learn
+  - pandas
+  - h5py
+  - matplotlib
+  - pillow
+  - pyyaml
+  - tqdm
+  - ninja
+  - pip:
+      - multimethod==2.0.2
+      - easydict==1.9
+      - termcolor
+      - shortuuid
+      - tensorboard
+      - wandb
+      - timm
+      - trimesh
+      - pygltflib

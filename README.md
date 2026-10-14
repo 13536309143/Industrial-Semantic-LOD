@@ -17,7 +17,7 @@
 
 <sub>Industrial assembly illustration from the supplied thesis figures; not a renderer screenshot.</sub>
 
-[Overview](#overview) · [Pipeline](#pipeline) · [Experiments](#recorded-experiments) · [Build](#build-and-run) · [Semantic workflow](#semantic-analysis-workflow) · [Code map](#code-map)
+[Overview](#overview) · [Pipeline](#pipeline) · [Experiments](#recorded-experiments) · [Key techniques](#key-techniques) · [Usage](#complete-usage-workflow) · [Code map](#code-map)
 
 </div>
 
@@ -75,6 +75,40 @@ The default open-branch gate triggers when PointNeXt confidence is below **0.70*
   <sub>Structure-preservation schematic from the supplied figures; illustrative, not a measured before/after experiment.</sub>
 </p>
 
+## Key techniques
+
+The thesis organizes the method around **offline semantic/structure-aware LOD construction** and **online GPU-driven rasterization with hierarchical visibility**. The following components implement that connection.
+
+### Multi-source semantic and structural reasoning
+
+ISPointNet combines supervised category evidence, gated open-vocabulary evidence, and explicit mesh descriptors. PointNeXt provides known industrial classes and uncertainty; PointCLIP V2 supplements ambiguous parts; structure describes scale, proportions, and complexity. Their fused structural role is mapped to simplification controls rather than used only as a display label.
+
+### Multiple policies for cluster LOD construction
+
+The renderer exposes six evidence configurations, and each produces **P1–P10 part policies**. Lower-protection policies favor reducing repeated or small geometry; higher-protection policies retain more detail for structural, motion, and precision roles. Policies jointly control target retention, hierarchy decay, group scale, feature weight, hard-protection budget, and error scaling.
+
+Within each cluster group, weighted feature attributes and vertex protection guide simplification. Grouping, simplification, and reclustering recursively create coarse clusters while retaining their generating-group associations. Model-level policies set the overall preference; boundary, sharp-edge, circular-loop, and thin-wall cues guide local constraints. [Policy integration](src/scene/scene_semantic_lod.cpp) · [Constrained simplification](src/meshlod/meshlod_simplify.h)
+
+### GPU hierarchy search and local precision selection
+
+The spatial hierarchy narrows the search with bounds, visibility, and projected error. Candidate groups then select individual clusters using cross-level generation relationships and residency. This permits different parts of the same model to use different detail levels, including accessible coarse candidates when finer generating groups have not arrived. [Traversal](shaders/traversal/traversal_run.comp.glsl)
+
+### Hierarchical visibility and adaptive two-pass culling
+
+Filtering spans **assembly → instance → spatial node → cluster**, using imported assembly bounds, frustum tests, screen size, and hierarchical depth. Small projected assemblies can take a coarse-LOD path when the imported hierarchy supports it.
+
+The first pass uses historical visibility information to filter geometry and renders it with the current camera. An optional second pass builds an intermediate Hi-Z from the first-pass depth, rechecks visibility, and supplements newly visible geometry. Adaptive activation uses cluster count and view-projection matrix change to decide when the extra pass runs; it requires the two-pass switch to be enabled. [Assembly visibility](shaders/traversal/assembly_visibility.comp.glsl) · [Pass scheduling](src/renderer/renderer_clusters_lod.cpp)
+
+### Task compaction and indirect mesh drawing
+
+Subgroup voting and prefix offsets compact accepted clusters into a continuous list with batched atomic reservations. GPU-generated indirect parameters determine mesh workgroup count. Mesh shaders expand the selected local geometry, followed by rasterization and fragment shading; depth feeds subsequent Hi-Z construction. [Task setup](shaders/build/build_setup.comp.glsl) · [Mesh shader](shaders/render/clusters.mesh.glsl)
+
+### Automatic group streaming and residency management
+
+With `--streaming 1`, GPU traversal identifies missing groups and generates deduplicated requests. CPU processing schedules data preparation and transfer within configured budgets, then publishes geometry addresses through residency updates. The hierarchy and lowest-detail data remain available; coarse candidates can cover the wait for finer groups. Age-based reclamation unloads unused dynamic groups.
+
+Once enabled, loading follows runtime demand rather than manual per-part uploads. Geometry budget, per-frame transfer budget, resident-group capacity, and load/unload request limits govern this process. Inspect Streaming memory and Profiler to assess a scene's working set. [Streaming implementation](src/streaming/streaming.cpp)
+
 ## Recorded experiments
 
 These results come from existing training logs and policy outputs. The documentation review checked all **30 scene/configuration CSVs** against the aggregate statistics. It did not retrain models or run a new rendering benchmark. [Evidence metadata and coverage checks](docs/data/readme-evidence.json)
@@ -94,7 +128,7 @@ These results come from existing training logs and policy outputs. The documenta
 
 **Evaluation scope.** Validation and test both use the `test` split, and the dataset maps `val` to `test`. These values describe the recorded development evaluation, not an independent held-out test. OA is overall accuracy; mAcc is mean class accuracy. The figure plots evaluation only at the logged five-epoch evaluation intervals.
 
-The reloaded checkpoint reports 98.99% accuracy for screws/bolts/studs and 76.21% for pipe fittings/valves/nozzles, showing why per-class analysis matters alongside the overall score. [Training log](tools/pointnext_lod/PointNeXt/log/industrial_part/industrial_part-train-pointnext-s-14class/log.txt) · [Configuration](tools/pointnext_lod/PointNeXt/cfgs/industrial_part/pointnext-s-14class-randomrot-8192-fast.yaml) · [Dataset implementation](tools/pointnext_lod/PointNeXt/openpoints/dataset/industrial_part.py)
+The reloaded checkpoint reports 98.99% accuracy for screws/bolts/studs and 76.21% for pipe fittings/valves/nozzles, showing why per-class analysis matters alongside the overall score. [Training log](experiments/pointnext/industrial-part-14class/training.log) · [Configuration](tools/pointnext_lod/PointNeXt/cfgs/industrial_part/pointnext-s-14class-randomrot-8192-fast.yaml) · [Dataset implementation](tools/pointnext_lod/PointNeXt/openpoints/dataset/industrial_part.py)
 
 ### 2. Five industrial scenes
 
@@ -140,80 +174,110 @@ Adding G to N changes 31.78% of policy assignments; adding candidate-only C to N
 
 The [project review](analysis_reports/PROJECT_REVIEW_20261014.md) maps code to the thesis and explains the evidence boundaries.
 
-## Build and run
+## Complete usage workflow
 
-### Requirements
+Follow **environment setup → labeled data and supervised training → multi-source scene analysis → LOD preprocessing → rendering**. The classifier is trained once for the supported industrial categories and reused for new scenes. PointCLIP V2 uses pretrained CLIP weights. [Detailed English guide](docs/guides/end-to-end.md) · [完整中文流程](docs/guides/end-to-end.zh-CN.md)
 
-- Windows with a C++20 compiler; the existing local build uses Visual Studio 2022.
-- CMake **3.22+**, Git, and Vulkan SDK **1.4.309.0+**.
-- A GPU/driver supporting the device features requested in [main.cpp](src/app/main.cpp), including EXT mesh shaders, shader clocks, float atomics, fragment shading rate, and 64-bit image atomics. NV-specific features are also requested; check device initialization before assuming compatibility.
-- `nvpro_core2`, meshoptimizer, and cgltf. The dependency finder downloads `nvpro_core2` at `03297bee1f997208951cc104abb5ecc3e1f987ed` if a local copy is unavailable.
+### 1. Configure the environments
 
-### Build
+| Component | Software and hardware |
+| :--- | :--- |
+| PointNeXt | Python 3.10, PyTorch 2.2.0 / torchvision 0.17.0, CUDA 12.1, NumPy 1.26.4, OpenPoints CUDA extension |
+| PointCLIP V2 | Separate CUDA environment, pretrained CLIP ViT-B/16 |
+| Extension build | CUDA Toolkit with `nvcc`, Visual Studio C++ build tools |
+| Renderer | C++20, Visual Studio 2022, CMake 3.22+, Git, Vulkan SDK 1.4.309.0+ |
 
-Run from the repository root:
+The GPU/driver must support the extensions requested in [main.cpp](src/app/main.cpp), including EXT mesh shaders and the requested atomic/clock/shading-rate features. CUDA supports offline inference; Vulkan supports runtime rendering.
 
-```powershell
-cmake -S . -B build -G "Visual Studio 17 2022" -A x64
-cmake --build build --config Release
-```
-
-The CMake target takes the source directory name. In the current `t1` checkout, the existing Release executable is **`_bin/Release/t1.exe`**. Renaming the checkout directory changes the target name on a fresh configuration.
-
-```powershell
-# Open a scene
-.\_bin\Release\t1.exe --scene "path\to\model.glb"
-
-# Precompute a cache without interactive rendering
-.\_bin\Release\t1.exe --scene "path\to\model.glb" --processingonly 1
-
-# Enable group streaming
-.\_bin\Release\t1.exe --scene "path\to\model.glb" --streaming 1
-
-# Enable adaptive two-pass culling
-.\_bin\Release\t1.exe --scene "path\to\model.glb" --culling 1 --twopassculling 1 --adaptivetwopassculling 1
-```
-
-Adaptive two-pass logic requires `twopassculling` to be enabled. Its decision uses scene cluster count and view-projection matrix change; enabling only `adaptivetwopassculling` does not activate the second pass.
-
-For a local dependency copy, place `nvpro_core2` under the project, its parent, its grandparent, or `build/_deps`. `-DNVPROCORE2_DOWNLOAD=OFF` disables automatic fetching but still requires an accessible local copy.
-
-## Semantic analysis workflow
-
-The renderer and offline neural inference have separate dependencies. Provide input GLBs, a compatible PointNeXt checkpoint, OpenPoints CUDA extensions, and the PointCLIP V2/CLIP environment before running the semantic scripts.
-
-From **Anaconda Prompt / cmd.exe** at the repository root:
+Use **Anaconda Prompt / cmd.exe**. Replace the checkout path if needed:
 
 ```bat
-rem Put input models under _downloaded_resources\*.glb
-rem Override these default environment names if needed
+set PROJECT_ROOT=E:\vk_lod_clusters1\t1
+cd /d "%PROJECT_ROOT%"
+conda env create -f tools\pointnext_lod\environment_pointnext.yml
+conda env create -f tools\pointclipv2\environment_pointclipv2.yml
+conda activate gpt-pointnext
+python -c "import torch,numpy; print(torch.__version__,torch.version.cuda,numpy.__version__,torch.cuda.is_available())"
+```
+
+Activate working existing environments instead of recreating them. In a Visual Studio Native Tools prompt with Conda available, compile the PointNeXt extension:
+
+```bat
+conda activate gpt-pointnext
+set CUDA_HOME=C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1
+set PATH=%CUDA_HOME%\bin;%PATH%
+cd /d "%PROJECT_ROOT%\tools\pointnext_lod\PointNeXt\openpoints\cpp\pointnet2_batch"
+python -m pip install . --no-build-isolation
+cd /d "%PROJECT_ROOT%"
+python -c "import sys; sys.path.insert(0,r'tools/pointnext_lod/PointNeXt'); from openpoints.cpp.pointnet2_batch import pointnet2_cuda; print('CUDA extension OK')"
+```
+
+Conda's CUDA runtime does not replace the compiler toolkit. If you switch terminals, set `PROJECT_ROOT` again and activate the environment. The existing local extension is preserved, but a fresh checkout must build its own compatible binary. [Environment and import troubleshooting](docs/guides/end-to-end.md#1-prerequisites-and-software-environments)
+
+### 2. Prepare labeled point clouds and scene geometry
+
+```text
+datasets/industrial_part_14class/        # labeled training/evaluation data
+  classes.txt                          # 0–13, fixed class order, tab-separated
+  train_list.txt
+  val_list.txt
+  test_list.txt
+  screws_bolts_studs/part_0001.npy       # normalized XYZ point cloud [N, 3]
+_downloaded_resources/
+  your_scene.glb                       # unlabeled scene for analysis/rendering
+```
+
+Prepare area-weighted surface samples, centered and scaled consistently with inference. The recipe uses **8,192 XYZ points**. List rows are `relative/path.npy<TAB>class_index<TAB>class_name`, using actual tabs. Class indices must match [the 14-class catalog](tools/pointnext_lod/industrial_part_14classes.txt). Split original parts/families before generating sampled or rotated copies.
+
+The repository includes a dataset adapter, not a raw-CAD dataset converter. Prepare labeled `.npy` samples separately. For scene analysis, export **GLB 2.0 with readable POSITION data and triangle-list primitives**, consistent units and stable mesh/node IDs. STEP/IGES must first be exported to triangulated GLB. The C++ renderer additionally accepts `.gltf` and scene `.cfg`; the root analysis batch scans `.glb` files. [Input contracts](docs/guides/end-to-end.md#2-prepare-labeled-training-data)
+
+### 3. Train PointNeXt and select the best checkpoint
+
+**Training uses a compatible complete external PointNeXt project.** This checkout vendors inference modules and recipes but does not contain `examples/classification/main.py`. Prepare the full training project, copy the industrial adapter/recipe, and register `IndustrialPartPointCloud` following [the training setup](docs/guides/end-to-end.md#3-prepare-a-complete-pointnext-training-project). Record its commit; the original external launcher is not bundled.
+
+After that setup, run from the external training checkout:
+
+```bat
+conda activate gpt-pointnext
+set TRAINING_ROOT=D:\PointNeXt-training
+cd /d "%TRAINING_ROOT%"
+set CUDA_VISIBLE_DEVICES=0
+python examples/classification/main.py --cfg cfgs/industrial_part/pointnext-s-14class-randomrot-8192-fast.yaml ^
+  dataset.common.data_dir="%PROJECT_ROOT%\datasets\industrial_part_14class" ^
+  dataset.val.list_file=val_list.txt dataset.test.list_file=test_list.txt ^
+  root_dir="%PROJECT_ROOT%\.artifacts\training\pointnext" seed=3098
+```
+
+The industrial recipe uses 14 classes, 100 epochs, AdamW, cosine scheduling, random rotation, label smoothing, and AMP. Explicit validation/test list overrides support separate evaluation sets; the historical run used a shared split. This command documents the external launcher interface, not a newly executed training run.
+
+Copy the selected best checkpoint from its actual run directory to:
+
+```text
+models/pointnext/industrial-part-14class-best.pth
+```
+
+Its encoder, classification head, and 14-class ordering must match the analysis configuration. Generic ModelNet40 weights are incompatible. Set `POINTNEXT_CKPT` to an absolute path to use another compatible file. Best weights remain local under `models/`; latest weights and TensorBoard events stay under `.artifacts/`. If a compatible trained industrial checkpoint is already available, reuse it without retraining for each GLB.
+
+### 4. Run multi-source semantic analysis
+
+At the repository root:
+
+```bat
+cd /d "%PROJECT_ROOT%"
 set POINTNEXT_CONDA_ENV=gpt-pointnext
 set POINTCLIP_CONDA_ENV=PointCLIPV2_LOD
 run_all_glb_pointnext_pointclipv2_fused.bat
 ```
 
-The batch runs full PointNeXt analysis, gated PointCLIP inference, and policy fusion in that order. It expects the checkpoint at:
+The batch switches environments and runs three stages:
 
-```text
-tools/pointnext_lod/PointNeXt/log/industrial_part/
-  industrial_part-train-pointnext-s-14class/checkpoint/
-    industrial_part-train-pointnext-s-14class_ckpt_best.pth
-```
+1. Full PointNeXt classification and geometry extraction → `<scene>_pointnext_analysis.csv`.
+2. Uncertainty-gated PointCLIP V2 → `<scene>_pointclipv2_candidates.csv`.
+3. Semantic/structure fusion → `<scene>_lod_constraints_fused.csv` and summary JSON.
 
-For each `<scene>`, it writes:
+Files are written under `lod_analysis_outputs/`. CLIP ViT-B/16 may download its pretrained weights on first use. Existing neural outputs are skipped; after changing the scene, checkpoint, classes, or prompts, archive and regenerate the corresponding outputs as a set.
 
-```text
-lod_analysis_outputs/
-  <scene>_pointnext_analysis.csv
-  <scene>_pointclipv2_candidates.csv
-  <scene>_pointnext_pointclip_merged.csv
-  <scene>_lod_constraints_fused.csv
-  <scene>_lod_constraints_fused_summary.json
-```
-
-The root batch skips existing neural outputs. If the model, checkpoint, or prompts change, archive or regenerate the corresponding outputs before interpreting a new run.
-
-For the existing five-scene comparison, after generating candidate outputs:
+For six-configuration comparisons on the existing five named scenes:
 
 ```bat
 conda activate PointCLIPV2_LOD
@@ -221,9 +285,40 @@ tools\pointclipv2\run_pointclipv2_full_5_glbs.bat
 tools\pointclipv2\run_lod_ablation_5_glbs.bat
 ```
 
-Generate full PointCLIP outputs first: the comparison batch falls back to candidate outputs when full files are missing. Select a configuration through **Semantic LOD Strategy** in the UI or `--semanticlodmode`:
+Generate full PointCLIP first; the comparison batch falls back to candidate outputs if full files are missing. Full inference is for comparison configurations, while default fusion uses the candidate branch.
 
-| CLI value | Configuration |
+### 5. Build the engine and construct cluster LOD
+
+```bat
+cd /d "%PROJECT_ROOT%"
+cmake -S . -B build -G "Visual Studio 17 2022" -A x64
+cmake --build build --config Release
+_bin\Release\t1.exe --scene "_downloaded_resources\your_scene.glb" ^
+  --semanticlodmode 5 --processingonly 1 --autoloadcache 0 --processingpartial 1
+```
+
+Replace `your_scene` with the actual name. The existing `t1` checkout outputs **`_bin/Release/t1.exe`**; the target name follows the source directory name. `nvpro_core2` is found locally or downloaded at pinned commit `03297bee1f997208951cc104abb5ecc3e1f987ed`. For local-only dependency use, configure with `-DNVPROCORE2_DOWNLOAD=OFF` and provide an accessible `nvpro_core2` copy.
+
+This engine preprocessing step consumes semantic policies, builds constrained cluster LOD, and writes a `.glb.zippp` cache. **Semantic analysis creates policy CSVs; engine preprocessing creates the renderable LOD cache.** `--processingpartial 1` supports partial preprocessing/resume.
+
+### 6. Open the scene and enable runtime features
+
+```bat
+_bin\Release\t1.exe --scene "_downloaded_resources\your_scene.glb" --semanticlodmode 5
+
+rem Automatic group streaming with example budgets
+_bin\Release\t1.exe --scene "_downloaded_resources\your_scene.glb" ^
+  --semanticlodmode 5 --streaming 1 --maxgeomegabytes 2048 --maxtransfermegabytes 64
+
+rem Streaming plus adaptive two-pass culling
+_bin\Release\t1.exe --scene "_downloaded_resources\your_scene.glb" ^
+  --semanticlodmode 5 --streaming 1 --culling 1 ^
+  --twopassculling 1 --adaptivetwopassculling 1
+```
+
+Budgets above are illustrative starting values, not measured recommendations. The adaptive flag requires two-pass and culling to be enabled. Fixed two-pass uses `--twopassculling 1 --adaptivetwopassculling 0`.
+
+| `--semanticlodmode` | Configuration |
 | ---: | :--- |
 | 0 | PointNeXt |
 | 1 | PointCLIP V2 |
@@ -232,7 +327,9 @@ Generate full PointCLIP outputs first: the comparison batch falls back to candid
 | 4 | PointNeXt + PointCLIP V2 |
 | **5** | **PointNeXt + PointCLIP V2 + structure** |
 
-**Value 0 is a PointNeXt policy mode, not a semantic-disable switch.** The loader searches for the selected configuration CSV, then fused CSV, then ordinary constraints. Check the logged resolved CSV path when comparing modes. Semantic policy hashes participate in cache compatibility checks. For an explicit rebuild, use `--processingonly 1 --autoloadcache 0`; use distinct `--cachesuffix` values to retain caches for different experiments.
+Value 0 is not a semantic-disable switch. The loader searches selected configuration CSVs before fused/ordinary fallback. Check the actual loaded path when comparing modes. Policy hashes participate in cache compatibility; use distinct `--cachesuffix` values for separate experiments.
+
+Inspect **Semantic LOD Policy Distribution**, the semantic visualization mode, Statistics, Streaming memory, and Profiler. `--loderror` controls runtime display precision; feature and assembly controls are described below and in [parameter registration](src/app/lodclusters_config.cpp).
 
 ## Code map
 
@@ -254,7 +351,9 @@ tools/
   pointnext_lod/ PointNeXt inference and semantic/structure policy mapping
   pointclipv2/   Open-vocabulary inference, fusion, comparison generation
 analysis_reports/  Recorded policy summaries and technical reviews
-docs/              README figures and evidence metadata
+experiments/       Selected training logs and run configuration
+models/            Local inference weights (ignored) and model notes
+docs/              Guides, methods, README figures, and evidence metadata
 ```
 
 | Start here | Purpose |
@@ -273,13 +372,15 @@ Frequently used controls include `--loderror`, `--featureconstraints`, `--featur
 ## Documentation and foundations
 
 - [中文说明](README.zh-CN.md)
+- [Complete training-to-rendering guide](docs/guides/end-to-end.md)
+- [Repository layout and artifact policy](docs/repository-layout.md)
 - [Code and experiment review](analysis_reports/PROJECT_REVIEW_20261014.md)
-- [Semantic analysis workflow](POINTNEXT_POINTCLIPV2_SEMANTIC_LOD_FULL_WORKFLOW.md)
-- [Semantic LOD technical analysis](SEMANTIC_LOD_STRATEGY_TECHNICAL_ANALYSIS.md)
-- [Six-configuration experiment design](LOD_ABLATION_EXPERIMENT_DESIGN.md)
+- [Semantic analysis workflow](docs/guides/end-to-end.zh-CN.md)
+- [Semantic LOD technical analysis](docs/methods/semantic-lod-analysis.zh-CN.md)
+- [Six-configuration experiment design](docs/experiments/policy-comparison-design.zh-CN.md)
 - [Recorded five-scene policy analysis](analysis_reports/LOD_ALL_DATA_ANALYSIS_REPORT.md)
 - [Figure provenance](docs/assets/README.md)
 
 This project uses and adapts established rendering and point-cloud components. See the original [Vulkan Cluster LOD sample](https://github.com/nvpro-samples/vk_lod_clusters), [nvpro_core2](https://github.com/nvpro-samples/nvpro_core2), [meshoptimizer](https://github.com/zeux/meshoptimizer), [PointNeXt](https://github.com/guochengqian/PointNeXt), and [PointCLIP V2](https://github.com/yangyangyang127/PointCLIP_V2) for their methods and upstream licensing. The industrial semantic-policy integration and runtime extensions should be evaluated separately from these foundations.
 
-**Artifact availability.** `_downloaded_resources/` and `lod_analysis_outputs/` are ignored by Git. The README publishes compact results and provenance, not the complete local scene dataset or per-mesh outputs. Inspect checkpoint files in a checkout before attempting inference. No repository-wide license file was identified in this review; consult component licenses before reuse.
+**Artifact availability.** Datasets, scene inputs, model weights, raw per-mesh outputs, and training runtime artifacts stay local and are ignored by Git. Selected evidence remains under `experiments/`, `analysis_reports/`, and `docs/data/`. Supply compatible trained weights before inference. See [repository layout](docs/repository-layout.md). No repository-wide license file was identified in this review; consult component licenses before reuse.

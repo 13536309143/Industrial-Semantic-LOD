@@ -376,7 +376,7 @@
       "sha256": "793d107d9c93def4c6ad4be02dc7d8018b3a55cee18cc0b5701c77a641a5506f"
     },
     {
-      "path": "tools/pointnext_lod/PointNeXt/log/industrial_part/industrial_part-train-pointnext-s-14class/log.txt",
+      "path": "experiments/pointnext/industrial-part-14class/training.log",
       "sha256": "a94509bed6feea51782add9cf04a2bb428b57152657f53eb2d7476ce882ffeb2"
     }
   ]

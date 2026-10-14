@@ -1,5 +1,57 @@
-/build
-/_bin
-/1
-/_downloaded_resources
-lod_analysis_outputs
+# Renderer build and runtime output
+/build/
+/_bin/
+
+# Local datasets, downloaded scenes, and per-mesh analysis output
+/_downloaded_resources/
+/lod_analysis_outputs/
+/datasets/
+
+# Training, evaluation captures, and local archives
+/.artifacts/
+/tools/pointnext_lod/PointNeXt/log/
+*.pth
+*.pt
+*.ckpt
+*.onnx
+*.safetensors
+events.out.tfevents.*
+*.log
+!experiments/**/training.log
+
+# Python caches and platform-specific extension output
+__pycache__/
+*.py[cod]
+*.pyd
+*.so
+*.dll
+*.exe
+*.egg
+*.egg-info/
+/tools/**/build/
+/tools/**/dist/
+*.obj
+*.o
+*.a
+*.pdb
+*.lib
+*.exp
+.ninja_deps
+.ninja_log
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+*.zippp
+*.zippp_partial
+
+# Editor/OS temporary files and legacy local scratch directory
+*.bak
+*.tmp
+*.swp
+.DS_Store
+Thumbs.db
+/1/
+
+# Keep source directories such as shaders/build/ and vendor generated headers.
+# Curated experiment CSV/JSON files and documentation assets remain tracked.

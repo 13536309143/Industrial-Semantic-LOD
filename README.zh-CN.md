@@ -17,7 +17,7 @@
 
 <sub>工业装配体图片来自提供的论文图片资料，为展示性示意图，并非本程序运行截图。</sub>
 
-[项目概览](#项目概览) · [方法流程](#方法流程) · [已有实验](#已有实验) · [构建与运行](#构建与运行) · [语义分析流程](#语义分析流程) · [代码导航](#代码导航)
+[项目概览](#项目概览) · [方法流程](#方法流程) · [已有实验](#已有实验) · [关键技术](#关键技术) · [完整流程](#完整使用流程) · [代码导航](#代码导航)
 
 </div>
 
@@ -75,6 +75,40 @@ flowchart TB
   <sub>结构保持图来自提供的图片资料，用于解释方法，并非定量实验的简化前后结果。</sub>
 </p>
 
+## 关键技术
+
+论文主线由**离线语义结构感知集群 LOD 构建**与**在线 GPU 驱动光栅化及层次可见性**组成，以下模块将两部分衔接起来。
+
+### 多源语义结构联合分析
+
+ISPointNet 联合监督类别证据、门控开放词汇证据与显式网格描述。PointNeXt 给出工业已知类别及不确定性，PointCLIP V2 为歧义零件补充候选语义，几何分支描述尺度、形态比例与复杂度。融合角色进一步转为简化控制信息，而不是只用于显示分类标签。
+
+### 多策略集群 LOD 构建
+
+引擎支持六种证据配置，每种配置生成 **P1–P10 零件级策略**。较低保护倾向减少重复或微小几何，较高保护倾向为结构、运动及精密角色保留更多细节。策略共同控制目标保留率、层次衰减、集群组尺度、特征权重、硬保护预算及误差缩放。
+
+在集群组内，特征属性加权与顶点保护指导简化；反复分组、简化和重新聚类产生粗集群，并保留生成组关系。模型级策略规定整体倾向，边界、锐边、近圆环和薄壁线索参与局部约束。[策略接入](src/scene/scene_semantic_lod.cpp) · [约束简化](src/meshlod/meshlod_simplify.h)
+
+### GPU 层次搜索与局部精度选择
+
+空间层次通过包围、可见性与投影误差缩小搜索范围，候选组再依据跨层生成关系和驻留状态选择集群。同一模型不同局部可采用不同精度；高精度生成组尚未加载时，可以保留可访问的粗候选。[遍历实现](shaders/traversal/traversal_run.comp.glsl)
+
+### 多粒度可见性与自适应双阶段剔除
+
+按**装配体 → 实例 → 空间节点 → 集群**筛选，结合真实导入的装配包围、视锥、屏幕尺寸和层次深度判断。具备适用层级的小投影装配可进入粗 LOD 路径。
+
+第一阶段借助历史可见性筛选，用当前相机绘制。可选第二阶段由第一阶段深度构建中间 Hi-Z，重判候选并补绘新显露几何。自适应逻辑根据集群规模和视图投影矩阵变化决定是否执行额外阶段，但必须先启用双阶段开关。[装配筛选](shaders/traversal/assembly_visibility.comp.glsl) · [阶段调度](src/renderer/renderer_clusters_lod.cpp)
+
+### 任务压缩与间接网格绘制
+
+子组投票、局部前缀与批量原子申请把有效集群压缩成连续列表，GPU 生成间接参数决定网格工作组数量。网格着色器展开选中局部几何，经光栅化与片段着色生成图像，深度再反馈给 Hi-Z。[任务准备](shaders/build/build_setup.comp.glsl) · [网格着色器](shaders/render/clusters.mesh.glsl)
+
+### 自动集群组流式传输与驻留管理
+
+启用 `--streaming 1` 后，GPU 遍历识别缺失组并产生去重请求，CPU 在预算内调度准备与传输，再通过驻留更新发布地址。基础层次和最低细节保持可访问，等待细组时可以使用粗候选；动态组按访问年龄回收。
+
+开启后，数据加载由运行时需求驱动，无需逐个零件手动上传。几何显存、每帧传输、驻留组容量及加载/卸载请求上限共同控制流程。可结合 Streaming memory 和 Profiler 观察场景工作集。[流式实现](src/streaming/streaming.cpp)
+
 ## 已有实验
 
 以下内容来自已有训练日志和策略输出。本次文档整理逐份核验了 **30 个场景/配置策略 CSV** 与汇总统计，没有重新训练模型或新增渲染性能基准。[数据来源与覆盖核验](docs/data/readme-evidence.json)
@@ -94,7 +128,7 @@ flowchart TB
 
 **评估口径：** 当前验证与测试均使用 `test` 划分，数据集也将 `val` 映射到 `test`。因此这些数值是开发过程中已经记录的评估结果，不能当作独立留出测试成绩。OA 为总体准确率，mAcc 为类别平均准确率。曲线仅在每五轮实际评估的位置展示评估值。
 
-重新加载最佳检查点后，螺钉/螺栓/螺柱类准确率为 98.99%，管件/阀门/喷嘴类为 76.21%，说明总体准确率之外仍需关注类别差异。[训练日志](tools/pointnext_lod/PointNeXt/log/industrial_part/industrial_part-train-pointnext-s-14class/log.txt) · [训练配置](tools/pointnext_lod/PointNeXt/cfgs/industrial_part/pointnext-s-14class-randomrot-8192-fast.yaml) · [数据集实现](tools/pointnext_lod/PointNeXt/openpoints/dataset/industrial_part.py)
+重新加载最佳检查点后，螺钉/螺栓/螺柱类准确率为 98.99%，管件/阀门/喷嘴类为 76.21%，说明总体准确率之外仍需关注类别差异。[训练日志](experiments/pointnext/industrial-part-14class/training.log) · [训练配置](tools/pointnext_lod/PointNeXt/cfgs/industrial_part/pointnext-s-14class-randomrot-8192-fast.yaml) · [数据集实现](tools/pointnext_lod/PointNeXt/openpoints/dataset/industrial_part.py)
 
 ### 2. 五个工业场景
 
@@ -140,80 +174,110 @@ flowchart TB
 
 详细代码分析、论文对应关系及实验边界见 [项目审查报告](analysis_reports/PROJECT_REVIEW_20261014.md)。
 
-## 构建与运行
+## 完整使用流程
 
-### 环境要求
+按 **环境配置 → 标注数据与监督训练 → 多源场景分析 → LOD 预处理 → 渲染** 执行。工业分类器按类别体系训练一次，新场景复用最佳检查点；PointCLIP V2 使用预训练 CLIP。[完整中文教程](docs/guides/end-to-end.zh-CN.md) · [Detailed English guide](docs/guides/end-to-end.md)
 
-- Windows 与 C++20 编译器；现有本地构建使用 Visual Studio 2022。
-- CMake **3.22+**、Git、Vulkan SDK **1.4.309.0+**。
-- GPU/驱动满足 [main.cpp](src/app/main.cpp) 注册的设备功能，包括 EXT mesh shader、shader clock、float atomic、fragment shading rate 和 64 位 image atomic。入口也请求了 NV 专属功能，设备兼容性以实际初始化为准。
-- `nvpro_core2`、meshoptimizer、cgltf。找不到本地依赖时，默认获取 `nvpro_core2` 固定提交 `03297bee1f997208951cc104abb5ecc3e1f987ed`。
+### 1. 配置环境
 
-### 编译
+| 部分 | 软件与硬件要求 |
+| :--- | :--- |
+| PointNeXt | Python 3.10、PyTorch 2.2.0 / torchvision 0.17.0、CUDA 12.1、NumPy 1.26.4、OpenPoints CUDA 扩展 |
+| PointCLIP V2 | 独立 CUDA 环境、预训练 CLIP ViT-B/16 |
+| 扩展编译 | 带 `nvcc` 的 CUDA Toolkit、Visual Studio C++ Build Tools |
+| 渲染器 | C++20、Visual Studio 2022、CMake 3.22+、Git、Vulkan SDK 1.4.309.0+ |
 
-在仓库根目录执行：
+GPU/驱动还需满足 [main.cpp](src/app/main.cpp) 请求的 EXT mesh shader、atomic、clock 和 shading-rate 等功能。离线推理用 CUDA，在线渲染用 Vulkan。
 
-```powershell
-cmake -S . -B build -G "Visual Studio 17 2022" -A x64
-cmake --build build --config Release
-```
-
-CMake 使用源码目录名作为 target 名。当前 `t1` 工作区实际生成的 Release 程序位于 **`_bin/Release/t1.exe`**。若改名后重新配置源码目录，生成目标名也随之改变。
-
-```powershell
-# 打开模型
-.\_bin\Release\t1.exe --scene "path\to\model.glb"
-
-# 预处理并生成缓存
-.\_bin\Release\t1.exe --scene "path\to\model.glb" --processingonly 1
-
-# 启用集群组流式加载
-.\_bin\Release\t1.exe --scene "path\to\model.glb" --streaming 1
-
-# 启用自适应双阶段剔除
-.\_bin\Release\t1.exe --scene "path\to\model.glb" --culling 1 --twopassculling 1 --adaptivetwopassculling 1
-```
-
-自适应逻辑必须在 `twopassculling` 已启用时才能生效。判定依据为场景集群规模与前后视图投影矩阵变化；仅启用 `adaptivetwopassculling` 不会激活第二阶段。
-
-本地依赖可放在项目目录、上一级、上两级或 `build/_deps` 下的 `nvpro_core2`。`-DNVPROCORE2_DOWNLOAD=OFF` 关闭自动下载，但仍需要能找到本地依赖。
-
-## 语义分析流程
-
-渲染程序与离线神经推理使用独立依赖。执行语义脚本前，需要准备输入 GLB、兼容的 PointNeXt 检查点、OpenPoints CUDA 扩展，以及 PointCLIP V2/CLIP 环境。
-
-在仓库根目录打开 **Anaconda Prompt / cmd.exe**：
+以下命令使用 **Anaconda Prompt / cmd.exe**，请按实际 checkout 修改路径：
 
 ```bat
-rem 输入模型放在 _downloaded_resources\*.glb
-rem 可按自己的环境名称覆盖以下默认值
+set PROJECT_ROOT=E:\vk_lod_clusters1\t1
+cd /d "%PROJECT_ROOT%"
+conda env create -f tools\pointnext_lod\environment_pointnext.yml
+conda env create -f tools\pointclipv2\environment_pointclipv2.yml
+conda activate gpt-pointnext
+python -c "import torch,numpy; print(torch.__version__,torch.version.cuda,numpy.__version__,torch.cuda.is_available())"
+```
+
+已有可用环境直接激活。在 Visual Studio Native Tools 命令行中准备 Conda，编译 PointNeXt 扩展：
+
+```bat
+conda activate gpt-pointnext
+set CUDA_HOME=C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1
+set PATH=%CUDA_HOME%\bin;%PATH%
+cd /d "%PROJECT_ROOT%\tools\pointnext_lod\PointNeXt\openpoints\cpp\pointnet2_batch"
+python -m pip install . --no-build-isolation
+cd /d "%PROJECT_ROOT%"
+python -c "import sys; sys.path.insert(0,r'tools/pointnext_lod/PointNeXt'); from openpoints.cpp.pointnet2_batch import pointnet2_cuda; print('CUDA extension OK')"
+```
+
+Conda CUDA runtime 不代替编译工具包。切换终端后需重新设置 `PROJECT_ROOT` 并激活环境。现有本地扩展保留，新机器应编译匹配自身环境的二进制。[详细环境与排错](docs/guides/end-to-end.zh-CN.md#1-环境准备)
+
+### 2. 准备标注点云与场景模型
+
+```text
+datasets/industrial_part_14class/      # 带标签训练/评估数据
+  classes.txt                        # 0–13，固定类别顺序，TAB 分隔
+  train_list.txt
+  val_list.txt
+  test_list.txt
+  screws_bolts_studs/part_0001.npy     # 归一化 XYZ 点云 [N,3]
+_downloaded_resources/
+  your_scene.glb                     # 待分析和渲染的无标签场景
+```
+
+对零件表面做面积加权采样，并按推理方式居中、缩放到单位球；配置使用 **8,192 XYZ 点**。列表行格式为 `相对路径.npy<TAB>类别编号<TAB>类别名`，使用真实制表符。类别编号与 [14 类目录](tools/pointnext_lod/industrial_part_14classes.txt) 一致，先按原始零件/家族划分，再生成采样和旋转副本。
+
+仓库提供数据适配器，没有原始 CAD 数据转换器，训练 `.npy` 需单独准备。场景分析输入为 **GLB 2.0、可读取的 POSITION、三角形列表 primitive**，统一单位并保持 mesh/node ID 稳定。STEP/IGES 先导出三角网格 GLB；C++ 渲染器另接受 `.gltf` 和场景 `.cfg`，根目录批处理扫描 `.glb`。[详细输入约定](docs/guides/end-to-end.zh-CN.md#2-准备工业分类数据)
+
+### 3. 训练 PointNeXt 并选择最佳检查点
+
+**训练使用兼容的外部完整 PointNeXt 工程。** 本仓库含推理模块和工业配置，没有 `examples/classification/main.py`。先按 [训练工程配置](docs/guides/end-to-end.zh-CN.md#3-准备完整训练工程) 准备完整源码，复制工业适配器/配置并注册 `IndustrialPartPointCloud`。记录外部提交；历史训练入口未随本仓库提供。
+
+准备好后在外部工程执行：
+
+```bat
+conda activate gpt-pointnext
+set TRAINING_ROOT=D:\PointNeXt-training
+cd /d "%TRAINING_ROOT%"
+set CUDA_VISIBLE_DEVICES=0
+python examples/classification/main.py --cfg cfgs/industrial_part/pointnext-s-14class-randomrot-8192-fast.yaml ^
+  dataset.common.data_dir="%PROJECT_ROOT%\datasets\industrial_part_14class" ^
+  dataset.val.list_file=val_list.txt dataset.test.list_file=test_list.txt ^
+  root_dir="%PROJECT_ROOT%\.artifacts\training\pointnext" seed=3098
+```
+
+工业配置为 14 类、100 轮、AdamW、余弦调度、随机旋转、标签平滑及 AMP。显式列表覆盖可使用独立验证/测试集，历史运行仍是共享划分。这里说明外部入口的使用接口，不代表本次已重新训练。
+
+从真实 run 目录选定 best，复制到：
+
+```text
+models/pointnext/industrial-part-14class-best.pth
+```
+
+检查点需匹配编码器、分类头与 14 类顺序，通用 ModelNet40 权重不能直接代替。可用 `POINTNEXT_CKPT` 指定其他兼容文件的绝对路径。best 放 `models/`，latest 和 TensorBoard 放 `.artifacts/`。已有兼容 best 时可直接复用，无需为每个 GLB 重训。
+
+### 4. 多源语义结构分析
+
+仓库根目录：
+
+```bat
+cd /d "%PROJECT_ROOT%"
 set POINTNEXT_CONDA_ENV=gpt-pointnext
 set POINTCLIP_CONDA_ENV=PointCLIPV2_LOD
 run_all_glb_pointnext_pointclipv2_fused.bat
 ```
 
-根目录批处理按顺序完成全量 PointNeXt 分析、门控 PointCLIP 推断及策略融合。默认检查点路径为：
+批处理自动切换环境，依次执行：
 
-```text
-tools/pointnext_lod/PointNeXt/log/industrial_part/
-  industrial_part-train-pointnext-s-14class/checkpoint/
-    industrial_part-train-pointnext-s-14class_ckpt_best.pth
-```
+1. 全量 PointNeXt 分类与几何提取 → `<scene>_pointnext_analysis.csv`。
+2. 不确定性门控 PointCLIP V2 → `<scene>_pointclipv2_candidates.csv`。
+3. 语义结构融合 → `<scene>_lod_constraints_fused.csv` 与汇总 JSON。
 
-每个 `<scene>` 输出：
+产物放在 `lod_analysis_outputs/`。首次 CLIP ViT-B/16 加载可能下载权重。已有神经 CSV 会跳过，场景、检查点、类别或提示词变化后需归档并整套重做。
 
-```text
-lod_analysis_outputs/
-  <scene>_pointnext_analysis.csv
-  <scene>_pointclipv2_candidates.csv
-  <scene>_pointnext_pointclip_merged.csv
-  <scene>_lod_constraints_fused.csv
-  <scene>_lod_constraints_fused_summary.json
-```
-
-根目录批处理会跳过已有神经推理输出。若输入模型、检查点或提示词变化，应先归档或重新生成对应结果，再解释新一轮实验。
-
-已有五场景对比需要先完成候选推断，再执行：
+对已有五个命名场景生成六组配置比较：
 
 ```bat
 conda activate PointCLIPV2_LOD
@@ -221,9 +285,40 @@ tools\pointclipv2\run_pointclipv2_full_5_glbs.bat
 tools\pointclipv2\run_lod_ablation_5_glbs.bat
 ```
 
-应先生成 full PointCLIP 文件：对比批处理在 full 文件缺失时会回退到候选文件。UI 中通过 **Semantic LOD Strategy** 切换，也可以使用 `--semanticlodmode`：
+先生成 full，否则批处理会回退 candidate。full 供比较配置使用，默认融合仍使用候选开放分支。
 
-| 参数值 | 配置 |
+### 5. 编译引擎并构建集群 LOD
+
+```bat
+cd /d "%PROJECT_ROOT%"
+cmake -S . -B build -G "Visual Studio 17 2022" -A x64
+cmake --build build --config Release
+_bin\Release\t1.exe --scene "_downloaded_resources\your_scene.glb" ^
+  --semanticlodmode 5 --processingonly 1 --autoloadcache 0 --processingpartial 1
+```
+
+将 `your_scene` 换成实际模型名。当前 `t1` 目录程序为 **`_bin/Release/t1.exe`**，target 名随源码目录变化。`nvpro_core2` 从本地查找或获取固定提交 `03297bee1f997208951cc104abb5ecc3e1f987ed`；只用本地依赖时设置 `-DNVPROCORE2_DOWNLOAD=OFF` 并提供可访问副本。
+
+引擎预处理消费语义策略，构建约束集群 LOD，并保存 `.glb.zippp`。**语义分析生成策略 CSV，引擎预处理才生成可渲染 LOD 缓存。** `--processingpartial 1` 支持部分处理与续跑。
+
+### 6. 打开场景并启用运行时技术
+
+```bat
+_bin\Release\t1.exe --scene "_downloaded_resources\your_scene.glb" --semanticlodmode 5
+
+rem 自动集群组流式传输，使用示例预算
+_bin\Release\t1.exe --scene "_downloaded_resources\your_scene.glb" ^
+  --semanticlodmode 5 --streaming 1 --maxgeomegabytes 2048 --maxtransfermegabytes 64
+
+rem 流式传输与自适应双阶段剔除
+_bin\Release\t1.exe --scene "_downloaded_resources\your_scene.glb" ^
+  --semanticlodmode 5 --streaming 1 --culling 1 ^
+  --twopassculling 1 --adaptivetwopassculling 1
+```
+
+上述预算是示例起点，并非实测推荐。自适应开关需要双阶段与剔除开关同时启用；固定双阶段使用 `--twopassculling 1 --adaptivetwopassculling 0`。
+
+| `--semanticlodmode` | 配置 |
 | ---: | :--- |
 | 0 | PointNeXt |
 | 1 | PointCLIP V2 |
@@ -232,7 +327,9 @@ tools\pointclipv2\run_lod_ablation_5_glbs.bat
 | 4 | PointNeXt + PointCLIP V2 |
 | **5** | **PointNeXt + PointCLIP V2 + structure** |
 
-**0 表示 PointNeXt 策略，不是关闭语义。** 加载器先搜索所选配置的 CSV，再搜索 fused CSV，最后搜索普通 constraints CSV。对比实验必须检查日志中的实际 CSV 路径。语义策略哈希参与缓存兼容性检查；需要显式重建时，可用 `--processingonly 1 --autoloadcache 0`，不同实验可使用不同 `--cachesuffix` 保留各自缓存。
+0 不是关闭语义。加载器先找所选配置，再回退 fused/普通 CSV，比较模式时需检查实际文件路径。策略哈希参与缓存兼容性，不同实验可使用不同 `--cachesuffix`。
+
+UI 查看 Semantic LOD Policy Distribution、语义策略可视化、Statistics、Streaming memory 和 Profiler。`--loderror` 控制显示精度，特征与装配参数见下文及 [参数注册](src/app/lodclusters_config.cpp)。
 
 ## 代码导航
 
@@ -254,7 +351,9 @@ tools/
   pointnext_lod/ PointNeXt 推断与语义结构策略映射
   pointclipv2/   开放词汇推断、融合与对比配置生成
 analysis_reports/  已有实验汇总与技术分析
-docs/              README 图片与证据元数据
+experiments/       精选训练日志与运行配置
+models/            本地推理权重（忽略）与模型说明
+docs/              教程、方法、README 图片与证据元数据
 ```
 
 | 入口文件 | 阅读目的 |
@@ -273,13 +372,15 @@ docs/              README 图片与证据元数据
 ## 文档与基础工作
 
 - [English README](README.md)
+- [从训练到渲染的完整教程](docs/guides/end-to-end.zh-CN.md)
+- [仓库目录与产物约定](docs/repository-layout.md)
 - [代码与实验审查报告](analysis_reports/PROJECT_REVIEW_20261014.md)
-- [语义分析完整流程](POINTNEXT_POINTCLIPV2_SEMANTIC_LOD_FULL_WORKFLOW.md)
-- [语义 LOD 技术分析](SEMANTIC_LOD_STRATEGY_TECHNICAL_ANALYSIS.md)
-- [六组策略实验设计](LOD_ABLATION_EXPERIMENT_DESIGN.md)
+- [语义分析完整流程](docs/guides/end-to-end.zh-CN.md)
+- [语义 LOD 技术分析](docs/methods/semantic-lod-analysis.zh-CN.md)
+- [六组策略实验设计](docs/experiments/policy-comparison-design.zh-CN.md)
 - [五场景已有策略分析](analysis_reports/LOD_ALL_DATA_ANALYSIS_REPORT.md)
 - [展示图片来源](docs/assets/README.md)
 
 本项目使用并适配了既有图形学与点云分析组件。基础方法与上游许可参见 [Vulkan Cluster LOD](https://github.com/nvpro-samples/vk_lod_clusters)、[nvpro_core2](https://github.com/nvpro-samples/nvpro_core2)、[meshoptimizer](https://github.com/zeux/meshoptimizer)、[PointNeXt](https://github.com/guochengqian/PointNeXt) 和 [PointCLIP V2](https://github.com/yangyangyang127/PointCLIP_V2)。工业语义策略集成与运行时扩展的作用，应通过独立实验与基础能力区分。
 
-**资料可用性：** `_downloaded_resources/` 和 `lod_analysis_outputs/` 被 Git 忽略，README 展示精简结果与来源，不代表本地完整场景数据及逐网格输出已公开。推理前请检查实际 checkout 中的检查点文件。本次未发现仓库级许可证文件，复用时应核对各组件许可证。
+**资料可用性：** 数据集、场景、权重、逐网格输出与训练运行产物保留在本地并由 Git 忽略；精选依据保留在 `experiments/`、`analysis_reports/` 和 `docs/data/`。推理前需要提供兼容训练权重，目录约定见 [仓库说明](docs/repository-layout.md)。本次未发现仓库级许可证文件，复用时应核对各组件许可证。
