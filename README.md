@@ -1,386 +1,285 @@
-# Vulkan Cluster LOD Renderer
+<div align="center">
 
-这是一个基于 Vulkan 的 Cluster LOD 渲染实验项目。项目从 `.gltf` / `.glb` 模型导入几何数据，在 CPU 侧构建 cluster、group 和多级 LOD 层次结构，然后在 GPU 侧通过 compute shader、mesh shader、Hi-Z 和可选 streaming 完成遍历、剔除、排序与渲染。
+# Industrial Semantic LOD
 
-项目目标不是做通用模型查看器，而是验证和调试大规模几何场景的 Cluster LOD 数据组织、运行时遍历、可见性剔除、显存驻留和流式加载策略。
+### Semantic and Structure-Aware Cluster LOD for GPU-Driven Industrial Rendering
 
-## 功能概览
+**工业三维模型的语义结构感知集群 LOD 与 GPU 驱动渲染**
 
-- glTF / GLB 场景导入，支持读取 mesh、node、material、camera 和实例层级。
-- 支持 `EXT_meshopt_compression` 数据解压。
-- CPU 侧构建 cluster / group / LOD hierarchy。
-- 基于 meshoptimizer 的 meshlet 切分、cluster 分区、属性感知简化和 bounds 计算。
-- 支持 scene cache，避免每次启动重复做离线 LOD 构建。
-- 支持 processing-only 模式，用于提前生成 cache。
-- 支持 preload 和 streaming 两种几何驻留模式。
-- 支持 Vulkan mesh shader 渲染路径，优先使用 EXT mesh shader，也可使用 NV mesh shader 路径。
-- 支持 Hi-Z、视锥/遮挡剔除、two-pass culling 等遍历优化。
-- 支持可选 GPU radix sort，对实例 sort key/value 做排序。
-- 提供 ImGui / ImPlot 调试界面，用于调节渲染、LOD、streaming、压缩、cache 和统计参数。
-- 支持语义结构感知 LOD：PointNeXt、PointCLIP V2 与几何结构特征融合生成 P1-P10 LOD 策略。
-- 支持自动读取 `lod_analysis_outputs/<模型名>_lod_constraints_fused.csv`，并在 scene cache 中绑定语义策略指纹。
+[English](README.md) · [简体中文](README.zh-CN.md)
 
-## 目录结构
+![Vulkan](https://img.shields.io/badge/Vulkan-1.4-AC162C?style=flat-square)
+![C++](https://img.shields.io/badge/C%2B%2B-20-2563EB?style=flat-square)
+![Python](https://img.shields.io/badge/Python-Semantic%20Analysis-3776AB?style=flat-square)
+![Research](https://img.shields.io/badge/Project-Master%27s%20Research-0F766E?style=flat-square)
 
-```text
-.
-+-- CMakeLists.txt
-+-- cmake/
-|   +-- FindNvproCore2.cmake
-+-- docs/
-|   +-- external-libraries-analysis.md
-|   +-- key-functions-blog.md
-|   +-- src-shaders-reference.md
-+-- shaders/
-|   +-- build/
-|   +-- common/
-|   +-- debug/
-|   +-- interface/
-|   +-- post/
-|   +-- render/
-|   +-- streaming/
-|   +-- traversal/
-+-- src/
-|   +-- app/
-|   +-- core/
-|   +-- meshlod/
-|   +-- renderer/
-|   +-- scene/
-|   +-- streaming/
-|   +-- vendor/
-+-- thirdparty/
-    +-- vulkan_radix_sort/
+<img src="docs/assets/industrial-assembly.png" alt="Industrial assembly illustration from the thesis figures" width="760">
+
+<sub>Industrial assembly illustration from the supplied thesis figures; not a renderer screenshot.</sub>
+
+[Overview](#overview) · [Pipeline](#pipeline) · [Experiments](#recorded-experiments) · [Build](#build-and-run) · [Semantic workflow](#semantic-analysis-workflow) · [Code map](#code-map)
+
+</div>
+
+## Overview
+
+Industrial assemblies contain parts with very different simplification needs: repeated fasteners, thin plates, transmission components, fluid interfaces, and geometrically sensitive details. This research project connects **part-level semantic and geometric analysis** to **local cluster LOD construction**, then renders the hierarchy through a Vulkan pipeline with GPU traversal, visibility filtering, and indirect mesh drawing.
+
+The offline analysis combines a **14-class PointNeXt classifier**, **PointCLIP V2 inference gated by prediction uncertainty**, and **explicit mesh descriptors**. It produces P1–P10 policies that control simplification, local feature protection, grouping, and runtime error scaling. The renderer supports preloaded geometry and group-level streaming, retaining coarse representations while finer data is unavailable.
+
+The thesis calls the analysis framework **ISPointNet**. In this implementation, its supervised encoder is `PointNextEncoder`; fusion and policy mapping are deterministic rules. The project integrates these components with a cluster LOD rendering foundation related to [NVIDIA's Vulkan Cluster LOD sample](https://github.com/nvpro-samples/vk_lod_clusters) and [meshoptimizer](https://github.com/zeux/meshoptimizer).
+
+| Research component | Implemented behavior |
+| :--- | :--- |
+| Semantic analysis | Industrial part classification with confidence and margin extraction |
+| Open-vocabulary evidence | Multi-view PointCLIP V2 inference on uncertain parts; full inference for comparison configurations |
+| Structure-aware policies | Mesh scale, proportions, compactness, and complexity inform P1–P10 allocation |
+| Local geometry constraints | Feature importance and vertex protection for boundaries, sharp edges, circular boundary loops, and thin-wall cues |
+| GPU-driven rendering | Hierarchy traversal, local LOD selection, subgroup compaction, and indirect mesh drawing |
+| Visibility and residency | Assembly prefiltering, frustum/Hi-Z tests, optional adaptive two-pass culling, and streaming |
+
+## Pipeline
+
+```mermaid
+flowchart TB
+    subgraph Analysis["1 · Part analysis"]
+        direction LR
+        A["glTF / GLB<br/>surface sampling"] --> N["PointNeXt"]
+        N --> Q{"Uncertain?"}
+        Q -->|Yes| C["PointCLIP V2"]
+        Q -->|No| F["Fusion<br/>P1–P10 CSV"]
+        C --> F
+        A -->|Mesh descriptors| F
+    end
+    subgraph Build["2 · LOD construction"]
+        direction LR
+        L["Policy-controlled<br/>grouping"] --> S["Feature constraints<br/>simplify and recluster"]
+        S --> H["LOD hierarchy<br/>scene cache"]
+    end
+    subgraph Runtime["3 · GPU rendering"]
+        direction LR
+        R["Preloaded / streamed<br/>geometry"] --> T["Visibility and traversal<br/>local LOD selection"]
+        T --> M["Task compaction<br/>indirect mesh drawing"]
+        M --> Z["Depth / Hi-Z"]
+        Z -.-> T
+    end
+    Analysis --> Build --> Runtime
 ```
 
-主要模块：
+The default open-branch gate triggers when PointNeXt confidence is below **0.70** or the top1–top2 margin is below **0.08**.
 
-- `src/app`：应用入口、参数注册、生命周期、UI、场景加载和每帧调度。
-- `src/core`：cache 序列化和文件映射相关逻辑。
-- `src/scene`：glTF 导入、几何预处理、cluster LOD 构建、压缩和场景实例化。
-- `src/meshlod`：基于 meshoptimizer 的 LOD 构建核心逻辑。
-- `src/renderer`：Vulkan 资源、framebuffer、Hi-Z、preload renderer 和 Cluster LOD renderer。
-- `src/streaming`：几何流式加载、驻留管理、传输任务和 streaming shader 管线。
-- `shaders/interface`：CPU/GPU 共享结构定义。
-- `shaders/render`、`shaders/traversal`、`shaders/streaming`、`shaders/post`：主要 GPU 侧逻辑。
+**Model policies and local features work at different scales.** The policy specifies a part's overall protection preference. Local feature analysis adds weighted attributes and vertex protection during group simplification. Repeated grouping, simplification, and reclustering preserve cross-level generation relationships for runtime selection.
 
-## 外部依赖
+<p align="center">
+  <img src="docs/assets/structure-preservation.png" alt="Schematic of simplified geometry with highlighted hole and boundary features" width="900"><br>
+  <sub>Structure-preservation schematic from the supplied figures; illustrative, not a measured before/after experiment.</sub>
+</p>
 
-项目使用 CMake 构建，核心依赖由 `nvpro_core2` 提供。`cmake/FindNvproCore2.cmake` 会优先查找本地 `nvpro_core2`，找不到时默认下载固定提交：
+## Recorded experiments
 
-```text
-03297bee1f997208951cc104abb5ecc3e1f987ed
-```
+These results come from existing training logs and policy outputs. The documentation review checked all **30 scene/configuration CSVs** against the aggregate statistics. It did not retrain models or run a new rendering benchmark. [Evidence metadata and coverage checks](docs/data/readme-evidence.json)
 
-主要依赖：
+### 1. Industrial part classification
 
-- Vulkan SDK `>= 1.4.309.0`
-- CMake `>= 3.22`
-- C++20 编译器
-- Git
-- nvpro2：`nvapp`、`nvgui`、`nvutils`、`nvvk`、`nvvkglsl`
-- meshoptimizer
-- cgltf
-- GLM
-- ImGui / ImPlot
-- shaderc
-- volk
-- Vulkan Memory Allocator
-- `thirdparty/vulkan_radix_sort`
+| Setting / metric | Recorded value |
+| :--- | ---: |
+| Classes / points per sample | 14 / 8,192 |
+| Training / evaluation samples | 61,711 / 15,372 |
+| Training epochs / recorded seed | 100 / 3098 |
+| Best logged evaluation OA | **96.19%** |
+| mAcc after reloading the best checkpoint | **93.86%** |
+| Selected checkpoint epoch | 85 |
 
-项目明确关闭了 nvpro2 的部分可选模块：
+![Recorded PointNeXt training and evaluation accuracy](docs/assets/pointnext-training.png)
 
-```cmake
-NVPRO2_ENABLE_nvgl OFF
-NVPRO2_ENABLE_nvgpu_monitor OFF
-NVPRO2_ENABLE_nvslang OFF
-NVPRO2_ENABLE_nvvkgltf OFF
-```
+**Evaluation scope.** Validation and test both use the `test` split, and the dataset maps `val` to `test`. These values describe the recorded development evaluation, not an independent held-out test. OA is overall accuracy; mAcc is mean class accuracy. The figure plots evaluation only at the logged five-epoch evaluation intervals.
 
-因此 glTF 导入走项目自己的 `cgltf + meshoptimizer` 路径，而不是 `nvvkgltf`。
+The reloaded checkpoint reports 98.99% accuracy for screws/bolts/studs and 76.21% for pipe fittings/valves/nozzles, showing why per-class analysis matters alongside the overall score. [Training log](tools/pointnext_lod/PointNeXt/log/industrial_part/industrial_part-train-pointnext-s-14class/log.txt) · [Configuration](tools/pointnext_lod/PointNeXt/cfgs/industrial_part/pointnext-s-14class-randomrot-8192-fast.yaml) · [Dataset implementation](tools/pointnext_lod/PointNeXt/openpoints/dataset/industrial_part.py)
 
-更完整的外部库使用分析见 [docs/external-libraries-analysis.md](docs/external-libraries-analysis.md)。
+### 2. Five industrial scenes
 
-## 构建
+| Scene | Meshes | Source triangles | PointCLIP candidates | Candidate share |
+| :--- | ---: | ---: | ---: | ---: |
+| `a` | 24,259 | 50,138,563 | 12,252 | 50.50% |
+| `b` | 63,063 | 78,514,530 | 29,115 | 46.17% |
+| `c` | 61,467 | 126,985,435 | 35,437 | 57.65% |
+| `o1778` | 1,778 | 5,469,879 | 920 | 51.74% |
+| `o3049` | 3,049 | 6,087,168 | 1,762 | 57.79% |
+| **Total** | **153,616** | **267,195,575** | **79,486** | **51.74%** |
 
-在 Windows + Visual Studio 环境中，可以使用：
+Triangle counts were checked from GLB triangle-primitive accessor counts. They describe source geometry, not triangles submitted per frame. These scenes have one mesh-bearing node per mesh. Scene `a` contains an assembly hierarchy; the other four have flat node structures, which limits assembly-level filtering opportunities. [Candidate statistics](analysis_reports/lod_pointnext_confidence_candidate_summary.csv)
+
+### 3. Six semantic policy configurations
+
+**N** denotes PointNeXt, **C** denotes PointCLIP V2, and **G** denotes explicit geometric structure evidence. Every configuration has 153,616 policy records across the five scenes.
+
+| Configuration | PointCLIP coverage | P1–P3 | P8–P10 | `allow_cull` output |
+| :--- | ---: | ---: | ---: | ---: |
+| N | 0.00% | 73.78% | 23.46% | 63.41% |
+| C | 100.00% | 87.82% | <0.01% | 87.78% |
+| N + G | 0.00% | 45.50% | 21.53% | 44.17% |
+| C + G | 100.00% | 8.40% | 0.19% | 4.22% |
+| N + C | 51.74% | 68.54% | 22.01% | 58.83% |
+| **N + C + G · default** | **51.74%** | **46.27%** | **22.08%** | **42.59%** |
+
+![Protection-level allocation across six policy configurations](docs/assets/policy-comparison.png)
+
+Adding G to N changes 31.78% of policy assignments; adding candidate-only C to N changes 8.41%. Moving from N + C to the full configuration changes 30.82%. Candidate records have mean PointNeXt confidence of 0.40–0.46, compared with 0.78–0.79 for records that skip the open branch. These observations describe policy behavior and the concentration of open-branch work on uncertain inputs. [Aggregate CSV](analysis_reports/lod_ablation_aggregate_summary.csv) · [Policy transitions](analysis_reports/lod_pairwise_change_totals.csv) · [Existing analysis](analysis_reports/LOD_ALL_DATA_ANALYSIS_REPORT.md)
+
+**Interpretation.** P1–P3 indicate lower protection and P8–P10 higher protection; these are policy classes, not geometric LOD levels. A more conservative distribution does not establish better geometric fidelity. The six configurations use different fusion rules/weights, and full versus candidate inference also differs in prompt-role filtering, so this is an engineering configuration comparison rather than a controlled branch ablation. `allow_cull` is exported policy metadata; the current GPU visibility path does not consume its flag to decide culling. Its percentage is not an observed culling rate.
+
+### Experiment coverage
+
+| Experiment | Evidence currently available |
+| :--- | :--- |
+| 14-class PointNeXt training | Completed run, per-class results, configuration, and checkpoints |
+| PointNeXt / candidate-only / full PointCLIP scene inference | Outputs for all five scenes |
+| Six policy configurations | 30 complete policy CSVs, distributions, and transition summaries |
+| GPU timing, geometry fidelity, and streaming tradeoffs | Implementation and instrumentation exist; no complete controlled benchmark dataset identified in this review |
+| PointNet / PointNet++ comparisons | Configuration files exist; completed comparative results were not identified |
+
+The [project review](analysis_reports/PROJECT_REVIEW_20261014.md) maps code to the thesis and explains the evidence boundaries.
+
+## Build and run
+
+### Requirements
+
+- Windows with a C++20 compiler; the existing local build uses Visual Studio 2022.
+- CMake **3.22+**, Git, and Vulkan SDK **1.4.309.0+**.
+- A GPU/driver supporting the device features requested in [main.cpp](src/app/main.cpp), including EXT mesh shaders, shader clocks, float atomics, fragment shading rate, and 64-bit image atomics. NV-specific features are also requested; check device initialization before assuming compatibility.
+- `nvpro_core2`, meshoptimizer, and cgltf. The dependency finder downloads `nvpro_core2` at `03297bee1f997208951cc104abb5ecc3e1f987ed` if a local copy is unavailable.
+
+### Build
+
+Run from the repository root:
 
 ```powershell
 cmake -S . -B build -G "Visual Studio 17 2022" -A x64
 cmake --build build --config Release
 ```
 
-也可以使用 Ninja：
+The CMake target takes the source directory name. In the current `t1` checkout, the existing Release executable is **`_bin/Release/t1.exe`**. Renaming the checkout directory changes the target name on a fresh configuration.
 
 ```powershell
-cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
-cmake --build build
+# Open a scene
+.\_bin\Release\t1.exe --scene "path\to\model.glb"
+
+# Precompute a cache without interactive rendering
+.\_bin\Release\t1.exe --scene "path\to\model.glb" --processingonly 1
+
+# Enable group streaming
+.\_bin\Release\t1.exe --scene "path\to\model.glb" --streaming 1
+
+# Enable adaptive two-pass culling
+.\_bin\Release\t1.exe --scene "path\to\model.glb" --culling 1 --twopassculling 1 --adaptivetwopassculling 1
 ```
 
-当前 CMake target 名来自目录名。因此在当前路径 `t1` 下，生成的可执行目标通常叫 `t1`。
+Adaptive two-pass logic requires `twopassculling` to be enabled. Its decision uses scene cluster count and view-projection matrix change; enabling only `adaptivetwopassculling` does not activate the second pass.
 
-如果不想让 CMake 自动下载 nvpro2，可以提前把 `nvpro_core2` 放在以下任一路径：
+For a local dependency copy, place `nvpro_core2` under the project, its parent, its grandparent, or `build/_deps`. `-DNVPROCORE2_DOWNLOAD=OFF` disables automatic fetching but still requires an accessible local copy.
 
-- `build/_deps/nvpro_core2`
-- 当前项目目录下的 `nvpro_core2`
-- 当前项目上级或上上级目录下的 `nvpro_core2`
+## Semantic analysis workflow
 
-也可以通过 CMake cache 覆盖：
+The renderer and offline neural inference have separate dependencies. Provide input GLBs, a compatible PointNeXt checkpoint, OpenPoints CUDA extensions, and the PointCLIP V2/CLIP environment before running the semantic scripts.
 
-```powershell
-cmake -S . -B build -DNVPROCORE2_DOWNLOAD=OFF
-```
-
-## 运行
-
-构建后从生成目录运行可执行文件。项目默认会尝试在运行目录、源码资源目录或复制到 runtime 的资源目录里查找 `a.glb`。
-
-指定模型：
-
-```powershell
-.\build\Release\t1.exe --scene path\to\model.glb
-```
-
-加载配置文件：
-
-```powershell
-.\build\Release\t1.exe --scene path\to\scene.cfg
-```
-
-只生成 cache，不打开窗口：
-
-```powershell
-.\build\Release\t1.exe --scene path\to\model.glb --processingonly 1
-```
-
-允许 processing-only 断点续跑：
-
-```powershell
-.\build\Release\t1.exe --scene path\to\model.glb --processingonly 1 --processingpartial 1
-```
-
-启用 streaming：
-
-```powershell
-.\build\Release\t1.exe --scene path\to\model.glb --streaming 1
-```
-
-指定 GPU：
-
-```powershell
-.\build\Release\t1.exe --device 0
-```
-
-启用 validation：
-
-```powershell
-.\build\Release\t1.exe --validation 1
-```
-
-## 语义结构 LOD
-
-项目根目录提供了一键全量分析脚本：
+From **Anaconda Prompt / cmd.exe** at the repository root:
 
 ```bat
+rem Put input models under _downloaded_resources\*.glb
+rem Override these default environment names if needed
+set POINTNEXT_CONDA_ENV=gpt-pointnext
+set POINTCLIP_CONDA_ENV=PointCLIPV2_LOD
 run_all_glb_pointnext_pointclipv2_fused.bat
 ```
 
-该脚本会扫描：
+The batch runs full PointNeXt analysis, gated PointCLIP inference, and policy fusion in that order. It expects the checkpoint at:
 
 ```text
-_downloaded_resources\*.glb
+tools/pointnext_lod/PointNeXt/log/industrial_part/
+  industrial_part-train-pointnext-s-14class/checkpoint/
+    industrial_part-train-pointnext-s-14class_ckpt_best.pth
 ```
 
-并按顺序执行：
+For each `<scene>`, it writes:
 
 ```text
-1. conda activate gpt-pointnext
-   PointNeXt 闭集分类 + 几何结构特征提取
-   -> lod_analysis_outputs\<模型名>_pointnext_analysis.csv
-
-2. conda activate PointCLIPV2_LOD
-   PointCLIP V2 开放词表 zero-shot 推断
-   -> lod_analysis_outputs\<模型名>_pointclipv2_zeroshot.csv
-
-3. 融合 PointNeXt、PointCLIP V2 和结构特征
-   -> lod_analysis_outputs\<模型名>_lod_constraints_fused.csv
+lod_analysis_outputs/
+  <scene>_pointnext_analysis.csv
+  <scene>_pointclipv2_candidates.csv
+  <scene>_pointnext_pointclip_merged.csv
+  <scene>_lod_constraints_fused.csv
+  <scene>_lod_constraints_fused_summary.json
 ```
 
-如果环境名不同，可以在运行前覆盖：
+The root batch skips existing neural outputs. If the model, checkpoint, or prompts change, archive or regenerate the corresponding outputs before interpreting a new run.
+
+For the existing five-scene comparison, after generating candidate outputs:
 
 ```bat
-set POINTNEXT_CONDA_ENV=你的PointNeXt环境
-set POINTCLIP_CONDA_ENV=你的PointCLIP环境
-run_all_glb_pointnext_pointclipv2_fused.bat
+conda activate PointCLIPV2_LOD
+tools\pointclipv2\run_pointclipv2_full_5_glbs.bat
+tools\pointclipv2\run_lod_ablation_5_glbs.bat
 ```
 
-生成 fused 策略后，删除旧 cache 让程序重新构建：
+Generate full PointCLIP outputs first: the comparison batch falls back to candidate outputs when full files are missing. Select a configuration through **Semantic LOD Strategy** in the UI or `--semanticlodmode`:
 
-```bat
-del /f /q _downloaded_resources\*.glb.zippp
-del /f /q _downloaded_resources\*.glb.zippp_partial
-```
+| CLI value | Configuration |
+| ---: | :--- |
+| 0 | PointNeXt |
+| 1 | PointCLIP V2 |
+| 2 | PointNeXt + structure |
+| 3 | PointCLIP V2 + structure |
+| 4 | PointNeXt + PointCLIP V2 |
+| **5** | **PointNeXt + PointCLIP V2 + structure** |
 
-C++ 加载模型时会优先查找：
+**Value 0 is a PointNeXt policy mode, not a semantic-disable switch.** The loader searches for the selected configuration CSV, then fused CSV, then ordinary constraints. Check the logged resolved CSV path when comparing modes. Semantic policy hashes participate in cache compatibility checks. For an explicit rebuild, use `--processingonly 1 --autoloadcache 0`; use distinct `--cachesuffix` values to retain caches for different experiments.
+
+## Code map
 
 ```text
-lod_analysis_outputs\<模型名>_lod_constraints_fused.csv
+src/
+  app/           Application, parameters, UI, and frame scheduling
+  scene/         glTF import, semantic policies, cluster LOD, compression
+  meshlod/       Grouping, feature constraints, simplification, hierarchy
+  renderer/      Vulkan resources, Hi-Z, preloading, and cluster renderer
+  streaming/     Group residency, request processing, and transfers
+  core/          Serialization and cache support
+shaders/
+  traversal/     Assembly visibility, hierarchy traversal, local selection
+  render/        Mesh and fragment shaders
+  streaming/     Residency updates and age-based filtering
+  post/          Hi-Z construction and background passes
+  interface/     Shared CPU/GPU structures
+tools/
+  pointnext_lod/ PointNeXt inference and semantic/structure policy mapping
+  pointclipv2/   Open-vocabulary inference, fusion, comparison generation
+analysis_reports/  Recorded policy summaries and technical reviews
+docs/              README figures and evidence metadata
 ```
 
-找不到 fused 时才回退到：
+| Start here | Purpose |
+| :--- | :--- |
+| [main.cpp](src/app/main.cpp) | Vulkan feature requests and application startup |
+| [scene_semantic_lod.cpp](src/scene/scene_semantic_lod.cpp) | CSV resolution, policy derivation, and configuration mapping |
+| [clusterlod.cpp](src/scene/clusterlod.cpp) | Policy injection and cluster hierarchy construction |
+| [meshlod_simplify.h](src/meshlod/meshlod_simplify.h) | Local feature analysis and constrained simplification |
+| [renderer_clusters_lod.cpp](src/renderer/renderer_clusters_lod.cpp) | GPU passes, synchronization, and adaptive two-pass decision |
+| [assembly_visibility.comp.glsl](shaders/traversal/assembly_visibility.comp.glsl) | Assembly-level screen-space and Hi-Z filtering |
+| [traversal_run.comp.glsl](shaders/traversal/traversal_run.comp.glsl) | GPU hierarchy task processing |
+| [build_lod_constraints_from_analysis.py](tools/pointnext_lod/build_lod_constraints_from_analysis.py) | Role fusion and P1–P10 policy generation |
 
-```text
-lod_analysis_outputs\<模型名>_lod_constraints.csv
-```
+Frequently used controls include `--loderror`, `--featureconstraints`, `--featureimportanceweight`, `--assemblymininstances`, `--assemblylodpixels`, `--maxgeomegabytes`, and `--maxtransfermegabytes`. See [parameter registration](src/app/lodclusters_config.cpp) for the current supported names.
 
-前端可在 visualization 中选择 `semantic lod policy`，查看 P1-P10 策略颜色和数量分布。
+## Documentation and foundations
 
-## 常用参数
+- [中文说明](README.zh-CN.md)
+- [Code and experiment review](analysis_reports/PROJECT_REVIEW_20261014.md)
+- [Semantic analysis workflow](POINTNEXT_POINTCLIPV2_SEMANTIC_LOD_FULL_WORKFLOW.md)
+- [Semantic LOD technical analysis](SEMANTIC_LOD_STRATEGY_TECHNICAL_ANALYSIS.md)
+- [Six-configuration experiment design](LOD_ABLATION_EXPERIMENT_DESIGN.md)
+- [Recorded five-scene policy analysis](analysis_reports/LOD_ALL_DATA_ANALYSIS_REPORT.md)
+- [Figure provenance](docs/assets/README.md)
 
-基础：
+This project uses and adapts established rendering and point-cloud components. See the original [Vulkan Cluster LOD sample](https://github.com/nvpro-samples/vk_lod_clusters), [nvpro_core2](https://github.com/nvpro-samples/nvpro_core2), [meshoptimizer](https://github.com/zeux/meshoptimizer), [PointNeXt](https://github.com/guochengqian/PointNeXt), and [PointCLIP V2](https://github.com/yangyangyang127/PointCLIP_V2) for their methods and upstream licensing. The industrial semantic-policy integration and runtime extensions should be evaluated separately from these foundations.
 
-- `--scene`：加载 `.gltf`、`.glb` 或 `.cfg`。
-- `--renderer`：选择 renderer 类型。
-- `--verbose`：输出更多日志。
-- `--debugui`：显示 Debug 面板。
-- `--vsync`：启用或关闭 VSync。
-- `--device`：按 index 强制选择 Vulkan 设备。
-- `--headless`：无窗口运行。
-- `--headlessframes`：headless 模式运行帧数。
-- `--dumpspirv`：把编译后的 SPIR-V 输出到工作目录。
-
-场景和 LOD：
-
-- `--clusterconfig`：选择 cluster preset。
-- `--clustergroupsize`：设置每组 cluster 数量。
-- `--loderror`：设置屏幕空间 LOD pixel error。
-- `--lodnodewidth`：设置 LOD hierarchy node width。
-- `--loddecimationfactor`：设置 LOD 递减系数。
-- `--meshoptfillweight`：传给 meshoptimizer cluster 构建的 fill weight。
-- `--simplifyuvweight`：UV 在属性感知简化中的权重。
-- `--simplifynormalweight`：normal 在属性感知简化中的权重。
-- `--simplifytangentweight`：tangent 在属性感知简化中的权重。
-- `--simplifytangentsignweight`：tangent sign 在属性感知简化中的权重。
-- `--learnedimportance`：是否启用轻量 MLP per-vertex learned importance，`1` 启用，`0` 关闭。
-- `--learnedstrength`：MLP importance 输出强度，数值越高，特征区域越保守。
-- `--learnedprotect`：高置信 importance 顶点硬保护阈值。
-- `--learnedtargetboost`：高 importance 区域的目标三角形保留增量。
-- `--learnederrorscale`：高 importance 区域的 LOD error 放大系数。
-- `--learnedtopologyedges`：用于精确边界/非流形描述符的单 geometry 有向边数量上限，`0` 表示不限制。
-
-cache 和预处理：
-
-- `--autosavecache`：加载后自动保存 cache。
-- `--autoloadcache`：启动时自动加载已有 cache。
-- `--mappedcache`：使用 memory mapped cache。
-- `--processingonly`：只处理并保存 cache，随后退出。
-- `--processingpartial`：processing-only 模式下允许部分保存和续跑。
-- `--processingmode`：控制外层/内层并行策略，`0` 自动，`-1` inner，`1` outer。
-- `--processingthreadpct`：初始加载和处理时使用的线程比例。
-- `--forcepreprocessmegabytes`：超过指定规模时要求先预处理。
-- `--cachesuffix`：cache 文件后缀，默认 `.zippp`。
-
-压缩：
-
-- `--compressed`：启用项目内部 group 数据压缩。
-- `--compressedpositionbits`：position mantissa drop bits。
-- `--compressedtexcoordbits`：texcoord mantissa drop bits。
-
-渲染和剔除：
-
-- `--visualize`：选择可视化模式。
-- `--culling`：启用视锥和遮挡剔除。
-- `--twopassculling`：启用 two-pass culling。
-- `--adaptivetwopassculling`：仅在场景规模和相机变化达到阈值时运行第二阶段剔除。
-- `--twopassminclusters`：adaptive two-pass 的最小场景 cluster 数阈值。
-- `--twopassmatrixdelta`：adaptive two-pass 的 culling 矩阵变化阈值。
-- `--forcedinvisculling`：强制 invisible culling。
-- `--separategroups`：使用 separate groups kernel。
-- `--instancesorting`：启用 instance sorting。
-- `--renderstats`：启用渲染统计。
-- `--extmeshshader`：使用 EXT mesh shader 路径。
-- `--facetshading`：启用 facet shading。
-- `--flipwinding`：翻转 winding。
-- `--forcetwosided`：强制双面。
-
-streaming：
-
-- `--streaming`：启用 streaming。
-- `--maxtransfermegabytes`：每帧 transfer buffer 预算。
-- `--maxgeomegabytes`：几何数据预算。
-- `--maxresidentgroups`：最大驻留 group 数。
-- `--maxframeloadrequests`：每帧最大加载请求数。
-- `--maxframeunloadrequests`：每帧最大卸载请求数。
-
-相机和光照：
-
-- `--camerastring`：从字符串恢复相机。
-- `--cameraspeed`：设置相机移动速度。
-- `--sundirection`：设置太阳方向。
-- `--suncolor`：设置太阳颜色。
-- `--shadowray`：启用或关闭 shadow ray。
-
-## 数据流程
-
-```text
-glTF / GLB / cache
-  -> Scene::init
-  -> cgltf 解析场景结构
-  -> meshoptimizer 解压 EXT_meshopt_compression
-  -> 顶点读取、量化、去重和 remap
-  -> meshoptimizer / meshlod 构建 cluster、group 和 LOD
-  -> Scene cache 保存或加载
-  -> RenderScene 选择 preload 或 streaming
-  -> Resources 创建 Vulkan buffer、image、descriptor 和 pipeline
-  -> renderer 执行 traversal、culling、Hi-Z、sorting 和 mesh shader render
-  -> ImGui / ImPlot 显示 viewport、设置和统计
-```
-
-## Shader
-
-shader 文件在运行时通过 `nvvkglsl::GlslCompiler` 和 shaderc 编译。编译时会根据 renderer、streaming、mesh shader 类型、subgroup size、cluster 大小等配置注入宏。
-
-主要 shader 目录：
-
-- `shaders/interface`：CPU/GPU 共享结构和 binding 定义。
-- `shaders/common`：剔除、Hi-Z、属性编码等公共逻辑。
-- `shaders/render`：mesh shader 渲染和 fragment shading。
-- `shaders/traversal`：LOD traversal、presort、init、run。
-- `shaders/streaming`：streaming setup、update scene、age filter。
-- `shaders/build`：scene build setup。
-- `shaders/post`：fullscreen、background、atomic raster、Hi-Z。
-- `shaders/debug`：instance / cluster bbox debug rendering。
-
-源码和 shader 文件说明见 [docs/src-shaders-reference.md](docs/src-shaders-reference.md)。
-
-## UI 使用
-
-运行程序后主要面板包括：
-
-- `Viewport`：显示渲染结果。
-- `Settings`：渲染、LOD、cluster、streaming 和压缩参数。
-- `Misc Settings`：相机、光照和高级参数。
-- `Statistics`：scene、traversal、memory 和 cluster 统计。
-- `Streaming memory`：streaming 驻留和内存曲线。
-- `Profiler`：CPU/GPU profiler 视图。
-- `Log`：运行日志。
-- `Debug`：shader readback 和调试值。
-
-菜单支持打开模型、重新加载、保存/删除 cache、重编 shader、切换 VSync 和退出。
-
-## 开发备注
-
-- `build`、`_bin` 被 `.gitignore` 忽略。
-- `thirdparty/vulkan_radix_sort` 的 `.cc` 被直接编入主可执行文件，不是通过它自己的 CMake target 链接。
-- `thirdparty/vulkan_radix_sort/src/generated` 下的 shader header 需要存在。
-- 项目要求 Vulkan header version 至少为 309，对应 Vulkan SDK `>= 1.4.309.0`。
-- CMake 会把 `shaders` 和 nvshaders 相关文件复制到 runtime/install 目录。
-- 修改 `shaders/interface` 中 CPU/GPU 共享结构时，需要同步检查 C++ 侧结构、buffer layout、descriptor binding 和 shader 使用点。
-- 修改 LOD/cluster 配置会触发 scene 或 renderer 重建，较大模型可能耗时明显，建议先使用 processing-only 生成 cache。
-
-## 相关文档
-
-- [POINTNEXT_POINTCLIPV2_SEMANTIC_LOD_FULL_WORKFLOW.md](POINTNEXT_POINTCLIPV2_SEMANTIC_LOD_FULL_WORKFLOW.md)：PointNeXt + PointCLIP V2 + fused 策略的完整执行流程。
-- [SEMANTIC_LOD_STRATEGY_TECHNICAL_ANALYSIS.md](SEMANTIC_LOD_STRATEGY_TECHNICAL_ANALYSIS.md)：语义与结构感知 LOD 策略判断的关键技术点。
-- [docs/external-libraries-analysis.md](docs/external-libraries-analysis.md)：外部库功能使用分析。
-- [docs/src-shaders-reference.md](docs/src-shaders-reference.md)：源码和 shader 文件职责说明。
-- [docs/key-functions-blog.md](docs/key-functions-blog.md)：从关键函数视角理解项目主流程。
+**Artifact availability.** `_downloaded_resources/` and `lod_analysis_outputs/` are ignored by Git. The README publishes compact results and provenance, not the complete local scene dataset or per-mesh outputs. Inspect checkpoint files in a checkout before attempting inference. No repository-wide license file was identified in this review; consult component licenses before reuse.

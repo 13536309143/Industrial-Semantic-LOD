@@ -1,0 +1,383 @@
+{
+  "review_date": "2026-10-14",
+  "scenes": [
+    {
+      "scene": "a",
+      "meshes": 24259,
+      "triangles": 50138563,
+      "nodes": 38733,
+      "hierarchical_nodes": 14474
+    },
+    {
+      "scene": "b",
+      "meshes": 63063,
+      "triangles": 78514530,
+      "nodes": 63063,
+      "hierarchical_nodes": 0
+    },
+    {
+      "scene": "c",
+      "meshes": 61467,
+      "triangles": 126985435,
+      "nodes": 61467,
+      "hierarchical_nodes": 0
+    },
+    {
+      "scene": "o1778",
+      "meshes": 1778,
+      "triangles": 5469879,
+      "nodes": 1778,
+      "hierarchical_nodes": 0
+    },
+    {
+      "scene": "o3049",
+      "meshes": 3049,
+      "triangles": 6087168,
+      "nodes": 3049,
+      "hierarchical_nodes": 0
+    }
+  ],
+  "total_meshes": 153616,
+  "total_source_triangles": 267195575,
+  "verified_policy_coverage": [
+    {
+      "scene": "a",
+      "variant": "1_pointnext",
+      "rows": 24259,
+      "unique_meshes": 24259
+    },
+    {
+      "scene": "b",
+      "variant": "1_pointnext",
+      "rows": 63063,
+      "unique_meshes": 63063
+    },
+    {
+      "scene": "c",
+      "variant": "1_pointnext",
+      "rows": 61467,
+      "unique_meshes": 61467
+    },
+    {
+      "scene": "o1778",
+      "variant": "1_pointnext",
+      "rows": 1778,
+      "unique_meshes": 1778
+    },
+    {
+      "scene": "o3049",
+      "variant": "1_pointnext",
+      "rows": 3049,
+      "unique_meshes": 3049
+    },
+    {
+      "scene": "a",
+      "variant": "2_pointclip",
+      "rows": 24259,
+      "unique_meshes": 24259
+    },
+    {
+      "scene": "b",
+      "variant": "2_pointclip",
+      "rows": 63063,
+      "unique_meshes": 63063
+    },
+    {
+      "scene": "c",
+      "variant": "2_pointclip",
+      "rows": 61467,
+      "unique_meshes": 61467
+    },
+    {
+      "scene": "o1778",
+      "variant": "2_pointclip",
+      "rows": 1778,
+      "unique_meshes": 1778
+    },
+    {
+      "scene": "o3049",
+      "variant": "2_pointclip",
+      "rows": 3049,
+      "unique_meshes": 3049
+    },
+    {
+      "scene": "a",
+      "variant": "3_pointnext_structure",
+      "rows": 24259,
+      "unique_meshes": 24259
+    },
+    {
+      "scene": "b",
+      "variant": "3_pointnext_structure",
+      "rows": 63063,
+      "unique_meshes": 63063
+    },
+    {
+      "scene": "c",
+      "variant": "3_pointnext_structure",
+      "rows": 61467,
+      "unique_meshes": 61467
+    },
+    {
+      "scene": "o1778",
+      "variant": "3_pointnext_structure",
+      "rows": 1778,
+      "unique_meshes": 1778
+    },
+    {
+      "scene": "o3049",
+      "variant": "3_pointnext_structure",
+      "rows": 3049,
+      "unique_meshes": 3049
+    },
+    {
+      "scene": "a",
+      "variant": "4_pointclip_structure",
+      "rows": 24259,
+      "unique_meshes": 24259
+    },
+    {
+      "scene": "b",
+      "variant": "4_pointclip_structure",
+      "rows": 63063,
+      "unique_meshes": 63063
+    },
+    {
+      "scene": "c",
+      "variant": "4_pointclip_structure",
+      "rows": 61467,
+      "unique_meshes": 61467
+    },
+    {
+      "scene": "o1778",
+      "variant": "4_pointclip_structure",
+      "rows": 1778,
+      "unique_meshes": 1778
+    },
+    {
+      "scene": "o3049",
+      "variant": "4_pointclip_structure",
+      "rows": 3049,
+      "unique_meshes": 3049
+    },
+    {
+      "scene": "a",
+      "variant": "5_pointnext_pointclip",
+      "rows": 24259,
+      "unique_meshes": 24259
+    },
+    {
+      "scene": "b",
+      "variant": "5_pointnext_pointclip",
+      "rows": 63063,
+      "unique_meshes": 63063
+    },
+    {
+      "scene": "c",
+      "variant": "5_pointnext_pointclip",
+      "rows": 61467,
+      "unique_meshes": 61467
+    },
+    {
+      "scene": "o1778",
+      "variant": "5_pointnext_pointclip",
+      "rows": 1778,
+      "unique_meshes": 1778
+    },
+    {
+      "scene": "o3049",
+      "variant": "5_pointnext_pointclip",
+      "rows": 3049,
+      "unique_meshes": 3049
+    },
+    {
+      "scene": "a",
+      "variant": "6_pointnext_pointclip_structure",
+      "rows": 24259,
+      "unique_meshes": 24259
+    },
+    {
+      "scene": "b",
+      "variant": "6_pointnext_pointclip_structure",
+      "rows": 63063,
+      "unique_meshes": 63063
+    },
+    {
+      "scene": "c",
+      "variant": "6_pointnext_pointclip_structure",
+      "rows": 61467,
+      "unique_meshes": 61467
+    },
+    {
+      "scene": "o1778",
+      "variant": "6_pointnext_pointclip_structure",
+      "rows": 1778,
+      "unique_meshes": 1778
+    },
+    {
+      "scene": "o3049",
+      "variant": "6_pointnext_pointclip_structure",
+      "rows": 3049,
+      "unique_meshes": 3049
+    }
+  ],
+  "aggregate_policy_results": [
+    {
+      "wolabel": "1 PointNeXt",
+      "mode": "pointnext",
+      "num_rows": "153616",
+      "pointclip_matched_share": "0.000000",
+      "cullable_share": "0.634140",
+      "aggressive_p1_p3_share": "0.737840",
+      "preserve_p8_p10_share": "0.234644",
+      "P1_share": "0.241752",
+      "P2_share": "0.392388",
+      "P3_share": "0.103700",
+      "P4_share": "0.000000",
+      "P5_share": "0.000000",
+      "P6_share": "0.000000",
+      "P7_share": "0.027517",
+      "P8_share": "0.116290",
+      "P9_share": "0.000631",
+      "P10_share": "0.117722"
+    },
+    {
+      "wolabel": "2 PointCLIP",
+      "mode": "pointclip",
+      "num_rows": "153616",
+      "pointclip_matched_share": "1.000000",
+      "cullable_share": "0.877819",
+      "aggressive_p1_p3_share": "0.878183",
+      "preserve_p8_p10_share": "0.000007",
+      "P1_share": "0.853192",
+      "P2_share": "0.024626",
+      "P3_share": "0.000365",
+      "P4_share": "0.084588",
+      "P5_share": "0.000000",
+      "P6_share": "0.000299",
+      "P7_share": "0.036923",
+      "P8_share": "0.000007",
+      "P9_share": "0.000000",
+      "P10_share": "0.000000"
+    },
+    {
+      "wolabel": "3 PointNeXt + structure",
+      "mode": "pointnext_structure",
+      "num_rows": "153616",
+      "pointclip_matched_share": "0.000000",
+      "cullable_share": "0.441712",
+      "aggressive_p1_p3_share": "0.455005",
+      "preserve_p8_p10_share": "0.215251",
+      "P1_share": "0.056980",
+      "P2_share": "0.384732",
+      "P3_share": "0.013293",
+      "P4_share": "0.168492",
+      "P5_share": "0.014217",
+      "P6_share": "0.118887",
+      "P7_share": "0.028148",
+      "P8_share": "0.096422",
+      "P9_share": "0.000625",
+      "P10_share": "0.118204"
+    },
+    {
+      "wolabel": "4 PointCLIP + structure",
+      "mode": "pointclip_structure",
+      "num_rows": "153616",
+      "pointclip_matched_share": "1.000000",
+      "cullable_share": "0.042203",
+      "aggressive_p1_p3_share": "0.084034",
+      "preserve_p8_p10_share": "0.001881",
+      "P1_share": "0.033460",
+      "P2_share": "0.008743",
+      "P3_share": "0.041832",
+      "P4_share": "0.491453",
+      "P5_share": "0.057338",
+      "P6_share": "0.336150",
+      "P7_share": "0.029144",
+      "P8_share": "0.001048",
+      "P9_share": "0.000013",
+      "P10_share": "0.000820"
+    },
+    {
+      "wolabel": "5 PointNeXt + PointCLIP",
+      "mode": "pointnext_pointclip",
+      "num_rows": "153616",
+      "pointclip_matched_share": "0.517433",
+      "cullable_share": "0.588337",
+      "aggressive_p1_p3_share": "0.685358",
+      "preserve_p8_p10_share": "0.220088",
+      "P1_share": "0.184050",
+      "P2_share": "0.404287",
+      "P3_share": "0.097021",
+      "P4_share": "0.059414",
+      "P5_share": "0.000000",
+      "P6_share": "0.000573",
+      "P7_share": "0.034567",
+      "P8_share": "0.104579",
+      "P9_share": "0.000631",
+      "P10_share": "0.114877"
+    },
+    {
+      "wolabel": "6 PointNeXt + PointCLIP + structure",
+      "mode": "pointnext_pointclip_structure",
+      "num_rows": "153616",
+      "pointclip_matched_share": "0.517433",
+      "cullable_share": "0.425945",
+      "aggressive_p1_p3_share": "0.462673",
+      "preserve_p8_p10_share": "0.220791",
+      "P1_share": "0.037001",
+      "P2_share": "0.388944",
+      "P3_share": "0.036728",
+      "P4_share": "0.160380",
+      "P5_share": "0.012310",
+      "P6_share": "0.115483",
+      "P7_share": "0.028363",
+      "P8_share": "0.100914",
+      "P9_share": "0.000631",
+      "P10_share": "0.119245"
+    }
+  ],
+  "logged_classification": {
+    "epoch": 85,
+    "OA_percent": 96.19,
+    "mAcc_percent": 93.86,
+    "seed": 3098,
+    "train_samples": 61711,
+    "evaluation_samples": 15372,
+    "independent_test": false,
+    "per_class_accuracy_percent": {
+      "screws_bolts_studs": 98.99,
+      "nuts": 97.02,
+      "washers_rings_spacers": 98.32,
+      "pins_rivets_keys": 98.2,
+      "bearings_bushings_guides": 91.01,
+      "gears_pulleys_chains": 92.72,
+      "motors_gearmotors": 98.31,
+      "pipe_fittings_valves_nozzles": 76.21,
+      "joints_clamps_structural_connectors": 93.28,
+      "wheels_castors": 93.53,
+      "rotating_fluid_machinery": 97.24,
+      "plates_discs_shapes": 85.08,
+      "handles_controls": 97.82,
+      "springs": 96.27
+    }
+  },
+  "sources": [
+    {
+      "path": "analysis_reports/lod_ablation_aggregate_summary.csv",
+      "sha256": "d03e14b1650b3d048b7b826f2cdf416dfe6db797fa6002f60f431cc0ed6ecd55"
+    },
+    {
+      "path": "analysis_reports/lod_pairwise_change_totals.csv",
+      "sha256": "42e7bb9db61fbe7df1de977e62471b5082e24a7cb0334344526eef4de88f449c"
+    },
+    {
+      "path": "analysis_reports/lod_pointnext_confidence_candidate_summary.csv",
+      "sha256": "793d107d9c93def4c6ad4be02dc7d8018b3a55cee18cc0b5701c77a641a5506f"
+    },
+    {
+      "path": "tools/pointnext_lod/PointNeXt/log/industrial_part/industrial_part-train-pointnext-s-14class/log.txt",
+      "sha256": "a94509bed6feea51782add9cf04a2bb428b57152657f53eb2d7476ce882ffeb2"
+    }
+  ]
+}
