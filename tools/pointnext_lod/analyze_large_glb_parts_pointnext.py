@@ -21,6 +21,8 @@ from typing import Iterable
 import numpy as np
 import torch
 
+from checkpoint_loading import load_classifier_checkpoint
+
 from analyze_gltf_parts_pointnext import (
     load_cfg,
     load_classes,
@@ -55,11 +57,11 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--cfg",
         type=Path,
-        default=Path("PointNeXt/cfgs/industrial_part/pointnext-s-14class-randomrot-8192-fast.yaml"),
+        default=Path("PointNeXt/cfgs/industrial_part/pointnext-s-14class-encoder-compare-inference.yaml"),
     )
     parser.add_argument("--ckpt", type=Path, required=True)
     parser.add_argument("--classes-file", type=Path, default=Path("industrial_part_14classes.txt"))
-    parser.add_argument("--num-points", type=int, default=4096)
+    parser.add_argument("--num-points", type=int, default=8192)
     parser.add_argument("--batch-size", type=int, default=16)
     parser.add_argument("--seed", type=int, default=2026)
     parser.add_argument("--device", default="cuda", choices=["cuda", "cpu"])
@@ -280,7 +282,7 @@ def basic_stats(vertices: np.ndarray, faces: np.ndarray) -> dict:
 
 def build_model(cfg, build_model_from_cfg, load_checkpoint, ckpt_path: Path, device: torch.device):
     model = build_model_from_cfg(cfg.model).to(device)
-    load_checkpoint(model, str(ckpt_path))
+    load_classifier_checkpoint(model, ckpt_path)
     model.eval()
     return model
 

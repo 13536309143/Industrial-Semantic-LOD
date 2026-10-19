@@ -1,11 +1,11 @@
 # Recorded industrial part classification run
 
-This folder retains compact evidence for the recorded 14-class PointNeXt run.
+This folder retains historical evidence for the previous 14-class PointNeXt run. It is no longer the default deployment. See [current deployment](../../../models/pointnext/deployment.json) and [current experiment](../encoder-compare-two-seeds-20261019/README.md).
 
 - `training.log`: original console log, including 100 epochs and best-checkpoint evaluation.
 - `run-config.yaml`: original serialized runtime configuration for provenance. It contains Python-specific YAML tags and historical absolute paths; it is not a portable training recipe.
 - The portable recipe remains under `tools/pointnext_lod/PointNeXt/cfgs/industrial_part/pointnext-s-14class-randomrot-8192-fast.yaml`.
-- Best weights are local under `models/pointnext/`; latest weights, trainer logs, and TensorBoard events are retained under `.artifacts/training/pointnext/industrial-part-14class/`.
+- The previous best checkpoint is archived under `.artifacts/migrations/pointnext_replaced_20261019_094119/weights/`; latest weights, trainer logs, and TensorBoard events remain under `.artifacts/training/pointnext/industrial-part-14class/`. The active `models/pointnext/` checkpoint now comes from the separate two-seed comparison.
 
 Recorded result: epoch 85, OA 96.19%, mAcc 93.86%, seed 3098. Validation and test share the same `test` split, so this is a development evaluation rather than an independent test result.
 

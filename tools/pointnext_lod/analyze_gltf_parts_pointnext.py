@@ -22,6 +22,8 @@ import torch
 import trimesh
 from pygltflib import GLTF2
 
+from checkpoint_loading import load_classifier_checkpoint
+
 
 HEX_SUFFIX_RE = re.compile(r"^(?P<base>.+)_[0-9a-fA-F]{6}$")
 
@@ -90,7 +92,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--cfg",
         type=Path,
-        default=Path("PointNeXt/cfgs/industrial_part/pointnext-s-14class-randomrot-8192-fast.yaml"),
+        default=Path("PointNeXt/cfgs/industrial_part/pointnext-s-14class-encoder-compare-inference.yaml"),
     )
     parser.add_argument("--ckpt", type=Path, required=True, help="Path to *_ckpt_best.pth.")
     parser.add_argument(
@@ -270,7 +272,7 @@ def normalize_unit_sphere(points: np.ndarray) -> np.ndarray:
 
 def build_model(cfg, build_model_from_cfg, load_checkpoint, ckpt_path: Path, device: torch.device):
     model = build_model_from_cfg(cfg.model).to(device)
-    load_checkpoint(model, str(ckpt_path))
+    load_classifier_checkpoint(model, ckpt_path)
     model.eval()
     return model
 

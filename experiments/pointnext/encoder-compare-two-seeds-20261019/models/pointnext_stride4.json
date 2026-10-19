@@ -1,0 +1,64 @@
+{
+  "model": {
+    "NAME": "BaseCls",
+    "encoder_args": {
+      "NAME": "PointNextEncoder",
+      "blocks": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "strides": [
+        1,
+        4,
+        4,
+        4,
+        4,
+        1
+      ],
+      "width": 32,
+      "in_channels": 3,
+      "radius": 0.15,
+      "radius_scaling": 1.5,
+      "sa_layers": 2,
+      "sa_use_res": true,
+      "nsample": 32,
+      "expansion": 4,
+      "aggr_args": {
+        "feature_type": "dp_fj",
+        "reduction": "max"
+      },
+      "group_args": {
+        "NAME": "ballquery",
+        "normalize_dp": true
+      },
+      "conv_args": {
+        "order": "conv-norm-act"
+      },
+      "act_args": {
+        "act": "relu"
+      },
+      "norm_args": {
+        "norm": "bn"
+      }
+    },
+    "cls_args": {
+      "NAME": "ClsHead",
+      "num_classes": 14,
+      "mlps": [
+        512,
+        256
+      ],
+      "norm_args": {
+        "norm": "bn1d"
+      }
+    }
+  },
+  "source": "https://raw.githubusercontent.com/guochengqian/PointNeXt/master/cfgs/modelnet40ply2048/pointnext-s.yaml",
+  "source_sha256": "f57f91fd8b03016cb8b3fec63146cf25f0119603bb691a22c62e16569802b4f5",
+  "retrieved": "2026-10-08",
+  "description": "Controlled ablation: only strides change from [1,2,2,2,2,1] to [1,4,4,4,4,1]; not an official PointNeXt baseline"
+}

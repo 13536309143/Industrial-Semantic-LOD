@@ -379,5 +379,9 @@
       "path": "experiments/pointnext/industrial-part-14class/training.log",
       "sha256": "a94509bed6feea51782add9cf04a2bb428b57152657f53eb2d7476ce882ffeb2"
     }
-  ]
+  ],
+  "status": "Historical review of previous-model scene outputs; not current-checkpoint scene results.",
+  "current_deployment_manifest": "models/pointnext/deployment.json",
+  "previous_scene_outputs_archive": ".artifacts/migrations/pointnext_replaced_20261019_094119/lod_analysis_outputs",
+  "current_scene_results_status": "pending_recompute_with_seed_2027_epoch_98"
 }

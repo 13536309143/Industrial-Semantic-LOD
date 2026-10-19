@@ -111,26 +111,26 @@ ISPointNet 联合监督类别证据、门控开放词汇证据与显式网格描
 
 ## 已有实验
 
-以下内容来自已有训练日志和策略输出。本次文档整理逐份核验了 **30 个场景/配置策略 CSV** 与汇总统计，没有重新训练模型或新增渲染性能基准。[数据来源与覆盖核验](docs/data/readme-evidence.json)
+当前监督编码器采用 `gpt` 中完成的双种子对比实验；默认部署 PointNeXt-S、seed=2027、第 98 轮权重，按验证集 Macro-F1 选择。[当前部署与复现说明](experiments/pointnext/encoder-compare-two-seeds-20261019/README.md) · [权重来源](models/pointnext/deployment.json)
+
+下述五场景和六组策略统计属于旧模型的历史观察，原始输出已归档，不能作为新权重的场景结果。新场景推理、融合和 LOD 缓存需要重新生成。[历史数据来源与覆盖核验](docs/data/readme-evidence.json)
 
 ### 1. 工业零件分类
 
-| 配置 / 指标 | 已记录数值 |
-| :--- | ---: |
-| 类别数 / 每样本点数 | 14 / 8,192 |
-| 训练 / 评估样本数 | 61,711 / 15,372 |
-| 训练轮数 / 本次运行种子 | 100 / 3098 |
-| 日志最佳评估 OA | **96.19%** |
-| 重新加载最佳检查点后的 mAcc | **93.86%** |
-| 最佳检查点轮次 | 85 |
+| 配置 | 测试 OA | 测试 mAcc | 测试 Macro-F1 |
+| :--- | ---: | ---: | ---: |
+| PointNet | 67.64±0.47 | 39.67±0.33 | 39.97±0.43 |
+| PointNet++ | 94.63±0.23 | 91.04±0.58 | 91.26±0.46 |
+| PointNeXt-S，stride=2 | **95.40±0.03** | **92.45±0.04** | **92.91±0.21** |
+| PointNeXt，stride=4 | 94.80±0.13 | 91.52±0.21 | 91.70±0.48 |
 
-![已有 PointNeXt 训练与评估准确率曲线](docs/assets/pointnext-training.png)
+![双种子监督编码器对比](experiments/pointnext/encoder-compare-two-seeds-20261019/two_seed_accuracy.png)
 
-**评估口径：** 当前验证与测试均使用 `test` 划分，数据集也将 `val` 映射到 `test`。因此这些数值是开发过程中已经记录的评估结果，不能当作独立留出测试成绩。OA 为总体准确率，mAcc 为类别平均准确率。曲线仅在每五轮实际评估的位置展示评估值。
+**评估口径：** 单位为 %，训练 seed=2026、2027 的均值±样本标准差（n=2，ddof=1）。14 类、8,192 XYZ 点；训练/验证/测试为 53,654/11,517/11,542，使用相同分组划分，按验证 Macro-F1 选择各次最佳权重。两次重复共享测试集；这是已有数据来源上的内部留出评估，不是外部装配测试，也不宣称统计显著性。
 
-重新加载最佳检查点后，螺钉/螺栓/螺柱类准确率为 98.99%，管件/阀门/喷嘴类为 76.21%，说明总体准确率之外仍需关注类别差异。[训练日志](experiments/pointnext/industrial-part-14class/training.log) · [训练配置](tools/pointnext_lod/PointNeXt/cfgs/industrial_part/pointnext-s-14class-randomrot-8192-fast.yaml) · [数据集实现](tools/pointnext_lod/PointNeXt/openpoints/dataset/industrial_part.py)
+默认部署选择 seed=2027：验证 Macro-F1 为 92.17%，高于 seed=2026 的 91.61%。该权重的单次测试 OA/mAcc/Macro-F1 为 95.43%/92.48%/93.06%；这些单次成绩与上表双种子均值应区分。旧 seed=3098、OA=96.19% 的开发评估仅作为[历史训练记录](experiments/pointnext/industrial-part-14class/README.md)保留。
 
-### 2. 五个工业场景
+### 2. 五个工业场景（旧模型历史统计）
 
 | 场景 | Mesh 数 | 原始三角形数 | PointCLIP 候选记录数 | 候选占比 |
 | :--- | ---: | ---: | ---: | ---: |
@@ -143,7 +143,7 @@ ISPointNet 联合监督类别证据、门控开放词汇证据与显式网格描
 
 三角形数由 GLB 三角形 primitive 的 accessor 数量核验，表示输入文件几何规模，不是每帧实际提交量。这五个文件的 mesh 数与带 mesh 的 node 数相等。`a` 保留装配层级，另外四个场景节点结构平铺，其装配级筛选适用范围受限。[候选统计](analysis_reports/lod_pointnext_confidence_candidate_summary.csv)
 
-### 3. 六组语义策略配置
+### 3. 六组语义策略配置（旧模型历史统计）
 
 **N** 表示 PointNeXt，**C** 表示 PointCLIP V2，**G** 表示显式几何结构证据。每种配置均覆盖五个场景的 153,616 条策略记录。
 
@@ -166,11 +166,11 @@ ISPointNet 联合监督类别证据、门控开放词汇证据与显式网格描
 
 | 实验 | 当前可确认的证据 |
 | :--- | :--- |
-| 14 类 PointNeXt 训练 | 完整运行日志、逐类结果、配置与检查点 |
-| 五场景 PointNeXt、候选及全量 PointCLIP 推断 | 五个场景均有输出 |
-| 六组策略配置比较 | 30 个完整策略 CSV、分布与策略变化汇总 |
+| 14 类监督编码器比较 | 四种配置×两个 seed；完整指标、历史、逐类结果与配置已导入 |
+| 当前默认 PointNeXt-S 部署 | seed=2027、epoch=98；严格参数加载与 8,192 点 GPU 前向检查通过 |
+| 新权重场景推理与融合 | 待重新运行批处理；旧场景输出已归档 |
+| 历史五场景与六组策略比较 | 旧模型的 30 个策略 CSV、分布与策略变化汇总，不能标作新模型结果 |
 | GPU 耗时、几何质量与流式权衡 | 已有实现与统计设施；本次未找到完整的受控基准结果集 |
-| PointNet / PointNet++ 分类对比 | 已有配置，未找到已完成的对比结果 |
 
 详细代码分析、论文对应关系及实验边界见 [项目审查报告](analysis_reports/PROJECT_REVIEW_20261014.md)。
 

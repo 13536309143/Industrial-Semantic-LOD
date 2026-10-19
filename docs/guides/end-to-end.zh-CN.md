@@ -2,6 +2,8 @@
 
 [English](end-to-end.md) · [简体中文](end-to-end.zh-CN.md) · [项目说明](../../README.zh-CN.md)
 
+当前默认权重已于 2026-10-19 更新为 `gpt` 双种子实验的 PointNeXt-S、seed=2027、epoch=98，按验证 Macro-F1 选择。可直接从第 5、6 节准备场景并推理；第 3、4 节保留从头训练的参考流程。新模型的训练流程、划分和结果见[当前实验说明](../../experiments/pointnext/encoder-compare-two-seeds-20261019/README.md)，不应以旧 YAML 重现该双种子实验。旧场景输出已归档，新模型尚需重新生成场景和 LOD 结果。
+
 完整研究流程为：**带标签工业点云 → PointNeXt 监督训练 → 工业场景多源语义结构分析 → 策略控制的集群 LOD 构建 → Vulkan 渲染**。分类器按类别体系训练一次，后续新场景复用最佳检查点。PointCLIP V2 使用预训练 CLIP 提供开放词汇证据，当前工业场景脚本不对它重新训练。
 
 ## 1. 环境准备
@@ -171,7 +173,7 @@ run_all_glb_pointnext_pointclipv2_fused.bat
 
 每场景关键产物是 `lod_analysis_outputs/<scene>_lod_constraints_fused.csv`。分类、候选和 merged 中间 CSV 对诊断与重新融合有价值，本次保留在本地并由 Git 忽略。
 
-批处理会跳过已存在的神经输出。场景几何、检查点、类别顺序、提示词或推理设置变化后，应归档对应旧文件并整套重新生成，否则新 fused 文件仍可能使用旧证据。
+批处理仅复用通过内容哈希核验的完整输出。监督阶段检查场景、权重、推理配置、类别顺序、代码及采样设置；候选开放阶段检查场景、监督 CSV、提示词与代码/设置。没有来源侧车文件的旧输出、被截断的输出及依赖变化后的输出都会重算。融合阶段重新生成策略。可设置 `SEMANTIC_OUTPUT_DIR` 使用独立目录；渲染器读取策略时仍应指向相应结果路径。第一次使用新权重必须生成新策略，并以 `--processingonly 1 --autoloadcache 0` 重建 LOD，旧缓存不能当作新模型结果。
 
 `a b c o1778 o3049` 的六组配置对比需先生成 full PointCLIP：
 

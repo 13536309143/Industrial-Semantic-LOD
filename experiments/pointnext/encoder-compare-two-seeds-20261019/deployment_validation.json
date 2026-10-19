@@ -1,0 +1,14 @@
+{
+  "strict_load": true,
+  "all_state_tensors_equal_source": true,
+  "parameters": 1366830,
+  "cuda_available": true,
+  "config": "E:\\vk_lod_clusters1\\t1\\tools\\pointnext_lod\\PointNeXt\\cfgs\\industrial_part\\pointnext-s-14class-encoder-compare-inference.yaml",
+  "gpu": "NVIDIA GeForce RTX 3060",
+  "smoke_points": 8192,
+  "smoke_output_shape": [
+    1,
+    14
+  ],
+  "smoke_finite": true
+}

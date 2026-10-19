@@ -2,6 +2,8 @@
 
 [English](end-to-end.md) · [简体中文](end-to-end.zh-CN.md) · [Project README](../../README.md)
 
+The default checkpoint was updated on 2026-10-19 to PointNeXt-S, seed 2027, epoch 98, selected by validation macro-F1 from the retained `gpt` runs. Start at sections 5–6 to use it. Sections 3–4 remain an optional from-scratch training reference; their legacy YAML does not reproduce the two-seed training implementation. See the [current experiment record](../../experiments/pointnext/encoder-compare-two-seeds-20261019/README.md). Previous scene outputs were archived; new scene and LOD results still require recomputation.
+
 The complete research workflow is **labeled industrial point clouds → supervised PointNeXt training → scene-level multi-source analysis → policy-controlled cluster LOD construction → Vulkan rendering**. Train the classifier once for a compatible category set, then reuse its best checkpoint for new scenes. PointCLIP V2 supplies pretrained open-vocabulary evidence and is not trained by the industrial scene-analysis scripts.
 
 ## 1. Prerequisites and software environments
@@ -175,7 +177,7 @@ The batch performs full PointNeXt classification/geometry extraction, uncertaint
 
 Required output for a scene is `lod_analysis_outputs/<scene>_lod_constraints_fused.csv`. Intermediate classification, candidate, and merged CSVs remain useful locally for diagnosis and regeneration; they are ignored by Git rather than deleted during this cleanup.
 
-The batch skips existing neural CSVs. After changing scene geometry, weights, class ordering, prompts, or inference settings, archive the matching old outputs and regenerate them as a set. Otherwise a new fused file can still be derived from old neural evidence.
+The batch reuses only complete outputs with matching content provenance. The PointNeXt stage checks scene/checkpoint/configuration/classes/code and sampling settings; the candidate stage checks the scene, PointNeXt CSV, prompts and inference code/settings. Legacy unstamped, truncated or stale outputs are rebuilt. Fusion regenerates policies. Set SEMANTIC_OUTPUT_DIR for an independent output directory. Rebuild renderer LOD caches with --processingonly 1 --autoloadcache 0; previous caches are not new-checkpoint results.
 
 For six-configuration comparisons on `a`, `b`, `c`, `o1778`, and `o3049`, generate full PointCLIP outputs first:
 

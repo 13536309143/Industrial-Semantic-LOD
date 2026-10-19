@@ -15,6 +15,8 @@ import subprocess
 import sys
 from pathlib import Path
 
+from artifact_cache import matches, record, stage_identity
+
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Batch analyze GLB files for LOD constraints.")
@@ -98,7 +100,17 @@ def main() -> None:
         lod_csv = output_dir / f"{stem}_lod_constraints.csv"
         lod_summary = output_dir / f"{stem}_lod_constraints_summary.json"
 
-        if not (args.skip_existing and analysis_csv.exists()):
+        analysis_outputs = [analysis_csv, analysis_json, summary_csv, review_csv]
+        provenance = output_dir / f"{stem}_pointnext_provenance.json"
+        identity = stage_identity(
+            [glb_path, args.ckpt, args.cfg, args.classes_file, analyze_script,
+             script_dir / "analyze_gltf_parts_pointnext.py",
+             script_dir / "checkpoint_loading.py", script_dir / "artifact_cache.py",
+             args.pointnext_root / "openpoints"],
+            {"num_points": args.num_points, "batch_size": args.batch_size,
+             "device": args.device, "seed": 2026, "inference_mode": "mesh"},
+        )
+        if not (args.skip_existing and matches(provenance, identity, analysis_outputs)):
             run(
                 [
                     sys.executable,
@@ -132,13 +144,16 @@ def main() -> None:
                 ],
                 cwd=script_dir,
             )
+            record(provenance, identity, analysis_outputs)
         else:
-            print(f"Skip existing PointNeXt output: {analysis_csv}")
+            print(f"Reuse verified PointNeXt output: {analysis_csv}")
 
         if args.pointnext_only:
             continue
 
-        if not (args.skip_existing and lod_csv.exists()):
+        lod_provenance = output_dir / f"{stem}_lod_provenance.json"
+        lod_identity = stage_identity([analysis_csv, lod_script], {})
+        if not (args.skip_existing and matches(lod_provenance, lod_identity, [lod_csv, lod_summary])):
             run(
                 [
                     sys.executable,
@@ -152,6 +167,7 @@ def main() -> None:
                 ],
                 cwd=script_dir,
             )
+            record(lod_provenance, lod_identity, [lod_csv, lod_summary])
         else:
             print(f"Skip existing LOD output: {lod_csv}")
 

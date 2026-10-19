@@ -1,0 +1,812 @@
+[
+  {
+    "old_label": 0,
+    "old_class": "Articulations, eyelets and other articulated joints",
+    "revised_label": 8,
+    "revised_class": "joints_clamps_structural_connectors",
+    "revised_class_cn": "铰接/夹具/结构连接件类",
+    "previous_label": 6,
+    "previous_class": "fittings_joints_connectors"
+  },
+  {
+    "old_label": 1,
+    "old_class": "bearing",
+    "revised_label": 4,
+    "revised_class": "bearings_bushings_guides",
+    "revised_class_cn": "轴承/衬套/导向件类",
+    "previous_label": 4,
+    "previous_class": "bearings_bushings_guides"
+  },
+  {
+    "old_label": 2,
+    "old_class": "Bearing accessories",
+    "revised_label": 4,
+    "revised_class": "bearings_bushings_guides",
+    "revised_class_cn": "轴承/衬套/导向件类",
+    "previous_label": 4,
+    "previous_class": "bearings_bushings_guides"
+  },
+  {
+    "old_label": 3,
+    "old_class": "Bushes",
+    "revised_label": 4,
+    "revised_class": "bearings_bushings_guides",
+    "revised_class_cn": "轴承/衬套/导向件类",
+    "previous_label": 4,
+    "previous_class": "bearings_bushings_guides"
+  },
+  {
+    "old_label": 4,
+    "old_class": "bushing",
+    "revised_label": 4,
+    "revised_class": "bearings_bushings_guides",
+    "revised_class_cn": "轴承/衬套/导向件类",
+    "previous_label": 4,
+    "previous_class": "bearings_bushings_guides"
+  },
+  {
+    "old_label": 5,
+    "old_class": "Cap nuts",
+    "revised_label": 1,
+    "revised_class": "nuts",
+    "revised_class_cn": "螺母类",
+    "previous_label": 1,
+    "previous_class": "nuts"
+  },
+  {
+    "old_label": 6,
+    "old_class": "Castle nuts",
+    "revised_label": 1,
+    "revised_class": "nuts",
+    "revised_class_cn": "螺母类",
+    "previous_label": 1,
+    "previous_class": "nuts"
+  },
+  {
+    "old_label": 7,
+    "old_class": "Castor",
+    "revised_label": 9,
+    "revised_class": "wheels_castors",
+    "revised_class_cn": "脚轮/轮子类",
+    "previous_label": 8,
+    "previous_class": "rotating_power_fluid"
+  },
+  {
+    "old_label": 8,
+    "old_class": "castors_and_wheels",
+    "revised_label": 9,
+    "revised_class": "wheels_castors",
+    "revised_class_cn": "脚轮/轮子类",
+    "previous_label": 8,
+    "previous_class": "rotating_power_fluid"
+  },
+  {
+    "old_label": 9,
+    "old_class": "Chain drives",
+    "revised_label": 5,
+    "revised_class": "gears_pulleys_chains",
+    "revised_class_cn": "齿轮/带轮/链传动类",
+    "previous_label": 5,
+    "previous_class": "gears_pulleys_drivetrain"
+  },
+  {
+    "old_label": 10,
+    "old_class": "clamp",
+    "revised_label": 8,
+    "revised_class": "joints_clamps_structural_connectors",
+    "revised_class_cn": "铰接/夹具/结构连接件类",
+    "previous_label": 6,
+    "previous_class": "fittings_joints_connectors"
+  },
+  {
+    "old_label": 11,
+    "old_class": "Clamps",
+    "revised_label": 8,
+    "revised_class": "joints_clamps_structural_connectors",
+    "revised_class_cn": "铰接/夹具/结构连接件类",
+    "previous_label": 6,
+    "previous_class": "fittings_joints_connectors"
+  },
+  {
+    "old_label": 12,
+    "old_class": "Collars",
+    "revised_label": 8,
+    "revised_class": "joints_clamps_structural_connectors",
+    "revised_class_cn": "铰接/夹具/结构连接件类",
+    "previous_label": 6,
+    "previous_class": "fittings_joints_connectors"
+  },
+  {
+    "old_label": 13,
+    "old_class": "Conventional rivets",
+    "revised_label": 3,
+    "revised_class": "pins_rivets_keys",
+    "revised_class_cn": "销/铆钉/键/花键类",
+    "previous_label": 3,
+    "previous_class": "pins_rivets_keys"
+  },
+  {
+    "old_label": 14,
+    "old_class": "Convex washer",
+    "revised_label": 2,
+    "revised_class": "washers_rings_spacers",
+    "revised_class_cn": "垫圈/挡圈/隔套类",
+    "previous_label": 2,
+    "previous_class": "washers_rings_spacers"
+  },
+  {
+    "old_label": 15,
+    "old_class": "Cylindrical pins",
+    "revised_label": 3,
+    "revised_class": "pins_rivets_keys",
+    "revised_class_cn": "销/铆钉/键/花键类",
+    "previous_label": 3,
+    "previous_class": "pins_rivets_keys"
+  },
+  {
+    "old_label": 16,
+    "old_class": "disc",
+    "revised_label": 11,
+    "revised_class": "plates_discs_shapes",
+    "revised_class_cn": "板/盘/简单几何件类",
+    "previous_label": 7,
+    "previous_class": "plates_discs_shapes"
+  },
+  {
+    "old_label": 17,
+    "old_class": "Elbow fitting",
+    "revised_label": 7,
+    "revised_class": "pipe_fittings_valves_nozzles",
+    "revised_class_cn": "管接头/法兰/阀/喷嘴类",
+    "previous_label": 6,
+    "previous_class": "fittings_joints_connectors"
+  },
+  {
+    "old_label": 18,
+    "old_class": "Eye screws",
+    "revised_label": 0,
+    "revised_class": "screws_bolts_studs",
+    "revised_class_cn": "螺钉/螺栓/螺柱/螺杆类",
+    "previous_label": 0,
+    "previous_class": "screws_bolts_studs"
+  },
+  {
+    "old_label": 19,
+    "old_class": "Fan",
+    "revised_label": 10,
+    "revised_class": "rotating_fluid_machinery",
+    "revised_class_cn": "叶轮/风扇/涡轮/转子类",
+    "previous_label": 8,
+    "previous_class": "rotating_power_fluid"
+  },
+  {
+    "old_label": 20,
+    "old_class": "fitting",
+    "revised_label": 7,
+    "revised_class": "pipe_fittings_valves_nozzles",
+    "revised_class_cn": "管接头/法兰/阀/喷嘴类",
+    "previous_label": 6,
+    "previous_class": "fittings_joints_connectors"
+  },
+  {
+    "old_label": 21,
+    "old_class": "flange",
+    "revised_label": 7,
+    "revised_class": "pipe_fittings_valves_nozzles",
+    "revised_class_cn": "管接头/法兰/阀/喷嘴类",
+    "previous_label": 6,
+    "previous_class": "fittings_joints_connectors"
+  },
+  {
+    "old_label": 22,
+    "old_class": "Flange nut",
+    "revised_label": 1,
+    "revised_class": "nuts",
+    "revised_class_cn": "螺母类",
+    "previous_label": 1,
+    "previous_class": "nuts"
+  },
+  {
+    "old_label": 23,
+    "old_class": "Flanged block bearing",
+    "revised_label": 4,
+    "revised_class": "bearings_bushings_guides",
+    "revised_class_cn": "轴承/衬套/导向件类",
+    "previous_label": 4,
+    "previous_class": "bearings_bushings_guides"
+  },
+  {
+    "old_label": 24,
+    "old_class": "Flanged plain bearings",
+    "revised_label": 4,
+    "revised_class": "bearings_bushings_guides",
+    "revised_class_cn": "轴承/衬套/导向件类",
+    "previous_label": 4,
+    "previous_class": "bearings_bushings_guides"
+  },
+  {
+    "old_label": 25,
+    "old_class": "fork_joint",
+    "revised_label": 8,
+    "revised_class": "joints_clamps_structural_connectors",
+    "revised_class_cn": "铰接/夹具/结构连接件类",
+    "previous_label": 6,
+    "previous_class": "fittings_joints_connectors"
+  },
+  {
+    "old_label": 26,
+    "old_class": "gear",
+    "revised_label": 5,
+    "revised_class": "gears_pulleys_chains",
+    "revised_class_cn": "齿轮/带轮/链传动类",
+    "previous_label": 5,
+    "previous_class": "gears_pulleys_drivetrain"
+  },
+  {
+    "old_label": 27,
+    "old_class": "Grooved pins",
+    "revised_label": 3,
+    "revised_class": "pins_rivets_keys",
+    "revised_class_cn": "销/铆钉/键/花键类",
+    "previous_label": 3,
+    "previous_class": "pins_rivets_keys"
+  },
+  {
+    "old_label": 28,
+    "old_class": "handles",
+    "revised_label": 12,
+    "revised_class": "handles_controls",
+    "revised_class_cn": "手柄/旋钮/拨杆/开关类",
+    "previous_label": 9,
+    "previous_class": "handles_controls_springs"
+  },
+  {
+    "old_label": 29,
+    "old_class": "Helical geared motors",
+    "revised_label": 6,
+    "revised_class": "motors_gearmotors",
+    "revised_class_cn": "电机/减速电机类",
+    "previous_label": 5,
+    "previous_class": "gears_pulleys_drivetrain"
+  },
+  {
+    "old_label": 30,
+    "old_class": "Hexagonal nuts",
+    "revised_label": 1,
+    "revised_class": "nuts",
+    "revised_class_cn": "螺母类",
+    "previous_label": 1,
+    "previous_class": "nuts"
+  },
+  {
+    "old_label": 31,
+    "old_class": "Hinge",
+    "revised_label": 8,
+    "revised_class": "joints_clamps_structural_connectors",
+    "revised_class_cn": "铰接/夹具/结构连接件类",
+    "previous_label": 6,
+    "previous_class": "fittings_joints_connectors"
+  },
+  {
+    "old_label": 32,
+    "old_class": "Hook",
+    "revised_label": 8,
+    "revised_class": "joints_clamps_structural_connectors",
+    "revised_class_cn": "铰接/夹具/结构连接件类",
+    "previous_label": 6,
+    "previous_class": "fittings_joints_connectors"
+  },
+  {
+    "old_label": 33,
+    "old_class": "Impeller",
+    "revised_label": 10,
+    "revised_class": "rotating_fluid_machinery",
+    "revised_class_cn": "叶轮/风扇/涡轮/转子类",
+    "previous_label": 8,
+    "previous_class": "rotating_power_fluid"
+  },
+  {
+    "old_label": 34,
+    "old_class": "Keys and keyways, splines",
+    "revised_label": 3,
+    "revised_class": "pins_rivets_keys",
+    "revised_class_cn": "销/铆钉/键/花键类",
+    "previous_label": 3,
+    "previous_class": "pins_rivets_keys"
+  },
+  {
+    "old_label": 35,
+    "old_class": "Knob",
+    "revised_label": 12,
+    "revised_class": "handles_controls",
+    "revised_class_cn": "手柄/旋钮/拨杆/开关类",
+    "previous_label": 9,
+    "previous_class": "handles_controls_springs"
+  },
+  {
+    "old_label": 36,
+    "old_class": "Lever",
+    "revised_label": 12,
+    "revised_class": "handles_controls",
+    "revised_class_cn": "手柄/旋钮/拨杆/开关类",
+    "previous_label": 9,
+    "previous_class": "handles_controls_springs"
+  },
+  {
+    "old_label": 37,
+    "old_class": "Locating pins",
+    "revised_label": 3,
+    "revised_class": "pins_rivets_keys",
+    "revised_class_cn": "销/铆钉/键/花键类",
+    "previous_label": 3,
+    "previous_class": "pins_rivets_keys"
+  },
+  {
+    "old_label": 38,
+    "old_class": "Locknuts",
+    "revised_label": 1,
+    "revised_class": "nuts",
+    "revised_class_cn": "螺母类",
+    "previous_label": 1,
+    "previous_class": "nuts"
+  },
+  {
+    "old_label": 39,
+    "old_class": "Lockwashers",
+    "revised_label": 2,
+    "revised_class": "washers_rings_spacers",
+    "revised_class_cn": "垫圈/挡圈/隔套类",
+    "previous_label": 2,
+    "previous_class": "washers_rings_spacers"
+  },
+  {
+    "old_label": 40,
+    "old_class": "motor",
+    "revised_label": 6,
+    "revised_class": "motors_gearmotors",
+    "revised_class_cn": "电机/减速电机类",
+    "previous_label": 8,
+    "previous_class": "rotating_power_fluid"
+  },
+  {
+    "old_label": 41,
+    "old_class": "Nozzle",
+    "revised_label": 7,
+    "revised_class": "pipe_fittings_valves_nozzles",
+    "revised_class_cn": "管接头/法兰/阀/喷嘴类",
+    "previous_label": 8,
+    "previous_class": "rotating_power_fluid"
+  },
+  {
+    "old_label": 42,
+    "old_class": "nut",
+    "revised_label": 1,
+    "revised_class": "nuts",
+    "revised_class_cn": "螺母类",
+    "previous_label": 1,
+    "previous_class": "nuts"
+  },
+  {
+    "old_label": 43,
+    "old_class": "pin",
+    "revised_label": 3,
+    "revised_class": "pins_rivets_keys",
+    "revised_class_cn": "销/铆钉/键/花键类",
+    "previous_label": 3,
+    "previous_class": "pins_rivets_keys"
+  },
+  {
+    "old_label": 44,
+    "old_class": "Plain guidings",
+    "revised_label": 4,
+    "revised_class": "bearings_bushings_guides",
+    "revised_class_cn": "轴承/衬套/导向件类",
+    "previous_label": 4,
+    "previous_class": "bearings_bushings_guides"
+  },
+  {
+    "old_label": 45,
+    "old_class": "plate",
+    "revised_label": 11,
+    "revised_class": "plates_discs_shapes",
+    "revised_class_cn": "板/盘/简单几何件类",
+    "previous_label": 7,
+    "previous_class": "plates_discs_shapes"
+  },
+  {
+    "old_label": 46,
+    "old_class": "Plates, circulate plates",
+    "revised_label": 11,
+    "revised_class": "plates_discs_shapes",
+    "revised_class_cn": "板/盘/简单几何件类",
+    "previous_label": 7,
+    "previous_class": "plates_discs_shapes"
+  },
+  {
+    "old_label": 47,
+    "old_class": "Plugs",
+    "revised_label": 7,
+    "revised_class": "pipe_fittings_valves_nozzles",
+    "revised_class_cn": "管接头/法兰/阀/喷嘴类",
+    "previous_label": 6,
+    "previous_class": "fittings_joints_connectors"
+  },
+  {
+    "old_label": 48,
+    "old_class": "pulley",
+    "revised_label": 5,
+    "revised_class": "gears_pulleys_chains",
+    "revised_class_cn": "齿轮/带轮/链传动类",
+    "previous_label": 5,
+    "previous_class": "gears_pulleys_drivetrain"
+  },
+  {
+    "old_label": 49,
+    "old_class": "Pulleys",
+    "revised_label": 5,
+    "revised_class": "gears_pulleys_chains",
+    "revised_class_cn": "齿轮/带轮/链传动类",
+    "previous_label": 5,
+    "previous_class": "gears_pulleys_drivetrain"
+  },
+  {
+    "old_label": 50,
+    "old_class": "Radial contact ball bearings",
+    "revised_label": 4,
+    "revised_class": "bearings_bushings_guides",
+    "revised_class_cn": "轴承/衬套/导向件类",
+    "previous_label": 4,
+    "previous_class": "bearings_bushings_guides"
+  },
+  {
+    "old_label": 51,
+    "old_class": "Right angular gearings",
+    "revised_label": 5,
+    "revised_class": "gears_pulleys_chains",
+    "revised_class_cn": "齿轮/带轮/链传动类",
+    "previous_label": 5,
+    "previous_class": "gears_pulleys_drivetrain"
+  },
+  {
+    "old_label": 52,
+    "old_class": "Right spur gears",
+    "revised_label": 5,
+    "revised_class": "gears_pulleys_chains",
+    "revised_class_cn": "齿轮/带轮/链传动类",
+    "previous_label": 5,
+    "previous_class": "gears_pulleys_drivetrain"
+  },
+  {
+    "old_label": 53,
+    "old_class": "ring",
+    "revised_label": 2,
+    "revised_class": "washers_rings_spacers",
+    "revised_class_cn": "垫圈/挡圈/隔套类",
+    "previous_label": 2,
+    "previous_class": "washers_rings_spacers"
+  },
+  {
+    "old_label": 54,
+    "old_class": "rivet",
+    "revised_label": 3,
+    "revised_class": "pins_rivets_keys",
+    "revised_class_cn": "销/铆钉/键/花键类",
+    "previous_label": 3,
+    "previous_class": "pins_rivets_keys"
+  },
+  {
+    "old_label": 55,
+    "old_class": "Rivet nut",
+    "revised_label": 1,
+    "revised_class": "nuts",
+    "revised_class_cn": "螺母类",
+    "previous_label": 1,
+    "previous_class": "nuts"
+  },
+  {
+    "old_label": 56,
+    "old_class": "Roll pins",
+    "revised_label": 3,
+    "revised_class": "pins_rivets_keys",
+    "revised_class_cn": "销/铆钉/键/花键类",
+    "previous_label": 3,
+    "previous_class": "pins_rivets_keys"
+  },
+  {
+    "old_label": 57,
+    "old_class": "rotor",
+    "revised_label": 10,
+    "revised_class": "rotating_fluid_machinery",
+    "revised_class_cn": "叶轮/风扇/涡轮/转子类",
+    "previous_label": 8,
+    "previous_class": "rotating_power_fluid"
+  },
+  {
+    "old_label": 58,
+    "old_class": "Screws and bolts with countersunk head",
+    "revised_label": 0,
+    "revised_class": "screws_bolts_studs",
+    "revised_class_cn": "螺钉/螺栓/螺柱/螺杆类",
+    "previous_label": 0,
+    "previous_class": "screws_bolts_studs"
+  },
+  {
+    "old_label": 59,
+    "old_class": "Screws and bolts with cylindrical head",
+    "revised_label": 0,
+    "revised_class": "screws_bolts_studs",
+    "revised_class_cn": "螺钉/螺栓/螺柱/螺杆类",
+    "previous_label": 0,
+    "previous_class": "screws_bolts_studs"
+  },
+  {
+    "old_label": 60,
+    "old_class": "Screws and bolts with hexagonal head",
+    "revised_label": 0,
+    "revised_class": "screws_bolts_studs",
+    "revised_class_cn": "螺钉/螺栓/螺柱/螺杆类",
+    "previous_label": 0,
+    "previous_class": "screws_bolts_studs"
+  },
+  {
+    "old_label": 61,
+    "old_class": "screws_and_bolts",
+    "revised_label": 0,
+    "revised_class": "screws_bolts_studs",
+    "revised_class_cn": "螺钉/螺栓/螺柱/螺杆类",
+    "previous_label": 0,
+    "previous_class": "screws_bolts_studs"
+  },
+  {
+    "old_label": 62,
+    "old_class": "Setscrew",
+    "revised_label": 0,
+    "revised_class": "screws_bolts_studs",
+    "revised_class_cn": "螺钉/螺栓/螺柱/螺杆类",
+    "previous_label": 0,
+    "previous_class": "screws_bolts_studs"
+  },
+  {
+    "old_label": 63,
+    "old_class": "Slotted nuts",
+    "revised_label": 1,
+    "revised_class": "nuts",
+    "revised_class_cn": "螺母类",
+    "previous_label": 1,
+    "previous_class": "nuts"
+  },
+  {
+    "old_label": 64,
+    "old_class": "Snap rings",
+    "revised_label": 2,
+    "revised_class": "washers_rings_spacers",
+    "revised_class_cn": "垫圈/挡圈/隔套类",
+    "previous_label": 2,
+    "previous_class": "washers_rings_spacers"
+  },
+  {
+    "old_label": 65,
+    "old_class": "Socket",
+    "revised_label": 7,
+    "revised_class": "pipe_fittings_valves_nozzles",
+    "revised_class_cn": "管接头/法兰/阀/喷嘴类",
+    "previous_label": 6,
+    "previous_class": "fittings_joints_connectors"
+  },
+  {
+    "old_label": 66,
+    "old_class": "Spacers",
+    "revised_label": 2,
+    "revised_class": "washers_rings_spacers",
+    "revised_class_cn": "垫圈/挡圈/隔套类",
+    "previous_label": 2,
+    "previous_class": "washers_rings_spacers"
+  },
+  {
+    "old_label": 67,
+    "old_class": "Split pins",
+    "revised_label": 3,
+    "revised_class": "pins_rivets_keys",
+    "revised_class_cn": "销/铆钉/键/花键类",
+    "previous_label": 3,
+    "previous_class": "pins_rivets_keys"
+  },
+  {
+    "old_label": 68,
+    "old_class": "spring",
+    "revised_label": 13,
+    "revised_class": "springs",
+    "revised_class_cn": "弹簧类",
+    "previous_label": 9,
+    "previous_class": "handles_controls_springs"
+  },
+  {
+    "old_label": 69,
+    "old_class": "Spring washers",
+    "revised_label": 2,
+    "revised_class": "washers_rings_spacers",
+    "revised_class_cn": "垫圈/挡圈/隔套类",
+    "previous_label": 2,
+    "previous_class": "washers_rings_spacers"
+  },
+  {
+    "old_label": 70,
+    "old_class": "Springs",
+    "revised_label": 13,
+    "revised_class": "springs",
+    "revised_class_cn": "弹簧类",
+    "previous_label": 9,
+    "previous_class": "handles_controls_springs"
+  },
+  {
+    "old_label": 71,
+    "old_class": "Square",
+    "revised_label": 11,
+    "revised_class": "plates_discs_shapes",
+    "revised_class_cn": "板/盘/简单几何件类",
+    "previous_label": 7,
+    "previous_class": "plates_discs_shapes"
+  },
+  {
+    "old_label": 72,
+    "old_class": "Square nuts",
+    "revised_label": 1,
+    "revised_class": "nuts",
+    "revised_class_cn": "螺母类",
+    "previous_label": 1,
+    "previous_class": "nuts"
+  },
+  {
+    "old_label": 73,
+    "old_class": "Standard fitting",
+    "revised_label": 7,
+    "revised_class": "pipe_fittings_valves_nozzles",
+    "revised_class_cn": "管接头/法兰/阀/喷嘴类",
+    "previous_label": 6,
+    "previous_class": "fittings_joints_connectors"
+  },
+  {
+    "old_label": 74,
+    "old_class": "stud",
+    "revised_label": 0,
+    "revised_class": "screws_bolts_studs",
+    "revised_class_cn": "螺钉/螺栓/螺柱/螺杆类",
+    "previous_label": 0,
+    "previous_class": "screws_bolts_studs"
+  },
+  {
+    "old_label": 75,
+    "old_class": "Studs",
+    "revised_label": 0,
+    "revised_class": "screws_bolts_studs",
+    "revised_class_cn": "螺钉/螺栓/螺柱/螺杆类",
+    "previous_label": 0,
+    "previous_class": "screws_bolts_studs"
+  },
+  {
+    "old_label": 76,
+    "old_class": "Switch",
+    "revised_label": 12,
+    "revised_class": "handles_controls",
+    "revised_class_cn": "手柄/旋钮/拨杆/开关类",
+    "previous_label": 9,
+    "previous_class": "handles_controls_springs"
+  },
+  {
+    "old_label": 77,
+    "old_class": "T-nut",
+    "revised_label": 1,
+    "revised_class": "nuts",
+    "revised_class_cn": "螺母类",
+    "previous_label": 1,
+    "previous_class": "nuts"
+  },
+  {
+    "old_label": 78,
+    "old_class": "T-shape fitting",
+    "revised_label": 7,
+    "revised_class": "pipe_fittings_valves_nozzles",
+    "revised_class_cn": "管接头/法兰/阀/喷嘴类",
+    "previous_label": 6,
+    "previous_class": "fittings_joints_connectors"
+  },
+  {
+    "old_label": 79,
+    "old_class": "Taper pins",
+    "revised_label": 3,
+    "revised_class": "pins_rivets_keys",
+    "revised_class_cn": "销/铆钉/键/花键类",
+    "previous_label": 3,
+    "previous_class": "pins_rivets_keys"
+  },
+  {
+    "old_label": 80,
+    "old_class": "Tapping screws",
+    "revised_label": 0,
+    "revised_class": "screws_bolts_studs",
+    "revised_class_cn": "螺钉/螺栓/螺柱/螺杆类",
+    "previous_label": 0,
+    "previous_class": "screws_bolts_studs"
+  },
+  {
+    "old_label": 81,
+    "old_class": "Threaded rods",
+    "revised_label": 0,
+    "revised_class": "screws_bolts_studs",
+    "revised_class_cn": "螺钉/螺栓/螺柱/螺杆类",
+    "previous_label": 0,
+    "previous_class": "screws_bolts_studs"
+  },
+  {
+    "old_label": 82,
+    "old_class": "Thrust washers",
+    "revised_label": 2,
+    "revised_class": "washers_rings_spacers",
+    "revised_class_cn": "垫圈/挡圈/隔套类",
+    "previous_label": 2,
+    "previous_class": "washers_rings_spacers"
+  },
+  {
+    "old_label": 83,
+    "old_class": "Toothed",
+    "revised_label": 5,
+    "revised_class": "gears_pulleys_chains",
+    "revised_class_cn": "齿轮/带轮/链传动类",
+    "previous_label": 5,
+    "previous_class": "gears_pulleys_drivetrain"
+  },
+  {
+    "old_label": 84,
+    "old_class": "Turbine",
+    "revised_label": 10,
+    "revised_class": "rotating_fluid_machinery",
+    "revised_class_cn": "叶轮/风扇/涡轮/转子类",
+    "previous_label": 8,
+    "previous_class": "rotating_power_fluid"
+  },
+  {
+    "old_label": 85,
+    "old_class": "Valve",
+    "revised_label": 7,
+    "revised_class": "pipe_fittings_valves_nozzles",
+    "revised_class_cn": "管接头/法兰/阀/喷嘴类",
+    "previous_label": 8,
+    "previous_class": "rotating_power_fluid"
+  },
+  {
+    "old_label": 86,
+    "old_class": "washer",
+    "revised_label": 2,
+    "revised_class": "washers_rings_spacers",
+    "revised_class_cn": "垫圈/挡圈/隔套类",
+    "previous_label": 2,
+    "previous_class": "washers_rings_spacers"
+  },
+  {
+    "old_label": 87,
+    "old_class": "Washer bolt",
+    "revised_label": 0,
+    "revised_class": "screws_bolts_studs",
+    "revised_class_cn": "螺钉/螺栓/螺柱/螺杆类",
+    "previous_label": 0,
+    "previous_class": "screws_bolts_studs"
+  },
+  {
+    "old_label": 88,
+    "old_class": "Wheel",
+    "revised_label": 9,
+    "revised_class": "wheels_castors",
+    "revised_class_cn": "脚轮/轮子类",
+    "previous_label": 8,
+    "previous_class": "rotating_power_fluid"
+  },
+  {
+    "old_label": 89,
+    "old_class": "Wingnuts",
+    "revised_label": 1,
+    "revised_class": "nuts",
+    "revised_class_cn": "螺母类",
+    "previous_label": 1,
+    "previous_class": "nuts"
+  }
+]

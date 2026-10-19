@@ -1,0 +1,25 @@
+{
+  "model": {
+    "NAME": "BaseCls",
+    "encoder_args": {
+      "NAME": "PointNetEncoder",
+      "in_channels": 3,
+      "input_transform": true,
+      "feature_transform": true
+    },
+    "cls_args": {
+      "NAME": "ClsHead",
+      "num_classes": 14,
+      "in_channels": 1024,
+      "mlps": [
+        512,
+        256
+      ],
+      "norm_args": {
+        "norm": "bn1d"
+      }
+    }
+  },
+  "source": "PointNeXt/cfgs/industrial_part/pointnet-14class-randomrot-8192-fast.yaml",
+  "description": "Existing local OpenPoints architecture, shared experimental training protocol"
+}

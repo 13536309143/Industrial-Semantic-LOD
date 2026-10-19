@@ -2,9 +2,14 @@
 setlocal
 
 cd /d "%~dp0\..\.."
+set "PYTHONUTF8=1"
+set "PYTHONIOENCODING=utf-8"
+set "PYTHONNOUSERSITE=1"
 
 if "%PYTHON_EXE%"=="" set "PYTHON_EXE=python"
 if "%POINTNEXT_CKPT%"=="" set "POINTNEXT_CKPT=%cd%\models\pointnext\industrial-part-14class-best.pth"
+if not defined POINTNEXT_CFG set "POINTNEXT_CFG=%cd%\tools\pointnext_lod\PointNeXt\cfgs\industrial_part\pointnext-s-14class-encoder-compare-inference.yaml"
+if not defined SEMANTIC_OUTPUT_DIR set "SEMANTIC_OUTPUT_DIR=%cd%\lod_analysis_outputs"
 
 if not exist "%POINTNEXT_CKPT%" (
   echo Missing PointNeXt checkpoint: %POINTNEXT_CKPT%
@@ -24,13 +29,14 @@ if errorlevel 1 (
 
 "%PYTHON_EXE%" tools\pointnext_lod\batch_analyze_glb_lod.py ^
   --resources-dir "%cd%\_downloaded_resources" ^
-  --output-dir "%cd%\lod_analysis_outputs" ^
+  --output-dir "%SEMANTIC_OUTPUT_DIR%" ^
   --pointnext-root "%cd%\tools\pointnext_lod\PointNeXt" ^
-  --cfg "%cd%\tools\pointnext_lod\PointNeXt\cfgs\industrial_part\pointnext-s-14class-randomrot-8192-fast.yaml" ^
+  --cfg "%POINTNEXT_CFG%" ^
   --ckpt "%POINTNEXT_CKPT%" ^
   --classes-file "%cd%\tools\pointnext_lod\industrial_part_14classes.txt" ^
-  --models a.glb b.glb c.glb o1778.glb o3049.glb ^
   --num-points 8192 ^
-  --batch-size 16
+  --batch-size 16 ^
+  --skip-existing
+set "ANALYSIS_EXIT=%errorlevel%"
 
-endlocal
+endlocal & exit /b %ANALYSIS_EXIT%

@@ -111,26 +111,26 @@ Once enabled, loading follows runtime demand rather than manual per-part uploads
 
 ## Recorded experiments
 
-These results come from existing training logs and policy outputs. The documentation review checked all **30 scene/configuration CSVs** against the aggregate statistics. It did not retrain models or run a new rendering benchmark. [Evidence metadata and coverage checks](docs/data/readme-evidence.json)
+The current classifier uses the completed two-seed encoder comparison from `gpt`. The default deployment is PointNeXt-S, seed 2027, epoch 98, selected by validation macro-F1. [Deployment and experiment provenance](experiments/pointnext/encoder-compare-two-seeds-20261019/README.md) · [Checkpoint manifest](models/pointnext/deployment.json)
+
+The five-scene and six-policy tables below are historical observations from the previous deployment. Their raw outputs have been archived; they are not scene results for the new checkpoint. Scene inference, fusion, and LOD caches must be regenerated. [Historical evidence metadata](docs/data/readme-evidence.json)
 
 ### 1. Industrial part classification
 
-| Setting / metric | Recorded value |
-| :--- | ---: |
-| Classes / points per sample | 14 / 8,192 |
-| Training / evaluation samples | 61,711 / 15,372 |
-| Training epochs / recorded seed | 100 / 3098 |
-| Best logged evaluation OA | **96.19%** |
-| mAcc after reloading the best checkpoint | **93.86%** |
-| Selected checkpoint epoch | 85 |
+| Configuration | Test OA | Test mAcc | Test macro-F1 |
+| :--- | ---: | ---: | ---: |
+| PointNet | 67.64±0.47 | 39.67±0.33 | 39.97±0.43 |
+| PointNet++ | 94.63±0.23 | 91.04±0.58 | 91.26±0.46 |
+| PointNeXt-S, stride 2 | **95.40±0.03** | **92.45±0.04** | **92.91±0.21** |
+| PointNeXt, stride 4 | 94.80±0.13 | 91.52±0.21 | 91.70±0.48 |
 
-![Recorded PointNeXt training and evaluation accuracy](docs/assets/pointnext-training.png)
+![Two-seed encoder comparison](experiments/pointnext/encoder-compare-two-seeds-20261019/two_seed_accuracy.png)
 
-**Evaluation scope.** Validation and test both use the `test` split, and the dataset maps `val` to `test`. These values describe the recorded development evaluation, not an independent held-out test. OA is overall accuracy; mAcc is mean class accuracy. The figure plots evaluation only at the logged five-epoch evaluation intervals.
+**Evaluation scope.** Percentages are mean ± sample SD across training seeds 2026 and 2027 (n=2, ddof=1). The shared grouped split has 53,654/11,517/11,542 train/validation/test samples, 14 classes and 8,192 XYZ points. Validation macro-F1 selects each checkpoint. Both seeds share the test set; this is an internal holdout from an existing source, not an external assembly evaluation or a significance claim.
 
-The reloaded checkpoint reports 98.99% accuracy for screws/bolts/studs and 76.21% for pipe fittings/valves/nozzles, showing why per-class analysis matters alongside the overall score. [Training log](experiments/pointnext/industrial-part-14class/training.log) · [Configuration](tools/pointnext_lod/PointNeXt/cfgs/industrial_part/pointnext-s-14class-randomrot-8192-fast.yaml) · [Dataset implementation](tools/pointnext_lod/PointNeXt/openpoints/dataset/industrial_part.py)
+Deployment uses seed 2027: its validation macro-F1 is 92.17%, versus 91.61% for seed 2026. The selected run's test OA/mAcc/macro-F1 are 95.43%/92.48%/93.06%; these single-run values differ from the two-seed averages above. The previous seed-3098 development evaluation (96.19% OA) remains a [historical record](experiments/pointnext/industrial-part-14class/README.md).
 
-### 2. Five industrial scenes
+### 2. Five industrial scenes (previous model, historical)
 
 | Scene | Meshes | Source triangles | PointCLIP candidates | Candidate share |
 | :--- | ---: | ---: | ---: | ---: |
@@ -143,7 +143,7 @@ The reloaded checkpoint reports 98.99% accuracy for screws/bolts/studs and 76.21
 
 Triangle counts were checked from GLB triangle-primitive accessor counts. They describe source geometry, not triangles submitted per frame. These scenes have one mesh-bearing node per mesh. Scene `a` contains an assembly hierarchy; the other four have flat node structures, which limits assembly-level filtering opportunities. [Candidate statistics](analysis_reports/lod_pointnext_confidence_candidate_summary.csv)
 
-### 3. Six semantic policy configurations
+### 3. Six semantic policy configurations (previous model, historical)
 
 **N** denotes PointNeXt, **C** denotes PointCLIP V2, and **G** denotes explicit geometric structure evidence. Every configuration has 153,616 policy records across the five scenes.
 
@@ -166,11 +166,11 @@ Adding G to N changes 31.78% of policy assignments; adding candidate-only C to N
 
 | Experiment | Evidence currently available |
 | :--- | :--- |
-| 14-class PointNeXt training | Completed run, per-class results, configuration, and checkpoints |
-| PointNeXt / candidate-only / full PointCLIP scene inference | Outputs for all five scenes |
-| Six policy configurations | 30 complete policy CSVs, distributions, and transition summaries |
+| 14-class encoder comparison | Four configurations × two seeds; metrics, histories, per-class outputs and configurations imported |
+| Current PointNeXt-S deployment | Seed 2027, epoch 98; strict state loading and 8,192-point GPU forward check passed |
+| New-checkpoint scene inference and fusion | Pending batch execution; previous outputs archived |
+| Historical five-scene / six-policy comparison | Previous model's 30 policy CSVs and aggregate observations; not new-model results |
 | GPU timing, geometry fidelity, and streaming tradeoffs | Implementation and instrumentation exist; no complete controlled benchmark dataset identified in this review |
-| PointNet / PointNet++ comparisons | Configuration files exist; completed comparative results were not identified |
 
 The [project review](analysis_reports/PROJECT_REVIEW_20261014.md) maps code to the thesis and explains the evidence boundaries.
 

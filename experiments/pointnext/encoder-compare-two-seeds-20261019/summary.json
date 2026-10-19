@@ -1,0 +1,117 @@
+{
+  "seeds": [
+    2026,
+    2027
+  ],
+  "n_per_method": 2,
+  "sd_ddof": 1,
+  "statistics": {
+    "pointnet": {
+      "oa": {
+        "mean_percent": 67.63559175186276,
+        "sample_sd_percent": 0.4717312610584323
+      },
+      "macc": {
+        "mean_percent": 39.66925863389995,
+        "sample_sd_percent": 0.33075585259926316
+      },
+      "macro_f1": {
+        "mean_percent": 39.97257295382358,
+        "sample_sd_percent": 0.43452195700183754
+      }
+    },
+    "pointnetpp": {
+      "oa": {
+        "mean_percent": 94.62831398371166,
+        "sample_sd_percent": 0.23280244052234136
+      },
+      "macc": {
+        "mean_percent": 91.03959243405305,
+        "sample_sd_percent": 0.5797657679554111
+      },
+      "macro_f1": {
+        "mean_percent": 91.26249584744797,
+        "sample_sd_percent": 0.46472207146605987
+      }
+    },
+    "pointnext_s": {
+      "oa": {
+        "mean_percent": 95.403742852192,
+        "sample_sd_percent": 0.03063190006873202
+      },
+      "macc": {
+        "mean_percent": 92.45099893733031,
+        "sample_sd_percent": 0.036423592029863734
+      },
+      "macro_f1": {
+        "mean_percent": 92.9142488356158,
+        "sample_sd_percent": 0.20625005605713032
+      }
+    },
+    "pointnext_stride4": {
+      "oa": {
+        "mean_percent": 94.79726217293363,
+        "sample_sd_percent": 0.12865398028866976
+      },
+      "macc": {
+        "mean_percent": 91.52337513091312,
+        "sample_sd_percent": 0.2085676121476976
+      },
+      "macro_f1": {
+        "mean_percent": 91.70395612099409,
+        "sample_sd_percent": 0.48197260546678794
+      }
+    }
+  },
+  "source_sha256": {
+    "experiments\\pointnext\\encoder-compare-two-seeds-20261019\\pointnet\\seed_2026\\result.json": "851b4ccb2190b394857781248fc67e65e7ab043d2c25f732ced4e4d544131d6f",
+    "experiments\\pointnext\\encoder-compare-two-seeds-20261019\\pointnet\\seed_2026\\history.csv": "a646e7665e3d13c912c63dad441d372385f552ed3d80ff594e015aa46066c947",
+    "experiments\\pointnext\\encoder-compare-two-seeds-20261019\\pointnet\\seed_2026\\confusion.json": "cb8224ebfa8db6adee269d39a32f37ce2da5f23391fda0bcd88706c1bc32bdbf",
+    "experiments\\pointnext\\encoder-compare-two-seeds-20261019\\pointnet\\seed_2026\\per_class.csv": "ff2ce9751b4d6d15f78018e9f3ec7228b0c3c36d9332aac3ea9b4bf8053440e8",
+    "experiments\\pointnext\\encoder-compare-two-seeds-20261019\\pointnet\\seed_2026\\environment.json": "6ee3689e4618328b5b3f08357644335bb9f445cf12cd5ecaa97314563f027e9b",
+    "experiments\\pointnext\\encoder-compare-two-seeds-20261019\\pointnet\\seed_2026\\job.json": "5e38c5647372bc8c835077c5711b51a44327c7115ae16f65bed5c8f44e12e86e",
+    "experiments\\pointnext\\encoder-compare-two-seeds-20261019\\pointnet\\seed_2027\\result.json": "b65ac4c13c1de2e8f037feea92b7f9586a777eb7ae4eab91a6822eb5c4b195f0",
+    "experiments\\pointnext\\encoder-compare-two-seeds-20261019\\pointnet\\seed_2027\\history.csv": "833d07f99e168875fc0de6fd1efc8bb513b045c612c3eac444795158edc91c3e",
+    "experiments\\pointnext\\encoder-compare-two-seeds-20261019\\pointnet\\seed_2027\\confusion.json": "226fe58e51128dd0706a197a7715bb08a69077ae73cd1b790620d061a29eca6f",
+    "experiments\\pointnext\\encoder-compare-two-seeds-20261019\\pointnet\\seed_2027\\per_class.csv": "195b5aaf9f2e5056fe5bd5cef702a6334c447a807494991a3507a8b4a170d070",
+    "experiments\\pointnext\\encoder-compare-two-seeds-20261019\\pointnet\\seed_2027\\environment.json": "6ee3689e4618328b5b3f08357644335bb9f445cf12cd5ecaa97314563f027e9b",
+    "experiments\\pointnext\\encoder-compare-two-seeds-20261019\\pointnet\\seed_2027\\job.json": "fdcd7271e4b3bb63229baf36a6698a79a68c980203094df3b9f62cae103493d1",
+    "experiments\\pointnext\\encoder-compare-two-seeds-20261019\\pointnetpp\\seed_2026\\result.json": "0acf4ce289240af3b8dfccae6aefbd102b32103a765e3a6d07c5995c4bc0f641",
+    "experiments\\pointnext\\encoder-compare-two-seeds-20261019\\pointnetpp\\seed_2026\\history.csv": "2e84e85421592fd87c5b49a7a912831a3fb0819926ac3eb7c7029c429a72327b",
+    "experiments\\pointnext\\encoder-compare-two-seeds-20261019\\pointnetpp\\seed_2026\\confusion.json": "e6f1475e87c923a4047f0e01beb5020990299b6abc05cc99c45b9a5baa85f047",
+    "experiments\\pointnext\\encoder-compare-two-seeds-20261019\\pointnetpp\\seed_2026\\per_class.csv": "78f50defa99eed1c812cbc8335f43c445c87d96b6dc696451151116e01374de6",
+    "experiments\\pointnext\\encoder-compare-two-seeds-20261019\\pointnetpp\\seed_2026\\environment.json": "6ee3689e4618328b5b3f08357644335bb9f445cf12cd5ecaa97314563f027e9b",
+    "experiments\\pointnext\\encoder-compare-two-seeds-20261019\\pointnetpp\\seed_2026\\job.json": "3a9facce7059c8fdf729d0bd9db38913c8bd6e28e587092fc6e8440c3e9cf446",
+    "experiments\\pointnext\\encoder-compare-two-seeds-20261019\\pointnetpp\\seed_2027\\result.json": "92d626f251b696013a58ae12b31dacb7a1dac3d9f8fc836d2ddeff9afaed055b",
+    "experiments\\pointnext\\encoder-compare-two-seeds-20261019\\pointnetpp\\seed_2027\\history.csv": "b247c6ec552da948ffd7fe6b144b04446546f92d4dd1e3cc5dd588385a94a0b4",
+    "experiments\\pointnext\\encoder-compare-two-seeds-20261019\\pointnetpp\\seed_2027\\confusion.json": "d55cfe98b88e6647f56d2406903cbc36c9ba2ae1e253a0c1ff5020da48616996",
+    "experiments\\pointnext\\encoder-compare-two-seeds-20261019\\pointnetpp\\seed_2027\\per_class.csv": "20b32966ccf16b65a290a5bda47009b7be80dc7f4f8369a22af464b8c8465099",
+    "experiments\\pointnext\\encoder-compare-two-seeds-20261019\\pointnetpp\\seed_2027\\environment.json": "6ee3689e4618328b5b3f08357644335bb9f445cf12cd5ecaa97314563f027e9b",
+    "experiments\\pointnext\\encoder-compare-two-seeds-20261019\\pointnetpp\\seed_2027\\job.json": "56fa9ac4cc44ed2b32f0cd9d7307f7eabf873699248c1d0109674c7cb691308f",
+    "experiments\\pointnext\\encoder-compare-two-seeds-20261019\\pointnext_s\\seed_2026\\result.json": "5abaa1af45564c08e2ac3ad7114ad9c29091785a6037185478cdd14b3fba4f59",
+    "experiments\\pointnext\\encoder-compare-two-seeds-20261019\\pointnext_s\\seed_2026\\history.csv": "4de78e7a5fa456dad494dfd08aacc22f22e22ddb059951c8a3a4ad16222523fc",
+    "experiments\\pointnext\\encoder-compare-two-seeds-20261019\\pointnext_s\\seed_2026\\confusion.json": "4c1b9867962267a83025a5ee8b757d004cbe7f4c377c8d20ae5e78039ff6499d",
+    "experiments\\pointnext\\encoder-compare-two-seeds-20261019\\pointnext_s\\seed_2026\\per_class.csv": "ce4b2527f4bcbe03b2eaa87e78d00e251cba09b227ca55709fd79568bd3084d4",
+    "experiments\\pointnext\\encoder-compare-two-seeds-20261019\\pointnext_s\\seed_2026\\environment.json": "6ee3689e4618328b5b3f08357644335bb9f445cf12cd5ecaa97314563f027e9b",
+    "experiments\\pointnext\\encoder-compare-two-seeds-20261019\\pointnext_s\\seed_2026\\job.json": "ab0730226a386aef0044b17dc1e4e174d8ce332f074789da6bda1c77b6caa707",
+    "experiments\\pointnext\\encoder-compare-two-seeds-20261019\\pointnext_s\\seed_2027\\result.json": "4085f6a317b2071b1bf40266ae7c6fba77b88e7581cb7d0ae769c9a36af544dd",
+    "experiments\\pointnext\\encoder-compare-two-seeds-20261019\\pointnext_s\\seed_2027\\history.csv": "ab3a875f767b2e84e12436cab8c69204f0fc7fe3585fa375fa1bdb4efab9258e",
+    "experiments\\pointnext\\encoder-compare-two-seeds-20261019\\pointnext_s\\seed_2027\\confusion.json": "3f2ee9b863632733520b0a4014dcf2fcdba299b19ea29aa8c6395b135f80c6c5",
+    "experiments\\pointnext\\encoder-compare-two-seeds-20261019\\pointnext_s\\seed_2027\\per_class.csv": "ee2190a3ace8a3bf451f08c5a1443b37339a2222bf07d3c2d88fefedc8497074",
+    "experiments\\pointnext\\encoder-compare-two-seeds-20261019\\pointnext_s\\seed_2027\\environment.json": "6ee3689e4618328b5b3f08357644335bb9f445cf12cd5ecaa97314563f027e9b",
+    "experiments\\pointnext\\encoder-compare-two-seeds-20261019\\pointnext_s\\seed_2027\\job.json": "a6bde4d5fa1d696cc1805945108ed559469e4301a3d36065377766d4a960564e",
+    "experiments\\pointnext\\encoder-compare-two-seeds-20261019\\pointnext_stride4\\seed_2026\\result.json": "0b709a6d74985fc460f352f7ff480659d5bb87b7d39608ff7f5b3d023b74f606",
+    "experiments\\pointnext\\encoder-compare-two-seeds-20261019\\pointnext_stride4\\seed_2026\\history.csv": "08ca85921ed44e3c97982f46509e3b8065cc91777c4f39f41553736ae29c2dcd",
+    "experiments\\pointnext\\encoder-compare-two-seeds-20261019\\pointnext_stride4\\seed_2026\\confusion.json": "2b4fce2b9b6ac1812ea3561a452f1a5cb3f4c157f5370712ee86a6996c1ba6c3",
+    "experiments\\pointnext\\encoder-compare-two-seeds-20261019\\pointnext_stride4\\seed_2026\\per_class.csv": "3a65b847e74154bcf614fdc6f7eb22e49f39e2983ae49bf6d1c82e57ecb4ac44",
+    "experiments\\pointnext\\encoder-compare-two-seeds-20261019\\pointnext_stride4\\seed_2026\\environment.json": "6ee3689e4618328b5b3f08357644335bb9f445cf12cd5ecaa97314563f027e9b",
+    "experiments\\pointnext\\encoder-compare-two-seeds-20261019\\pointnext_stride4\\seed_2026\\job.json": "0c3989e038eb46f57ca584e0fe9c0cf58757090d035749e7b0e2f7717a372350",
+    "experiments\\pointnext\\encoder-compare-two-seeds-20261019\\pointnext_stride4\\seed_2027\\result.json": "f3840b52285c45014598c37a343d8fe717e024b3d8cd5e0fbd0fddca72b60b00",
+    "experiments\\pointnext\\encoder-compare-two-seeds-20261019\\pointnext_stride4\\seed_2027\\history.csv": "efdc8e48b6f9189d5a0479078d44aac884e067cb670b1c3d15979c70cc9a94ec",
+    "experiments\\pointnext\\encoder-compare-two-seeds-20261019\\pointnext_stride4\\seed_2027\\confusion.json": "d8bd1c1f20cdea528dd8192afb0136d552a92f81bd02d5b3bc3230dd6e9e3e26",
+    "experiments\\pointnext\\encoder-compare-two-seeds-20261019\\pointnext_stride4\\seed_2027\\per_class.csv": "c03bcb67fde0a1f3dff02c2f2b85c9ad035b54a402df726e0263544abb9a60ff",
+    "experiments\\pointnext\\encoder-compare-two-seeds-20261019\\pointnext_stride4\\seed_2027\\environment.json": "6ee3689e4618328b5b3f08357644335bb9f445cf12cd5ecaa97314563f027e9b",
+    "experiments\\pointnext\\encoder-compare-two-seeds-20261019\\pointnext_stride4\\seed_2027\\job.json": "b4a966f80d3a1bf2d1782f16803ef846e59edb367e2932720239d5a13e7bef42"
+  },
+  "selection_rule": "Among the retained PointNeXt-S seeds, validation macro-F1 descending, validation OA descending, seed ascending; test metrics not used for selection."
+}

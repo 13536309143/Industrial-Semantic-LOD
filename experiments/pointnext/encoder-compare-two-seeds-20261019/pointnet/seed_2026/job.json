@@ -1,0 +1,56 @@
+{
+  "identity": "4f8d42a81213277230d28c49ae3b06f6e2d54380eeff5dfd040b717b36aab493",
+  "experiment_identity": "e6e1f345814115e7109bd421b6f0a033aae1f044766e253c401016531cf113a5",
+  "protocol": {
+    "schema": 1,
+    "methods": [
+      "pointnet",
+      "pointnetpp",
+      "pointnext_s",
+      "industrial",
+      "pointnext_stride4"
+    ],
+    "seeds": [
+      2026,
+      2027,
+      2028
+    ],
+    "num_classes": 14,
+    "num_points": 8192,
+    "mapping": "reclassified_90_industrial_parts_14classes.json",
+    "sampling_seed": 3407,
+    "split_seed": 1701,
+    "split_ratios": [
+      0.7,
+      0.15,
+      0.15
+    ],
+    "conflicting_label_policy": "exclude_group",
+    "epochs": 100,
+    "micro_batch": 4,
+    "effective_batch": 16,
+    "eval_batch": 8,
+    "workers": 4,
+    "convert_workers": 4,
+    "lr": 0.001,
+    "min_lr": 1e-06,
+    "weight_decay": 0.05,
+    "label_smoothing": 0.2,
+    "grad_clip": 1.0,
+    "amp": true,
+    "pointnet_transform_regularization": 0.001,
+    "augmentation": {
+      "rotation": "xyz_euler_uniform_minus_pi_pi",
+      "scale": [
+        0.8,
+        1.2
+      ],
+      "shift": 0.2
+    },
+    "latency_batch": 1,
+    "latency_iterations": 100
+  },
+  "method": "pointnet",
+  "seed": 2026,
+  "manifest": "D:\\111111111111111\\gpt\\encoder_compare_cache\\manifest.json"
+}

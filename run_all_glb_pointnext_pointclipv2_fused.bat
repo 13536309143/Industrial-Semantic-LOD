@@ -2,15 +2,19 @@
 setlocal EnableExtensions EnableDelayedExpansion
 
 cd /d "%~dp0"
+set "PYTHONUTF8=1"
+set "PYTHONIOENCODING=utf-8"
+set "PYTHONNOUSERSITE=1"
 
-set "RESOURCES_DIR=%cd%\_downloaded_resources"
-set "OUT=%cd%\lod_analysis_outputs"
+if not defined RESOURCES_DIR set "RESOURCES_DIR=%cd%\_downloaded_resources"
+if not defined SEMANTIC_OUTPUT_DIR set "SEMANTIC_OUTPUT_DIR=%cd%\lod_analysis_outputs"
+set "OUT=%SEMANTIC_OUTPUT_DIR%"
 
 if "%POINTNEXT_CONDA_ENV%"=="" set "POINTNEXT_CONDA_ENV=gpt-pointnext"
 if "%POINTCLIP_CONDA_ENV%"=="" set "POINTCLIP_CONDA_ENV=PointCLIPV2_LOD"
 
 set "POINTNEXT_ROOT=%cd%\tools\pointnext_lod\PointNeXt"
-set "POINTNEXT_CFG=%POINTNEXT_ROOT%\cfgs\industrial_part\pointnext-s-14class-randomrot-8192-fast.yaml"
+if not defined POINTNEXT_CFG set "POINTNEXT_CFG=%POINTNEXT_ROOT%\cfgs\industrial_part\pointnext-s-14class-encoder-compare-inference.yaml"
 if "%POINTNEXT_CKPT%"=="" set "POINTNEXT_CKPT=%cd%\models\pointnext\industrial-part-14class-best.pth"
 set "POINTNEXT_CLASSES=%cd%\tools\pointnext_lod\industrial_part_14classes.txt"
 
@@ -48,6 +52,8 @@ for %%G in ("%RESOURCES_DIR%\*.glb") do (
 
 echo.
 echo ===== Stage 1/3: PointNeXt analysis for all GLB files =====
+echo Checkpoint: %POINTNEXT_CKPT%
+echo Outputs: %OUT%
 echo Activating conda environment: %POINTNEXT_CONDA_ENV%
 call conda activate %POINTNEXT_CONDA_ENV%
 if errorlevel 1 (
@@ -102,9 +108,8 @@ for %%G in ("%RESOURCES_DIR%\*.glb") do (
   set "STEM=!STEM: =_!"
   echo.
   echo ===== PointCLIPV2 %%~nxG =====
-  if exist "%OUT%\!STEM!_pointclipv2_candidates.csv" (
-    echo Skip existing PointCLIPV2 candidate output: %OUT%\!STEM!_pointclipv2_candidates.csv
-  ) else (
+  call :pointclip_cache check "%%~fG" "!STEM!"
+  if errorlevel 1 (
     python tools\pointclipv2\run_pointclipv2_zeroshot_glb.py ^
       --glb "%%~fG" ^
       --pointclip-root "%POINTCLIP_ROOT%" ^
@@ -113,6 +118,11 @@ for %%G in ("%RESOURCES_DIR%\*.glb") do (
       --num-points 8192 ^
       --batch-size 8 ^
       --top-k 5 ^
+      --seed 2026 ^
+      --backbone ViT-B/16 ^
+      --candidate-high-confidence 0.70 ^
+      --candidate-low-margin 0.08 ^
+      --exclude-roles micro_uncertain ^
       --output-csv "%OUT%\!STEM!_pointclipv2_candidates.csv" ^
       --output-json "%OUT%\!STEM!_pointclipv2_candidates.json" ^
       --summary-csv "%OUT%\!STEM!_pointclipv2_candidates_summary.csv"
@@ -120,6 +130,10 @@ for %%G in ("%RESOURCES_DIR%\*.glb") do (
       echo PointCLIPV2 failed for %%~nxG
       exit /b 1
     )
+    call :pointclip_cache record "%%~fG" "!STEM!"
+    if errorlevel 1 exit /b 1
+  ) else (
+    echo Reuse verified PointCLIPV2 candidate output: %OUT%\!STEM!_pointclipv2_candidates.csv
   )
 )
 
@@ -150,6 +164,11 @@ for %%G in ("%RESOURCES_DIR%\*.glb") do (
   )
 )
 
+python tools\pointnext_lod\write_pipeline_status.py ^
+  --resources-dir "%RESOURCES_DIR%" --output-dir "%OUT%" ^
+  --ckpt "%POINTNEXT_CKPT%" --cfg "%POINTNEXT_CFG%"
+if errorlevel 1 exit /b 1
+
 echo.
 echo ===== Done =====
 echo Generated fused LOD constraints in:
@@ -159,3 +178,23 @@ echo Next, run renderer preprocessing with --processingonly 1 --autoloadcache 0 
 echo Then open the scene in the renderer. See docs\guides\end-to-end.md for commands.
 
 endlocal
+exit /b 0
+
+:pointclip_cache
+python tools\pointnext_lod\artifact_cache.py %~1 ^
+  --stamp "%OUT%\%~3_pointclipv2_candidates.provenance.json" ^
+  --input "%~2" ^
+  --input "%OUT%\%~3_pointnext_analysis.csv" ^
+  --input "%POINTCLIP_PROMPTS%" ^
+  --input "%cd%\tools\pointclipv2\run_pointclipv2_zeroshot_glb.py" ^
+  --input "%cd%\tools\pointnext_lod\artifact_cache.py" ^
+  --input "%POINTCLIP_ROOT%\zeroshot_cls\trainers" ^
+  --input "%POINTCLIP_ROOT%\zeroshot_cls\clip" ^
+  --param "num_points=8192" --param "batch_size=8" --param "top_k=5" ^
+  --param "seed=2026" --param "backbone=ViT-B/16" ^
+  --param "high_confidence=0.70" --param "low_margin=0.08" ^
+  --param "exclude_roles=micro_uncertain" --param "environment=%POINTCLIP_CONDA_ENV%" ^
+  --output "%OUT%\%~3_pointclipv2_candidates.csv" ^
+  --output "%OUT%\%~3_pointclipv2_candidates.json" ^
+  --output "%OUT%\%~3_pointclipv2_candidates_summary.csv"
+exit /b %errorlevel%

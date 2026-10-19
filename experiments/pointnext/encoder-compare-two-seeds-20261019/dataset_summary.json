@@ -1,0 +1,156 @@
+{
+  "schema": 1,
+  "classes": [
+    "screws_bolts_studs",
+    "nuts",
+    "washers_rings_spacers",
+    "pins_rivets_keys",
+    "bearings_bushings_guides",
+    "gears_pulleys_chains",
+    "motors_gearmotors",
+    "pipe_fittings_valves_nozzles",
+    "joints_clamps_structural_connectors",
+    "wheels_castors",
+    "rotating_fluid_machinery",
+    "plates_discs_shapes",
+    "handles_controls",
+    "springs"
+  ],
+  "protocol": {
+    "num_points": 8192,
+    "sampling_seed": 3407,
+    "split_seed": 1701,
+    "split_ratios": [
+      0.7,
+      0.15,
+      0.15
+    ],
+    "conflicting_label_policy": "exclude_group"
+  },
+  "data_quality": {
+    "policy": "exclude_group",
+    "source_samples": 76733,
+    "retained_samples": 76713,
+    "excluded_samples": 20,
+    "conflicting_groups": 10,
+    "per_class": [
+      {
+        "label": 0,
+        "class_name": "screws_bolts_studs",
+        "source_samples": 27848,
+        "retained_samples": 27847,
+        "excluded_samples": 1,
+        "retained_groups": 22617
+      },
+      {
+        "label": 1,
+        "class_name": "nuts",
+        "source_samples": 3199,
+        "retained_samples": 3191,
+        "excluded_samples": 8,
+        "retained_groups": 2945
+      },
+      {
+        "label": 2,
+        "class_name": "washers_rings_spacers",
+        "source_samples": 5066,
+        "retained_samples": 5066,
+        "excluded_samples": 0,
+        "retained_groups": 4590
+      },
+      {
+        "label": 3,
+        "class_name": "pins_rivets_keys",
+        "source_samples": 19511,
+        "retained_samples": 19511,
+        "excluded_samples": 0,
+        "retained_groups": 16537
+      },
+      {
+        "label": 4,
+        "class_name": "bearings_bushings_guides",
+        "source_samples": 3750,
+        "retained_samples": 3750,
+        "excluded_samples": 0,
+        "retained_groups": 3473
+      },
+      {
+        "label": 5,
+        "class_name": "gears_pulleys_chains",
+        "source_samples": 1585,
+        "retained_samples": 1584,
+        "excluded_samples": 1,
+        "retained_groups": 1520
+      },
+      {
+        "label": 6,
+        "class_name": "motors_gearmotors",
+        "source_samples": 1478,
+        "retained_samples": 1478,
+        "excluded_samples": 0,
+        "retained_groups": 1466
+      },
+      {
+        "label": 7,
+        "class_name": "pipe_fittings_valves_nozzles",
+        "source_samples": 4914,
+        "retained_samples": 4913,
+        "excluded_samples": 1,
+        "retained_groups": 4826
+      },
+      {
+        "label": 8,
+        "class_name": "joints_clamps_structural_connectors",
+        "source_samples": 2399,
+        "retained_samples": 2399,
+        "excluded_samples": 0,
+        "retained_groups": 2394
+      },
+      {
+        "label": 9,
+        "class_name": "wheels_castors",
+        "source_samples": 705,
+        "retained_samples": 704,
+        "excluded_samples": 1,
+        "retained_groups": 702
+      },
+      {
+        "label": 10,
+        "class_name": "rotating_fluid_machinery",
+        "source_samples": 913,
+        "retained_samples": 913,
+        "excluded_samples": 0,
+        "retained_groups": 902
+      },
+      {
+        "label": 11,
+        "class_name": "plates_discs_shapes",
+        "source_samples": 912,
+        "retained_samples": 912,
+        "excluded_samples": 0,
+        "retained_groups": 778
+      },
+      {
+        "label": 12,
+        "class_name": "handles_controls",
+        "source_samples": 3777,
+        "retained_samples": 3769,
+        "excluded_samples": 8,
+        "retained_groups": 3537
+      },
+      {
+        "label": 13,
+        "class_name": "springs",
+        "source_samples": 676,
+        "retained_samples": 676,
+        "excluded_samples": 0,
+        "retained_groups": 670
+      }
+    ],
+    "scope": "All members of conflicting groups excluded before splitting; no source edits or automatic relabeling."
+  },
+  "mapping_hash": "798ee985f85b46197ef21032c3a42dda4d52b9648c2c88baf9fb422c3419f18e",
+  "group_policy": "source class+model ID, exact triangle geometry, optional family CSV",
+  "test_provenance": "Fresh pooled split of existing train/test; old test was previously inspected. Not an external unseen dataset.",
+  "fingerprint": "c8cb76458b6a464b5194ed63b3ba894ea9677c2e356990f40624345f1b975f06"
+}
