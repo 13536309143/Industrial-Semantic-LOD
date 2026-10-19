@@ -28,6 +28,9 @@ os.environ.setdefault("MKL_NUM_THREADS", "1")
 
 import numpy as np
 
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "pointnext_lod"))
+from gltf_hierarchy import attach_world_matrices
+
 COMPONENT_DTYPES = {
     5120: np.int8,
     5121: np.uint8,
@@ -182,6 +185,7 @@ def read_glb_chunks(path: Path) -> Tuple[dict, int, int]:
         bin_len, bin_type = struct.unpack("<II", file.read(8))
         if bin_type != int.from_bytes(b"BIN\x00", "little"):
             raise ValueError("Second GLB chunk is not BIN")
+        attach_world_matrices(gltf, node_matrix)
         return gltf, bin_header_offset + 8, bin_len
 
 
@@ -242,7 +246,10 @@ def node_matrix(node: dict) -> np.ndarray:
 
 def mesh_for_node(gltf: dict, mm: mmap.mmap, bin_offset: int, node: dict) -> Tuple[np.ndarray, np.ndarray]:
     mesh = gltf["meshes"][node["mesh"]]
-    transform = node_matrix(node)
+    transform = node.get("_world_matrix")
+    if transform is None:
+        attach_world_matrices(gltf, node_matrix)
+        transform = node["_world_matrix"]
     vertices_list = []
     faces_list = []
     vertex_offset = 0

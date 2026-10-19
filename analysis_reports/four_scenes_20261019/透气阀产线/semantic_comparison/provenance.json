@@ -1,0 +1,18 @@
+{
+  "inputs": {
+    "E:\\vk_lod_clusters1\\t1\\_downloaded_resources\\透气阀产线.glb": "c27eb7aa2a3066621f9bf9a681cdc568d25f9a104e73e9a8c922ea449ec59d72",
+    "E:\\vk_lod_clusters1\\t1\\models\\pointnext\\industrial-part-14class-best.pth": "238ed37c8af354ea5bb6532f371ef6003d8fb43e0d6124f44363c55b66ea0493",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\four_scenes_seed2027_20261019\\透气阀产线\\透气阀产线_pointnext_analysis.csv": "210b56689495adc3ca7751adfa724caaefc415737d3759b2914a65f93772b0a4",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\four_scenes_seed2027_20261019\\透气阀产线\\透气阀产线_pointclipv2_full.csv": "2310450e3626020280c07bdf841097f77196a137d0f99b21d731d5f922889d53",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\four_scenes_seed2027_20261019\\透气阀产线\\透气阀产线_pointclipv2_candidates.csv": "ef4da4070b5646ba41b2e93074bab9e80ff523c002196078b3309661cb8050d6",
+    "E:\\vk_lod_clusters1\\t1\\tools\\pointclipv2\\analyze_scene_semantics.py": "5197d6d8e961a6856a1d438f7f01ecceff592d4d88e88a9ae83371538778ab55",
+    "E:\\vk_lod_clusters1\\t1\\tools\\pointclipv2\\independent_structure.py": "687db74e991fdd8c98a4cdad6ebb2d537d249a943914c35e59c31f6942d28bb1",
+    "E:\\vk_lod_clusters1\\t1\\tools\\pointnext_lod\\build_lod_constraints_from_analysis.py": "f7d35d0d908558c646cdaa1dbfaac62c8a513bc234af494f38ab8b2608d972ae"
+  },
+  "raw_run": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\four_scenes_seed2027_20261019\\透气阀产线",
+  "full_scene_coverage": true,
+  "six_full_vocab_labels": 110,
+  "gated_production_vocab_labels": 106,
+  "independent_geometry_uncertainty_removed": true,
+  "supervised_parameter_invariance_check_passed": true
+}

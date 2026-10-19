@@ -22,6 +22,7 @@ import numpy as np
 import torch
 
 from checkpoint_loading import load_classifier_checkpoint
+from gltf_hierarchy import attach_world_matrices
 
 from analyze_gltf_parts_pointnext import (
     load_cfg,
@@ -109,6 +110,7 @@ def read_glb_chunks(path: Path) -> tuple[dict, int, int]:
         if bin_type != int.from_bytes(b"BIN\x00", "little"):
             raise ValueError("Second GLB chunk is not BIN")
         bin_offset = bin_header_offset + 8
+        attach_world_matrices(gltf, node_matrix)
         return gltf, bin_offset, bin_len
 
 
@@ -177,7 +179,10 @@ def apply_transform(vertices: np.ndarray, matrix: np.ndarray) -> np.ndarray:
 
 def mesh_for_node(gltf: dict, mm: mmap.mmap, bin_offset: int, node: dict) -> tuple[np.ndarray, np.ndarray]:
     mesh = gltf["meshes"][node["mesh"]]
-    transform = node_matrix(node)
+    transform = node.get("_world_matrix")
+    if transform is None:
+        attach_world_matrices(gltf, node_matrix)
+        transform = node["_world_matrix"]
     vertices_list = []
     faces_list = []
     vertex_offset = 0

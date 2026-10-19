@@ -1,0 +1,31 @@
+﻿order,node_index,mesh_index,node_name,predicted_class,confidence,shape_hint,face_count,open_label,open_role,open_score,candidate,N,C,N+G,C+G,N+C,N+C+G,full_minus_n,priority_spread
+1450,1449,1449,Mesh.1055,rotating_fluid_machinery,0.473726361989975,flat_plate,9948,generic mounting pad,ordinary_low_detail,0.0657678171992302,1,10,1,10,6,10,10,0,9
+1616,1615,1615,Mesh.942,motors_gearmotors,0.6635276675224304,irregular,7052,tiny cap or plug,micro_uncertain,0.047783974558115005,1,10,1,10,6,10,10,0,9
+1617,1616,1616,Mesh.1036,motors_gearmotors,0.7036844491958618,irregular,7052,tiny cap or plug,micro_uncertain,0.0454624779522419,0,10,1,10,6,10,10,0,9
+1618,1617,1617,Mesh.993,motors_gearmotors,0.7173047065734863,irregular,7052,tiny cap or plug,micro_uncertain,0.04523846507072449,0,10,1,10,6,10,10,0,9
+1132,1131,1131,Mesh.125,bearings_bushings_guides,0.7460552453994751,irregular,6400,plain disc,ordinary_low_detail,0.08119554817676544,0,10,1,10,6,10,10,0,9
+1653,1652,1652,Mesh.828,bearings_bushings_guides,0.7380434274673462,irregular,6400,plain disc,ordinary_low_detail,0.08031952381134033,0,10,1,10,6,10,10,0,9
+1658,1657,1657,Mesh.826,bearings_bushings_guides,0.7006115317344666,irregular,6400,plain disc,ordinary_low_detail,0.08001736551523209,0,10,1,10,6,10,10,0,9
+1659,1658,1658,Mesh.869,bearings_bushings_guides,0.6786416172981262,irregular,6400,plain disc,ordinary_low_detail,0.07954803109169006,1,10,1,10,6,10,10,0,9
+1664,1663,1663,Mesh.868,bearings_bushings_guides,0.6299514174461365,irregular,6400,plain disc,ordinary_low_detail,0.07952842861413956,1,10,1,10,6,10,10,0,9
+506,505,505,Mesh.1643,motors_gearmotors,0.9941151142120361,irregular,5376,large tank or vessel,large_static_bulk,0.08083728700876236,0,10,1,10,6,10,10,0,9
+804,803,803,Mesh.1881,motors_gearmotors,0.9835590720176697,irregular,5376,plain rectangular block,ordinary_low_detail,0.07081751525402069,0,10,1,10,6,10,10,0,9
+1141,1140,1140,Mesh.157,motors_gearmotors,0.9945653676986694,irregular,4980,plain rectangular block,ordinary_low_detail,0.06623929738998413,0,10,1,10,6,10,10,0,9
+1248,1247,1247,Mesh.035,motors_gearmotors,0.9980865716934204,irregular,4980,plain rectangular block,ordinary_low_detail,0.060895588248968124,0,10,1,10,6,10,10,0,9
+1648,1647,1647,Mesh.820,motors_gearmotors,0.9965482354164124,irregular,4980,tiny cap or plug,micro_uncertain,0.05552292615175247,0,10,1,10,6,10,10,0,9
+1671,1670,1670,Mesh.865,motors_gearmotors,0.9982481002807617,irregular,4980,plain rectangular block,ordinary_low_detail,0.060172051191329956,0,10,1,10,6,10,10,0,9
+1128,1127,1127,Mesh.132,gears_pulleys_chains,0.9907915592193604,round_or_cubic,4948,plain disc,ordinary_low_detail,0.06257329881191254,0,10,1,10,6,10,10,0,9
+1129,1128,1128,Mesh.129,gears_pulleys_chains,0.9855462312698364,round_or_cubic,4948,plain disc,ordinary_low_detail,0.05818624794483185,0,10,1,10,6,10,10,0,9
+1275,1274,1274,Mesh.025,gears_pulleys_chains,0.9868345856666565,round_or_cubic,4948,plain disc,ordinary_low_detail,0.058607202023267746,0,10,1,10,6,10,10,0,9
+1298,1297,1297,Mesh.019,gears_pulleys_chains,0.9800440669059753,round_or_cubic,4948,plain disc,ordinary_low_detail,0.059958428144454956,0,10,1,10,6,10,10,0,9
+1643,1642,1642,Mesh.808,gears_pulleys_chains,0.9866172075271606,round_or_cubic,4948,plain disc,ordinary_low_detail,0.0656706690788269,0,10,1,10,6,10,10,0,9
+1654,1653,1653,Mesh.814,gears_pulleys_chains,0.9834455847740173,round_or_cubic,4948,plain disc,ordinary_low_detail,0.047017812728881836,0,10,1,10,6,10,10,0,9
+1666,1665,1665,Mesh.830,gears_pulleys_chains,0.9878811836242676,round_or_cubic,4948,plain disc,ordinary_low_detail,0.05685897916555405,0,10,1,10,6,10,10,0,9
+1667,1666,1666,Mesh.840,gears_pulleys_chains,0.9876176714897156,round_or_cubic,4948,plain disc,ordinary_low_detail,0.05113605037331581,0,10,1,10,6,10,10,0,9
+913,912,912,Mesh.1211,motors_gearmotors,0.48176026344299316,irregular,4590,cylindrical pin,repeated_fastener,0.06449038535356522,1,10,1,10,6,10,10,0,9
+858,857,857,Mesh.1414,motors_gearmotors,0.9900897741317749,irregular,4562,plain rectangular block,ordinary_low_detail,0.06164130941033363,0,10,1,10,6,10,10,0,9
+925,924,924,Mesh.1221,motors_gearmotors,0.9961057305335999,irregular,4562,plain rectangular block,ordinary_low_detail,0.062239088118076324,0,10,1,10,6,10,10,0,9
+979,978,978,Mesh.1170,motors_gearmotors,0.9963222742080688,irregular,4562,plain rectangular block,ordinary_low_detail,0.06256641447544098,0,10,1,10,6,10,10,0,9
+474,473,473,Mesh.1712,bearings_bushings_guides,0.4724244177341461,round_or_cubic,4550,plain disc,ordinary_low_detail,0.06772065907716751,1,10,1,10,6,10,10,0,9
+608,607,607,Mesh.1785,bearings_bushings_guides,0.543738067150116,round_or_cubic,4550,plain disc,ordinary_low_detail,0.06270904093980789,1,10,1,10,6,10,10,0,9
+246,245,245,Mesh.758,rotating_fluid_machinery,0.49367043375968933,irregular,4518,small visual fragment,micro_uncertain,0.04718993231654167,1,10,1,10,6,10,10,0,9

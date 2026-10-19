@@ -1,0 +1,14 @@
+{
+  "status": "four_scenes_full_semantic_test_complete",
+  "report": "E:\\vk_lod_clusters1\\t1\\analysis_reports\\four_scenes_20261019\\四模型全量测试与整体评价.md",
+  "mesh_nodes": 7742,
+  "scenes": [
+    "透气阀产线",
+    "汽车链接器植入-折弯设备",
+    "手机喇叭检测线",
+    "K31自动铆压机"
+  ],
+  "raw_directory": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\four_scenes_seed2027_20261019",
+  "ground_truth_metrics_available": false,
+  "renderer_lod_cache_status": "not_rebuilt"
+}

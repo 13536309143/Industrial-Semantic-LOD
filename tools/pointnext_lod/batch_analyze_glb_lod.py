@@ -106,6 +106,7 @@ def main() -> None:
             [glb_path, args.ckpt, args.cfg, args.classes_file, analyze_script,
              script_dir / "analyze_gltf_parts_pointnext.py",
              script_dir / "checkpoint_loading.py", script_dir / "artifact_cache.py",
+             script_dir / "gltf_hierarchy.py",
              args.pointnext_root / "openpoints"],
             {"num_points": args.num_points, "batch_size": args.batch_size,
              "device": args.device, "seed": 2026, "inference_mode": "mesh"},

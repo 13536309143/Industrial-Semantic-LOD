@@ -1,0 +1,31 @@
+﻿order,node_index,mesh_index,node_name,predicted_class,confidence,shape_hint,face_count,open_label,open_role,open_score,candidate,N,C,N+G,C+G,N+C,N+C+G,full_minus_n,priority_spread
+831,934,793,018分割盘-1/RU80DT-200-1,motors_gearmotors,0.9686660170555115,round_or_cubic,425848,small visual fragment,micro_uncertain,0.0872800275683403,0,10,1,10,6,10,10,0,9
+101,104,83,018-A冲切-1/B6003ZZ-1,bearings_bushings_guides,0.6383963823318481,irregular,119458,spacer sleeve,repeated_fastener,0.05423270910978317,1,10,1,10,6,10,10,0,9
+102,105,84,018-A冲切-1/B6003ZZ-2,bearings_bushings_guides,0.5639052987098694,irregular,119458,spacer sleeve,repeated_fastener,0.0519903190433979,1,10,1,10,6,10,10,0,9
+1561,1740,1441,料架^018金属B冲切-1/B6003ZZ-1,bearings_bushings_guides,0.46672993898391724,irregular,119458,plain disc,ordinary_low_detail,0.07114241272211075,1,10,1,10,6,10,10,0,9
+1128,1278,1024,018产品固定机构-1/深沟球轴承60000型[GBT276-2013][617-3]-4,bearings_bushings_guides,0.7396448254585266,round_or_cubic,52164,slotted castle nut,repeated_fastener,0.05072101205587387,0,10,1,10,6,10,10,0,9
+1131,1281,1027,018产品固定机构-1/深沟球轴承60000型[GBT276-2013][617-3]-1,bearings_bushings_guides,0.7697184085845947,round_or_cubic,52164,slotted castle nut,repeated_fastener,0.04996485635638237,0,10,1,10,6,10,10,0,9
+1132,1282,1028,018产品固定机构-1/深沟球轴承60000型[GBT276-2013][617-3]-3,bearings_bushings_guides,0.728233814239502,round_or_cubic,52164,slotted castle nut,repeated_fastener,0.05291985347867012,0,10,1,10,6,10,10,0,9
+1133,1283,1029,018产品固定机构-1/深沟球轴承60000型[GBT276-2013][617-3]-2,bearings_bushings_guides,0.7528068423271179,round_or_cubic,52164,slotted castle nut,repeated_fastener,0.05229470133781433,0,10,1,10,6,10,10,0,9
+1621,1809,1501,018摸具上夹爪总成-1/018-变距上夹爪-1/弹簧直径5-5,springs,0.9896559715270996,irregular,51756,tiny cap or plug,micro_uncertain,0.08177360892295837,0,10,1,10,1,10,10,0,9
+1624,1812,1501,018摸具上夹爪总成-1/018-变距上夹爪-1/弹簧直径5-3,springs,0.9960007071495056,irregular,51756,tiny cap or plug,micro_uncertain,0.08828382939100266,0,10,1,10,1,10,10,0,9
+1631,1819,1510,018摸具上夹爪总成-1/018-变距上夹爪-1/弹簧直径5-4,springs,0.9919711351394653,irregular,51756,tiny cap or plug,micro_uncertain,0.08321309089660645,0,10,1,10,1,10,10,0,9
+1666,1854,1544,018摸具上夹爪总成-1/018-变距上夹爪-1/弹簧直径5-2,springs,0.9919384121894836,irregular,51756,tiny cap or plug,micro_uncertain,0.08632863312959671,0,10,1,10,1,10,10,0,9
+111,114,93,018-A冲切-1/LMU10.1-1,bearings_bushings_guides,0.8637157678604126,round_or_cubic,48828,small visual fragment,micro_uncertain,0.05030461773276329,0,10,1,10,6,10,10,0,9
+130,135,110,018-A冲切-1/LMU10.1-3,bearings_bushings_guides,0.8711501359939575,round_or_cubic,48828,small visual fragment,micro_uncertain,0.048184312880039215,0,10,1,10,6,10,10,0,9
+131,136,111,018-A冲切-1/LMU10.1-4,bearings_bushings_guides,0.8705493211746216,round_or_cubic,48828,small visual fragment,micro_uncertain,0.04818857088685036,0,10,1,10,6,10,10,0,9
+142,149,121,018-A冲切-1/LMU10.1-2,bearings_bushings_guides,0.8728177547454834,round_or_cubic,48828,small visual fragment,micro_uncertain,0.05146046727895737,0,10,1,10,6,10,10,0,9
+1546,1725,1426,料架^018金属B冲切-1/LMU10.1-1,bearings_bushings_guides,0.8530393242835999,round_or_cubic,48828,plain rectangular block,ordinary_low_detail,0.057252831757068634,0,10,1,10,6,10,10,0,9
+1560,1739,1440,料架^018金属B冲切-1/LMU10.1-2,bearings_bushings_guides,0.8815757632255554,round_or_cubic,48828,plain rectangular block,ordinary_low_detail,0.05888068675994873,0,10,1,10,6,10,10,0,9
+1568,1747,1448,料架^018金属B冲切-1/LMU10.1-4,bearings_bushings_guides,0.8704317212104797,round_or_cubic,48828,plain rectangular block,ordinary_low_detail,0.06057898700237274,0,10,1,10,6,10,10,0,9
+1569,1748,1449,料架^018金属B冲切-1/LMU10.1-3,bearings_bushings_guides,0.8720749020576477,round_or_cubic,48828,plain rectangular block,ordinary_low_detail,0.06120013818144798,0,10,1,10,6,10,10,0,9
+1611,1797,1491,TKB1600-03-1,motors_gearmotors,0.9556414484977722,compact_block,41662,small visual fragment,micro_uncertain,0.0766463652253151,0,10,1,10,6,10,10,0,9
+1451,1622,1333,摸具-1/弹簧10X35-2,springs,0.9767332673072815,irregular,37538,spacer sleeve,repeated_fastener,0.04368625953793526,0,10,1,10,6,10,10,0,9
+1452,1623,1334,摸具-1/弹簧10X35-1,springs,0.9928104281425476,irregular,37538,spacer sleeve,repeated_fastener,0.045811936259269714,0,10,1,10,6,10,10,0,9
+1453,1624,1335,摸具-1/弹簧10X35-3,springs,0.957254946231842,irregular,37538,spacer sleeve,repeated_fastener,0.04767307639122009,0,10,1,10,6,10,10,0,9
+1454,1625,1336,摸具-1/弹簧10X35-4,springs,0.9767246246337891,irregular,37538,spacer sleeve,repeated_fastener,0.04660075530409813,0,10,1,10,6,10,10,0,9
+212,225,191,018-A冲切-1/摸具总装1-1/弹簧-2,springs,0.9779321551322937,irregular,36132,spacer sleeve,repeated_fastener,0.04093226045370102,0,10,1,10,6,10,10,0,9
+216,230,195,018-A冲切-1/摸具总装1-1/弹簧-3,springs,0.9690760374069214,irregular,36132,spacer sleeve,repeated_fastener,0.041324809193611145,0,10,1,10,6,10,10,0,9
+223,239,202,018-A冲切-1/摸具总装1-1/弹簧-1,springs,0.9798675775527954,irregular,36132,spacer sleeve,repeated_fastener,0.039754852652549744,0,10,1,10,6,10,10,0,9
+227,244,206,018-A冲切-1/摸具总装1-1/弹簧-4,springs,0.9761983156204224,irregular,36132,spacer sleeve,repeated_fastener,0.04124201089143753,0,10,1,10,6,10,10,0,9
+1455,1626,1337,摸具-1/21e8-510-9348-LAYOUT-1,rotating_fluid_machinery,0.40351518988609314,flat_plate,17112,cylindrical pin,repeated_fastener,0.046834610402584076,1,10,1,10,6,10,10,0,9

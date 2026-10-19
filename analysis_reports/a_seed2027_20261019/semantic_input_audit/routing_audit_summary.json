@@ -1,0 +1,80 @@
+{
+  "schema": 1,
+  "scene_diagonal": 4.389231357150927,
+  "rows": 1778,
+  "source_triangles": 5469879,
+  "bins": [
+    {
+      "relative_size_min_exclusive": 0,
+      "relative_size_max_inclusive": 0.005,
+      "count": 101,
+      "record_percent": 5.680539932508436,
+      "triangle_percent": 0.8571670415378475,
+      "mean_pointnext_confidence": 0.5590637391156489,
+      "accepted_percent": 26.73267326732673,
+      "usable_open_percent": 29.702970297029704
+    },
+    {
+      "relative_size_min_exclusive": 0.005,
+      "relative_size_max_inclusive": 0.01,
+      "count": 205,
+      "record_percent": 11.529808773903262,
+      "triangle_percent": 8.831383655835896,
+      "mean_pointnext_confidence": 0.6477526367437548,
+      "accepted_percent": 52.19512195121951,
+      "usable_open_percent": 20.975609756097562
+    },
+    {
+      "relative_size_min_exclusive": 0.01,
+      "relative_size_max_inclusive": 0.02,
+      "count": 501,
+      "record_percent": 28.177727784026995,
+      "triangle_percent": 11.201344673255113,
+      "mean_pointnext_confidence": 0.6282985274960657,
+      "accepted_percent": 44.510978043912175,
+      "usable_open_percent": 21.157684630738522
+    },
+    {
+      "relative_size_min_exclusive": 0.02,
+      "relative_size_max_inclusive": 0.1,
+      "count": 624,
+      "record_percent": 35.09561304836895,
+      "triangle_percent": 64.75797727883926,
+      "mean_pointnext_confidence": 0.5491196476639464,
+      "accepted_percent": 34.13461538461539,
+      "usable_open_percent": 10.897435897435898
+    },
+    {
+      "relative_size_min_exclusive": 0.1,
+      "relative_size_max_inclusive": "inf",
+      "count": 347,
+      "record_percent": 19.51631046119235,
+      "triangle_percent": 14.352127350531886,
+      "mean_pointnext_confidence": 0.5178527552044013,
+      "accepted_percent": 20.7492795389049,
+      "usable_open_percent": 5.187319884726225
+    }
+  ],
+  "routing_counts": {
+    "global_plus_local_multiscale": 392,
+    "open_coarse_then_fine_or_abstain": 762,
+    "known_part_evidence": 523,
+    "small_with_context": 99,
+    "small_with_critical_evidence": 2
+  },
+  "visibility_unmeasured": true,
+  "geometry_removed": 0,
+  "production_policies_modified": false,
+  "accuracy_measured": false,
+  "settings": {
+    "small_ratio": 0.005,
+    "large_ratio": 0.1,
+    "complex_faces": 10000
+  },
+  "threshold_scope": "Scheduling preview only, not calibrated semantic or deletion criteria.",
+  "inputs_sha256": {
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\a_seed2027_20261019\\a_pointnext_analysis.csv": "fa6365f4bd63b16144b837c0a57f1e56b8f843794cad3145e24b7fbbc1076246",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\a_seed2027_20261019\\a_pointclipv2_full.csv": "3baf9ccd9b41cf63073c613daf1925b7252b8b712d2b03ebda54362c52942478"
+  },
+  "source_sha256": "cf1a9434b09fe781df41fadea26399794c7881bd08635796042f6a4daab80e3d"
+}

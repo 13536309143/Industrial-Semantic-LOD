@@ -1,0 +1,166 @@
+{
+  "scene": "E:\\vk_lod_clusters1\\t1\\_downloaded_resources\\手机喇叭检测线.glb",
+  "glb_sha256": "0b9a5597b267f63edde781b2dfad3019fb20b4ee75d0ebf3ff708c4b2fc24d7b",
+  "nodes": 1285,
+  "mesh_nodes": 1167,
+  "unique_meshes": 1072,
+  "referenced_meshes": 1072,
+  "assembly_nodes": 118,
+  "max_depth": 5,
+  "active_mesh_nodes": 1167,
+  "unique_mesh_triangles": 1609544,
+  "instance_triangles": 1723934,
+  "mesh_reference_reuse_savings": 95,
+  "duplicate_node_names": {},
+  "chinese_leaf_names": 695,
+  "name_evidence_status_counts": {
+    "code_or_generic_name": 472,
+    "weak_lexical_hint": 250,
+    "unmapped_descriptive_name": 445
+  },
+  "name_candidate_role_counts": {
+    "unmapped": 917,
+    "mount_or_support": 133,
+    "fluid_or_vacuum": 9,
+    "sensing_or_inspection": 2,
+    "pneumatic_or_linear_actuator": 8,
+    "bearing_or_linear_guide": 34,
+    "frame_or_structure": 32,
+    "transmission": 4,
+    "fastener": 20,
+    "motor_or_reducer": 2,
+    "enclosure": 6
+  },
+  "with_ancestor_lexical_context": 433,
+  "with_nonroot_process_context": 815,
+  "world_differs_from_local": 1167,
+  "inherited_nonuniform_scale": 0,
+  "inherited_rotation_or_reflection": 1167,
+  "alpha_blend_mesh_nodes": 26,
+  "first_primitive_alpha_blend_nodes": 23,
+  "neural_rows_joined": 1167,
+  "open_rows_joined": 1167,
+  "ground_truth_available": false,
+  "visibility_measured": false,
+  "scope": "Name hints are weak metadata evidence, not accuracy labels or deletion criteria.",
+  "source_sha256": "b3facc7bd74c76337e05f8b8cdcbb9f85d6280c7065cf5dd678a56be05ea27ff",
+  "rules": [
+    [
+      "environment",
+      "地面|地板|floor|ground"
+    ],
+    [
+      "mount_or_support",
+      "支架|安装板|固定板|固定座|固定件|固定块|底板|垫板|支撑|支座|安装上板|安装垫块|安装件|(?:马达|电机|气缸|滑台|CCD|光源).*(?:板|座|斜撑|垫块|固定块)"
+    ],
+    [
+      "sensing_or_inspection",
+      "传感器|光电|相机|镜头|光源|CCD|温控表|检测器"
+    ],
+    [
+      "motor_or_reducer",
+      "电机|马达|减速机|减速器"
+    ],
+    [
+      "pneumatic_or_linear_actuator",
+      "气缸|电缸|滑台"
+    ],
+    [
+      "bearing_or_linear_guide",
+      "轴承|导轨|滑块|导套|导柱"
+    ],
+    [
+      "transmission",
+      "齿轮|同步轮|皮带轮|链轮|丝杆|丝杠|同步带|齿条"
+    ],
+    [
+      "fastener",
+      "螺钉|螺栓|螺母|垫圈|挡圈|卡簧"
+    ],
+    [
+      "spring",
+      "弹簧"
+    ],
+    [
+      "fluid_or_vacuum",
+      "接头|气管|气嘴|吸盘|真空|气阀|电磁阀"
+    ],
+    [
+      "tooling_or_process",
+      "夹爪|夹具|治具|冲头|折弯|冲切|模具|植入"
+    ],
+    [
+      "frame_or_structure",
+      "铝型材|型材|机架|立柱|横梁|框架|底座"
+    ],
+    [
+      "enclosure",
+      "防护罩|防护门|门板|外壳|盖板|盒盖|护罩"
+    ],
+    [
+      "product_or_workpiece",
+      "产品|喇叭|连接器|链接器|透气阀"
+    ]
+  ],
+  "world_scene_diagonal": 3.821891553355242,
+  "world_scene_bbox_min": [
+    -1.133651852607727,
+    -1.06618332862854,
+    -1.2199651002883911
+  ],
+  "world_scene_bbox_max": [
+    1.2645902633666992,
+    0.9584845900535583,
+    0.9608626365661621
+  ],
+  "local_process_scale_rows": 815,
+  "global_le_1pct_but_local_ge_10pct": 0,
+  "size_bins": [
+    {
+      "min_exclusive": 0,
+      "max_inclusive": 0.005,
+      "count": 125,
+      "record_percent": 10.711225364181663,
+      "triangle_percent": 4.30190482930321,
+      "mean_supervised_confidence": 0.6650573909282684
+    },
+    {
+      "min_exclusive": 0.005,
+      "max_inclusive": 0.01,
+      "count": 70,
+      "record_percent": 5.998286203941731,
+      "triangle_percent": 4.42476336101034,
+      "mean_supervised_confidence": 0.6437915361353329
+    },
+    {
+      "min_exclusive": 0.01,
+      "max_inclusive": 0.02,
+      "count": 301,
+      "record_percent": 25.792630676949443,
+      "triangle_percent": 18.129348339321574,
+      "mean_supervised_confidence": 0.5274520398572434
+    },
+    {
+      "min_exclusive": 0.02,
+      "max_inclusive": 0.1,
+      "count": 404,
+      "record_percent": 34.61868037703513,
+      "triangle_percent": 38.299378050435806,
+      "mean_supervised_confidence": 0.5987103368607488
+    },
+    {
+      "min_exclusive": 0.1,
+      "max_inclusive": "inf",
+      "count": 267,
+      "record_percent": 22.87917737789203,
+      "triangle_percent": 34.84460541992907,
+      "mean_supervised_confidence": 0.5303128694885233
+    }
+  ],
+  "neural_inputs_sha256": {
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\named_scenes_seed2027_20261019\\手机喇叭检测线\\手机喇叭检测线_pointnext_analysis.csv": "24a3516b1f7b83fc8a2aecbb92ab94d8282da9e5a9015e801f87f5b334fb0881",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\named_scenes_seed2027_20261019\\手机喇叭检测线\\手机喇叭检测线_pointclipv2_full.csv": "45392200bc6437072658ac6875e1be8ec4ca9e91bd19fb600cb66bcbe536091c"
+  },
+  "repeated_mesh_groups": 36,
+  "repeated_mesh_groups_with_class_disagreement": 17
+}

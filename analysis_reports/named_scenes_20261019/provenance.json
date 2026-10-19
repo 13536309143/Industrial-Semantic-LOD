@@ -1,0 +1,36 @@
+{
+  "inputs_sha256": {
+    "E:\\vk_lod_clusters1\\t1\\analysis_reports\\named_scenes_20261019\\手机喇叭检测线\\hierarchy_summary.json": "e3fa3cc3ad181ee61fc9a87e7606db0951645336121099a4357cfaad1358e0a5",
+    "E:\\vk_lod_clusters1\\t1\\analysis_reports\\named_scenes_20261019\\手机喇叭检测线\\mesh_name_context_audit.csv": "d50bcd54c98f05bcb14191648fef1b681863901d42c9be6075e605f3a2e1a35b",
+    "E:\\vk_lod_clusters1\\t1\\analysis_reports\\named_scenes_20261019\\手机喇叭检测线\\semantic_comparison\\analysis_summary.json": "9be2088f9bb2b0fe7301b1fc68bbab697188b39eab0a52ba491f0e5723e921b8",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\named_scenes_seed2027_20261019\\手机喇叭检测线\\experiment_status.json": "580d292645e4ae1f644bdbba6edfe0e925b65790b0eece091f986e6f57d09b62",
+    "E:\\vk_lod_clusters1\\t1\\analysis_reports\\named_scenes_20261019\\透气阀产线\\hierarchy_summary.json": "b37bfebe341e19fccda107733425e09a65d0e6d4699969ee3e35e020dca99946",
+    "E:\\vk_lod_clusters1\\t1\\analysis_reports\\named_scenes_20261019\\透气阀产线\\mesh_name_context_audit.csv": "b008a3fe1dbddbb9b00bce08a1be3720b3c33922b11b9cf83c7e5915a9e85bd1",
+    "E:\\vk_lod_clusters1\\t1\\analysis_reports\\named_scenes_20261019\\透气阀产线\\semantic_comparison\\analysis_summary.json": "3a21607f0386bf4871c76cbbf8fadf729f4ffad0573e5c2f510fdab5e4bd6147",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\named_scenes_seed2027_20261019\\透气阀产线\\experiment_status.json": "fb205c6676c7fec8f2e6fa0cfa7641ec5834bd5243495162b73077a5ecd2b7b9",
+    "E:\\vk_lod_clusters1\\t1\\analysis_reports\\named_scenes_20261019\\汽车链接器植入-折弯设备\\hierarchy_summary.json": "3e3673b015a11ed7a9a435177393c3481b2bc11be8aadc50afd582221e101e40",
+    "E:\\vk_lod_clusters1\\t1\\analysis_reports\\named_scenes_20261019\\汽车链接器植入-折弯设备\\mesh_name_context_audit.csv": "e9cd515a154e403dc21a37eaa78cbf05811703ffb4a647296c0f48890c6a9ae4",
+    "E:\\vk_lod_clusters1\\t1\\analysis_reports\\named_scenes_20261019\\汽车链接器植入-折弯设备\\semantic_comparison\\analysis_summary.json": "1f6ff9c8f4da0fa14b6dd8369ea4ed4d1e57b077111f0596a0666bbf45477f2d",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\named_scenes_seed2027_20261019\\汽车链接器植入-折弯设备\\experiment_status.json": "2345bc9bc0ad56f8ee2dc62d27738b4f989eb6a1195e2726befb10a3f3e76579"
+  },
+  "source_sha256": {
+    "E:\\vk_lod_clusters1\\t1\\tools\\pointclipv2\\summarize_named_scenes.py": "7b6c55a273a9997474b8c7c4383cf7f18611aab515d19e93c4c39ce7f233213b",
+    "E:\\vk_lod_clusters1\\t1\\tools\\pointclipv2\\audit_named_scene.py": "b3facc7bd74c76337e05f8b8cdcbb9f85d6280c7065cf5dd678a56be05ea27ff",
+    "E:\\vk_lod_clusters1\\t1\\tools\\pointnext_lod\\gltf_hierarchy.py": "0d5ac493da2bb77ed29a80c12b9e268ab21e406e13015d9abb0dc0b7992afa0a"
+  },
+  "outputs_sha256": {
+    "E:\\vk_lod_clusters1\\t1\\analysis_reports\\named_scenes_20261019\\三场景名称层级与语义分析.md": "91555e42f1419e145e166c95246abed0e4e015079ce3a5112d242f2718e33854",
+    "E:\\vk_lod_clusters1\\t1\\analysis_reports\\named_scenes_20261019\\three_scene_summary.csv": "efda5d8ca505c41f0461c22d255a708c83babecf770f7030117d0fa0a9b77480",
+    "E:\\vk_lod_clusters1\\t1\\analysis_reports\\named_scenes_20261019\\three_scene_summary.json": "97cf6a328421ae4eec90805eca450c9f19c102f03d03277675aa8966e92a9423",
+    "E:\\vk_lod_clusters1\\t1\\analysis_reports\\named_scenes_20261019\\name_semantic_review.csv": "446683647c2aa44f8d6fa712087e826fe84e4828363b54a78f1529a145d5f0b2"
+  },
+  "scenes": [
+    "手机喇叭检测线",
+    "透气阀产线",
+    "汽车链接器植入-折弯设备"
+  ],
+  "all_mesh_nodes_preserved": true,
+  "neural_inference_used_name_metadata": false,
+  "ground_truth_accuracy_measured": false,
+  "production_fusion_modified": false
+}

@@ -1,0 +1,232 @@
+{
+  "scene": "E:\\vk_lod_clusters1\\t1\\_downloaded_resources\\汽车链接器植入-折弯设备.glb",
+  "glb_sha256": "37601be98bca99de52c7e67e51877ba58a2e2077ef4e74c431a3e0222cd60ef3",
+  "nodes": 1947,
+  "mesh_nodes": 1747,
+  "unique_meshes": 1613,
+  "referenced_meshes": 1613,
+  "assembly_nodes": 198,
+  "max_depth": 6,
+  "active_mesh_nodes": 1747,
+  "unique_mesh_triangles": 11327715,
+  "instance_triangles": 11760345,
+  "mesh_reference_reuse_savings": 134,
+  "duplicate_node_names": {
+    "STH030-600简易模型-1/600FJ-3-1": 2,
+    "STH030-600简易模型-1/600FJ-2-1": 2,
+    "STH030-600简易模型-1/JX22-018-A105-2": 2,
+    "STH030-600简易模型-1/600FJ-1-1": 2,
+    "STH030-600简易模型-1/2205-A101-1": 2,
+    "STH030-600简易模型-1/JX22-018-A105-1": 2,
+    "显示器-1/4080-1000-1": 2,
+    "显示器-1/4080-200-1": 2,
+    "显示器-1/G037-C-4080_X2_89D24EF6_X0_-1": 2,
+    "显示器-1/G037-C-4080_X2_89D24EF6_X0_-2": 2,
+    "显示器-1/17_X2_5BF8_X0_.STEP-1/17_S_4_S_g-1": 2,
+    "显示器-1/mk245nano_X2_952E76D8_X0_-1": 2,
+    "显示器-1/JX22-018-D84-1": 2,
+    "显示器-1/JX22-018-D83-1": 2,
+    "人机架-1/_X2_680751C64EBA673A76D2_X0_-1/_X2_4EBA673A_X0__1-1": 2,
+    "人机架-1/_X2_680751C64EBA673A76D2_X0_-1/_X2_630994AE_X0_22G_1-1": 2,
+    "人机架-1/_X2_680751C64EBA673A76D2_X0_-1/_X2_6025505C_X0___X2_630994AE_X0_22R_1-1": 2,
+    "人机架-1/_X2_680751C64EBA673A76D2_X0_-1/_X2_4EBA673A_X0_-1/__192X138-4XD22A-1/__192X138-4XD22A-1": 2,
+    "人机架-1/_X2_680751C64EBA673A76D2_X0_-1/_X2_4EBA673A_X0_-1/280____-1/280____-1": 2,
+    "人机架-1/_X2_680751C64EBA673A76D2_X0_-1/_X2_4EBA673A_X0_-1/PRODUCT_1976-1/PRODUCT_1976-1": 2,
+    "人机架-1/_X2_680751C64EBA673A76D2_X0_-1/_X2_4EBA673A_X0_-1/PRODUCT_839.1-1/PRODUCT_839-1": 2,
+    "人机架-1/_X2_680751C64EBA673A76D2_X0_-1/_X2_4EBA673A_X0_-1/PRODUCT_1976.1-1/PRODUCT_1976-1": 2,
+    "人机架-1/_X2_680751C64EBA673A76D2_X0_-1/_X2_4EBA673A_X0_-1/PRODUCT_839-1/PRODUCT_839-1": 2,
+    "人机架-1/_X2_680751C64EBA673A76D2_X0_-1/_X2_4EBA673A_X0_-1/_X2_57064EF6_X0_-001-1/_X2_57064EF6_X0_-001-1": 2,
+    "人机架-1/_X2_680751C64EBA673A76D2_X0_-1/_X2_630994AE_X0_22R_1.1-1": 2,
+    "人机架-1/_X2_680751C64EBA673A76D2_X0_-1/_X2_630994AE_X0_22G_1.1-1": 2,
+    "KK86-440A1-F0C S2 M400-1/KK86-BLOCK-A1_24_1_1-1": 2,
+    "KK86-440A1-F0C S2 M400-1/AC400W-1/FRONT_COVER19-1": 2,
+    "KK86-440A1-F0C S2 M400-1/AC400W-1/PRT023-1": 2,
+    "KK86-440A1-F0C S2 M400-1/AC400W-1/FRONT_COVER18-1": 2,
+    "KK86-440A1-F0C S2 M400-1/AC400W-1/PRT021-1": 2,
+    "KK86-440A1-F0C S2 M400-1/AC400W-1/FRONT_COVER17-1": 2,
+    "KK86-440A1-F0C S2 M400-1/AC400W-1/PRT019-1": 2,
+    "KK86-440A1-F0C S2 M400-1/AC400W-1/PRT024-1": 2,
+    "KK86-440A1-F0C S2 M400-1/AC400W-1/PRT025-1": 2,
+    "KK86-440A1-F0C S2 M400-1/KK86-RAIL_48_1-1": 2,
+    "KK86-440A1-F0C S2 M400-1/440光+线_1-1/440-1": 2,
+    "KK86-440A1-F0C S2 M400-1/440光+线_1-1/光电开关-2": 2,
+    "KK86-440A1-F0C S2 M400-1/440光+线_1-1/光电开关-1": 2,
+    "KK86-440A1-F0C S2 M400-1/440光+线_1-1/光电开关-3": 2,
+    "G037-C-4080_X2_89D24EF6_X0_-1": 2,
+    "G037-C-4080_X2_89D24EF6_X0_-2": 2,
+    "产品01-1": 2,
+    "_GCPSLK39-8-14_b-1": 3,
+    "_BOLT4-12-1": 3,
+    "_BOLT4-12-2": 3,
+    "018端子B抓取机构-1/JX22-018-D65-2": 2,
+    "018端子B抓取机构-1/MD6x5S_5_+_CMSG-2_-1/_CMSG_GN_11-1": 2,
+    "018端子B抓取机构-1/MD6x5S_5_+_CMSG-2_-1/_MD 6x5-S5 - Body-1": 2,
+    "018端子B抓取机构-1/MD6x5S_5_+_CMSG-2_-1/_CMSG_GN_11-2": 2,
+    "018端子B抓取机构-1/MD6x5S_5_+_CMSG-2_-1/_MD 6x5 - Nut Rod-2": 2,
+    "018端子B抓取机构-1/MD6x5S_5_+_CMSG-2_-1/_MD 6x5-S5 - Rod-1": 2,
+    "018端子B抓取机构-1/JX22-018-D67-1": 2,
+    "018端子B抓取机构-1/JX22-018-D65-1": 2,
+    "018端子B抓取机构-1/JX22-018-D69-1": 2,
+    "018端子B抓取机构-1/JX22-018-D68-1": 2,
+    "018端子B抓取机构-1/JX22-018-D66-1": 2,
+    "018端子B抓取机构-1/JX22-018-D67-2": 2
+  },
+  "chinese_leaf_names": 392,
+  "name_evidence_status_counts": {
+    "weak_lexical_hint": 216,
+    "code_or_generic_name": 1355,
+    "unmapped_descriptive_name": 176
+  },
+  "name_candidate_role_counts": {
+    "environment": 1,
+    "unmapped": 1531,
+    "tooling_or_process": 6,
+    "product_or_workpiece": 40,
+    "sensing_or_inspection": 15,
+    "spring": 12,
+    "fastener": 108,
+    "fluid_or_vacuum": 16,
+    "frame_or_structure": 2,
+    "mount_or_support": 1,
+    "enclosure": 9,
+    "transmission": 2,
+    "bearing_or_linear_guide": 4
+  },
+  "with_ancestor_lexical_context": 1747,
+  "with_nonroot_process_context": 1333,
+  "world_differs_from_local": 1723,
+  "inherited_nonuniform_scale": 0,
+  "inherited_rotation_or_reflection": 1379,
+  "alpha_blend_mesh_nodes": 11,
+  "first_primitive_alpha_blend_nodes": 11,
+  "neural_rows_joined": 1747,
+  "open_rows_joined": 1747,
+  "ground_truth_available": false,
+  "visibility_measured": false,
+  "scope": "Name hints are weak metadata evidence, not accuracy labels or deletion criteria.",
+  "source_sha256": "b3facc7bd74c76337e05f8b8cdcbb9f85d6280c7065cf5dd678a56be05ea27ff",
+  "rules": [
+    [
+      "environment",
+      "地面|地板|floor|ground"
+    ],
+    [
+      "mount_or_support",
+      "支架|安装板|固定板|固定座|固定件|固定块|底板|垫板|支撑|支座|安装上板|安装垫块|安装件|(?:马达|电机|气缸|滑台|CCD|光源).*(?:板|座|斜撑|垫块|固定块)"
+    ],
+    [
+      "sensing_or_inspection",
+      "传感器|光电|相机|镜头|光源|CCD|温控表|检测器"
+    ],
+    [
+      "motor_or_reducer",
+      "电机|马达|减速机|减速器"
+    ],
+    [
+      "pneumatic_or_linear_actuator",
+      "气缸|电缸|滑台"
+    ],
+    [
+      "bearing_or_linear_guide",
+      "轴承|导轨|滑块|导套|导柱"
+    ],
+    [
+      "transmission",
+      "齿轮|同步轮|皮带轮|链轮|丝杆|丝杠|同步带|齿条"
+    ],
+    [
+      "fastener",
+      "螺钉|螺栓|螺母|垫圈|挡圈|卡簧"
+    ],
+    [
+      "spring",
+      "弹簧"
+    ],
+    [
+      "fluid_or_vacuum",
+      "接头|气管|气嘴|吸盘|真空|气阀|电磁阀"
+    ],
+    [
+      "tooling_or_process",
+      "夹爪|夹具|治具|冲头|折弯|冲切|模具|植入"
+    ],
+    [
+      "frame_or_structure",
+      "铝型材|型材|机架|立柱|横梁|框架|底座"
+    ],
+    [
+      "enclosure",
+      "防护罩|防护门|门板|外壳|盖板|盒盖|护罩"
+    ],
+    [
+      "product_or_workpiece",
+      "产品|喇叭|连接器|链接器|透气阀"
+    ]
+  ],
+  "world_scene_diagonal": 6.939270663484501,
+  "world_scene_bbox_min": [
+    -2.5799999237060547,
+    -1.8133413791656494,
+    0.29923489689826965
+  ],
+  "world_scene_bbox_max": [
+    3.097215175628662,
+    1.5216586589813232,
+    2.490234851837158
+  ],
+  "local_process_scale_rows": 1333,
+  "global_le_1pct_but_local_ge_10pct": 83,
+  "equipment_bbox_diagonal_excluding_named_environment": 6.939029124635324,
+  "named_environment_node_indices": [
+    2
+  ],
+  "environment_scope": "Alternative scale reference only; no geometry removed or visibility inferred.",
+  "size_bins": [
+    {
+      "min_exclusive": 0,
+      "max_inclusive": 0.005,
+      "count": 355,
+      "record_percent": 20.32054951345163,
+      "triangle_percent": 11.201797226186816,
+      "mean_supervised_confidence": 0.5955387114639014
+    },
+    {
+      "min_exclusive": 0.005,
+      "max_inclusive": 0.01,
+      "count": 566,
+      "record_percent": 32.398397252432744,
+      "triangle_percent": 29.060320934462382,
+      "mean_supervised_confidence": 0.5939924530816584
+    },
+    {
+      "min_exclusive": 0.01,
+      "max_inclusive": 0.02,
+      "count": 408,
+      "record_percent": 23.35432169433314,
+      "triangle_percent": 11.71190130901772,
+      "mean_supervised_confidence": 0.5455934386700392
+    },
+    {
+      "min_exclusive": 0.02,
+      "max_inclusive": 0.1,
+      "count": 357,
+      "record_percent": 20.4350314825415,
+      "triangle_percent": 44.524289040840216,
+      "mean_supervised_confidence": 0.5627331890645815
+    },
+    {
+      "min_exclusive": 0.1,
+      "max_inclusive": "inf",
+      "count": 61,
+      "record_percent": 3.4917000572409846,
+      "triangle_percent": 3.5016914894928677,
+      "mean_supervised_confidence": 0.6813654022627189
+    }
+  ],
+  "neural_inputs_sha256": {
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\named_scenes_seed2027_20261019\\汽车链接器植入-折弯设备\\汽车链接器植入-折弯设备_pointnext_analysis.csv": "5ccce387ddc89ff14861c8db9752388aab616f062e10b325c320289f75350865",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\named_scenes_seed2027_20261019\\汽车链接器植入-折弯设备\\汽车链接器植入-折弯设备_pointclipv2_full.csv": "f35afa285460a766bc030b0ce2863b6c78a04aba576d39476f455e0fa0475aa3"
+  },
+  "repeated_mesh_groups": 40,
+  "repeated_mesh_groups_with_class_disagreement": 9
+}

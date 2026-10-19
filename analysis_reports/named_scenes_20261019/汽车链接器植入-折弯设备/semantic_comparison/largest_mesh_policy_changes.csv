@@ -1,0 +1,11 @@
+﻿order,node_index,mesh_index,node_name,predicted_class,confidence,shape_hint,face_count,open_label,open_role,open_score,candidate,N,C,N+G,C+G,N+C,N+C+G,full_minus_n,priority_spread
+1354,1513,1250,注塑机摸具-1,rotating_fluid_machinery,0.3939768075942993,round_or_cubic,425698,plain rectangular block,ordinary_low_detail,0.14478778839111328,1,1,4,6,4,4,6,5,5
+1358,1517,1254,注塑机摸具-3,rotating_fluid_machinery,0.3131049573421478,round_or_cubic,425698,plain rectangular block,ordinary_low_detail,0.13089920580387115,1,1,4,6,4,4,6,5,5
+250,270,228,STH030-600简易模型-1/600FJ-3-1,handles_controls,0.5965737104415894,irregular,298406,small visual fragment,micro_uncertain,0.056335121393203735,1,8,1,6,6,8,6,-2,7
+1022,1150,918,STH030-600简易模型-1/600FJ-3-1,handles_controls,0.5883022546768188,irregular,298406,small visual fragment,micro_uncertain,0.05739198252558708,1,8,1,6,6,8,6,-2,7
+1028,1157,924,STH030-600简易模型-2/600FJ-3-1,handles_controls,0.7026220560073853,irregular,298406,small visual fragment,micro_uncertain,0.05933992564678192,0,8,1,6,6,8,6,-2,7
+107,110,89,018-A冲切-1/B6005ZZ.1-2,bearings_bushings_guides,0.2474900484085083,irregular,265514,seal gasket interface,interface_fluid,0.07978271692991257,1,1,7,6,6,7,6,5,6
+108,111,90,018-A冲切-1/B6005ZZ.1-1,bearings_bushings_guides,0.27690401673316956,irregular,265514,seal gasket interface,interface_fluid,0.08167067915201187,1,1,7,6,6,7,6,5,6
+1557,1736,1437,料架^018金属B冲切-1/B6005ZZ.1-1,bearings_bushings_guides,0.20519724488258362,irregular,265514,plain disc,ordinary_low_detail,0.07059582322835922,1,1,1,6,6,1,6,5,5
+1565,1744,1445,料架^018金属B冲切-1/B6005ZZ.1-2,bearings_bushings_guides,0.3037189543247223,irregular,265514,plain disc,ordinary_low_detail,0.06871422380208969,1,1,1,6,6,1,6,5,5
+1032,1161,928,STH030-600简易模型-2/600FJ-1-1,handles_controls,0.5991652011871338,irregular,126746,plain rectangular block,ordinary_low_detail,0.06282483786344528,1,8,1,6,6,8,6,-2,7

@@ -1,0 +1,18 @@
+{
+  "inputs": {
+    "E:\\vk_lod_clusters1\\t1\\_downloaded_resources\\汽车链接器植入-折弯设备.glb": "dde06a4a6c8d67374c3a8574b60f4815ef724451b3c62df36bae6417b1212dff",
+    "E:\\vk_lod_clusters1\\t1\\models\\pointnext\\industrial-part-14class-best.pth": "238ed37c8af354ea5bb6532f371ef6003d8fb43e0d6124f44363c55b66ea0493",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\four_scenes_seed2027_20261019\\汽车链接器植入-折弯设备\\汽车链接器植入-折弯设备_pointnext_analysis.csv": "a3562bf4509650fa29c613b906b7d0e17307f31cb638b8fc41fa6799a0ca1f9a",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\four_scenes_seed2027_20261019\\汽车链接器植入-折弯设备\\汽车链接器植入-折弯设备_pointclipv2_full.csv": "a6061a9443da04e936611b21bd45df8de22a47936b2dd65a67bcb5a7a0bc19ed",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\four_scenes_seed2027_20261019\\汽车链接器植入-折弯设备\\汽车链接器植入-折弯设备_pointclipv2_candidates.csv": "3e0bffa21ba5a5c0778f559169b9e8ce9ab90aa2447a5911e7e65a4fbb9ed484",
+    "E:\\vk_lod_clusters1\\t1\\tools\\pointclipv2\\analyze_scene_semantics.py": "5197d6d8e961a6856a1d438f7f01ecceff592d4d88e88a9ae83371538778ab55",
+    "E:\\vk_lod_clusters1\\t1\\tools\\pointclipv2\\independent_structure.py": "687db74e991fdd8c98a4cdad6ebb2d537d249a943914c35e59c31f6942d28bb1",
+    "E:\\vk_lod_clusters1\\t1\\tools\\pointnext_lod\\build_lod_constraints_from_analysis.py": "f7d35d0d908558c646cdaa1dbfaac62c8a513bc234af494f38ab8b2608d972ae"
+  },
+  "raw_run": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\four_scenes_seed2027_20261019\\汽车链接器植入-折弯设备",
+  "full_scene_coverage": true,
+  "six_full_vocab_labels": 110,
+  "gated_production_vocab_labels": 106,
+  "independent_geometry_uncertainty_removed": true,
+  "supervised_parameter_invariance_check_passed": true
+}

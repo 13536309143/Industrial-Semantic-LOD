@@ -113,7 +113,9 @@ Once enabled, loading follows runtime demand rather than manual per-part uploads
 
 The current classifier uses the completed two-seed encoder comparison from `gpt`. The default deployment is PointNeXt-S, seed 2027, epoch 98, selected by validation macro-F1. [Deployment and experiment provenance](experiments/pointnext/encoder-compare-two-seeds-20261019/README.md) · [Checkpoint manifest](models/pointnext/deployment.json)
 
-The five-scene and six-policy tables below are historical observations from the previous deployment. Their raw outputs have been archived; they are not scene results for the new checkpoint. Scene inference, fusion, and LOD caches must be regenerated. [Historical evidence metadata](docs/data/readme-evidence.json)
+The five-scene and six-policy tables below are historical observations from the previous deployment. Their raw outputs have been archived; they are not scene results for the new checkpoint. New-checkpoint full inference, fusion and six-policy comparisons are complete for the current `a.glb` (1,778 meshes): [scene analysis](analysis_reports/a_seed2027_20261019/analysis_report.md). Three additional named production-line scenes now have full inference, six-policy comparisons and a [CAD name/hierarchy audit](analysis_reports/named_scenes_20261019/三场景名称层级与语义分析.md), covering 6,261 mesh nodes. Their readers accumulate parent transforms and distinguish unique meshes from instantiated triangles. Names and hierarchy remain auxiliary audit evidence; neural inference does not consume them yet. Actual LOD/rendering evaluation requires separate runs. [Historical evidence metadata](docs/data/readme-evidence.json)
+
+The latest [four-scene full semantic test and overall assessment](analysis_reports/four_scenes_20261019/四模型全量测试与整体评价.md) adds the K31 riveting machine, covering 7,742 mesh nodes. The re-exported connector machine was inferred again; unchanged speaker/vent scenes reused content-verified neural snapshots with regenerated policies and reports. Historical reports remain intact. Device/process context and both pooled-node and equal-scene summaries are provided; ground-truth accuracy and actual LOD/rendering performance remain unmeasured.
 
 ### 1. Industrial part classification
 
@@ -168,7 +170,7 @@ Adding G to N changes 31.78% of policy assignments; adding candidate-only C to N
 | :--- | :--- |
 | 14-class encoder comparison | Four configurations × two seeds; metrics, histories, per-class outputs and configurations imported |
 | Current PointNeXt-S deployment | Seed 2027, epoch 98; strict state loading and 8,192-point GPU forward check passed |
-| New-checkpoint scene inference and fusion | Pending batch execution; previous outputs archived |
+| New-checkpoint scene inference and fusion | Current a: 1,778 supervised/full-open records, 1,136 gated-open records; six configurations and independent geometry diagnostics complete |
 | Historical five-scene / six-policy comparison | Previous model's 30 policy CSVs and aggregate observations; not new-model results |
 | GPU timing, geometry fidelity, and streaming tradeoffs | Implementation and instrumentation exist; no complete controlled benchmark dataset identified in this review |
 

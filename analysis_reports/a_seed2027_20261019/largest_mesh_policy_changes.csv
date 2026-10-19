@@ -1,0 +1,11 @@
+﻿order,node_index,mesh_index,node_name,predicted_class,confidence,shape_hint,face_count,open_label,open_role,open_score,candidate,N,C,N+G,C+G,N+C,N+C+G,full_minus_n,priority_spread
+1767,1766,1766,Mesh.888,handles_controls,0.7346321940422058,long_slender,581563,small visual fragment,micro_uncertain,0.04632260277867317,0,8,1,6,6,8,6,-2,7
+412,411,411,Mesh.1746,handles_controls,0.704029381275177,long_slender,372685,small visual fragment,micro_uncertain,0.04636446014046669,0,8,1,6,6,8,6,-2,7
+414,413,413,Mesh.1744,handles_controls,0.8148928284645081,long_slender,372685,small visual fragment,micro_uncertain,0.04571542516350746,0,8,1,6,6,8,6,-2,7
+546,545,545,Mesh.1799,handles_controls,0.7810405492782593,long_slender,372685,small visual fragment,micro_uncertain,0.04522991180419922,0,8,1,6,6,8,6,-2,7
+548,547,547,Mesh.1808,handles_controls,0.757815957069397,long_slender,372685,small visual fragment,micro_uncertain,0.04504324868321419,0,8,1,6,6,8,6,-2,7
+1766,1765,1765,Mesh.889,plates_discs_shapes,0.30529677867889404,long_slender,62040,small visual fragment,micro_uncertain,0.04130486771464348,1,1,1,6,6,1,6,5,5
+547,546,546,Mesh.1800,handles_controls,0.43056976795196533,long_slender,60357,small visual fragment,micro_uncertain,0.039838872849941254,1,8,1,6,6,8,6,-2,7
+413,412,412,Mesh.1745,handles_controls,0.3479269742965698,long_slender,60357,small visual fragment,micro_uncertain,0.042279891669750214,1,1,1,6,6,1,6,5,5
+415,414,414,Mesh.1743,plates_discs_shapes,0.3324335515499115,long_slender,60357,small visual fragment,micro_uncertain,0.04166833683848381,1,1,1,6,6,1,6,5,5
+549,548,548,Mesh.1809,handles_controls,0.26523005962371826,long_slender,60357,small visual fragment,micro_uncertain,0.03956925868988037,1,1,1,6,6,1,6,5,5

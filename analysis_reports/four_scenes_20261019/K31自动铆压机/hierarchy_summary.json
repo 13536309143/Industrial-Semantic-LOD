@@ -1,0 +1,166 @@
+{
+  "scene": "E:\\vk_lod_clusters1\\t1\\_downloaded_resources\\K31自动铆压机.glb",
+  "glb_sha256": "97f8f13e427ca5f368ddaf515fea0117aa9cc85b266711fef61c3ac48547886b",
+  "nodes": 1543,
+  "mesh_nodes": 1481,
+  "unique_meshes": 1277,
+  "referenced_meshes": 1277,
+  "assembly_nodes": 62,
+  "max_depth": 4,
+  "active_mesh_nodes": 1481,
+  "unique_mesh_triangles": 2965388,
+  "instance_triangles": 3433060,
+  "mesh_reference_reuse_savings": 204,
+  "duplicate_node_names": {},
+  "chinese_leaf_names": 493,
+  "name_evidence_status_counts": {
+    "code_or_generic_name": 988,
+    "weak_lexical_hint": 231,
+    "unmapped_descriptive_name": 262
+  },
+  "name_candidate_role_counts": {
+    "unmapped": 1250,
+    "fastener": 57,
+    "bearing_or_linear_guide": 53,
+    "pneumatic_or_linear_actuator": 41,
+    "spring": 48,
+    "mount_or_support": 5,
+    "motor_or_reducer": 7,
+    "transmission": 5,
+    "frame_or_structure": 3,
+    "fluid_or_vacuum": 6,
+    "sensing_or_inspection": 6
+  },
+  "with_ancestor_lexical_context": 1481,
+  "with_nonroot_process_context": 1112,
+  "world_differs_from_local": 1480,
+  "inherited_nonuniform_scale": 0,
+  "inherited_rotation_or_reflection": 953,
+  "alpha_blend_mesh_nodes": 12,
+  "first_primitive_alpha_blend_nodes": 12,
+  "neural_rows_joined": 1481,
+  "open_rows_joined": 1481,
+  "ground_truth_available": false,
+  "visibility_measured": false,
+  "scope": "Name hints are weak metadata evidence, not accuracy labels or deletion criteria.",
+  "source_sha256": "0c2e1bf76485d7c1bfbc62e8bc2db2dc069e21bda66563e97725379eeec7d0c5",
+  "rules": [
+    [
+      "environment",
+      "地面|地板|floor|ground"
+    ],
+    [
+      "mount_or_support",
+      "支架|安装板|固定板|固定座|固定件|固定块|底板|垫板|支撑|支座|安装上板|安装垫块|安装件|(?:马达|电机|气缸|滑台|CCD|光源).*(?:板|座|斜撑|垫块|固定块)"
+    ],
+    [
+      "sensing_or_inspection",
+      "传感器|光电|相机|镜头|光源|CCD|温控表|检测器"
+    ],
+    [
+      "motor_or_reducer",
+      "电机|马达|减速机|减速器"
+    ],
+    [
+      "pneumatic_or_linear_actuator",
+      "气缸|电缸|滑台"
+    ],
+    [
+      "bearing_or_linear_guide",
+      "轴承|导轨|滑块|导套|导柱"
+    ],
+    [
+      "transmission",
+      "齿轮|同步轮|皮带轮|链轮|丝杆|丝杠|同步带|齿条"
+    ],
+    [
+      "fastener",
+      "螺钉|螺栓|螺母|垫圈|挡圈|卡簧"
+    ],
+    [
+      "spring",
+      "弹簧"
+    ],
+    [
+      "fluid_or_vacuum",
+      "接头|气管|气嘴|吸盘|真空|气阀|电磁阀"
+    ],
+    [
+      "tooling_or_process",
+      "夹爪|夹具|治具|冲头|折弯|冲切|模具|植入|铆头|压头|铆压|压装"
+    ],
+    [
+      "frame_or_structure",
+      "铝型材|型材|机架|立柱|横梁|框架|底座"
+    ],
+    [
+      "enclosure",
+      "防护罩|防护门|门板|外壳|盖板|盒盖|护罩"
+    ],
+    [
+      "product_or_workpiece",
+      "产品|喇叭|连接器|链接器|透气阀"
+    ]
+  ],
+  "world_scene_diagonal": 4.215837266008021,
+  "world_scene_bbox_min": [
+    -1.6161999702453613,
+    -0.7934001088142395,
+    -1.031942367553711
+  ],
+  "world_scene_bbox_max": [
+    1.6091002225875854,
+    1.1150001287460327,
+    0.8990498781204224
+  ],
+  "local_process_scale_rows": 1112,
+  "global_le_1pct_but_local_ge_10pct": 0,
+  "size_bins": [
+    {
+      "min_exclusive": 0,
+      "max_inclusive": 0.005,
+      "count": 271,
+      "record_percent": 18.298446995273466,
+      "triangle_percent": 14.183964160253534,
+      "mean_supervised_confidence": 0.6011042052749338
+    },
+    {
+      "min_exclusive": 0.005,
+      "max_inclusive": 0.01,
+      "count": 312,
+      "record_percent": 21.066846725185684,
+      "triangle_percent": 18.625657576622604,
+      "mean_supervised_confidence": 0.4905390852632431
+    },
+    {
+      "min_exclusive": 0.01,
+      "max_inclusive": 0.02,
+      "count": 293,
+      "record_percent": 19.783929777177583,
+      "triangle_percent": 15.697482712215924,
+      "mean_supervised_confidence": 0.5097551346333767
+    },
+    {
+      "min_exclusive": 0.02,
+      "max_inclusive": 0.1,
+      "count": 532,
+      "record_percent": 35.921674544226875,
+      "triangle_percent": 41.50297402317466,
+      "mean_supervised_confidence": 0.577942264511397
+    },
+    {
+      "min_exclusive": 0.1,
+      "max_inclusive": "inf",
+      "count": 73,
+      "record_percent": 4.929101958136394,
+      "triangle_percent": 9.989921527733276,
+      "mean_supervised_confidence": 0.6949535753220728
+    }
+  ],
+  "neural_inputs_sha256": {
+    "lod_analysis_outputs\\four_scenes_seed2027_20261019\\K31自动铆压机\\K31自动铆压机_pointnext_analysis.csv": "f288e536dc327dd983f70c02a5063be3b7f624767298f9260ac33c6bf160d4dd",
+    "lod_analysis_outputs\\four_scenes_seed2027_20261019\\K31自动铆压机\\K31自动铆压机_pointclipv2_full.csv": "9085fe0aa56f87e41d83c333eefcf7e6a422c2c95a2b932addf43f4e618d65f3"
+  },
+  "repeated_mesh_groups": 111,
+  "repeated_mesh_groups_with_class_disagreement": 13
+}

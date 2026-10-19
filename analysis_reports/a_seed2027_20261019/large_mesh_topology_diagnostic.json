@@ -1,0 +1,82 @@
+[
+  {
+    "order": "1767",
+    "node_name": "Mesh.888",
+    "faces": 581563,
+    "vertices": 485086,
+    "weld_tolerance": 2.1238505470426122e-07,
+    "face_components": 1,
+    "largest_component_face_share": 1.0,
+    "components_ge_100_faces": 1
+  },
+  {
+    "order": "412",
+    "node_name": "Mesh.1746",
+    "faces": 372685,
+    "vertices": 270935,
+    "weld_tolerance": 2.1238488133027908e-07,
+    "face_components": 1,
+    "largest_component_face_share": 1.0,
+    "components_ge_100_faces": 1
+  },
+  {
+    "order": "414",
+    "node_name": "Mesh.1744",
+    "faces": 372685,
+    "vertices": 270935,
+    "weld_tolerance": 2.1238488133027908e-07,
+    "face_components": 1,
+    "largest_component_face_share": 1.0,
+    "components_ge_100_faces": 1
+  },
+  {
+    "order": "546",
+    "node_name": "Mesh.1799",
+    "faces": 372685,
+    "vertices": 270836,
+    "weld_tolerance": 2.1238487471823785e-07,
+    "face_components": 1,
+    "largest_component_face_share": 1.0,
+    "components_ge_100_faces": 1
+  },
+  {
+    "order": "548",
+    "node_name": "Mesh.1808",
+    "faces": 372685,
+    "vertices": 270836,
+    "weld_tolerance": 2.1238487471823785e-07,
+    "face_components": 1,
+    "largest_component_face_share": 1.0,
+    "components_ge_100_faces": 1
+  },
+  {
+    "order": "1766",
+    "node_name": "Mesh.889",
+    "faces": 62040,
+    "vertices": 53324,
+    "weld_tolerance": 2.111388081090194e-07,
+    "face_components": 1,
+    "largest_component_face_share": 1.0,
+    "components_ge_100_faces": 1
+  },
+  {
+    "order": "413",
+    "node_name": "Mesh.1745",
+    "faces": 60357,
+    "vertices": 50367,
+    "weld_tolerance": 2.1113884668225157e-07,
+    "face_components": 1,
+    "largest_component_face_share": 1.0,
+    "components_ge_100_faces": 1
+  },
+  {
+    "order": "415",
+    "node_name": "Mesh.1743",
+    "faces": 60357,
+    "vertices": 50367,
+    "weld_tolerance": 2.1113884668225157e-07,
+    "face_components": 1,
+    "largest_component_face_share": 1.0,
+    "components_ge_100_faces": 1
+  }
+]

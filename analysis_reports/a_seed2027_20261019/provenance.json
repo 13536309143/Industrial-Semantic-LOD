@@ -1,0 +1,43 @@
+{
+  "inputs": {
+    "E:\\vk_lod_clusters1\\t1\\_downloaded_resources\\a.glb": "3fcbd0e5d17cf911fbb2ad3cfc82be37e819d2d4e9cda23fb4f1e826f37c2621",
+    "E:\\vk_lod_clusters1\\t1\\models\\pointnext\\industrial-part-14class-best.pth": "238ed37c8af354ea5bb6532f371ef6003d8fb43e0d6124f44363c55b66ea0493",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\a_seed2027_20261019\\a_pointnext_analysis.csv": "fa6365f4bd63b16144b837c0a57f1e56b8f843794cad3145e24b7fbbc1076246",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\a_seed2027_20261019\\a_pointclipv2_full.csv": "3baf9ccd9b41cf63073c613daf1925b7252b8b712d2b03ebda54362c52942478",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\a_seed2027_20261019\\a_pointclipv2_candidates.csv": "128fbcca5fc7b296f0f698820bbe0bb41a4101b7a51d35db63f9a45096f613ab",
+    "E:\\vk_lod_clusters1\\t1\\tools\\pointclipv2\\analyze_scene_semantics.py": "03d322e765d3dee34aa2aab925fe22a6ca6ccbf990d2c8669107cf896626607f",
+    "E:\\vk_lod_clusters1\\t1\\tools\\pointclipv2\\independent_structure.py": "687db74e991fdd8c98a4cdad6ebb2d537d249a943914c35e59c31f6942d28bb1",
+    "E:\\vk_lod_clusters1\\t1\\tools\\pointnext_lod\\build_lod_constraints_from_analysis.py": "f7d35d0d908558c646cdaa1dbfaac62c8a513bc234af494f38ab8b2608d972ae"
+  },
+  "raw_run": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\a_seed2027_20261019",
+  "full_scene_coverage": true,
+  "six_full_vocab_labels": 110,
+  "gated_production_vocab_labels": 106,
+  "independent_geometry_uncertainty_removed": true,
+  "supervised_parameter_invariance_check_passed": true,
+  "postprocessing_note": "Final revision adds timing scope annotations; policy outputs are unchanged.",
+  "output_sha256": {
+    "lod_analysis_outputs\\a_seed2027_20261019\\six_full\\a_lod_ablation_compare.csv": "ce54abdae852381e061a3c0ed13f51a16d0e1affa9acd8218a14c3414209e39f",
+    "lod_analysis_outputs\\a_seed2027_20261019\\six_full\\a_lod_constraints_1_pointnext.csv": "8afa298818867f5ff65f932fd3cd7f8558dc3af68a73ee1f7462cddc72e29132",
+    "lod_analysis_outputs\\a_seed2027_20261019\\six_full\\a_lod_constraints_2_pointclip.csv": "d14c88b0bb324e0996e2ac5898dcb958297f29aa0a0953076507e5f4dbe5e512",
+    "lod_analysis_outputs\\a_seed2027_20261019\\six_full\\a_lod_constraints_3_pointnext_structure.csv": "134cfb3777792f869bfad584330439526c071d82191c2e6c36925669bb9ec449",
+    "lod_analysis_outputs\\a_seed2027_20261019\\six_full\\a_lod_constraints_4_pointclip_structure.csv": "ad500242ea2da9b154a59e388532e265f0507d2e6f976a38838f312ecfdb8cef",
+    "lod_analysis_outputs\\a_seed2027_20261019\\six_full\\a_lod_constraints_5_pointnext_pointclip.csv": "8e34b9b4921106027fec4cbc7ea56094c4713e81228a43b44c562698bbe38bd9",
+    "lod_analysis_outputs\\a_seed2027_20261019\\six_full\\a_lod_constraints_6_pointnext_pointclip_structure.csv": "6c7019e05b2c15fdb86d1c9e256c2dd7630263240048651a70a7b02122dd2baa",
+    "lod_analysis_outputs\\a_seed2027_20261019\\six_gated_production\\a_lod_ablation_compare.csv": "086850b34034c121334dad43742209e0c613d3f05af6927f7115c34a2284a62e",
+    "lod_analysis_outputs\\a_seed2027_20261019\\six_gated_production\\a_lod_constraints_1_pointnext.csv": "8afa298818867f5ff65f932fd3cd7f8558dc3af68a73ee1f7462cddc72e29132",
+    "lod_analysis_outputs\\a_seed2027_20261019\\six_gated_production\\a_lod_constraints_2_pointclip.csv": "d14c88b0bb324e0996e2ac5898dcb958297f29aa0a0953076507e5f4dbe5e512",
+    "lod_analysis_outputs\\a_seed2027_20261019\\six_gated_production\\a_lod_constraints_3_pointnext_structure.csv": "134cfb3777792f869bfad584330439526c071d82191c2e6c36925669bb9ec449",
+    "lod_analysis_outputs\\a_seed2027_20261019\\six_gated_production\\a_lod_constraints_4_pointclip_structure.csv": "ad500242ea2da9b154a59e388532e265f0507d2e6f976a38838f312ecfdb8cef",
+    "lod_analysis_outputs\\a_seed2027_20261019\\six_gated_production\\a_lod_constraints_5_pointnext_pointclip.csv": "c6c0dd7adbadbc17c7e5ff911d01be769c0dc8654ca70f6a54e133eb87d87ed0",
+    "lod_analysis_outputs\\a_seed2027_20261019\\six_gated_production\\a_lod_constraints_6_pointnext_pointclip_structure.csv": "c0b9018589269292144d1089ca9e285437bffe578e88bdbb8234dc332d76dff6",
+    "analysis_reports\\a_seed2027_20261019\\largest_mesh_policy_changes.csv": "469002da9c13f1180f87e4c08f9b5f73a6963351877607c2b65f501981f268bb",
+    "analysis_reports\\a_seed2027_20261019\\lod_pairwise_change_summary.csv": "48c4969cffac025a920ce45116f40fe3c911b886368be39878e1c81d9d5a9804",
+    "analysis_reports\\a_seed2027_20261019\\manual_review_top30.csv": "24dec91be0605acdb3b933b0bfaddbae97bd07559cb9b18b862785668171bed7",
+    "analysis_reports\\a_seed2027_20261019\\per_mesh_policy_audit.csv": "f2f7f9c1cc869cfdf2aad4705cd02b3a5377605f79c236c315bdb82ea55a15b0",
+    "analysis_reports\\a_seed2027_20261019\\priority_counts.csv": "dc1435462327102c8898e25fe063bc4a1fb3e00b883b3944ff8c4edde66aa560",
+    "analysis_reports\\a_seed2027_20261019\\six_policy_comparison.csv": "1fda8969a1dcfd8b5d4f72c24e670d69cc5e83ae8ec07256bfec83867402d9a0",
+    "analysis_reports\\a_seed2027_20261019\\analysis_report.md": "2117e95f33d8f807034f4ed71b0931cc2fa9ef91bc695f594b2e10ac526e7995",
+    "analysis_reports\\a_seed2027_20261019\\analysis_summary.json": "19f853b9e8843525f764c8a1098ba43b454bbf527587321bca855facc9c27c70"
+  }
+}
