@@ -34,6 +34,7 @@ enum SemanticLodMode : uint32_t
   SEMANTIC_LOD_POINTCLIP_STRUCTURE,
   SEMANTIC_LOD_POINTNEXT_POINTCLIP,
   SEMANTIC_LOD_POINTNEXT_POINTCLIP_STRUCTURE,
+  SEMANTIC_LOD_POINTNEXT_POINTCLIP_STRUCTURE_METADATA,
 };
 
 // Build-time scene settings that affect cache identity and GPU-visible payload layout.

@@ -285,6 +285,8 @@ const char* semanticModeSuffix(uint32_t mode)
       return "_lod_constraints_5_pointnext_pointclip.csv";
     case SEMANTIC_LOD_POINTNEXT_POINTCLIP_STRUCTURE:
       return "_lod_constraints_6_pointnext_pointclip_structure.csv";
+    case SEMANTIC_LOD_POINTNEXT_POINTCLIP_STRUCTURE_METADATA:
+      return "_lod_constraints_7_pointnext_pointclip_structure_metadata.csv";
     default:
       return "_lod_constraints_6_pointnext_pointclip_structure.csv";
   }
@@ -306,6 +308,8 @@ const char* semanticModeLabel(uint32_t mode)
       return "PointNeXt + PointCLIP";
     case SEMANTIC_LOD_POINTNEXT_POINTCLIP_STRUCTURE:
       return "PointNeXt + PointCLIP + structure";
+    case SEMANTIC_LOD_POINTNEXT_POINTCLIP_STRUCTURE_METADATA:
+      return "PointNeXt + open semantics + structure + CAD context";
     default:
       return "PointNeXt + PointCLIP + structure";
   }
@@ -330,8 +334,11 @@ void Scene::loadSemanticLodPolicies()
   const std::filesystem::path cwd = std::filesystem::current_path();
 
   pushCsvNameCandidates(candidates, seen, sceneDir, cwd, selectedCsvName);
-  pushCsvNameCandidates(candidates, seen, sceneDir, cwd, fusedCsvName);
-  pushCsvNameCandidates(candidates, seen, sceneDir, cwd, csvName);
+  if(m_config.semanticLodMode != SEMANTIC_LOD_POINTNEXT_POINTCLIP_STRUCTURE_METADATA)
+  {
+    pushCsvNameCandidates(candidates, seen, sceneDir, cwd, fusedCsvName);
+    pushCsvNameCandidates(candidates, seen, sceneDir, cwd, csvName);
+  }
 
   std::filesystem::path csvPath;
   for(const std::filesystem::path& candidate : candidates)

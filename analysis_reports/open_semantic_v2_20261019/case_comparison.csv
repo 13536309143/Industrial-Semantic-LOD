@@ -1,0 +1,21 @@
+﻿scene,node_index,node_name,closed,old,new,new_status,resolved,metadata_resolved
+透气阀产线,131,弹簧-2,springs,spacer sleeve,coil_spring,family_only,family:transmission,known:springs
+透气阀产线,132,弹簧-4,springs,spacer sleeve,coil_spring,family_only,family:transmission,known:springs
+透气阀产线,140,弹簧-1,springs,spacer sleeve,coil_spring,family_only,family:transmission,known:springs
+透气阀产线,141,弹簧-3,springs,spacer sleeve,coil_spring,family_only,family:transmission,known:springs
+透气阀产线,311,极耳胶裁切-1/弹簧-3,springs,slotted castle nut,coil_spring,family_only,family:transmission,known:springs
+汽车链接器植入-折弯设备,151,摸具-1/弹簧10X35-1,springs,spacer sleeve,coil_spring,family_only,family:transmission,known:springs
+汽车链接器植入-折弯设备,152,摸具-1/弹簧10X35-2,springs,spacer sleeve,coil_spring,family_only,family:transmission,known:springs
+汽车链接器植入-折弯设备,153,摸具-1/弹簧10X35-3,springs,spacer sleeve,coil_spring,family_only,family:transmission,known:springs
+汽车链接器植入-折弯设备,154,摸具-1/弹簧10X35-4,springs,spacer sleeve,coil_spring,family_only,family:transmission,known:springs
+汽车链接器植入-折弯设备,507,018-A冲切-1/摸具总装1-1/弹簧-1,springs,spacer sleeve,coil_spring,family_only,family:transmission,known:springs
+手机喇叭检测线,93,轴承-2-1,washers_rings_spacers,plain disc,flat_washer,family_only,family:fastening,known:bearings_bushings_guides
+手机喇叭检测线,94,轴承-3-1,washers_rings_spacers,plain disc,flat_washer,family_only,family:fastening,known:bearings_bushings_guides
+手机喇叭检测线,95,轴承块2-2-1,handles_controls,cylindrical pin,shaft_key,class_only,,known:bearings_bushings_guides
+手机喇叭检测线,96,轴承块2-3-1,handles_controls,cylindrical pin,shaft_key,class_only,,known:bearings_bushings_guides
+手机喇叭检测线,150,轴承-2-1.001,washers_rings_spacers,plain disc,flat_washer,family_only,family:fastening,known:bearings_bushings_guides
+K31自动铆压机,58,K31-02A（H）螺母-1,bearings_bushings_guides,cap nut,cap_nut,class_only,,known:nuts
+K31自动铆压机,59,K31-02A（H）螺母-10,bearings_bushings_guides,cap nut,cap_nut,class_only,,known:nuts
+K31自动铆压机,60,K31-02A（H）螺母-11,bearings_bushings_guides,cap nut,cap_nut,class_only,,known:nuts
+K31自动铆压机,61,K31-02A（H）螺母-12,bearings_bushings_guides,cap nut,cap_nut,class_only,,known:nuts
+K31自动铆压机,62,K31-02A（H）螺母-13,bearings_bushings_guides,cap nut,cap_nut,class_only,,known:nuts

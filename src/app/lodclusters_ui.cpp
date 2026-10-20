@@ -77,6 +77,8 @@ const char* semanticLodModeName(uint32_t mode)
       return "PointNeXt + PointCLIP";
     case SEMANTIC_LOD_POINTNEXT_POINTCLIP_STRUCTURE:
       return "PointNeXt + PointCLIP + structure";
+    case SEMANTIC_LOD_POINTNEXT_POINTCLIP_STRUCTURE_METADATA:
+      return "PointNeXt + open semantics + structure + CAD context";
     default:
       return "PointNeXt + PointCLIP + structure";
   }

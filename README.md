@@ -117,6 +117,8 @@ The five-scene and six-policy tables below are historical observations from the 
 
 The latest [four-scene full semantic test and overall assessment](analysis_reports/four_scenes_20261019/四模型全量测试与整体评价.md) adds the K31 riveting machine, covering 7,742 mesh nodes. The re-exported connector machine was inferred again; unchanged speaker/vent scenes reused content-verified neural snapshots with regenerated policies and reports. Historical reports remain intact. Device/process context and both pooled-node and equal-scene summaries are provided; ground-truth accuracy and actual LOD/rendering performance remain unmeasured.
 
+Run **`run_open_semantic_v2.bat`** for the upgraded open branch: a 66-label/12-family taxonomy, pose/local views, independent surface-normal shading, cross-render agreement, three-level abstention and explicit semantic identities with unified N/C/G fusion. A seventh renderer strategy adds separately marked CAD context. [Usage and method](tools/pointclipv2/OPEN_SEMANTIC_V2.md) · [Upgrade comparison](analysis_reports/open_semantic_v2_20261019/开放语义分支升级与对照分析.md). Engineering thresholds remain uncalibrated; evidence coverage and policy changes are not accuracy gains.
+
 ### 1. Industrial part classification
 
 | Configuration | Test OA | Test mAcc | Test macro-F1 |
