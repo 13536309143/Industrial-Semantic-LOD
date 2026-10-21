@@ -1,0 +1,1642 @@
+{
+  "inputs": {
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\assembly_context_v3_20261020\\scene_sources.json": "75a543956d6a5381d14f8d052454e1d236aa8d508f086e5e2c561345ef3e1ff4",
+    "E:\\vk_lod_clusters1\\t1\\_downloaded_resources\\a.glb": "3fcbd0e5d17cf911fbb2ad3cfc82be37e819d2d4e9cda23fb4f1e826f37c2621",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\assembly_context_v3_20261020\\a\\closed\\a_pointnext_analysis.csv": "fa6365f4bd63b16144b837c0a57f1e56b8f843794cad3145e24b7fbbc1076246",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\assembly_context_v3_20261020\\a\\visual\\open_semantic_combined.csv": "52c371e045a3391a0dc03277b0b0b1954a78bb46009991fad81dc7f3b5b2c7b6",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\assembly_context_v3_20261020\\a\\geometry_descriptors.json": "666c62f947e9d60ab402cc279aaef8e30c9b2b15003479432a37e22e1fd68975",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\assembly_context_v3_20261020\\a\\final_guarded\\v3_NCGHM.csv": "d2f1e402433df16e025c4cbbc8cbc55027ba793f7e4e361575664ae5ce43042f",
+    "E:\\vk_lod_clusters1\\t1\\_downloaded_resources\\b.glb": "97f8f13e427ca5f368ddaf515fea0117aa9cc85b266711fef61c3ac48547886b",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\assembly_context_v3_20261020\\b\\closed\\b_pointnext_analysis.csv": "f288e536dc327dd983f70c02a5063be3b7f624767298f9260ac33c6bf160d4dd",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\open_semantic_v2_20261019\\K31自动铆压机\\open_semantic_combined.csv": "0e7760a3ea5ac6ce0ec1a3893c36605c27bc32fa9ca5274d1bb1d8e0983b8745",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\assembly_context_v3_20261020\\b\\geometry_descriptors.json": "99e550d085dc7ad0eaeeddb408787727e8043052fdc182697a9aa9a4943fc2ac",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\assembly_context_v3_20261020\\b\\final_guarded\\v3_NCGHM.csv": "d526ffee1946ed8cbf669b7ec8fc3b64abd524847e703225cb8235e650852498",
+    "E:\\vk_lod_clusters1\\t1\\_downloaded_resources\\c.glb": "dde06a4a6c8d67374c3a8574b60f4815ef724451b3c62df36bae6417b1212dff",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\four_scenes_seed2027_20261019\\汽车链接器植入-折弯设备\\汽车链接器植入-折弯设备_pointnext_analysis.csv": "a3562bf4509650fa29c613b906b7d0e17307f31cb638b8fc41fa6799a0ca1f9a",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\open_semantic_v2_20261019\\汽车链接器植入-折弯设备\\open_semantic_combined.csv": "35f3c82e8f7cde5678b1257f016f1de6a9e5ccc0429f79d6330439d4f9986b56",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\assembly_context_v3_20261020\\c\\geometry_descriptors.json": "e18f6c8f3535a16700e59d70cbc96dc3aff660d365fb4e0dccd5dd13129ad213",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\assembly_context_v3_20261020\\c\\final_guarded\\v3_NCGHM.csv": "694a145b2c82c36b3d4442964ea3d3cc437715b8f74edf4c74584aa65bc01833",
+    "E:\\vk_lod_clusters1\\t1\\_downloaded_resources\\d.glb": "0b9a5597b267f63edde781b2dfad3019fb20b4ee75d0ebf3ff708c4b2fc24d7b",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\four_scenes_seed2027_20261019\\手机喇叭检测线\\手机喇叭检测线_pointnext_analysis.csv": "24a3516b1f7b83fc8a2aecbb92ab94d8282da9e5a9015e801f87f5b334fb0881",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\open_semantic_v2_20261019\\手机喇叭检测线\\open_semantic_combined.csv": "5250a4198c089bbc356bdd97fb0106bac1e4a085dc6e61f85079d57677effb00",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\assembly_context_v3_20261020\\d\\geometry_descriptors.json": "c0c0a3dc5090a1ffd6525970629fb47d27b0dbc3d934b040ff8cfa1005085449",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\assembly_context_v3_20261020\\d\\final_guarded\\v3_NCGHM.csv": "4eb812f21b1db203cbfa8698a680ee51acf35824d33d2c67b2278af15984c1ec",
+    "E:\\vk_lod_clusters1\\t1\\_downloaded_resources\\e.glb": "c27eb7aa2a3066621f9bf9a681cdc568d25f9a104e73e9a8c922ea449ec59d72",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\four_scenes_seed2027_20261019\\透气阀产线\\透气阀产线_pointnext_analysis.csv": "210b56689495adc3ca7751adfa724caaefc415737d3759b2914a65f93772b0a4",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\open_semantic_v2_20261019\\透气阀产线\\open_semantic_combined.csv": "221e2addc1311c7133aad614cadf9a4d0f0838345657f9a1a64495a8b937127b",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\assembly_context_v3_20261020\\e\\geometry_descriptors.json": "e7bdf4ad9887b0c106a251072048e6d1de45fab0d6f2a92534fe2c1911378131",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\assembly_context_v3_20261020\\e\\final_guarded\\v3_NCGHM.csv": "7642a41bfef9402a56cf2cc1f57f0fbf71b36c86808aa9babf1195c1648202e8",
+    "E:\\vk_lod_clusters1\\t1\\_downloaded_resources\\f.glb": "220dcd99f554c2148a6c1c7028fc72317d46c69def1967e1b58962ddb3fa8a1c",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\assembly_context_v3_20261020\\f\\closed\\f_pointnext_analysis.csv": "1c0efe6912abb4afdbce6c3dc143be1edd09aba02f26dde22e011396af5a5c1a",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\assembly_context_v3_20261020\\f\\visual\\open_semantic_combined.csv": "38a9a193bd87bc95fa39494915e20efe1aebe9dc6b4e0ea5058e7c5c7d346c67",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\assembly_context_v3_20261020\\f\\geometry_descriptors.json": "553bb5323c1a000e79106d5b833b803f2bdaf6cdb682fc0dbb80ad5aba3b7f09",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\assembly_context_v3_20261020\\f\\final_guarded\\v3_NCGHM.csv": "abea15c73cba183904a23432260ad0d22665e052446e2e3a2f581974d48d9a52",
+    "E:\\vk_lod_clusters1\\t1\\tools\\pointclipv2\\assembly_context_policy.py": "5f854d3d5d40adc98fc3837da2460ced5e9c1d27b1cd6e923d334f7fdfd5db77",
+    "E:\\vk_lod_clusters1\\t1\\tools\\pointclipv2\\assembly_context_features.py": "3219a5b50e621013cb5f542efd9b02a4058b3fca0200b981be82684b904924f0",
+    "E:\\vk_lod_clusters1\\t1\\tools\\pointclipv2\\factorial_ablation_policy.py": "42328a5b1a04e64520cecf359c67c3d61f2ced3d4d7ccfd4189b9cad5cbefd0d",
+    "E:\\vk_lod_clusters1\\t1\\tools\\pointclipv2\\assembly_context_config.json": "d4ce592c60d895a860c11777fd691a992ba44a2ed42ed395c3a3fe7089b5d8aa",
+    "E:\\vk_lod_clusters1\\t1\\tools\\pointclipv2\\industrial_open_vocab_v2.json": "c61eec86f57998f605469d8135d075c3a5bc2c52700f88793ed14d7a80c1681a",
+    "E:\\vk_lod_clusters1\\t1\\tools\\pointclipv2\\fuse_open_semantic_v2.py": "fcbd2fbae4319ce521f41587fcc4e5e5ef6861a6ea9bcfcf0c58e8b3c5d2fb92",
+    "E:\\vk_lod_clusters1\\t1\\tools\\pointclipv2\\retune_p10_visual_weights.py": "7c2caf51fd852d9d93c171835e0d7293580431209230d28eb3d992cafdbfcdf5",
+    "E:\\vk_lod_clusters1\\t1\\analysis_reports\\adaptive_p10_v4_20261020\\method\\generation_adaptive_p10_policy.py": "a00bed3a5028ee46915c4c662fdd63352b1ca4656033414ed86adeb53202f706",
+    "E:\\vk_lod_clusters1\\t1\\analysis_reports\\adaptive_p10_v4_20261020\\method\\generation_run_adaptive_p10.py": "605a7bb1fa83534ae884e1502f1c848ddcd2c41d0a2b99f8237c6e8c0a490ccc",
+    "E:\\vk_lod_clusters1\\t1\\tools\\pointclipv2\\adaptive_p10_policy.py": "1d4bbbb2993992e6526ff7504d38659cc62fe9b48329f5b1dc7eae62c86ba1b8",
+    "E:\\vk_lod_clusters1\\t1\\analysis_reports\\adaptive_p10_v4_20261020\\method\\pre_base_cleanup\\semantic_geometry_probe.dll": "ad5ecc8eb3b4c48bcc2206bf18c8074354ae8a686366109956772a3abb7a1b30",
+    "E:\\vk_lod_clusters1\\t1\\analysis_reports\\adaptive_p10_v4_20261020\\method\\pre_base_cleanup\\scene_semantic_lod.cpp": "38845635d4a518db6923fa4ae1814ed24b8e3b556f08816ef8748c02323f9117",
+    "E:\\vk_lod_clusters1\\t1\\analysis_reports\\adaptive_p10_v4_20261020\\method\\pre_base_cleanup\\meshlod_simplify.h": "298fc19947232e193e3be31fc25538e1620e9204f2703543dfdae1f5d3bc9303",
+    "E:\\vk_lod_clusters1\\t1\\analysis_reports\\adaptive_p10_v4_20261020\\method\\pre_base_cleanup\\meshlod_build.h": "17d94092c206209122585133a00276946751fabd5c2ec774db21c91154b30e73",
+    "E:\\vk_lod_clusters1\\t1\\tools\\pointclipv2\\enable_p10_base_cleanup.py": "a5e52521947147feae841a501a3cb64b80a031a51bfffc87a2b6000dfe1e731b",
+    "E:\\vk_lod_clusters1\\t1\\src\\scene\\scene_semantic_lod.cpp": "7f8e498b9c261186c8e5a02b1eec375592b335a8b74073bdf9ac0b3b6036ed7e",
+    "E:\\vk_lod_clusters1\\t1\\src\\meshlod\\meshlod_build.h": "c50b553abc347d25e84e02c98a2afc7ba14bdbd6fdd2f201c12eb881d49f2f87",
+    "E:\\vk_lod_clusters1\\t1\\src\\meshlod\\meshlod_types.h": "b9df14ba667c22297610221b5449a4afd7c76050215cb07d8eb06556779f94b0"
+  },
+  "outputs": {
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\a\\CG_H0.csv": "d91a02c260173cbd073ebf65f002592929199cb79c4eb613525d5f85b12d3ab5",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\a\\CG_H1.csv": "eca6729755bf3b6bc8a1500ff4c06aadf63a12d5d8a32a7db95dbc8e65287ba2",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\a\\C_H0.csv": "f543b9855ad4e4975ef4be5897a988529c7bebdd5210b1e211f7bd8ba05f2d72",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\a\\C_H1.csv": "e8c5d678f8fc65cc69eb3e90dd6a5d02a8ff22f1f202880b740f776f3706b58f",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\a\\G_H0.csv": "6d7967f909c9b742445d6a61c8a6cfc70bb3101f9ccbcb3729609d2d3745b25f",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\a\\G_H1.csv": "cbd777989a8bda519d6357c7002734a0b09b40dce2a0a461693d623228ae617e",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\a\\NCG_H0.csv": "9a475cdb6183a2b3f617338a9d0ba9531ebe6a35c025db7c10467c0cfdacccfe",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\a\\NCG_H1.csv": "6adef68dd75ea7abfdc460990642d3377ada95a9851f4d707dcf54cb122aeef0",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\a\\NCG_H1_M1.csv": "726bcc1781799606e23052b3651308490f76a1e7793d8a5bcaa6cec89fae6e2c",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\a\\NCG_H1_M1_selected.csv": "b33e64f4ef10c5b6547d3f0acf0a2122a135ecb73a9a8546220c4fe6c649919b",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\a\\NC_H0.csv": "4b9ba428d02d40db1295b3fcbbff206d4cc5afc1e07c438bdd270f4f06a61a22",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\a\\NC_H1.csv": "f84d51cfcde3c37618517a559d8636925a1962751210133df6f37c71225d7371",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\a\\NG_H0.csv": "bb2efc782d8e653118b4abfee730115461f2eb3e07fc9b48de65768dd25f16a3",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\a\\NG_H1.csv": "6b5512abe004251b84a954577ec85bbc86c061c4ce64345be2b17e3bf06bcaef",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\a\\N_H0.csv": "840ededa01f96a172ee8a47270a35ebcb2d1c5ba662983eb36c1e2b4c1613bc2",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\a\\N_H1.csv": "0d941ca17453cac21a12212e3e43c089c1f178175eba27ce9d54ffcc865cba0e",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\b\\CG_H0.csv": "23b5da2dd0e215786d945592e74d9c185bb48e815e634d06682f22371c4cfdd0",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\b\\CG_H1.csv": "bb2ee8756784e258d4f5a5ce4ea9225f66d1785a4ef4a2de8e66b22eac25de14",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\b\\C_H0.csv": "a9cc75a63b102faa20295850c0aaac23d2d5218245dab37e25aa0436c1abef21",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\b\\C_H1.csv": "08280b3818782a48096566d0bd2774f1f24d887bd521cbd368da756cdc6f16d1",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\b\\G_H0.csv": "085e358ed2d25d263d812081593bc8a2f276305a1bc9487061f4b0d318468a9b",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\b\\G_H1.csv": "5fd1e6aad4a1a29cc2b881c6284f8d396b77ed115bc7cfc8c0c33f1ba28e5690",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\b\\NCG_H0.csv": "dc90e2206ed4ce80e82415e0aa8436a58272fb0ffb945987261df85b31e55c02",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\b\\NCG_H1.csv": "9bbf016ce8ce90554e16dc9c4f898e189c1a57060ab0403a6969a822e9298070",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\b\\NCG_H1_M1.csv": "c909d944114e54824c22e0ee5065a48edd9cbacf0a4e617def44e981e111d7ee",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\b\\NCG_H1_M1_selected.csv": "e0666b1f25440776730605cb9cd296b67108757d0c0d916d04db0a09e55d9629",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\b\\NC_H0.csv": "13c6376f4fa6a0553842da0dad9aa3cf87dd15a3f408133d15fc51172d15bdfe",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\b\\NC_H1.csv": "18cbfe292c5328919515c01ae5ae33f73226d0c4afaf27b8505a1639be463d66",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\b\\NG_H0.csv": "7fd6a8a78e3e0cbab2f728b51ccf233d5af95acc8a21f3e6294ee06fb76d2dc1",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\b\\NG_H1.csv": "0e5e07eb4398ff0840f135415928d89cf9927f2302787c5ab113ff5642ce6d2a",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\b\\N_H0.csv": "73de04df04a44a2b2eb9be6678392a93c3eb32df7d2e639fdbc8c07207ae0b13",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\b\\N_H1.csv": "0071594a6f15df04289008ba4a2c9cf56c93849b3dbcb26e2a9c437fc0226174",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\c\\CG_H0.csv": "8fc9f9173209f40a7a309a382663754c02ddb29b178270d1f78e31dff8753c92",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\c\\CG_H1.csv": "3c4a7ddbedac69e3e83e0f16a30dd8e6905d4cc0b4e244c0489c70854591e215",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\c\\C_H0.csv": "466a81bd80da18b15e9ebe7ebefbbf9b30c722acc66ce61622f1816e157076ac",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\c\\C_H1.csv": "ca685e278363a63c414d2d2ac5824a642e1b1e64315a59df661913cce6dcf1df",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\c\\G_H0.csv": "04fd53bdafde5e527c8b28a5ace1554bf1078b458c6eeecb8b929a23db82c613",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\c\\G_H1.csv": "efeadfc71fa048fb0ed6d62c17a4601bcb205ba55b582bd6e2caf04435418d9a",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\c\\NCG_H0.csv": "5e760d502b04193edb41969bf66ee632b0f4594e8935de8cb7758f6772b7e5bc",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\c\\NCG_H1.csv": "b4053adac33426ef04d3f517500bf8659a92909fa505b56764b6697378d902e7",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\c\\NCG_H1_M1.csv": "322bbbf8a8af7d33dfe75184a0a9d3ac436d494353cac923f4e07f060e3808da",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\c\\NCG_H1_M1_selected.csv": "12b9e4b6084d57aea14787a4d965f96c274db793794b35348dbdc27380364fb1",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\c\\NC_H0.csv": "3c2567c7c9d194003cc466597a3dcb8f35a25802576871cc498765a3df59bead",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\c\\NC_H1.csv": "4192ab6697c38d0377bd1894c9131bfa2dfee400f2aefda7eaf1ec953b9761aa",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\c\\NG_H0.csv": "0561622b81840ca47e52e347500e107b3a10c1d86dee916f594353c3fe551979",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\c\\NG_H1.csv": "ceb35fde9f661d7ffb765ac730a6a57ed6b572d0d3ab63a9b2bb2f4b8783ca4f",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\c\\N_H0.csv": "44e1d249a1a7d80fe6305b12e9b076e0597e01cc58f6a2827b7ccbf140617145",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\c\\N_H1.csv": "a504a175f4ee0a489a51c89d635e506cd0c5b12226872a2e00709fbe551c0649",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\d\\CG_H0.csv": "49df55c105029d6425f1abf964166cb67951acc35fd3994052abba0ab3470444",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\d\\CG_H1.csv": "c700e95e5759ac9375b98d77c2c5f1ef5114fac0e5d516c2450b95d8eb2bdc34",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\d\\C_H0.csv": "2f66fb3e9829fb7d09522127fb2f6650a9ab08e50bb700382412205902eeacb0",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\d\\C_H1.csv": "4ac1effe8410a733d9698069a61c9a68b9fd0a9e76013ed8f26b081f07e8384e",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\d\\G_H0.csv": "f548e15759ff22a80d89925f0454364417d406dba1f94686e88b2a0616f5e60c",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\d\\G_H1.csv": "ff0fb85524c5aa9b676111f5c910a65e29bb899f3b33f0fb956b242341f99d3b",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\d\\NCG_H0.csv": "564c940c78e254801a4bd3fdc298bd67261459edb7d6775345c31579d53981bd",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\d\\NCG_H1.csv": "7519590096d7ac9835c4cc31aafdffcfba59f85a16ef7b61d7fdc37d6c41621b",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\d\\NCG_H1_M1.csv": "4422a38afc40e4094e0103288fa44104b1f11e26b7d9ab9d5ca85ed0eb58b575",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\d\\NCG_H1_M1_selected.csv": "4ddf66792b0d52ab8c731869cd328a12216705c5db2ca6ec7517a9540137dea6",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\d\\NC_H0.csv": "af095d87e16eedc13c4b171dba124ecdd05a6435d27cdbce128c098d2707949b",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\d\\NC_H1.csv": "5216f0736df06471af65c82a2afaffd5feba9257e854833665f4570395bd7dcf",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\d\\NG_H0.csv": "3f79cfc7904fcd6a211ff8ad56c9898db0392ca6d8c30fdcf56426dc6aa11009",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\d\\NG_H1.csv": "45abe8e4d60f9be69e4e3a3f223774a7ca2850783d355a2f05a3980c157beb56",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\d\\N_H0.csv": "209870db58007458fec3eebcb1893673aa5448a4301efc5cfdcded6f4ec5153f",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\d\\N_H1.csv": "e8ee23cf8b1ee15596f069b528f6cfee240c0b0e41d3bfe300c755b8a90ebda4",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\e\\CG_H0.csv": "c6519c0372de5c8d24a641b95d742f1e5d9fe6b5038fb844ef393f45735a5bbb",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\e\\CG_H1.csv": "5da6d88dc85289f295ddef36c3805abccf35a3f9c79d58a7e3bd2b21599181cb",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\e\\C_H0.csv": "bef77a785036675b536603f290af9cbd6ce7df151749b6080d1d96897cacf4e4",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\e\\C_H1.csv": "17bb03cfd5c791fc5c1a3ba946d6235531fa878f95405fdd9207e1058f6c6f19",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\e\\G_H0.csv": "d3165495746667e4d5b34da6a97358abcd0f180989ad32ba7237daa537fd0df6",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\e\\G_H1.csv": "25844ad5cc28fc8ceaabe531f649484427d45d24ca29eb7ba528c96a2394446e",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\e\\NCG_H0.csv": "0df01b131c248db6055fb45e526240cd103970302371d76b1600a747c708439f",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\e\\NCG_H1.csv": "b626ad5b77988e67e32cb38eb984aac7efb6afc9cbebddfa309d5a21a6b103fc",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\e\\NCG_H1_M1.csv": "e37a6e55ddb812c249e5794f8d59031888d42fb15e2ea09bd2af97f529bdf464",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\e\\NCG_H1_M1_selected.csv": "8841fa1bcbcaf684d1e0f0f6a15c27397fc736acc1986cc0d18a6a69e7b060f6",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\e\\NC_H0.csv": "21501f8c926c033b3416328ee2c2f189f30252645757bf1b41fa7197c3987abd",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\e\\NC_H1.csv": "8bc19ed8d7219f8174b19e20db0b4763f93fa3610c47ce637002acc6198e116c",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\e\\NG_H0.csv": "149e5429e54c129546ded0c017626f44508b7955af4765b75c23b059dfcaa9cc",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\e\\NG_H1.csv": "29509ad39e8bcf690f82184f84fa7484ae93e8b7115661429598f1bc39c2ce84",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\e\\N_H0.csv": "f2a3e971a3dfd9b0933b03cb9967684ddcfe02791131400e8f519edf255c965d",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\e\\N_H1.csv": "6a1ec9e4cfefd761bd8e2fe254b1899fd1dbb4d411b62b091daa74f8821f1ce4",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\f\\CG_H0.csv": "f41d97368ccad837d24f2332a3edd41bd64e7d8b92d1513dd03ca6939c21836f",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\f\\CG_H1.csv": "8521cf138536221a2056d2c2e8a2f971680d0c7e3fc51b37514cc2335838aa1e",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\f\\C_H0.csv": "32f8ee6c0f827605df802f80523c9595585ad139e8e6508bd0b0ddc56b9dde56",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\f\\C_H1.csv": "c018c140d1d7229b56f024fbffb7bf8a7689d267f2a2260595e014a8f8702105",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\f\\G_H0.csv": "a8e710e027ae83371da03b81cb3c41d037a4efb7d75b5022e0b3e47e313326e9",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\f\\G_H1.csv": "588794ff594fc6562d39d97f396431f895f231a25156acfcae30c0d812888327",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\f\\NCG_H0.csv": "7224f50cc328227bcaf9157d514814862550d0482b750edfe031199a1874d313",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\f\\NCG_H1.csv": "6605c8a0b0952cab8b73859e7b11886c62775c511019938670e71c63f575837a",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\f\\NCG_H1_M1.csv": "7520649f52f1c2d9b4cef41c9bd1509bcdb19c498934f727605c18bfe09da9b3",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\f\\NCG_H1_M1_selected.csv": "719896d144cac3f98d51d82011909a3da9993118e5fb1b9de8c8961b7464478f",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\f\\NC_H0.csv": "61e4f6dcbad66827ed74470d9f8015297c5b8491251e5e48fb6bd1505e4c78a7",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\f\\NC_H1.csv": "a14040177fed19a9f9e6a70c3ab0f945ff314c240c02f20919d3d1ed03469572",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\f\\NG_H0.csv": "cfba334bf9beece018c055f7d569383a3277e0fb0d7ccdf13380b9790babd4fb",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\f\\NG_H1.csv": "871d82de2413fc06549ef0b02b1e6d0744f8e85aff0a77130de5aec13a4bdaf5",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\f\\N_H0.csv": "eab88a448308ddeb9bb27423a33399b69d4cd14c2096f557048ee1e89fdf9298",
+    "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\f\\N_H1.csv": "ca70a060edd927760ca6701f1dd48cf774025aabe9cdf2def0a8edd713d8e8ed"
+  },
+  "all_nodes": true,
+  "calibrated_accuracy": false,
+  "geometry_evaluation_reuse": {
+    "reason": "Only runtime screen weight and version tags changed; all simplifier requests/error limits/geometry unchanged",
+    "archive": "E:\\vk_lod_clusters1\\t1\\analysis_reports\\adaptive_p10_v4_20261020\\development_v4_2_scene_ready\\policies_before_visual_retune.zip",
+    "archive_sha256": "270411d7bfaf28127474e2978342538edeb1a29f39ec1c27a4aa7872929aea70",
+    "changed_columns": [
+      "policy_version",
+      "runtime_visual_quality_rule",
+      "screen_error_weight",
+      "strategy"
+    ],
+    "records": [
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\a\\C_H0.csv",
+        "before_sha256": "ef66d902a2924c28077b7328c6227465bf214fc9ec8a6d4bf5c1bd23c794afa0",
+        "after_sha256": "7730bba22243cc6cc126edfd86482bf6488eb2d84a99bb8ac794e52776a78f71"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\a\\C_H1.csv",
+        "before_sha256": "891ad01b835165d938d836dd6e886f70269949daacce5e5d0be2ba5b8d48d87e",
+        "after_sha256": "ea47a24290951869ca1a071c357f5acb71addcd943e474f3a33c99aa9bbf63a6"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\a\\CG_H0.csv",
+        "before_sha256": "c27fac1194eff88851dfda0bfb527194ea8ceaf821a7b766e4ecb0f6a4cc37ee",
+        "after_sha256": "130c75b35480f74ba70d02246ab566e4dfa8f4e9d22046529f09b98aa4079cc9"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\a\\CG_H1.csv",
+        "before_sha256": "6e2e24102dd456284f36a7fb88a9989da1b5d312475492371c225cffd03f05ea",
+        "after_sha256": "da1a8a9b536045afc32695a7575f234348290b22df49ef7f4df7dec7a89ca492"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\a\\G_H0.csv",
+        "before_sha256": "fba0118ba6ace5e6c3adb514045bb7b9ea43aebaec42bfe7f5898da3f7bdb3a9",
+        "after_sha256": "fdfed313705b93118f8390d26d916d1fce020a6cbf75fddbf8e35b16a90dcb98"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\a\\G_H1.csv",
+        "before_sha256": "f021f8ffe4af205e2b158d9530a5c82b0efbba2fc9de83ab475caed8e84a5d57",
+        "after_sha256": "4bba45feecd2e6744e4c3c86fc72f4070a727e4999a7a36a1b354879ce4c88c4"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\a\\N_H0.csv",
+        "before_sha256": "bdc7b1712e76ebbc5c2225e92a7662c2f2f241b67892cd1c9550e393dfb3b38b",
+        "after_sha256": "d3906aab323409c861741a95207b03958d93d5a46a00f675e7646d86baa7b6b5"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\a\\N_H1.csv",
+        "before_sha256": "8f5f4a9e65874edcb717a62978a6b1c1badbae85820ec6eca9d2351f79b959da",
+        "after_sha256": "1a8fa58288e8155dd850518bc6e39c00fa25ba337079cc71ee89da984e7d66a3"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\a\\NC_H0.csv",
+        "before_sha256": "f2d8d28e886e1fb0b6cb8a9fb9c2e7d6bb6488744ee9ed23c1437471da342600",
+        "after_sha256": "81cf8f7ef9f02dd170e7327dca57ecd8c459bb715e6186982b51403e15531739"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\a\\NC_H1.csv",
+        "before_sha256": "cfbfda8c5a6d7a9c0287b607694cd2fab76892712e4b14c2ce488081560e432d",
+        "after_sha256": "94d7ea67a28e0fbd7271d500fe04ab53d2a092ef71d8b90a75dbd5082b1c689e"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\a\\NCG_H0.csv",
+        "before_sha256": "242e4d50b5ac20b0258934881c5d4153d545cd1c7243327acf58b4733ef8ffd7",
+        "after_sha256": "cfb2095c26bc2fd8a0e6e4fbd9f1c20bf164263058b96da3059d35633604e6f1"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\a\\NCG_H1.csv",
+        "before_sha256": "c162bfbf9e3cc0abf0496b0f71282e3e58617fd14e7442944ed885e2a58e4872",
+        "after_sha256": "88fd2ccb99adec7bc82f341662ba1ad31220309faae0ed01ff96c312c69a1656"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\a\\NCG_H1_M1.csv",
+        "before_sha256": "74507b661f2b40fc5cbfeacd910999fe25853823956046c935c56385504c3cf1",
+        "after_sha256": "27b8bc706635c3b77c5868793d60a20f0d2160363ab048cb34baebe19ff8c1ef"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\a\\NCG_H1_M1_selected.csv",
+        "before_sha256": "720aab6c72decf8a404fb8263452dc555f84ea7ae1375a7345fa00f41b6040ea",
+        "after_sha256": "72057aed8a74fe555f8f966f0882b3f31f4fb62c4ebc5ac20a57f6295dee9126"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\a\\NG_H0.csv",
+        "before_sha256": "3cdc04304c9b0dcd48bc544b781b544a2ca6e10f76a3487a43c572d4a2b2ccfc",
+        "after_sha256": "f9a8f81ebfdb39d042a9a2656b779eb0b136144bcddca803e9b7bda1ba444a69"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\a\\NG_H1.csv",
+        "before_sha256": "9c4425d0bc65019b5a57e450286be352ab08e8ff7cc6c40f10c44ac7ca832383",
+        "after_sha256": "75c08648a69b8bb8cb7363ae0c3a019dfe22c7d5cb2457f5de86e73c661e6754"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\b\\C_H0.csv",
+        "before_sha256": "df9e4186a8d6f115f6878f960617a8387ccdbcc95703a182dce1e31575590acc",
+        "after_sha256": "f1e43c51367ceeff0733d891b4a2c91272c33ea08f3c9900090dd38c4f036422"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\b\\C_H1.csv",
+        "before_sha256": "36f96f8553e969bc77c62c40a5935ca85376de9d0230844d82839d2a005590c9",
+        "after_sha256": "5f979d843f4acd9fcd7cce3a71363d6def185c99c25b6f9d3cc28e7409d8486b"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\b\\CG_H0.csv",
+        "before_sha256": "37246c67262d65694cbc26919dd9f6904b04040642791ffb34fab0be83949a7b",
+        "after_sha256": "615ff429e2004c4aec4ad2db6ab97f1de94230b9b501147ce035abaa0faffd29"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\b\\CG_H1.csv",
+        "before_sha256": "e427e42ec8e463c06e3bb5926963df566d66070719689918fb76e262b32dd050",
+        "after_sha256": "bd48ecd94e8875bb2dc8a8182464e9bd14bab143b212ac9ec868d458ca8fc39b"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\b\\G_H0.csv",
+        "before_sha256": "570f3b75f2506c61a0e16500066b28c9cad8e28c401b1cb7844476af5cfb8cd1",
+        "after_sha256": "84d9a156bbbff9141523471e6a494db05f88c552fb83d123bfd13ed844053eb5"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\b\\G_H1.csv",
+        "before_sha256": "f6666649e4221e4aad9596c7da6acbd570805c6137aee475889fdb7d7e63c854",
+        "after_sha256": "b34444f400e05288470d2d8a66e88407f538ace98adabc3e196e9f20106da2db"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\b\\N_H0.csv",
+        "before_sha256": "a9ed8182fba64d2d5ca2ada5a843ae094533682640a48f467f268894ca15820c",
+        "after_sha256": "66804af10274020c675d00aa18b7472baa985c0e1ce9dbd034abb535add50032"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\b\\N_H1.csv",
+        "before_sha256": "f61364fa8c33df4eb9100d50ac34d1572ebe51be9609c1c253227a6d66dd96d7",
+        "after_sha256": "5ce185150504d59d945e4c25f7635c344a817f1b4bfe319df45739b641a89864"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\b\\NC_H0.csv",
+        "before_sha256": "765ff61a56bf9d3abc97e24e8b2fcd5ceac060e57ac71d3ecfa923ae7d3886f1",
+        "after_sha256": "f2fc8f1191d050880eb116e4fcdb6f4f2d5b7a99bd11001ae6a7205ff2d20b4c"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\b\\NC_H1.csv",
+        "before_sha256": "e21385ed8fc4ef9cdc836217616f54c2b5f8481ea780cfa55c01247e0512290a",
+        "after_sha256": "d5155c9cec48291fe2ebfda47c30d27faf940653ed6870c312937fa295b95b1e"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\b\\NCG_H0.csv",
+        "before_sha256": "ce79318a1242780efa641440e8b544fa6b05af5511b3677b4be70fac7886080f",
+        "after_sha256": "95b3dc29d45618b2d914c3e650f5bc857bd2fa8689ff150e95ec07d823ac2e5c"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\b\\NCG_H1.csv",
+        "before_sha256": "3e22c05d9ef03e22210f069bc84a0035e4eb683cf6e5cfda099314ecb1c18801",
+        "after_sha256": "83b561dba2b5eae2cf8c5c30ed0de1ee714e31f1abb69cd51dd17c8e052eba78"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\b\\NCG_H1_M1.csv",
+        "before_sha256": "2b66860b3fddf8553cedc3737f5d0ac26496f623cc02348cac448486729d1586",
+        "after_sha256": "401681d7ea0c67503a2375202ca8961f3856433b9d448c1befa5ebb6506839b1"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\b\\NCG_H1_M1_selected.csv",
+        "before_sha256": "d069a6d19f340e9778cb671bc56629959e7ee8ae0002cb1da1c4a0f809b3a239",
+        "after_sha256": "d53ae9cf9171f915a53964b674afc721bcb269f28cb4c36a7be81cb8b45ff776"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\b\\NG_H0.csv",
+        "before_sha256": "496371633e1e6c9195c13a3b3a64e899a4a655f8734ed3731705c67cfd558bd9",
+        "after_sha256": "086b885837869195110a0cdf4c2a394c96ccc7d3167b18b509614e898f643571"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\b\\NG_H1.csv",
+        "before_sha256": "8482e33d99c96dc493020bd857ac3a97e2c7f2d448fb9dd205ca0f76825d47ae",
+        "after_sha256": "a6568dbdc568ff8b9d2b0ca0d5409352aaf1fe0fc086b98aea04b3ceb4383459"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\c\\C_H0.csv",
+        "before_sha256": "7978ff7bba0dd9fcc2b71b1de36196052a162bf3912bf0617556a8a7f4b0edc1",
+        "after_sha256": "e21cd161d94d1cf33ce002b9911158debb2740ddb3b279a30606742ff0c1480b"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\c\\C_H1.csv",
+        "before_sha256": "4e630d942eb43e969de16fdd633d23a7d3722fbf8597f3bfe0d966f94254c0cf",
+        "after_sha256": "0b5a8a6a1aaa1a288f0d69f21d09ae80aaa008080e51d97e09034cd58594e32e"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\c\\CG_H0.csv",
+        "before_sha256": "f22297297f6132c1992d3d3392161ccb264047f5fe13ff8ae351a3cacb8677c3",
+        "after_sha256": "913305419398c038f9014fd5c151202c26346919d9b3c18af96de1360e6d01a6"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\c\\CG_H1.csv",
+        "before_sha256": "95a081f8efa51400bc39c1cd17f76c313171620325012b4b08b92fd2b1a1967f",
+        "after_sha256": "e5373fc131dfdcc739dfdc105036575fbb849756d97ec9e9775847fbdd2b4193"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\c\\G_H0.csv",
+        "before_sha256": "a40a87f5feb0b7d24e7b516524cf45e354fdeb80e9953180dc0a12fab77c5a92",
+        "after_sha256": "5a9fb87cd123d58f44bebd5be4d978aa66b45c3ff5504237cf11b6c43e2bd8b3"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\c\\G_H1.csv",
+        "before_sha256": "9a5ed2183027f55356712ddeb3cb6fd5a805176802d9f3f55110253b9a5834ab",
+        "after_sha256": "b0eed7b9fbbaf0d7008bb651eeec0517447072e77b627be98b0c3c09dcd0ab42"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\c\\N_H0.csv",
+        "before_sha256": "d4c9f4c3403005ff3a565fe175824e4d090eccae499533248962e26e21462bd2",
+        "after_sha256": "e845785ca25850c0e9bf334a0a312aa89ade34e79450120e0454ceac38719756"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\c\\N_H1.csv",
+        "before_sha256": "87ffa624032c7229c661c83369a44ff78d0c3c9f0184a84306a16a74a39611f5",
+        "after_sha256": "e6d3da705b64effebd446af02b04c279fa97b5f98212f30ca811fe647fde7a13"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\c\\NC_H0.csv",
+        "before_sha256": "3d3e6a62e5820d98c9c6eef514668d54a19555a8c86ad28d6f5662d855596b93",
+        "after_sha256": "68f2df04acf8726cb591794aa70c5212198bed8cbcb9fd731e71d407d0b01e96"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\c\\NC_H1.csv",
+        "before_sha256": "85e66738b65c58b7253552bff7aaa84feb2834593fe9c533d72b79e6e0fc6943",
+        "after_sha256": "591d08b986c241d4e73acd6e791556b21bcc216cc2e09a9c1d6a1e0e2e22973d"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\c\\NCG_H0.csv",
+        "before_sha256": "e1a9b892db1c0b44e1de8866a73b68c4904bbd728cc8c96b82ecc289915f2632",
+        "after_sha256": "708c584c80d550d54114b04db0ca003d6ba3098e19533350576e874d1ba2f654"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\c\\NCG_H1.csv",
+        "before_sha256": "8407217b2d426b1912384070a512f29b91f49f78329cc59d9860305d99062632",
+        "after_sha256": "1242937a8fd035fc09fdb61fbda43e92495ab504f5a29e65f8dae65b0650a328"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\c\\NCG_H1_M1.csv",
+        "before_sha256": "40113e2c97d5b048df7e93ab9abe18331b785bbc1c40c14209dbc224a573a535",
+        "after_sha256": "d7dba824292be050f8ebae65bc3e6c1c152612ffc63627fc35b1decd59e50e78"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\c\\NCG_H1_M1_selected.csv",
+        "before_sha256": "5f1bd9e3a9828ad51ecc20df435f1cf1a1979d620ddfa322680e6e75b50970f1",
+        "after_sha256": "2572244772eea3ea8d239699cc0bb8a7b854b316cae64cd1f08bf17fef6c43d5"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\c\\NG_H0.csv",
+        "before_sha256": "7d6337bc18b6190edacc3fa22e552994f17af58e8d26dc1c1dca6de034531f7e",
+        "after_sha256": "e0a74fce616f51b84083683ffa106ebab727ba09967bbfda27b54c9839a7e275"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\c\\NG_H1.csv",
+        "before_sha256": "5116b0016bf20bdac55d013080de99cce5ad83fa33fdca6372302e40647e932a",
+        "after_sha256": "f6a9a30847ab9531ca6db75133685ba5ed1f8566b9fe6b5391ff8b6ffc2b6012"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\d\\C_H0.csv",
+        "before_sha256": "ec6dec7a68f74f63f13f95e2d049128a35a89ad4a0d2f7c012f47bdba2ad418e",
+        "after_sha256": "c201d91e06922307092f4dc08b88b704ab4f5cada43cdc2ba9844d6f24e0b7e0"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\d\\C_H1.csv",
+        "before_sha256": "608e2b97f164a7ee483928c559e80333f570d72b3dc65d3008ee4376337778cc",
+        "after_sha256": "b51367914ee5b1af6af82a3448130e77c72fd6c8f83e9c7371f6f3069753aa1a"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\d\\CG_H0.csv",
+        "before_sha256": "023d309b4a1ce5dea5839e4fb1c0cd50385fa2fe0990da8af44b8f2f3f16bbf9",
+        "after_sha256": "96e1300eeb1f9c6fc745aa53917f4010b30eb7f7978c47926840508e54e6a340"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\d\\CG_H1.csv",
+        "before_sha256": "5dbc369b2bb32cba53599aded7373ccc90cddc39bed56770d87971b7d707f9fa",
+        "after_sha256": "c364cb7ef6babc62b9960c2c7b33d489dcb5d3f22323eefececcfda815bee651"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\d\\G_H0.csv",
+        "before_sha256": "ab3756ab2dd3a4c06292a9b05a0d458321c197c055523338ee392c3b071bf1df",
+        "after_sha256": "9a1e4bd9f13bf25794e007e024765603b47e0e2d8cfac6079199b42de391407e"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\d\\G_H1.csv",
+        "before_sha256": "e772924761cf953e421acee3ec0e505a43476d1d8bce8f7a864c5813f862b4c7",
+        "after_sha256": "2278b1543ee00dce3c1eb910f1f9718411ad39f4e0427d0d6d335ade04e74c4a"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\d\\N_H0.csv",
+        "before_sha256": "f1cd10846404a4e357775f96e9775d38b1b63f7e9ec440925e208f5b0f3c3044",
+        "after_sha256": "8b9d47db2f1ef21e4fe429c04fb72bd783d34b2af83a1dd260bbd2748edc05a6"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\d\\N_H1.csv",
+        "before_sha256": "ec5168ef021fa4434d14eecfa56fe95304fb4e58a204a5b7bc893b91ed0533d8",
+        "after_sha256": "c1d15b9f4129fba3e43f3a616091a4afda614dbdd9eb06a2b8c0d6fe10c8c935"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\d\\NC_H0.csv",
+        "before_sha256": "126946169b66ce3566b135448db9728d599a518ef6a753758e09b0086419d995",
+        "after_sha256": "12c2f5abe61b4c4a2503a7223749e9f825711b977a0727be064dd9795c359f26"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\d\\NC_H1.csv",
+        "before_sha256": "0befe7cc5677f98c2b44be3ebf70f2ba597703b24ef6ef0e73a1b2d6c3180570",
+        "after_sha256": "d49056ddc6fd2495e3599fdf7d91ce65839e0e49ba5c31d97cba8ec917a42ce7"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\d\\NCG_H0.csv",
+        "before_sha256": "db404971863c0455a7e9fe04bfd0e4c70f06981095c4e5fa781e27d9cb796c15",
+        "after_sha256": "094b6f7c58e00b26dfad300b22822115a5151a25a3b7fb85046921e7ab7d979e"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\d\\NCG_H1.csv",
+        "before_sha256": "1426f6ef38eb9d99f504a1bc324d5b2cdcc2ba652dda2f79801648329072ac07",
+        "after_sha256": "24a4d0cb0f65511dd7da64944f65b30d4a19cb60280b9ad8b7e2b9027839390e"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\d\\NCG_H1_M1.csv",
+        "before_sha256": "116cdebb49d114a876cf1f0a890b4eff3925c05f029d3d3e8f3f1a1af68811c4",
+        "after_sha256": "1fdaed37b52d0e8a89342213bdb097be87323b8778f92f98117832bf78ef89d2"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\d\\NCG_H1_M1_selected.csv",
+        "before_sha256": "b85d065a8a042c9534be64aed804f1736eac5e4cbcdbd8a1c3a915c8d9b54421",
+        "after_sha256": "7e99c1b0aee1d5a23f16924e088c14a8f52cfdbe55e2a8a906c0019be4d81173"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\d\\NG_H0.csv",
+        "before_sha256": "1b9767fa0e3fc409b2045575e4886c617ae91256e357201072ab8ecb378e3ebe",
+        "after_sha256": "0054334cb8ff663a13a5304ce5e15e035ad89f428eda73da47ad6669fb853395"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\d\\NG_H1.csv",
+        "before_sha256": "d3669c1a85e8ff73b10ff5aefefcdf9a5a7b27e45b5a05135203b9b4962ec65d",
+        "after_sha256": "62fd5dcf353636e49ba281ad5e7b8bac125459a10f53c20826453e252a13ddc8"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\e\\C_H0.csv",
+        "before_sha256": "071304e9faa4dcedc95ca143ba3b5588aa7ca0f99f9e197a1def35d3d2332273",
+        "after_sha256": "d1720cbfe40870c0381a297e0cc1fa867f00285728b79f0ad3b80dc0d13c7637"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\e\\C_H1.csv",
+        "before_sha256": "9bd67ba23a5e0229143528553b3ef6970eb59afa57c80e5931ce2aa0ef8a7a70",
+        "after_sha256": "864f91a404f7481b17ebdc5d0827b0eb486c2f9b3b3fe3ed7edb3e9c5848e9d7"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\e\\CG_H0.csv",
+        "before_sha256": "83da96f2c2726fa691e66204a343b6bfe94b62c5d28feb2e483eafeb48aaa2cf",
+        "after_sha256": "0f90c75593b6e674960ff428f8aac955b3afa4d6ef3ae52052a51386d39b03ae"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\e\\CG_H1.csv",
+        "before_sha256": "75a3e918bebae15ed9f91cf71c27156f4b0aa1aeefffecdeb5e5589c5290eb90",
+        "after_sha256": "cb166077100e83884085c899f00d517b5bffed00d08f44589c02a04325245f19"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\e\\G_H0.csv",
+        "before_sha256": "ff51a653bd8e9f07256fd4ccf7e3abfe4c3ba25b7b17d7b95e34bfcdc5beefd5",
+        "after_sha256": "018212dd5a4bc220f2c438b7d3b9eee860f8a832f79dd5a9d87aae329f309d59"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\e\\G_H1.csv",
+        "before_sha256": "92733b145a56341502b7e47445542b04f25c09d1a11537464c21288375bddec7",
+        "after_sha256": "15c155ab7c2fd849648049ab234f7a0491392fb7a45912f617de84868f7e88f9"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\e\\N_H0.csv",
+        "before_sha256": "e75e56b0634513b43d6d80a6603b258289b2d6ec35f75bd8cc885331af432aa5",
+        "after_sha256": "aac309157d1b1a88478383c5cacb867e95a4453e83be80e7d644efcdd1deda1a"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\e\\N_H1.csv",
+        "before_sha256": "25fc613d41af212c0a16eda14691e8fee9eaec3380a0fa94e945b6296b599371",
+        "after_sha256": "2113aef7cfd8c732fe5ed0079829a6f652643784e9010100f47ba737c14f6d4c"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\e\\NC_H0.csv",
+        "before_sha256": "a7b8edd39e05ecbfea9ba47d12e3c96ca43cece65a0ffe96059695fdffa26e8d",
+        "after_sha256": "a55f90aadabecc6abcfa0e397e96876fec2cdfb86647e624b87ae189ea5e8d2e"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\e\\NC_H1.csv",
+        "before_sha256": "32b102aeeb9152f3d78c7fc48f4e1f503a97dfc975f5cf5d67a4bbccfd9bf368",
+        "after_sha256": "85d20da1f94b8137f2fbd8068a8838b889db4681263637ac3ee65e5b2f3cc604"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\e\\NCG_H0.csv",
+        "before_sha256": "ec21d1bb1de254a54c258b4656d18f72ff356596754ccb9dd247d9d1f330dac2",
+        "after_sha256": "97b00006d6e59801b189de81eddc1a14b18b19e3308a543d49964d04703f542b"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\e\\NCG_H1.csv",
+        "before_sha256": "74362e2eaeae7bc7a61cebba6e5d817b1e4b083684779ebe1c61c43ea948231c",
+        "after_sha256": "da8b468b6958f3f72b2b76d17f279fddb87164e619f1e1d6040a6b6b22fe176c"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\e\\NCG_H1_M1.csv",
+        "before_sha256": "7204b0a65e1327064d71247eafafd21dcb04750ddef76ac9a44adff721c33816",
+        "after_sha256": "05fa650f0e9c19720d33568c952d515bb1ef77f9385edfbc1796e2c89138f999"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\e\\NCG_H1_M1_selected.csv",
+        "before_sha256": "3cd98a14b7fc2aba8f05232a906a89b681417e88f8f01e49808a3d5b9fc47414",
+        "after_sha256": "1c44a54cff7722a346c1f6d0c1a91bf7e18acafbf9c3277a8fb079ba243d60b7"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\e\\NG_H0.csv",
+        "before_sha256": "42bf25ff187f83d846572ad2de93fde2650c492b65a28cf83099923d7a7fa1cd",
+        "after_sha256": "b108ad82fd6605381d3f9e04ea53138b92dc91b62522f166e438852a4a95b430"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\e\\NG_H1.csv",
+        "before_sha256": "45888a2b536d3fc21c94f35ae306d60e68d4ade44d82aceefec0b5751145615a",
+        "after_sha256": "b6295e52b7ccf93db7cb18a9d7f8fe793c47a57a673337533b36bab547fc964a"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\f\\C_H0.csv",
+        "before_sha256": "06b6edfd4d7c135adfb75f4d890ce543e45963edbf45108ec7439de886f4d45e",
+        "after_sha256": "d1f79d6477ab2f99d148cd0152743f2edbfc185e8ce961aa16a5ce380e115a1f"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\f\\C_H1.csv",
+        "before_sha256": "176aa5c6ab145f782ba501246dd92a409ddca4c64438fa81103e95464db08b07",
+        "after_sha256": "32a2d09ec3e85918d85ce9d1638b66831648a9310a761dc9d2060967fdf396da"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\f\\CG_H0.csv",
+        "before_sha256": "aaea46b66eaa3e983a496968fd628267fee01fdb3347302e7ebde88725fbba58",
+        "after_sha256": "78cbe3b6d35f8ffa7397e7d216d19797b1d804a40edb87f6b332eeed7c5ab252"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\f\\CG_H1.csv",
+        "before_sha256": "ff9a780f42b610fac9a0398c81c4e25b9f5f3b7ea84b768ca41d460ccff223ce",
+        "after_sha256": "f286f1224d2f07a6f0407b76bf893d73fc6db3de245cb1c64c9265b8c54377c1"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\f\\G_H0.csv",
+        "before_sha256": "ff091aedf2484ec27cd46b048cb0cb855eca64afcc00e83e789ae609030e7d1f",
+        "after_sha256": "e22a1162abc13e069df4a5951c3289ac31229001b8f2d59e90fc4be66b20f9c3"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\f\\G_H1.csv",
+        "before_sha256": "b9e1f9d1b0633f3506c2aa144616ce74dd930a75144ec611dd69a511975f6506",
+        "after_sha256": "51a9268172846aee9db3e13af130eaf90e4f987d8a6418eb8df2cf415b988d29"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\f\\N_H0.csv",
+        "before_sha256": "2c3080f5965fb98dfe358f0f6f99a8cb5716d4e7a0fbefbc7a96fa4858b3c043",
+        "after_sha256": "f8059f95f481e2e4ba67134a2f5c79278f46d0b3fd0c37358bc85d68093062e4"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\f\\N_H1.csv",
+        "before_sha256": "8b85fc6bf16a79815d427897f6a67b2574db78706061b2346339addccb721a32",
+        "after_sha256": "0104dca04ddff9f9486d48b69ee3dd19275074dcd12e10149a8f793d747030b0"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\f\\NC_H0.csv",
+        "before_sha256": "d1cd506bd1aa4d673dd076a38d03c8c4fc135143e0ed456105dd3ed360a06ee4",
+        "after_sha256": "780b2f1a4cce2fba813c8fcf0fd09487d4d6af3ca6e87ed23f3d1f1826033f1e"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\f\\NC_H1.csv",
+        "before_sha256": "eb4d546a2c459a44b2657e45c84a5bff2ea34f8b8450b7df2ce9d870c86470e5",
+        "after_sha256": "db150285d3bebb854f1ec5351c1d970a41d56ceea0f0d15e39ce61bd41fcbcd9"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\f\\NCG_H0.csv",
+        "before_sha256": "c6dbf2a5bb5d1a3ced3ceba11a284216cebcacde623c7e8b8cf5f53ea0e147e5",
+        "after_sha256": "c018e2048fb1ce253c33adabda224ca90420b8c0e541096d541f1b1060cb28bf"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\f\\NCG_H1.csv",
+        "before_sha256": "fc8ae3b7a0231a8fe054e35b934db05954e990004e69d37a9be6c376aa4ebef1",
+        "after_sha256": "743fdbdf6ded2e655beb9f7ec6419afa45a365dbcefa765a28279d7f3b10ea35"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\f\\NCG_H1_M1.csv",
+        "before_sha256": "c397d2210bfc2169c5708af1b9ec0c8b7db9d846de46d62bb513b9f778ef162c",
+        "after_sha256": "3423fb0bb1be39a27d713e5cdfb5010ce7657f13b8c58e658d42e8cbe60fd6ef"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\f\\NCG_H1_M1_selected.csv",
+        "before_sha256": "f7278b7d8b831c0310a42f210c9d2998cea3449510f046e9fc0b075e51aed25d",
+        "after_sha256": "a1a8ba921e05e5178716083c6b5940786902d368e0be10dc7ceeb519120a74b3"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\f\\NG_H0.csv",
+        "before_sha256": "55721232b6c9434ea8f37b84cc84037276ba390f186cc3b2d232f389d22f6407",
+        "after_sha256": "a7047348a61a1e45b7f7abd0d35d5a66e3ca64002a15e4268d480e58c043139a"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\f\\NG_H1.csv",
+        "before_sha256": "8d94fd909a2e4c07337d152badea9052cbffc1d5a0f4f9f0d2b6657be7dae672",
+        "after_sha256": "074add35839ebe7fce6288c7743e5cc676d5f7194036db8b6b779d872ef7191d"
+      }
+    ]
+  },
+  "source_history": [
+    {
+      "current_source": "E:\\vk_lod_clusters1\\t1\\tools\\pointclipv2\\adaptive_p10_policy.py",
+      "frozen_source": "E:\\vk_lod_clusters1\\t1\\analysis_reports\\adaptive_p10_v4_20261020\\method\\generation_adaptive_p10_policy.py",
+      "generation_sha256": "a00bed3a5028ee46915c4c662fdd63352b1ca4656033414ed86adeb53202f706",
+      "note": "Preserved exact source hash; later changes add CLI compatibility/metadata and delivery validation"
+    },
+    {
+      "current_source": "E:\\vk_lod_clusters1\\t1\\tools\\pointclipv2\\run_adaptive_p10.py",
+      "frozen_source": "E:\\vk_lod_clusters1\\t1\\analysis_reports\\adaptive_p10_v4_20261020\\method\\generation_run_adaptive_p10.py",
+      "generation_sha256": "605a7bb1fa83534ae884e1502f1c848ddcd2c41d0a2b99f8237c6e8c0a490ccc",
+      "note": "Preserved exact source hash; later changes add CLI compatibility/metadata and delivery validation"
+    }
+  ],
+  "geometry_evaluation_reuse_history": [
+    {
+      "reason": "Only runtime screen weight and version tags changed; all simplifier requests/error limits/geometry unchanged",
+      "archive": "E:\\vk_lod_clusters1\\t1\\analysis_reports\\adaptive_p10_v4_20261020\\development_v4_1_scene_ready\\policies_before_visual_retune.zip",
+      "archive_sha256": "33b22b1ff1c835dd0c1dc91f1890f5632678c2a24839f3fd922c9dd9ec0a1299",
+      "changed_columns": [
+        "policy_version",
+        "runtime_visual_quality_rule",
+        "screen_error_weight",
+        "strategy"
+      ],
+      "records": [
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\a\\C_H0.csv",
+          "before_sha256": "8829145d4738ea5139f6715c06925c4ee4c2a72a288070b0b836ec434db6b58d",
+          "after_sha256": "ef66d902a2924c28077b7328c6227465bf214fc9ec8a6d4bf5c1bd23c794afa0"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\a\\C_H1.csv",
+          "before_sha256": "c22be6d495f33cdd213e8e5e80b2827512a5f2477ba6d3bddfcfe5c81b348633",
+          "after_sha256": "891ad01b835165d938d836dd6e886f70269949daacce5e5d0be2ba5b8d48d87e"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\a\\CG_H0.csv",
+          "before_sha256": "47fbd00a1c934a3a3c5246a7036f4e2c119601f18a913b0caffe06cddac4fc66",
+          "after_sha256": "c27fac1194eff88851dfda0bfb527194ea8ceaf821a7b766e4ecb0f6a4cc37ee"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\a\\CG_H1.csv",
+          "before_sha256": "f8256bc7168267e3b120ded7f90068c84cea16401abcbdd9308e8cdd70f55fc1",
+          "after_sha256": "6e2e24102dd456284f36a7fb88a9989da1b5d312475492371c225cffd03f05ea"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\a\\G_H0.csv",
+          "before_sha256": "2f7c024d6a226f661d6c772cb2270e4f7926ba56c365a0d6b2ba2960bb55bffc",
+          "after_sha256": "fba0118ba6ace5e6c3adb514045bb7b9ea43aebaec42bfe7f5898da3f7bdb3a9"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\a\\G_H1.csv",
+          "before_sha256": "fda6b15b297086ab1fb327b80f644d10d4a614b71c4de0b5050e56e51798867c",
+          "after_sha256": "f021f8ffe4af205e2b158d9530a5c82b0efbba2fc9de83ab475caed8e84a5d57"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\a\\N_H0.csv",
+          "before_sha256": "ccea37e6f8d3e3d0fec9904bb98e8859141505e4a119feaed30eeb512417665d",
+          "after_sha256": "bdc7b1712e76ebbc5c2225e92a7662c2f2f241b67892cd1c9550e393dfb3b38b"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\a\\N_H1.csv",
+          "before_sha256": "bd8d66bf74c29b50f1fcc811888ef7d5ab896e77844f9e6347e77bc54c693820",
+          "after_sha256": "8f5f4a9e65874edcb717a62978a6b1c1badbae85820ec6eca9d2351f79b959da"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\a\\NC_H0.csv",
+          "before_sha256": "d8d49098ebb2dc8dfe64d0d9156112a4eea9ffd247ce64bfda15fa563b473482",
+          "after_sha256": "f2d8d28e886e1fb0b6cb8a9fb9c2e7d6bb6488744ee9ed23c1437471da342600"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\a\\NC_H1.csv",
+          "before_sha256": "78753afcfbeaa14b35dc6e0c523029047611cfce9144e11cabe1a767528bc76d",
+          "after_sha256": "cfbfda8c5a6d7a9c0287b607694cd2fab76892712e4b14c2ce488081560e432d"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\a\\NCG_H0.csv",
+          "before_sha256": "f83f5e2809171f2a2a7b300f6d769f359f8779613e5ae09556ff76184b6ef18b",
+          "after_sha256": "242e4d50b5ac20b0258934881c5d4153d545cd1c7243327acf58b4733ef8ffd7"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\a\\NCG_H1.csv",
+          "before_sha256": "291b2493c7fdae829e65bc7119100123033d05a93f330d17b8bf85f9f3a5a185",
+          "after_sha256": "c162bfbf9e3cc0abf0496b0f71282e3e58617fd14e7442944ed885e2a58e4872"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\a\\NCG_H1_M1.csv",
+          "before_sha256": "18d32e4745072f50620e55546f0a89a8f8395b8547955e4fc85b897ec5aa1386",
+          "after_sha256": "74507b661f2b40fc5cbfeacd910999fe25853823956046c935c56385504c3cf1"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\a\\NCG_H1_M1_selected.csv",
+          "before_sha256": "98b81aca93ce84a9e2966e709aa9b5f925546d6f5e4be9d5ad657cff6c3ff201",
+          "after_sha256": "720aab6c72decf8a404fb8263452dc555f84ea7ae1375a7345fa00f41b6040ea"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\a\\NG_H0.csv",
+          "before_sha256": "d690db1e43be36be017d6190969538ffd91c9fc0b32cf2a9b538b1d7a89dcf76",
+          "after_sha256": "3cdc04304c9b0dcd48bc544b781b544a2ca6e10f76a3487a43c572d4a2b2ccfc"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\a\\NG_H1.csv",
+          "before_sha256": "2f2116be4467fd94c0c5d3ef30b9570e6e30661ee90b20508011c88ee42bd4f4",
+          "after_sha256": "9c4425d0bc65019b5a57e450286be352ab08e8ff7cc6c40f10c44ac7ca832383"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\b\\C_H0.csv",
+          "before_sha256": "a18dff98658ae5a4fd7babee584e3c3ecf9f114fcd0b3f3dbd3f5cf34750929f",
+          "after_sha256": "df9e4186a8d6f115f6878f960617a8387ccdbcc95703a182dce1e31575590acc"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\b\\C_H1.csv",
+          "before_sha256": "32394082ec14dfb5ed0f02d544096a16cf093a1fd85b6e4764552d0fed02ddd8",
+          "after_sha256": "36f96f8553e969bc77c62c40a5935ca85376de9d0230844d82839d2a005590c9"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\b\\CG_H0.csv",
+          "before_sha256": "b988ca98d6de4809e64045f3e90ba232cc45909292de2460df06b3000d228820",
+          "after_sha256": "37246c67262d65694cbc26919dd9f6904b04040642791ffb34fab0be83949a7b"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\b\\CG_H1.csv",
+          "before_sha256": "e8857e26295d982380c0d87ac258f5ec00fdff4aa646a6e11edde2178bccbea8",
+          "after_sha256": "e427e42ec8e463c06e3bb5926963df566d66070719689918fb76e262b32dd050"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\b\\G_H0.csv",
+          "before_sha256": "d0faaccf0c03ecbf32016744366d88537802a51140bb9bb889e0352c76fa5cc1",
+          "after_sha256": "570f3b75f2506c61a0e16500066b28c9cad8e28c401b1cb7844476af5cfb8cd1"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\b\\G_H1.csv",
+          "before_sha256": "cea5a89c9bef6b12216ba0881284d71f7e560e4de891e414a1efe06830317b58",
+          "after_sha256": "f6666649e4221e4aad9596c7da6acbd570805c6137aee475889fdb7d7e63c854"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\b\\N_H0.csv",
+          "before_sha256": "ca4a13e59b21e250d16e215a8bb740cbd3172c38331161a4ae2924b9f5deca90",
+          "after_sha256": "a9ed8182fba64d2d5ca2ada5a843ae094533682640a48f467f268894ca15820c"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\b\\N_H1.csv",
+          "before_sha256": "8bff93efe79380843a57e5183f8b599eaa93350b91fd9db2ce27ac07993969cd",
+          "after_sha256": "f61364fa8c33df4eb9100d50ac34d1572ebe51be9609c1c253227a6d66dd96d7"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\b\\NC_H0.csv",
+          "before_sha256": "a6363c5d3d8522a88f46ce8617d662ee147ccc1fa94f8ecbbca73a45be21ded1",
+          "after_sha256": "765ff61a56bf9d3abc97e24e8b2fcd5ceac060e57ac71d3ecfa923ae7d3886f1"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\b\\NC_H1.csv",
+          "before_sha256": "4236fc21520f118c21869c0c0533594515a50facb8c5a1c6fe3aae7942b5c65f",
+          "after_sha256": "e21385ed8fc4ef9cdc836217616f54c2b5f8481ea780cfa55c01247e0512290a"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\b\\NCG_H0.csv",
+          "before_sha256": "e94202fc3a84af9b9e5f4dec9f681b87ca16908fb805d5c61526089fe8a20f8f",
+          "after_sha256": "ce79318a1242780efa641440e8b544fa6b05af5511b3677b4be70fac7886080f"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\b\\NCG_H1.csv",
+          "before_sha256": "a891cbbf3de8ac4b4eb39a9a4c7eb4db8ff465628a8b334cf89e756a8dc80ce4",
+          "after_sha256": "3e22c05d9ef03e22210f069bc84a0035e4eb683cf6e5cfda099314ecb1c18801"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\b\\NCG_H1_M1.csv",
+          "before_sha256": "5f88d65aeb4a6ab27ac58af6cbee98806befd70e8648ed64c4d0b68806c5adb3",
+          "after_sha256": "2b66860b3fddf8553cedc3737f5d0ac26496f623cc02348cac448486729d1586"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\b\\NCG_H1_M1_selected.csv",
+          "before_sha256": "3c8ba8d51e4547cf5c13933ca025eaa8139813306f99d4a9ac2198697b751436",
+          "after_sha256": "d069a6d19f340e9778cb671bc56629959e7ee8ae0002cb1da1c4a0f809b3a239"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\b\\NG_H0.csv",
+          "before_sha256": "e2e7e9bc62153a970db37887b862208c509778f016efd3a1652fcdc52ac8673b",
+          "after_sha256": "496371633e1e6c9195c13a3b3a64e899a4a655f8734ed3731705c67cfd558bd9"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\b\\NG_H1.csv",
+          "before_sha256": "b52cbd27b01dd840391e5ebc6a2bb7575fb58f68ef763e97c2f8b906f702c42d",
+          "after_sha256": "8482e33d99c96dc493020bd857ac3a97e2c7f2d448fb9dd205ca0f76825d47ae"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\c\\C_H0.csv",
+          "before_sha256": "1d5b015261acc1397943fad379f703d3413b167424b8ea7c34344fa7aba08d9b",
+          "after_sha256": "7978ff7bba0dd9fcc2b71b1de36196052a162bf3912bf0617556a8a7f4b0edc1"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\c\\C_H1.csv",
+          "before_sha256": "0a54f6ae934fc26be87cbeae16a83984dd23790d8c01281be505babd5598798a",
+          "after_sha256": "4e630d942eb43e969de16fdd633d23a7d3722fbf8597f3bfe0d966f94254c0cf"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\c\\CG_H0.csv",
+          "before_sha256": "e43c55adf6d26a508ed82b00d9dbedab1c292e754fd5820745a03f9ba623f9cf",
+          "after_sha256": "f22297297f6132c1992d3d3392161ccb264047f5fe13ff8ae351a3cacb8677c3"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\c\\CG_H1.csv",
+          "before_sha256": "b1ca4420f630d7bb953a7b2f334eef455d57d126ca0b7df6ba3879bc4105d78f",
+          "after_sha256": "95a081f8efa51400bc39c1cd17f76c313171620325012b4b08b92fd2b1a1967f"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\c\\G_H0.csv",
+          "before_sha256": "513cc95b75c68d669a15cdc82ed5ca8eb58d67007f8c4c4801ffe1e9058d702c",
+          "after_sha256": "a40a87f5feb0b7d24e7b516524cf45e354fdeb80e9953180dc0a12fab77c5a92"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\c\\G_H1.csv",
+          "before_sha256": "0cfd590a2a01ea8c133497c2ecb33953a9ce5c814cc0af7aeac496ae9cdc50f9",
+          "after_sha256": "9a5ed2183027f55356712ddeb3cb6fd5a805176802d9f3f55110253b9a5834ab"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\c\\N_H0.csv",
+          "before_sha256": "e027801344d07e43b4822ad3ec20cbfb0880976e107186d3d19ee0a001abdb09",
+          "after_sha256": "d4c9f4c3403005ff3a565fe175824e4d090eccae499533248962e26e21462bd2"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\c\\N_H1.csv",
+          "before_sha256": "335d8fbf606e71a57c9cad9332238c33ae692240757b4aca14394348d16f421a",
+          "after_sha256": "87ffa624032c7229c661c83369a44ff78d0c3c9f0184a84306a16a74a39611f5"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\c\\NC_H0.csv",
+          "before_sha256": "dc67f98ae80819b6e0271bd959e7383e7dc0d0720bcd79a334513b26090b7a60",
+          "after_sha256": "3d3e6a62e5820d98c9c6eef514668d54a19555a8c86ad28d6f5662d855596b93"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\c\\NC_H1.csv",
+          "before_sha256": "40ab87dbdcc5b9491cf341f44b4cfaf065330f9fdc75c4c9e22c3b994fbd1b22",
+          "after_sha256": "85e66738b65c58b7253552bff7aaa84feb2834593fe9c533d72b79e6e0fc6943"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\c\\NCG_H0.csv",
+          "before_sha256": "e545db038cc7773896013541028e4ad2de5da4f37c2ef9a30b6476b0105cf16b",
+          "after_sha256": "e1a9b892db1c0b44e1de8866a73b68c4904bbd728cc8c96b82ecc289915f2632"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\c\\NCG_H1.csv",
+          "before_sha256": "3044ce23c25bcfb68e2755f0fa656fb239dec3a66e537f766e6a8eab1357694f",
+          "after_sha256": "8407217b2d426b1912384070a512f29b91f49f78329cc59d9860305d99062632"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\c\\NCG_H1_M1.csv",
+          "before_sha256": "12c0618622300c1b8b236eac4358e84eb9e93008d8e22483326536b24a30819a",
+          "after_sha256": "40113e2c97d5b048df7e93ab9abe18331b785bbc1c40c14209dbc224a573a535"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\c\\NCG_H1_M1_selected.csv",
+          "before_sha256": "a983ec5629c3837ced585ba22bb12e2209bcb67e7555ca06783c97df461f0cf9",
+          "after_sha256": "5f1bd9e3a9828ad51ecc20df435f1cf1a1979d620ddfa322680e6e75b50970f1"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\c\\NG_H0.csv",
+          "before_sha256": "340619dd4950bd33a661933f5e1867eac851a49258400231841675889a57a1e4",
+          "after_sha256": "7d6337bc18b6190edacc3fa22e552994f17af58e8d26dc1c1dca6de034531f7e"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\c\\NG_H1.csv",
+          "before_sha256": "0dcb61632fa12b277b3f29d4e0550a69d132fcce5f9c6a57c41ef8bead472bdb",
+          "after_sha256": "5116b0016bf20bdac55d013080de99cce5ad83fa33fdca6372302e40647e932a"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\d\\C_H0.csv",
+          "before_sha256": "04035c3fc5e05b397afb9417c8beabf36465d4554c5f1b29c7e035e2abc3f29c",
+          "after_sha256": "ec6dec7a68f74f63f13f95e2d049128a35a89ad4a0d2f7c012f47bdba2ad418e"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\d\\C_H1.csv",
+          "before_sha256": "c6e1333343e842d3defb64075c678164c694309115431a022adb07c8892b45ba",
+          "after_sha256": "608e2b97f164a7ee483928c559e80333f570d72b3dc65d3008ee4376337778cc"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\d\\CG_H0.csv",
+          "before_sha256": "7157421be0d55ca16d97c7ec31dcb3cf7fb686f916bbabe8c2ba1c31416ca46d",
+          "after_sha256": "023d309b4a1ce5dea5839e4fb1c0cd50385fa2fe0990da8af44b8f2f3f16bbf9"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\d\\CG_H1.csv",
+          "before_sha256": "f5054a1bafa04d871148fe2922e5d5b60255fca951523fd87e4d41bc4ab4f4cf",
+          "after_sha256": "5dbc369b2bb32cba53599aded7373ccc90cddc39bed56770d87971b7d707f9fa"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\d\\G_H0.csv",
+          "before_sha256": "b7441042c19df3c25a9aaaf04899cd2a7ec247955f864f80ed70b1de1f8f2c7b",
+          "after_sha256": "ab3756ab2dd3a4c06292a9b05a0d458321c197c055523338ee392c3b071bf1df"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\d\\G_H1.csv",
+          "before_sha256": "e8b99b240af296530964877c952f36072475bf8d72cbaf070707bab9ed56b650",
+          "after_sha256": "e772924761cf953e421acee3ec0e505a43476d1d8bce8f7a864c5813f862b4c7"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\d\\N_H0.csv",
+          "before_sha256": "cfc35c9f6798ba1fa14c35ca0b419b7f86e047281afd27f6cb73ad3ff0abdb15",
+          "after_sha256": "f1cd10846404a4e357775f96e9775d38b1b63f7e9ec440925e208f5b0f3c3044"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\d\\N_H1.csv",
+          "before_sha256": "b3609624323ef8d29dcbc9b5b391a4d0b5af2533d20e6ccea36e8e446986d20e",
+          "after_sha256": "ec5168ef021fa4434d14eecfa56fe95304fb4e58a204a5b7bc893b91ed0533d8"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\d\\NC_H0.csv",
+          "before_sha256": "8c8a6f4d83941cf45badc85b0f7b661e3bfdf050c1353ed02e44759c9b7b629d",
+          "after_sha256": "126946169b66ce3566b135448db9728d599a518ef6a753758e09b0086419d995"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\d\\NC_H1.csv",
+          "before_sha256": "50aa1a2559e75ccfd9146aed6d741c978dcfbeed16c4fe273e884ece18159c00",
+          "after_sha256": "0befe7cc5677f98c2b44be3ebf70f2ba597703b24ef6ef0e73a1b2d6c3180570"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\d\\NCG_H0.csv",
+          "before_sha256": "67ed4146c9b124deed71e5cdd1d72693ad72a3c5173e3f04c1da0b2b37773536",
+          "after_sha256": "db404971863c0455a7e9fe04bfd0e4c70f06981095c4e5fa781e27d9cb796c15"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\d\\NCG_H1.csv",
+          "before_sha256": "37b2fbd500121d0ad6a524c69553088ff0d9c5c6f5684617c4a14a4b470d2cb2",
+          "after_sha256": "1426f6ef38eb9d99f504a1bc324d5b2cdcc2ba652dda2f79801648329072ac07"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\d\\NCG_H1_M1.csv",
+          "before_sha256": "8bd8c2a47484fe81ca1a6374272c62a87661d9799f6f2ef2e1e8de11eff81661",
+          "after_sha256": "116cdebb49d114a876cf1f0a890b4eff3925c05f029d3d3e8f3f1a1af68811c4"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\d\\NCG_H1_M1_selected.csv",
+          "before_sha256": "c52ccaaaf72f3b206561fc4f4ac1915f7bba68933ceb63bf438e110907b9495d",
+          "after_sha256": "b85d065a8a042c9534be64aed804f1736eac5e4cbcdbd8a1c3a915c8d9b54421"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\d\\NG_H0.csv",
+          "before_sha256": "0af4c0314057370dd1d922b2f5c13676d630257b82989183512f3dea67e240c9",
+          "after_sha256": "1b9767fa0e3fc409b2045575e4886c617ae91256e357201072ab8ecb378e3ebe"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\d\\NG_H1.csv",
+          "before_sha256": "08012b3695e2157d35f76cdcf44fba00d8809906c41f10dd0ff8810e7db27b73",
+          "after_sha256": "d3669c1a85e8ff73b10ff5aefefcdf9a5a7b27e45b5a05135203b9b4962ec65d"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\e\\C_H0.csv",
+          "before_sha256": "f50f2440205be3c9358cb02358e6c7576a1d3a86043632b81bffdaaf0af8ade3",
+          "after_sha256": "071304e9faa4dcedc95ca143ba3b5588aa7ca0f99f9e197a1def35d3d2332273"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\e\\C_H1.csv",
+          "before_sha256": "ade033c75691ae8ce8c413f4612ef76c9e7e6e118c77c97aee52f7d8d300cece",
+          "after_sha256": "9bd67ba23a5e0229143528553b3ef6970eb59afa57c80e5931ce2aa0ef8a7a70"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\e\\CG_H0.csv",
+          "before_sha256": "060dd2cc8e4cca97f6f000e082947bf4325dc0130eead24859fea3c0d270f811",
+          "after_sha256": "83da96f2c2726fa691e66204a343b6bfe94b62c5d28feb2e483eafeb48aaa2cf"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\e\\CG_H1.csv",
+          "before_sha256": "6cd814738673ea3ff7e14cbb7606bb0a6e0a041c162ec4de758ab4e38ecdacb8",
+          "after_sha256": "75a3e918bebae15ed9f91cf71c27156f4b0aa1aeefffecdeb5e5589c5290eb90"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\e\\G_H0.csv",
+          "before_sha256": "57ab82d900e908bbebc1273f000d53fac310e141f9992761e4b2e05f3a13ef52",
+          "after_sha256": "ff51a653bd8e9f07256fd4ccf7e3abfe4c3ba25b7b17d7b95e34bfcdc5beefd5"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\e\\G_H1.csv",
+          "before_sha256": "2a1d85b34a31e262e7128685212a7b9774d39b8a0c9b15a8630d1cd6e0ff4dca",
+          "after_sha256": "92733b145a56341502b7e47445542b04f25c09d1a11537464c21288375bddec7"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\e\\N_H0.csv",
+          "before_sha256": "aceeb49db9f40e85b24698fe6e40235d5912371dc13e9a716700615499fdd629",
+          "after_sha256": "e75e56b0634513b43d6d80a6603b258289b2d6ec35f75bd8cc885331af432aa5"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\e\\N_H1.csv",
+          "before_sha256": "f6ce836ef5b6ef68696020706fd8a83d6c5f0b1e4c2d7a3f5b81e092de4e04c7",
+          "after_sha256": "25fc613d41af212c0a16eda14691e8fee9eaec3380a0fa94e945b6296b599371"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\e\\NC_H0.csv",
+          "before_sha256": "3dfccfe9c89415f98ebf178d18a958a1f9051136a2190f0656c1a5a024523a3e",
+          "after_sha256": "a7b8edd39e05ecbfea9ba47d12e3c96ca43cece65a0ffe96059695fdffa26e8d"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\e\\NC_H1.csv",
+          "before_sha256": "2bf8eaaeaddd159846cd91219ee6e89b8ec4b9d46beaf1385078eb9c8e7aa0be",
+          "after_sha256": "32b102aeeb9152f3d78c7fc48f4e1f503a97dfc975f5cf5d67a4bbccfd9bf368"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\e\\NCG_H0.csv",
+          "before_sha256": "bcf6603de3d9eacef03d0095ba27c8c4a30d3f2cc83c328db767e65c9c4b7541",
+          "after_sha256": "ec21d1bb1de254a54c258b4656d18f72ff356596754ccb9dd247d9d1f330dac2"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\e\\NCG_H1.csv",
+          "before_sha256": "e424b04546f997c96d7246a2fee768cf91fdc2ef258fd732d76a96ee2733ef42",
+          "after_sha256": "74362e2eaeae7bc7a61cebba6e5d817b1e4b083684779ebe1c61c43ea948231c"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\e\\NCG_H1_M1.csv",
+          "before_sha256": "bae22af498987d0e47080823072b976c04f777de15f79e86545ea3fd69399ce9",
+          "after_sha256": "7204b0a65e1327064d71247eafafd21dcb04750ddef76ac9a44adff721c33816"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\e\\NCG_H1_M1_selected.csv",
+          "before_sha256": "f88c25f74f0a6201fecca81873e3e9fa6bb8a6d5a2c858be3ad24efdf6ea7710",
+          "after_sha256": "3cd98a14b7fc2aba8f05232a906a89b681417e88f8f01e49808a3d5b9fc47414"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\e\\NG_H0.csv",
+          "before_sha256": "0e38b1431352e92395cffe8213e2fc8d6e6bffe485704519690893cc80a7ef85",
+          "after_sha256": "42bf25ff187f83d846572ad2de93fde2650c492b65a28cf83099923d7a7fa1cd"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\e\\NG_H1.csv",
+          "before_sha256": "2f1f2d3b4639a5274ec6171b905c5fc3a63c1580af40b28a9ad4995ea8e6f9ef",
+          "after_sha256": "45888a2b536d3fc21c94f35ae306d60e68d4ade44d82aceefec0b5751145615a"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\f\\C_H0.csv",
+          "before_sha256": "8077f3a8952755522471adf79924f04fc9db8df21a2f51e368e1a62cfbf3e98d",
+          "after_sha256": "06b6edfd4d7c135adfb75f4d890ce543e45963edbf45108ec7439de886f4d45e"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\f\\C_H1.csv",
+          "before_sha256": "d2ed9312fce6d843334a1b048268e02a0a66a37818ff8eec3a46c3fceb41a85e",
+          "after_sha256": "176aa5c6ab145f782ba501246dd92a409ddca4c64438fa81103e95464db08b07"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\f\\CG_H0.csv",
+          "before_sha256": "dc5b2ce9506324409e143514602ff4f31596841dcb75ce787f9b76a57c3718e9",
+          "after_sha256": "aaea46b66eaa3e983a496968fd628267fee01fdb3347302e7ebde88725fbba58"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\f\\CG_H1.csv",
+          "before_sha256": "143c2368ad224e7efbe995ab1c0b73e40657815226a702959f706d9f9d16e3be",
+          "after_sha256": "ff9a780f42b610fac9a0398c81c4e25b9f5f3b7ea84b768ca41d460ccff223ce"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\f\\G_H0.csv",
+          "before_sha256": "6f2c77705f2ab0ac06aebeaef84a6c8e3bf6e4b1abeb1649fab04257bd449dcf",
+          "after_sha256": "ff091aedf2484ec27cd46b048cb0cb855eca64afcc00e83e789ae609030e7d1f"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\f\\G_H1.csv",
+          "before_sha256": "d3b4044ad31f06f972940f5575b8e862b4f6a432b1203a62ea15f98f1da65424",
+          "after_sha256": "b9e1f9d1b0633f3506c2aa144616ce74dd930a75144ec611dd69a511975f6506"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\f\\N_H0.csv",
+          "before_sha256": "349328dc2c87f8ae46e7caa5f8c53c24746acc33b1e84ebedc3c2ffb1e526817",
+          "after_sha256": "2c3080f5965fb98dfe358f0f6f99a8cb5716d4e7a0fbefbc7a96fa4858b3c043"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\f\\N_H1.csv",
+          "before_sha256": "c88edeb3ce1dc6ee6ea607c69c82a3d0c1613921e60efd1a2166871c2fcf983d",
+          "after_sha256": "8b85fc6bf16a79815d427897f6a67b2574db78706061b2346339addccb721a32"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\f\\NC_H0.csv",
+          "before_sha256": "3b76a69ca9640d8f6167d33f29a42b627a7aa387a6c12f8f552e87f5f7921457",
+          "after_sha256": "d1cd506bd1aa4d673dd076a38d03c8c4fc135143e0ed456105dd3ed360a06ee4"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\f\\NC_H1.csv",
+          "before_sha256": "4356db05333ad2836a677679c97c53201d59befa44a0e06f8c0317f143985ea0",
+          "after_sha256": "eb4d546a2c459a44b2657e45c84a5bff2ea34f8b8450b7df2ce9d870c86470e5"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\f\\NCG_H0.csv",
+          "before_sha256": "fa5c5c1f78ed3cca1bc4e125d2270211d5af3c4fb87a2113337c072823340cd7",
+          "after_sha256": "c6dbf2a5bb5d1a3ced3ceba11a284216cebcacde623c7e8b8cf5f53ea0e147e5"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\f\\NCG_H1.csv",
+          "before_sha256": "39e10e6d00a5165bedf67ab745764de48a9cb9114572ff2d34884a5ed803a99d",
+          "after_sha256": "fc8ae3b7a0231a8fe054e35b934db05954e990004e69d37a9be6c376aa4ebef1"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\f\\NCG_H1_M1.csv",
+          "before_sha256": "03e676c580c084e2bd038d79a64295e6e883d59c85177288c552b775e4100a54",
+          "after_sha256": "c397d2210bfc2169c5708af1b9ec0c8b7db9d846de46d62bb513b9f778ef162c"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\f\\NCG_H1_M1_selected.csv",
+          "before_sha256": "cfaf5334fefa21879da6dfad2d8101decb0fe1e92f332f9cf12c0cc5086c4cca",
+          "after_sha256": "f7278b7d8b831c0310a42f210c9d2998cea3449510f046e9fc0b075e51aed25d"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\f\\NG_H0.csv",
+          "before_sha256": "891d1c3d71577d28e47e8c8e0c06bf03d8d89215d466ed7c4b04597a1e49b813",
+          "after_sha256": "55721232b6c9434ea8f37b84cc84037276ba390f186cc3b2d232f389d22f6407"
+        },
+        {
+          "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\f\\NG_H1.csv",
+          "before_sha256": "58a5fd3fdc6a16300ce786955d7abc7019f7936839c047590ae6106711edf6f3",
+          "after_sha256": "8d94fd909a2e4c07337d152badea9052cbffc1d5a0f4f9f0d2b6657be7dae672"
+        }
+      ]
+    }
+  ],
+  "base_cleanup_extension": {
+    "records": [
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\a\\C_H0.csv",
+        "before_sha256": "7730bba22243cc6cc126edfd86482bf6488eb2d84a99bb8ac794e52776a78f71",
+        "after_sha256": "f543b9855ad4e4975ef4be5897a988529c7bebdd5210b1e211f7bd8ba05f2d72"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\a\\C_H1.csv",
+        "before_sha256": "ea47a24290951869ca1a071c357f5acb71addcd943e474f3a33c99aa9bbf63a6",
+        "after_sha256": "e8c5d678f8fc65cc69eb3e90dd6a5d02a8ff22f1f202880b740f776f3706b58f"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\a\\CG_H0.csv",
+        "before_sha256": "130c75b35480f74ba70d02246ab566e4dfa8f4e9d22046529f09b98aa4079cc9",
+        "after_sha256": "d91a02c260173cbd073ebf65f002592929199cb79c4eb613525d5f85b12d3ab5"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\a\\CG_H1.csv",
+        "before_sha256": "da1a8a9b536045afc32695a7575f234348290b22df49ef7f4df7dec7a89ca492",
+        "after_sha256": "eca6729755bf3b6bc8a1500ff4c06aadf63a12d5d8a32a7db95dbc8e65287ba2"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\a\\G_H0.csv",
+        "before_sha256": "fdfed313705b93118f8390d26d916d1fce020a6cbf75fddbf8e35b16a90dcb98",
+        "after_sha256": "6d7967f909c9b742445d6a61c8a6cfc70bb3101f9ccbcb3729609d2d3745b25f"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\a\\G_H1.csv",
+        "before_sha256": "4bba45feecd2e6744e4c3c86fc72f4070a727e4999a7a36a1b354879ce4c88c4",
+        "after_sha256": "cbd777989a8bda519d6357c7002734a0b09b40dce2a0a461693d623228ae617e"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\a\\N_H0.csv",
+        "before_sha256": "d3906aab323409c861741a95207b03958d93d5a46a00f675e7646d86baa7b6b5",
+        "after_sha256": "840ededa01f96a172ee8a47270a35ebcb2d1c5ba662983eb36c1e2b4c1613bc2"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\a\\N_H1.csv",
+        "before_sha256": "1a8fa58288e8155dd850518bc6e39c00fa25ba337079cc71ee89da984e7d66a3",
+        "after_sha256": "0d941ca17453cac21a12212e3e43c089c1f178175eba27ce9d54ffcc865cba0e"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\a\\NC_H0.csv",
+        "before_sha256": "81cf8f7ef9f02dd170e7327dca57ecd8c459bb715e6186982b51403e15531739",
+        "after_sha256": "4b9ba428d02d40db1295b3fcbbff206d4cc5afc1e07c438bdd270f4f06a61a22"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\a\\NC_H1.csv",
+        "before_sha256": "94d7ea67a28e0fbd7271d500fe04ab53d2a092ef71d8b90a75dbd5082b1c689e",
+        "after_sha256": "f84d51cfcde3c37618517a559d8636925a1962751210133df6f37c71225d7371"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\a\\NCG_H0.csv",
+        "before_sha256": "cfb2095c26bc2fd8a0e6e4fbd9f1c20bf164263058b96da3059d35633604e6f1",
+        "after_sha256": "9a475cdb6183a2b3f617338a9d0ba9531ebe6a35c025db7c10467c0cfdacccfe"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\a\\NCG_H1.csv",
+        "before_sha256": "88fd2ccb99adec7bc82f341662ba1ad31220309faae0ed01ff96c312c69a1656",
+        "after_sha256": "6adef68dd75ea7abfdc460990642d3377ada95a9851f4d707dcf54cb122aeef0"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\a\\NCG_H1_M1.csv",
+        "before_sha256": "27b8bc706635c3b77c5868793d60a20f0d2160363ab048cb34baebe19ff8c1ef",
+        "after_sha256": "726bcc1781799606e23052b3651308490f76a1e7793d8a5bcaa6cec89fae6e2c"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\a\\NCG_H1_M1_selected.csv",
+        "before_sha256": "72057aed8a74fe555f8f966f0882b3f31f4fb62c4ebc5ac20a57f6295dee9126",
+        "after_sha256": "b33e64f4ef10c5b6547d3f0acf0a2122a135ecb73a9a8546220c4fe6c649919b"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\a\\NG_H0.csv",
+        "before_sha256": "f9a8f81ebfdb39d042a9a2656b779eb0b136144bcddca803e9b7bda1ba444a69",
+        "after_sha256": "bb2efc782d8e653118b4abfee730115461f2eb3e07fc9b48de65768dd25f16a3"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\a\\NG_H1.csv",
+        "before_sha256": "75c08648a69b8bb8cb7363ae0c3a019dfe22c7d5cb2457f5de86e73c661e6754",
+        "after_sha256": "6b5512abe004251b84a954577ec85bbc86c061c4ce64345be2b17e3bf06bcaef"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\b\\C_H0.csv",
+        "before_sha256": "f1e43c51367ceeff0733d891b4a2c91272c33ea08f3c9900090dd38c4f036422",
+        "after_sha256": "a9cc75a63b102faa20295850c0aaac23d2d5218245dab37e25aa0436c1abef21"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\b\\C_H1.csv",
+        "before_sha256": "5f979d843f4acd9fcd7cce3a71363d6def185c99c25b6f9d3cc28e7409d8486b",
+        "after_sha256": "08280b3818782a48096566d0bd2774f1f24d887bd521cbd368da756cdc6f16d1"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\b\\CG_H0.csv",
+        "before_sha256": "615ff429e2004c4aec4ad2db6ab97f1de94230b9b501147ce035abaa0faffd29",
+        "after_sha256": "23b5da2dd0e215786d945592e74d9c185bb48e815e634d06682f22371c4cfdd0"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\b\\CG_H1.csv",
+        "before_sha256": "bd48ecd94e8875bb2dc8a8182464e9bd14bab143b212ac9ec868d458ca8fc39b",
+        "after_sha256": "bb2ee8756784e258d4f5a5ce4ea9225f66d1785a4ef4a2de8e66b22eac25de14"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\b\\G_H0.csv",
+        "before_sha256": "84d9a156bbbff9141523471e6a494db05f88c552fb83d123bfd13ed844053eb5",
+        "after_sha256": "085e358ed2d25d263d812081593bc8a2f276305a1bc9487061f4b0d318468a9b"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\b\\G_H1.csv",
+        "before_sha256": "b34444f400e05288470d2d8a66e88407f538ace98adabc3e196e9f20106da2db",
+        "after_sha256": "5fd1e6aad4a1a29cc2b881c6284f8d396b77ed115bc7cfc8c0c33f1ba28e5690"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\b\\N_H0.csv",
+        "before_sha256": "66804af10274020c675d00aa18b7472baa985c0e1ce9dbd034abb535add50032",
+        "after_sha256": "73de04df04a44a2b2eb9be6678392a93c3eb32df7d2e639fdbc8c07207ae0b13"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\b\\N_H1.csv",
+        "before_sha256": "5ce185150504d59d945e4c25f7635c344a817f1b4bfe319df45739b641a89864",
+        "after_sha256": "0071594a6f15df04289008ba4a2c9cf56c93849b3dbcb26e2a9c437fc0226174"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\b\\NC_H0.csv",
+        "before_sha256": "f2fc8f1191d050880eb116e4fcdb6f4f2d5b7a99bd11001ae6a7205ff2d20b4c",
+        "after_sha256": "13c6376f4fa6a0553842da0dad9aa3cf87dd15a3f408133d15fc51172d15bdfe"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\b\\NC_H1.csv",
+        "before_sha256": "d5155c9cec48291fe2ebfda47c30d27faf940653ed6870c312937fa295b95b1e",
+        "after_sha256": "18cbfe292c5328919515c01ae5ae33f73226d0c4afaf27b8505a1639be463d66"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\b\\NCG_H0.csv",
+        "before_sha256": "95b3dc29d45618b2d914c3e650f5bc857bd2fa8689ff150e95ec07d823ac2e5c",
+        "after_sha256": "dc90e2206ed4ce80e82415e0aa8436a58272fb0ffb945987261df85b31e55c02"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\b\\NCG_H1.csv",
+        "before_sha256": "83b561dba2b5eae2cf8c5c30ed0de1ee714e31f1abb69cd51dd17c8e052eba78",
+        "after_sha256": "9bbf016ce8ce90554e16dc9c4f898e189c1a57060ab0403a6969a822e9298070"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\b\\NCG_H1_M1.csv",
+        "before_sha256": "401681d7ea0c67503a2375202ca8961f3856433b9d448c1befa5ebb6506839b1",
+        "after_sha256": "c909d944114e54824c22e0ee5065a48edd9cbacf0a4e617def44e981e111d7ee"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\b\\NCG_H1_M1_selected.csv",
+        "before_sha256": "d53ae9cf9171f915a53964b674afc721bcb269f28cb4c36a7be81cb8b45ff776",
+        "after_sha256": "e0666b1f25440776730605cb9cd296b67108757d0c0d916d04db0a09e55d9629"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\b\\NG_H0.csv",
+        "before_sha256": "086b885837869195110a0cdf4c2a394c96ccc7d3167b18b509614e898f643571",
+        "after_sha256": "7fd6a8a78e3e0cbab2f728b51ccf233d5af95acc8a21f3e6294ee06fb76d2dc1"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\b\\NG_H1.csv",
+        "before_sha256": "a6568dbdc568ff8b9d2b0ca0d5409352aaf1fe0fc086b98aea04b3ceb4383459",
+        "after_sha256": "0e5e07eb4398ff0840f135415928d89cf9927f2302787c5ab113ff5642ce6d2a"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\c\\C_H0.csv",
+        "before_sha256": "e21cd161d94d1cf33ce002b9911158debb2740ddb3b279a30606742ff0c1480b",
+        "after_sha256": "466a81bd80da18b15e9ebe7ebefbbf9b30c722acc66ce61622f1816e157076ac"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\c\\C_H1.csv",
+        "before_sha256": "0b5a8a6a1aaa1a288f0d69f21d09ae80aaa008080e51d97e09034cd58594e32e",
+        "after_sha256": "ca685e278363a63c414d2d2ac5824a642e1b1e64315a59df661913cce6dcf1df"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\c\\CG_H0.csv",
+        "before_sha256": "913305419398c038f9014fd5c151202c26346919d9b3c18af96de1360e6d01a6",
+        "after_sha256": "8fc9f9173209f40a7a309a382663754c02ddb29b178270d1f78e31dff8753c92"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\c\\CG_H1.csv",
+        "before_sha256": "e5373fc131dfdcc739dfdc105036575fbb849756d97ec9e9775847fbdd2b4193",
+        "after_sha256": "3c4a7ddbedac69e3e83e0f16a30dd8e6905d4cc0b4e244c0489c70854591e215"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\c\\G_H0.csv",
+        "before_sha256": "5a9fb87cd123d58f44bebd5be4d978aa66b45c3ff5504237cf11b6c43e2bd8b3",
+        "after_sha256": "04fd53bdafde5e527c8b28a5ace1554bf1078b458c6eeecb8b929a23db82c613"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\c\\G_H1.csv",
+        "before_sha256": "b0eed7b9fbbaf0d7008bb651eeec0517447072e77b627be98b0c3c09dcd0ab42",
+        "after_sha256": "efeadfc71fa048fb0ed6d62c17a4601bcb205ba55b582bd6e2caf04435418d9a"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\c\\N_H0.csv",
+        "before_sha256": "e845785ca25850c0e9bf334a0a312aa89ade34e79450120e0454ceac38719756",
+        "after_sha256": "44e1d249a1a7d80fe6305b12e9b076e0597e01cc58f6a2827b7ccbf140617145"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\c\\N_H1.csv",
+        "before_sha256": "e6d3da705b64effebd446af02b04c279fa97b5f98212f30ca811fe647fde7a13",
+        "after_sha256": "a504a175f4ee0a489a51c89d635e506cd0c5b12226872a2e00709fbe551c0649"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\c\\NC_H0.csv",
+        "before_sha256": "68f2df04acf8726cb591794aa70c5212198bed8cbcb9fd731e71d407d0b01e96",
+        "after_sha256": "3c2567c7c9d194003cc466597a3dcb8f35a25802576871cc498765a3df59bead"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\c\\NC_H1.csv",
+        "before_sha256": "591d08b986c241d4e73acd6e791556b21bcc216cc2e09a9c1d6a1e0e2e22973d",
+        "after_sha256": "4192ab6697c38d0377bd1894c9131bfa2dfee400f2aefda7eaf1ec953b9761aa"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\c\\NCG_H0.csv",
+        "before_sha256": "708c584c80d550d54114b04db0ca003d6ba3098e19533350576e874d1ba2f654",
+        "after_sha256": "5e760d502b04193edb41969bf66ee632b0f4594e8935de8cb7758f6772b7e5bc"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\c\\NCG_H1.csv",
+        "before_sha256": "1242937a8fd035fc09fdb61fbda43e92495ab504f5a29e65f8dae65b0650a328",
+        "after_sha256": "b4053adac33426ef04d3f517500bf8659a92909fa505b56764b6697378d902e7"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\c\\NCG_H1_M1.csv",
+        "before_sha256": "d7dba824292be050f8ebae65bc3e6c1c152612ffc63627fc35b1decd59e50e78",
+        "after_sha256": "322bbbf8a8af7d33dfe75184a0a9d3ac436d494353cac923f4e07f060e3808da"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\c\\NCG_H1_M1_selected.csv",
+        "before_sha256": "2572244772eea3ea8d239699cc0bb8a7b854b316cae64cd1f08bf17fef6c43d5",
+        "after_sha256": "12b9e4b6084d57aea14787a4d965f96c274db793794b35348dbdc27380364fb1"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\c\\NG_H0.csv",
+        "before_sha256": "e0a74fce616f51b84083683ffa106ebab727ba09967bbfda27b54c9839a7e275",
+        "after_sha256": "0561622b81840ca47e52e347500e107b3a10c1d86dee916f594353c3fe551979"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\c\\NG_H1.csv",
+        "before_sha256": "f6a9a30847ab9531ca6db75133685ba5ed1f8566b9fe6b5391ff8b6ffc2b6012",
+        "after_sha256": "ceb35fde9f661d7ffb765ac730a6a57ed6b572d0d3ab63a9b2bb2f4b8783ca4f"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\d\\C_H0.csv",
+        "before_sha256": "c201d91e06922307092f4dc08b88b704ab4f5cada43cdc2ba9844d6f24e0b7e0",
+        "after_sha256": "2f66fb3e9829fb7d09522127fb2f6650a9ab08e50bb700382412205902eeacb0"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\d\\C_H1.csv",
+        "before_sha256": "b51367914ee5b1af6af82a3448130e77c72fd6c8f83e9c7371f6f3069753aa1a",
+        "after_sha256": "4ac1effe8410a733d9698069a61c9a68b9fd0a9e76013ed8f26b081f07e8384e"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\d\\CG_H0.csv",
+        "before_sha256": "96e1300eeb1f9c6fc745aa53917f4010b30eb7f7978c47926840508e54e6a340",
+        "after_sha256": "49df55c105029d6425f1abf964166cb67951acc35fd3994052abba0ab3470444"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\d\\CG_H1.csv",
+        "before_sha256": "c364cb7ef6babc62b9960c2c7b33d489dcb5d3f22323eefececcfda815bee651",
+        "after_sha256": "c700e95e5759ac9375b98d77c2c5f1ef5114fac0e5d516c2450b95d8eb2bdc34"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\d\\G_H0.csv",
+        "before_sha256": "9a1e4bd9f13bf25794e007e024765603b47e0e2d8cfac6079199b42de391407e",
+        "after_sha256": "f548e15759ff22a80d89925f0454364417d406dba1f94686e88b2a0616f5e60c"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\d\\G_H1.csv",
+        "before_sha256": "2278b1543ee00dce3c1eb910f1f9718411ad39f4e0427d0d6d335ade04e74c4a",
+        "after_sha256": "ff0fb85524c5aa9b676111f5c910a65e29bb899f3b33f0fb956b242341f99d3b"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\d\\N_H0.csv",
+        "before_sha256": "8b9d47db2f1ef21e4fe429c04fb72bd783d34b2af83a1dd260bbd2748edc05a6",
+        "after_sha256": "209870db58007458fec3eebcb1893673aa5448a4301efc5cfdcded6f4ec5153f"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\d\\N_H1.csv",
+        "before_sha256": "c1d15b9f4129fba3e43f3a616091a4afda614dbdd9eb06a2b8c0d6fe10c8c935",
+        "after_sha256": "e8ee23cf8b1ee15596f069b528f6cfee240c0b0e41d3bfe300c755b8a90ebda4"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\d\\NC_H0.csv",
+        "before_sha256": "12c2f5abe61b4c4a2503a7223749e9f825711b977a0727be064dd9795c359f26",
+        "after_sha256": "af095d87e16eedc13c4b171dba124ecdd05a6435d27cdbce128c098d2707949b"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\d\\NC_H1.csv",
+        "before_sha256": "d49056ddc6fd2495e3599fdf7d91ce65839e0e49ba5c31d97cba8ec917a42ce7",
+        "after_sha256": "5216f0736df06471af65c82a2afaffd5feba9257e854833665f4570395bd7dcf"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\d\\NCG_H0.csv",
+        "before_sha256": "094b6f7c58e00b26dfad300b22822115a5151a25a3b7fb85046921e7ab7d979e",
+        "after_sha256": "564c940c78e254801a4bd3fdc298bd67261459edb7d6775345c31579d53981bd"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\d\\NCG_H1.csv",
+        "before_sha256": "24a4d0cb0f65511dd7da64944f65b30d4a19cb60280b9ad8b7e2b9027839390e",
+        "after_sha256": "7519590096d7ac9835c4cc31aafdffcfba59f85a16ef7b61d7fdc37d6c41621b"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\d\\NCG_H1_M1.csv",
+        "before_sha256": "1fdaed37b52d0e8a89342213bdb097be87323b8778f92f98117832bf78ef89d2",
+        "after_sha256": "4422a38afc40e4094e0103288fa44104b1f11e26b7d9ab9d5ca85ed0eb58b575"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\d\\NCG_H1_M1_selected.csv",
+        "before_sha256": "7e99c1b0aee1d5a23f16924e088c14a8f52cfdbe55e2a8a906c0019be4d81173",
+        "after_sha256": "4ddf66792b0d52ab8c731869cd328a12216705c5db2ca6ec7517a9540137dea6"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\d\\NG_H0.csv",
+        "before_sha256": "0054334cb8ff663a13a5304ce5e15e035ad89f428eda73da47ad6669fb853395",
+        "after_sha256": "3f79cfc7904fcd6a211ff8ad56c9898db0392ca6d8c30fdcf56426dc6aa11009"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\d\\NG_H1.csv",
+        "before_sha256": "62fd5dcf353636e49ba281ad5e7b8bac125459a10f53c20826453e252a13ddc8",
+        "after_sha256": "45abe8e4d60f9be69e4e3a3f223774a7ca2850783d355a2f05a3980c157beb56"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\e\\C_H0.csv",
+        "before_sha256": "d1720cbfe40870c0381a297e0cc1fa867f00285728b79f0ad3b80dc0d13c7637",
+        "after_sha256": "bef77a785036675b536603f290af9cbd6ce7df151749b6080d1d96897cacf4e4"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\e\\C_H1.csv",
+        "before_sha256": "864f91a404f7481b17ebdc5d0827b0eb486c2f9b3b3fe3ed7edb3e9c5848e9d7",
+        "after_sha256": "17bb03cfd5c791fc5c1a3ba946d6235531fa878f95405fdd9207e1058f6c6f19"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\e\\CG_H0.csv",
+        "before_sha256": "0f90c75593b6e674960ff428f8aac955b3afa4d6ef3ae52052a51386d39b03ae",
+        "after_sha256": "c6519c0372de5c8d24a641b95d742f1e5d9fe6b5038fb844ef393f45735a5bbb"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\e\\CG_H1.csv",
+        "before_sha256": "cb166077100e83884085c899f00d517b5bffed00d08f44589c02a04325245f19",
+        "after_sha256": "5da6d88dc85289f295ddef36c3805abccf35a3f9c79d58a7e3bd2b21599181cb"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\e\\G_H0.csv",
+        "before_sha256": "018212dd5a4bc220f2c438b7d3b9eee860f8a832f79dd5a9d87aae329f309d59",
+        "after_sha256": "d3165495746667e4d5b34da6a97358abcd0f180989ad32ba7237daa537fd0df6"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\e\\G_H1.csv",
+        "before_sha256": "15c155ab7c2fd849648049ab234f7a0491392fb7a45912f617de84868f7e88f9",
+        "after_sha256": "25844ad5cc28fc8ceaabe531f649484427d45d24ca29eb7ba528c96a2394446e"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\e\\N_H0.csv",
+        "before_sha256": "aac309157d1b1a88478383c5cacb867e95a4453e83be80e7d644efcdd1deda1a",
+        "after_sha256": "f2a3e971a3dfd9b0933b03cb9967684ddcfe02791131400e8f519edf255c965d"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\e\\N_H1.csv",
+        "before_sha256": "2113aef7cfd8c732fe5ed0079829a6f652643784e9010100f47ba737c14f6d4c",
+        "after_sha256": "6a1ec9e4cfefd761bd8e2fe254b1899fd1dbb4d411b62b091daa74f8821f1ce4"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\e\\NC_H0.csv",
+        "before_sha256": "a55f90aadabecc6abcfa0e397e96876fec2cdfb86647e624b87ae189ea5e8d2e",
+        "after_sha256": "21501f8c926c033b3416328ee2c2f189f30252645757bf1b41fa7197c3987abd"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\e\\NC_H1.csv",
+        "before_sha256": "85d20da1f94b8137f2fbd8068a8838b889db4681263637ac3ee65e5b2f3cc604",
+        "after_sha256": "8bc19ed8d7219f8174b19e20db0b4763f93fa3610c47ce637002acc6198e116c"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\e\\NCG_H0.csv",
+        "before_sha256": "97b00006d6e59801b189de81eddc1a14b18b19e3308a543d49964d04703f542b",
+        "after_sha256": "0df01b131c248db6055fb45e526240cd103970302371d76b1600a747c708439f"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\e\\NCG_H1.csv",
+        "before_sha256": "da8b468b6958f3f72b2b76d17f279fddb87164e619f1e1d6040a6b6b22fe176c",
+        "after_sha256": "b626ad5b77988e67e32cb38eb984aac7efb6afc9cbebddfa309d5a21a6b103fc"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\e\\NCG_H1_M1.csv",
+        "before_sha256": "05fa650f0e9c19720d33568c952d515bb1ef77f9385edfbc1796e2c89138f999",
+        "after_sha256": "e37a6e55ddb812c249e5794f8d59031888d42fb15e2ea09bd2af97f529bdf464"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\e\\NCG_H1_M1_selected.csv",
+        "before_sha256": "1c44a54cff7722a346c1f6d0c1a91bf7e18acafbf9c3277a8fb079ba243d60b7",
+        "after_sha256": "8841fa1bcbcaf684d1e0f0f6a15c27397fc736acc1986cc0d18a6a69e7b060f6"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\e\\NG_H0.csv",
+        "before_sha256": "b108ad82fd6605381d3f9e04ea53138b92dc91b62522f166e438852a4a95b430",
+        "after_sha256": "149e5429e54c129546ded0c017626f44508b7955af4765b75c23b059dfcaa9cc"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\e\\NG_H1.csv",
+        "before_sha256": "b6295e52b7ccf93db7cb18a9d7f8fe793c47a57a673337533b36bab547fc964a",
+        "after_sha256": "29509ad39e8bcf690f82184f84fa7484ae93e8b7115661429598f1bc39c2ce84"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\f\\C_H0.csv",
+        "before_sha256": "d1f79d6477ab2f99d148cd0152743f2edbfc185e8ce961aa16a5ce380e115a1f",
+        "after_sha256": "32f8ee6c0f827605df802f80523c9595585ad139e8e6508bd0b0ddc56b9dde56"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\f\\C_H1.csv",
+        "before_sha256": "32a2d09ec3e85918d85ce9d1638b66831648a9310a761dc9d2060967fdf396da",
+        "after_sha256": "c018c140d1d7229b56f024fbffb7bf8a7689d267f2a2260595e014a8f8702105"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\f\\CG_H0.csv",
+        "before_sha256": "78cbe3b6d35f8ffa7397e7d216d19797b1d804a40edb87f6b332eeed7c5ab252",
+        "after_sha256": "f41d97368ccad837d24f2332a3edd41bd64e7d8b92d1513dd03ca6939c21836f"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\f\\CG_H1.csv",
+        "before_sha256": "f286f1224d2f07a6f0407b76bf893d73fc6db3de245cb1c64c9265b8c54377c1",
+        "after_sha256": "8521cf138536221a2056d2c2e8a2f971680d0c7e3fc51b37514cc2335838aa1e"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\f\\G_H0.csv",
+        "before_sha256": "e22a1162abc13e069df4a5951c3289ac31229001b8f2d59e90fc4be66b20f9c3",
+        "after_sha256": "a8e710e027ae83371da03b81cb3c41d037a4efb7d75b5022e0b3e47e313326e9"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\f\\G_H1.csv",
+        "before_sha256": "51a9268172846aee9db3e13af130eaf90e4f987d8a6418eb8df2cf415b988d29",
+        "after_sha256": "588794ff594fc6562d39d97f396431f895f231a25156acfcae30c0d812888327"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\f\\N_H0.csv",
+        "before_sha256": "f8059f95f481e2e4ba67134a2f5c79278f46d0b3fd0c37358bc85d68093062e4",
+        "after_sha256": "eab88a448308ddeb9bb27423a33399b69d4cd14c2096f557048ee1e89fdf9298"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\f\\N_H1.csv",
+        "before_sha256": "0104dca04ddff9f9486d48b69ee3dd19275074dcd12e10149a8f793d747030b0",
+        "after_sha256": "ca70a060edd927760ca6701f1dd48cf774025aabe9cdf2def0a8edd713d8e8ed"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\f\\NC_H0.csv",
+        "before_sha256": "780b2f1a4cce2fba813c8fcf0fd09487d4d6af3ca6e87ed23f3d1f1826033f1e",
+        "after_sha256": "61e4f6dcbad66827ed74470d9f8015297c5b8491251e5e48fb6bd1505e4c78a7"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\f\\NC_H1.csv",
+        "before_sha256": "db150285d3bebb854f1ec5351c1d970a41d56ceea0f0d15e39ce61bd41fcbcd9",
+        "after_sha256": "a14040177fed19a9f9e6a70c3ab0f945ff314c240c02f20919d3d1ed03469572"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\f\\NCG_H0.csv",
+        "before_sha256": "c018e2048fb1ce253c33adabda224ca90420b8c0e541096d541f1b1060cb28bf",
+        "after_sha256": "7224f50cc328227bcaf9157d514814862550d0482b750edfe031199a1874d313"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\f\\NCG_H1.csv",
+        "before_sha256": "743fdbdf6ded2e655beb9f7ec6419afa45a365dbcefa765a28279d7f3b10ea35",
+        "after_sha256": "6605c8a0b0952cab8b73859e7b11886c62775c511019938670e71c63f575837a"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\f\\NCG_H1_M1.csv",
+        "before_sha256": "3423fb0bb1be39a27d713e5cdfb5010ce7657f13b8c58e658d42e8cbe60fd6ef",
+        "after_sha256": "7520649f52f1c2d9b4cef41c9bd1509bcdb19c498934f727605c18bfe09da9b3"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\f\\NCG_H1_M1_selected.csv",
+        "before_sha256": "a1a8ba921e05e5178716083c6b5940786902d368e0be10dc7ceeb519120a74b3",
+        "after_sha256": "719896d144cac3f98d51d82011909a3da9993118e5fb1b9de8c8961b7464478f"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\f\\NG_H0.csv",
+        "before_sha256": "a7047348a61a1e45b7f7abd0d35d5a66e3ca64002a15e4268d480e58c043139a",
+        "after_sha256": "cfba334bf9beece018c055f7d569383a3277e0fb0d7ccdf13380b9790babd4fb"
+      },
+      {
+        "path": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\adaptive_p10_v4_20261020\\f\\NG_H1.csv",
+        "before_sha256": "074add35839ebe7fce6288c7743e5cc676d5f7194036db8b6b779d872ef7191d",
+        "after_sha256": "871d82de2413fc06549ef0b02b1e6d0744f8e85aff0a77130de5aec13a4bdaf5"
+      }
+    ],
+    "diagnostic_scope": "Existing single_mesh_geometry_nodes.csv evaluates original-source far simplification without feature locks or finest-level cleanup; real application tests include cleanup",
+    "quality_scope": "incremental bounded error, original feature locks, component/extent checks; no deletion"
+  },
+  "non_affecting_rule_finalization": "Unverified scene-reference names retain P5 floor; all 2 existing scene-reference rows are geometry-verified, so no current policy output changed."
+}

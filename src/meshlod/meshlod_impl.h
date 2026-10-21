@@ -47,6 +47,8 @@ struct IterationContext
 	clodOutput output_callback = nullptr;
 	std::vector<unsigned char> locks;
 	std::vector<unsigned int>  remap;
+	std::vector<unsigned int> component_ids;
+	std::vector<unsigned int> base_indices;
 	std::vector<float> feature_importance;
 	std::vector<unsigned char> feature_locks;
 	std::vector<float> feature_attributes;

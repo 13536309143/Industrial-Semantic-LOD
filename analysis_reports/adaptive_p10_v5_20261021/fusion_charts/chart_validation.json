@@ -1,0 +1,11 @@
+{
+  "status": "passed",
+  "verified_policy_files": 90,
+  "source_policy_rows": 165000,
+  "main_conditions": 72,
+  "supplementary_conditions": 18,
+  "figure_count": 15,
+  "independent_count_and_triangle_reconciliation": true,
+  "manual_accuracy_labels": false,
+  "runtime_memory_or_fps_measured": false
+}

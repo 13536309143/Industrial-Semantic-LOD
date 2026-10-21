@@ -1,0 +1,92 @@
+{
+  "1": {
+    "name": "micro_repeated_low_impact",
+    "near": 0.38,
+    "mid": 0.2,
+    "far": 0.08,
+    "screen_weight": 0.48,
+    "lock_budget": 0.008,
+    "relative_QEM_limit": 0.025
+  },
+  "2": {
+    "name": "ordinary_repeated_parts",
+    "near": 0.44,
+    "mid": 0.24,
+    "far": 0.1,
+    "screen_weight": 0.62,
+    "lock_budget": 0.012,
+    "relative_QEM_limit": 0.022
+  },
+  "3": {
+    "name": "simple_static_bulk",
+    "near": 0.48,
+    "mid": 0.28,
+    "far": 0.12,
+    "screen_weight": 0.76,
+    "lock_budget": 0.018,
+    "relative_QEM_limit": 0.018
+  },
+  "4": {
+    "name": "ordinary_surface_support",
+    "near": 0.52,
+    "mid": 0.32,
+    "far": 0.16,
+    "screen_weight": 0.88,
+    "lock_budget": 0.025,
+    "relative_QEM_limit": 0.016
+  },
+  "5": {
+    "name": "unresolved_balanced",
+    "near": 0.58,
+    "mid": 0.38,
+    "far": 0.22,
+    "screen_weight": 1.0,
+    "lock_budget": 0.035,
+    "relative_QEM_limit": 0.014
+  },
+  "6": {
+    "name": "thin_slender_silhouette",
+    "near": 0.6,
+    "mid": 0.42,
+    "far": 0.26,
+    "screen_weight": 1.1,
+    "lock_budget": 0.05,
+    "relative_QEM_limit": 0.01
+  },
+  "7": {
+    "name": "functional_interface",
+    "near": 0.64,
+    "mid": 0.46,
+    "far": 0.3,
+    "screen_weight": 1.22,
+    "lock_budget": 0.06,
+    "relative_QEM_limit": 0.009
+  },
+  "8": {
+    "name": "functional_control_motion",
+    "near": 0.66,
+    "mid": 0.5,
+    "far": 0.34,
+    "screen_weight": 1.34,
+    "lock_budget": 0.075,
+    "relative_QEM_limit": 0.008
+  },
+  "9": {
+    "name": "precision_guidance_transmission",
+    "near": 0.7,
+    "mid": 0.54,
+    "far": 0.4,
+    "screen_weight": 1.5,
+    "lock_budget": 0.09,
+    "relative_QEM_limit": 0.006
+  },
+  "10": {
+    "name": "critical_process_detail",
+    "near": 0.76,
+    "mid": 0.6,
+    "far": 0.48,
+    "screen_weight": 1.72,
+    "lock_budget": 0.12,
+    "relative_QEM_limit": 0.004
+  }
+}

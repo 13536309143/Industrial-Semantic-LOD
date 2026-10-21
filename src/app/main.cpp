@@ -40,6 +40,25 @@
 
 using namespace lodclusters;
 
+// Opt-in for offline comparisons: exclude asynchronous loading/blank frames from
+// the sequencer, including its warmup and screenshots. Normal scripts may load
+// their first scene themselves and therefore retain the original behavior.
+class SceneReadySequencer : public nvapp::ElementSequencer
+{
+public:
+  SceneReadySequencer(const nvutils::ParameterSequencer::InitInfo& info, std::weak_ptr<LodClusters> scene, bool wait)
+      : nvapp::ElementSequencer(info), m_scene(scene), m_wait(wait) {}
+  void onPreRender() override
+  {
+    auto scene = m_scene.lock();
+    if(!m_wait || (scene && scene->isRenderReadyForSequence()))
+      nvapp::ElementSequencer::onPreRender();
+  }
+private:
+  std::weak_ptr<LodClusters> m_scene;
+  bool m_wait;
+};
+
 
 int main(int argc, char** argv)
 {
@@ -101,6 +120,10 @@ int main(int argc, char** argv)
   parameterRegistry.add({"device", "force a vulkan device via index into the device list"}, &vkSetup.forceGPU);
   parameterRegistry.add({"headless"}, &appInfo.headless, true);
   parameterRegistry.add({"headlessframes"}, &appInfo.headlessFrameCount);
+  parameterRegistry.add({"headlesswidth"}, &appInfo.windowSize.x);
+  parameterRegistry.add({"headlessheight"}, &appInfo.windowSize.y);
+  bool sequenceWaitForScene = false;
+  parameterRegistry.add({"sequencewaitforscene", "start sequence measurements only after the scene is rendered"}, &sequenceWaitForScene);
 
   LodClusters::Info sampleInfo;
   sampleInfo.cameraManipulator               = cameraManipulator;
@@ -124,7 +147,7 @@ int main(int argc, char** argv)
   parameterParser.parse(argc, argv);
 
 
-  auto elemSequencer = std::make_shared<nvapp::ElementSequencer>(sequencerInfo);
+  auto elemSequencer = std::make_shared<SceneReadySequencer>(sequencerInfo, sampleElement, sequenceWaitForScene);
 
   if(sampleElement->isCacheLoadOnly())
   {

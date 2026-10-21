@@ -578,23 +578,61 @@ std::vector<unsigned int> simplify(const clodConfig& config, const clodMesh& mes
 	lod.resize(meshopt_simplifyWithAttributes(&lod[0], &indices[0], indices.size(),
 	    mesh.vertex_positions, mesh.vertex_count, mesh.vertex_positions_stride,
 	    mesh.vertex_attributes, mesh.vertex_attributes_stride, mesh.attribute_weights, mesh.attribute_count,
-	    active_locks, target_count, FLT_MAX, options, error));
+    active_locks, target_count, config.simplify_error_absolute > 0 ? config.simplify_error_absolute : FLT_MAX, options, error));
 
 	if (lod.size() > target_count && config.simplify_fallback_permissive && !config.simplify_permissive)
 	{
 		lod.resize(meshopt_simplifyWithAttributes(&lod[0], &indices[0], indices.size(),
 		    mesh.vertex_positions, mesh.vertex_count, mesh.vertex_positions_stride,
 		    mesh.vertex_attributes, mesh.vertex_attributes_stride, mesh.attribute_weights, mesh.attribute_count,
-		    active_locks, target_count, FLT_MAX, options | meshopt_SimplifyPermissive, error));
+    active_locks, target_count, config.simplify_error_absolute > 0 ? config.simplify_error_absolute : FLT_MAX, options | meshopt_SimplifyPermissive, error));
 	}
 
-	if (lod.size() > target_count && config.simplify_fallback_sloppy)
+	if (lod.size() > target_count && config.simplify_fallback_sloppy && config.simplify_error_absolute <= 0)
 	{
 		simplifyFallback(lod, mesh, indices, feature_locks.empty() ? locks : feature_locks, target_count, error);
 		*error *= config.simplify_error_factor_sloppy;
 	}
 
-	if (config.simplify_error_edge_limit > 0)
+	if (config.max_axis_shrink > 0 && !indices.empty())
+	{
+		float lo[3] = {FLT_MAX, FLT_MAX, FLT_MAX}, hi[3] = {-FLT_MAX, -FLT_MAX, -FLT_MAX};
+		float outLo[3] = {FLT_MAX, FLT_MAX, FLT_MAX}, outHi[3] = {-FLT_MAX, -FLT_MAX, -FLT_MAX};
+		for(unsigned int v : indices)
+			for(int a = 0; a < 3; ++a)
+			{
+				float p = featureVertexPosition(mesh, v)[a];
+				lo[a] = std::min(lo[a], p); hi[a] = std::max(hi[a], p);
+			}
+		for(unsigned int v : lod)
+			for(int a = 0; a < 3; ++a)
+			{
+				float p = featureVertexPosition(mesh, v)[a];
+				outLo[a] = std::min(outLo[a], p); outHi[a] = std::max(outHi[a], p);
+			}
+		float maxExtent = std::max({hi[0]-lo[0], hi[1]-lo[1], hi[2]-lo[2]});
+		for(int a = 0; a < 3; ++a)
+			if(hi[a]-lo[a] > maxExtent * 1e-6f && (lod.empty() || outHi[a]-outLo[a] < (hi[a]-lo[a]) * (1.0f-config.max_axis_shrink)))
+			{
+				*error = 0.0f;
+				return indices;
+			}
+	}
+	if (config.preserve_components && mesh.component_ids)
+	{
+		std::vector<unsigned int> before, after;
+		before.reserve(indices.size()/3); after.reserve(lod.size()/3);
+		for(size_t i = 0; i < indices.size(); i += 3) before.push_back(mesh.component_ids[indices[i]]);
+		for(size_t i = 0; i < lod.size(); i += 3) after.push_back(mesh.component_ids[lod[i]]);
+		std::sort(before.begin(), before.end()); before.erase(std::unique(before.begin(), before.end()), before.end());
+		std::sort(after.begin(), after.end()); after.erase(std::unique(after.begin(), after.end()), after.end());
+		if(before != after)
+		{
+			*error = 0.0f;
+			return indices;
+		}
+	}
+	if (config.simplify_error_edge_limit > 0 && config.simplify_error_absolute <= 0)
 	{
 		float max_edge_sq = 0;
 		size_t positions_stride = mesh.vertex_positions_stride / sizeof(float);

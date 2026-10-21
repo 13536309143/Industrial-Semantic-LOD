@@ -618,6 +618,20 @@ struct GroupView
     float    featureCriticalThreshold = 0.93f;
     float    featureSoftScale = 1.0f;
     float    featureHardLockRatio = 0.10f;
+    // Optional geometry constraints remain independent of semantic confidence.
+    float    featureLockFloor = 0.0f;
+    float    featureSoftFloor = 0.0f;
+    uint32_t schemaVersion = 0;
+    float    featureLockBudget = 0.035f;
+    float    explicitFeatureSoftScale = 1.0f;
+    float    explicitFeatureWeightScale = 1.0f;
+    float    explicitProtectThreshold = 0.82f;
+    float    explicitCriticalThreshold = 0.98f;
+    float    simplifyErrorRelative = 0.0f;
+    float    maxAxisShrink = 0.0f;
+    bool     preserveComponents = false;
+    float    baseSimplifyRatio = 1.0f;
+    float    baseErrorRelative = 0.0f;
     float    hierarchyDepthDecay = 0.02f;
     float    hierarchyMinRatio = 0.42f;
     uint32_t partitionSize = 16;

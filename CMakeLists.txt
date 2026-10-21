@@ -44,6 +44,11 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
   meshoptimizer
   cgltf
 )
+# CPU-only diagnostic probe for offline semantic-policy geometry experiments.
+add_library(semantic_geometry_probe SHARED tools/pointclipv2/native/semantic_geometry_probe.cpp src/meshlod/meshlod.cpp)
+target_include_directories(semantic_geometry_probe PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/src/meshlod")
+target_link_libraries(semantic_geometry_probe PRIVATE meshoptimizer)
+set_target_properties(semantic_geometry_probe PROPERTIES FOLDER "Tools")
 source_group(TREE "${CMAKE_CURRENT_SOURCE_DIR}/src" PREFIX "Source Files" FILES ${SOURCE_FILES})
 source_group(TREE "${CMAKE_CURRENT_SOURCE_DIR}/shaders" PREFIX "Shader Files" FILES ${SHADER_FILES})
 add_project_definitions(${PROJECT_NAME})

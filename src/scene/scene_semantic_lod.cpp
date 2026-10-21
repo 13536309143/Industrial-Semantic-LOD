@@ -211,8 +211,24 @@ void derivePolicy(Scene::SemanticLodPolicy& policy)
     policy.featureSoftScale *= 0.85f;
   }
 
+  policy.featureHardLockRatio = std::max(policy.featureHardLockRatio, clampf(policy.featureLockFloor, 0.0f, 0.35f));
+  policy.featureSoftScale = std::max(policy.featureSoftScale, clampf(policy.featureSoftFloor, 0.0f, 2.0f));
+
+  if(policy.schemaVersion >= 4)
+  {
+    // V4 profiles already combine function and geometry. Do not silently add the
+    // legacy per-class locks or reduce geometric protection with semantic confidence.
+    policy.simplifyRatio = nearRatio;
+    policy.featureHardLockRatio = clampf(policy.featureLockBudget, 0.0f, 0.35f);
+    policy.featureSoftScale = clampf(policy.explicitFeatureSoftScale, 0.30f, 2.0f);
+    policy.featureWeightScale = clampf(policy.explicitFeatureWeightScale, 0.25f, 2.0f);
+    policy.featureProtectThreshold = clampf(policy.explicitProtectThreshold, 0.0f, 1.0f);
+    policy.featureCriticalThreshold = clampf(policy.explicitCriticalThreshold, policy.featureProtectThreshold, 1.0f);
+    policy.errorMergeScale = 1.0f;
+  }
+
   const float weight = std::max(policy.screenErrorWeight, 0.25f);
-  policy.lodErrorScale = clampf(1.0f / weight, 0.45f, 2.40f);
+  policy.lodErrorScale = clampf(1.0f / weight, policy.schemaVersion >= 4 ? 0.10f : 0.45f, 2.40f);
 }
 
 void mergeMeshPolicy(Scene::SemanticLodPolicy& dst, const Scene::SemanticLodPolicy& src)
@@ -232,6 +248,20 @@ void mergeMeshPolicy(Scene::SemanticLodPolicy& dst, const Scene::SemanticLodPoli
   dst.targetRatioMid = std::max(dst.targetRatioMid, src.targetRatioMid);
   dst.targetRatioFar = std::max(dst.targetRatioFar, src.targetRatioFar);
   dst.screenErrorWeight = std::max(dst.screenErrorWeight, src.screenErrorWeight);
+  dst.featureLockFloor = std::max(dst.featureLockFloor, src.featureLockFloor);
+  dst.featureSoftFloor = std::max(dst.featureSoftFloor, src.featureSoftFloor);
+  dst.schemaVersion = std::max(dst.schemaVersion, src.schemaVersion);
+  dst.featureLockBudget = std::max(dst.featureLockBudget, src.featureLockBudget);
+  dst.explicitFeatureSoftScale = std::max(dst.explicitFeatureSoftScale, src.explicitFeatureSoftScale);
+  dst.explicitFeatureWeightScale = std::max(dst.explicitFeatureWeightScale, src.explicitFeatureWeightScale);
+  dst.explicitProtectThreshold = std::min(dst.explicitProtectThreshold, src.explicitProtectThreshold);
+  dst.explicitCriticalThreshold = std::min(dst.explicitCriticalThreshold, src.explicitCriticalThreshold);
+  auto stricterLimit = [](float a, float b) { return a <= 0.0f ? b : b <= 0.0f ? a : std::min(a, b); };
+  dst.simplifyErrorRelative = stricterLimit(dst.simplifyErrorRelative, src.simplifyErrorRelative);
+  dst.maxAxisShrink = stricterLimit(dst.maxAxisShrink, src.maxAxisShrink);
+  dst.preserveComponents = dst.preserveComponents || src.preserveComponents;
+  dst.baseSimplifyRatio = std::max(dst.baseSimplifyRatio, src.baseSimplifyRatio);
+  dst.baseErrorRelative = stricterLimit(dst.baseErrorRelative, src.baseErrorRelative);
   dst.rowHash = hashCombine(dst.rowHash, src.rowHash);
   derivePolicy(dst);
 }
@@ -309,7 +339,7 @@ const char* semanticModeLabel(uint32_t mode)
     case SEMANTIC_LOD_POINTNEXT_POINTCLIP_STRUCTURE:
       return "PointNeXt + PointCLIP + structure";
     case SEMANTIC_LOD_POINTNEXT_POINTCLIP_STRUCTURE_METADATA:
-      return "PointNeXt + open semantics + structure + CAD context";
+      return "PointNeXt + open semantics + geometry + assembly/CAD context";
     default:
       return "PointNeXt + PointCLIP + structure";
   }
@@ -405,6 +435,19 @@ void Scene::loadSemanticLodPolicies()
     policy.targetRatioMid = parseFloat(column(row, "target_ratio_mid"), policy.targetRatioMid);
     policy.targetRatioFar = parseFloat(column(row, "target_ratio_far"), policy.targetRatioFar);
     policy.screenErrorWeight = parseFloat(column(row, "screen_error_weight"), policy.screenErrorWeight);
+    policy.featureLockFloor = parseFloat(column(row, "feature_lock_floor"), 0.0f);
+    policy.featureSoftFloor = parseFloat(column(row, "feature_soft_floor"), 0.0f);
+    policy.schemaVersion = parseUint(column(row, "policy_schema"), 0);
+    policy.featureLockBudget = parseFloat(column(row, "feature_lock_budget"), policy.featureLockFloor);
+    policy.explicitFeatureSoftScale = parseFloat(column(row, "feature_soft_scale"), 1.0f);
+    policy.explicitFeatureWeightScale = parseFloat(column(row, "feature_weight_scale"), 1.0f);
+    policy.explicitProtectThreshold = parseFloat(column(row, "feature_protect_threshold"), 0.82f);
+    policy.explicitCriticalThreshold = parseFloat(column(row, "feature_critical_threshold"), 0.98f);
+    policy.simplifyErrorRelative = clampf(parseFloat(column(row, "simplify_error_relative")), 0.0f, 0.1f);
+    policy.maxAxisShrink = clampf(parseFloat(column(row, "max_axis_shrink")), 0.0f, 0.25f);
+    policy.preserveComponents = parseBool(column(row, "preserve_components"));
+    policy.baseSimplifyRatio = clampf(parseFloat(column(row, "base_simplify_ratio"), 1.0f), 0.1f, 1.0f);
+    policy.baseErrorRelative = clampf(parseFloat(column(row, "base_error_relative")), 0.0f, 0.01f);
     policy.rowHash = hashString(hashCombine(hashCombine(policy.meshIndex, policy.nodeIndex), policy.priority), line);
     derivePolicy(policy);
 
@@ -470,8 +513,19 @@ void Scene::applySemanticPolicyToConfig(clodConfig& config, const SemanticLodPol
   config.feature_soft_scale = clampf(policy.featureSoftScale, 0.30f, 2.00f);
   config.feature_hard_lock_ratio = clampf(policy.featureHardLockRatio, 0.0f, 0.35f);
   config.hierarchy_depth_decay = clampf(policy.hierarchyDepthDecay, 0.0f, 0.16f);
-  config.hierarchy_min_ratio = clampf(policy.hierarchyMinRatio, 0.02f, 0.75f);
+  config.hierarchy_min_ratio = clampf(policy.hierarchyMinRatio, 0.02f, 0.96f);
   config.partition_size = std::max<size_t>(8, std::min<size_t>(24, policy.partitionSize));
+  if(policy.schemaVersion >= 4)
+  {
+    config.simplify_error_relative = policy.simplifyErrorRelative;
+    config.max_axis_shrink = policy.maxAxisShrink;
+    config.preserve_components = policy.preserveComponents;
+    config.base_simplify_ratio = policy.baseSimplifyRatio;
+    config.base_error_relative = policy.baseErrorRelative;
+    // Sloppy fallback and error truncation invalidate a measured quality budget.
+    config.simplify_fallback_sloppy = false;
+    config.simplify_error_edge_limit = 0.0f;
+  }
 
   if(config.feature_constraints)
   {

@@ -209,6 +209,7 @@ public:
 
   bool isProcessingOnly() const { return !m_sceneFilePathDropNew.empty() && m_sceneLoaderConfig.processingOnly; }
   bool isCacheLoadOnly() const { return !m_sceneFilePathDropNew.empty() && m_cacheLoadOnly; }
+  bool isRenderReadyForSequence() const { return !m_sceneLoading.load() && m_renderer && m_renderScene && m_frames >= 16; }
 
 
   void doProcessingOnly();

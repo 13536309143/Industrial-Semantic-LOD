@@ -1,0 +1,57 @@
+{
+  "b": {
+    "glb": "E:\\vk_lod_clusters1\\t1\\_downloaded_resources\\b.glb",
+    "glb_sha256": "97f8f13e427ca5f368ddaf515fea0117aa9cc85b266711fef61c3ac48547886b",
+    "pointnext_csv": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\assembly_context_v3_20261020\\b\\closed\\b_pointnext_analysis.csv",
+    "pointnext_sha256": "f288e536dc327dd983f70c02a5063be3b7f624767298f9260ac33c6bf160d4dd",
+    "open_csv": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\open_semantic_v2_20261019\\K31自动铆压机\\open_semantic_combined.csv",
+    "open_sha256": "0e7760a3ea5ac6ce0ec1a3893c36605c27bc32fa9ca5274d1bb1d8e0983b8745",
+    "visual_directory": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\open_semantic_v2_20261019\\K31自动铆压机",
+    "reused_identical_scene": true,
+    "evaluation_split": "development_diagnostics"
+  },
+  "c": {
+    "glb": "E:\\vk_lod_clusters1\\t1\\_downloaded_resources\\c.glb",
+    "glb_sha256": "dde06a4a6c8d67374c3a8574b60f4815ef724451b3c62df36bae6417b1212dff",
+    "pointnext_csv": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\four_scenes_seed2027_20261019\\汽车链接器植入-折弯设备\\汽车链接器植入-折弯设备_pointnext_analysis.csv",
+    "pointnext_sha256": "a3562bf4509650fa29c613b906b7d0e17307f31cb638b8fc41fa6799a0ca1f9a",
+    "open_csv": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\open_semantic_v2_20261019\\汽车链接器植入-折弯设备\\open_semantic_combined.csv",
+    "open_sha256": "35f3c82e8f7cde5678b1257f016f1de6a9e5ccc0429f79d6330439d4f9986b56",
+    "visual_directory": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\open_semantic_v2_20261019\\汽车链接器植入-折弯设备",
+    "reused_identical_scene": true,
+    "evaluation_split": "development_diagnostics"
+  },
+  "d": {
+    "glb": "E:\\vk_lod_clusters1\\t1\\_downloaded_resources\\d.glb",
+    "glb_sha256": "0b9a5597b267f63edde781b2dfad3019fb20b4ee75d0ebf3ff708c4b2fc24d7b",
+    "pointnext_csv": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\four_scenes_seed2027_20261019\\手机喇叭检测线\\手机喇叭检测线_pointnext_analysis.csv",
+    "pointnext_sha256": "24a3516b1f7b83fc8a2aecbb92ab94d8282da9e5a9015e801f87f5b334fb0881",
+    "open_csv": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\open_semantic_v2_20261019\\手机喇叭检测线\\open_semantic_combined.csv",
+    "open_sha256": "5250a4198c089bbc356bdd97fb0106bac1e4a085dc6e61f85079d57677effb00",
+    "visual_directory": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\open_semantic_v2_20261019\\手机喇叭检测线",
+    "reused_identical_scene": true,
+    "evaluation_split": "development_diagnostics"
+  },
+  "e": {
+    "glb": "E:\\vk_lod_clusters1\\t1\\_downloaded_resources\\e.glb",
+    "glb_sha256": "c27eb7aa2a3066621f9bf9a681cdc568d25f9a104e73e9a8c922ea449ec59d72",
+    "pointnext_csv": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\four_scenes_seed2027_20261019\\透气阀产线\\透气阀产线_pointnext_analysis.csv",
+    "pointnext_sha256": "210b56689495adc3ca7751adfa724caaefc415737d3759b2914a65f93772b0a4",
+    "open_csv": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\open_semantic_v2_20261019\\透气阀产线\\open_semantic_combined.csv",
+    "open_sha256": "221e2addc1311c7133aad614cadf9a4d0f0838345657f9a1a64495a8b937127b",
+    "visual_directory": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\open_semantic_v2_20261019\\透气阀产线",
+    "reused_identical_scene": true,
+    "evaluation_split": "development_diagnostics"
+  },
+  "a": {
+    "glb": "E:\\vk_lod_clusters1\\t1\\_downloaded_resources\\a.glb",
+    "glb_sha256": "3fcbd0e5d17cf911fbb2ad3cfc82be37e819d2d4e9cda23fb4f1e826f37c2621",
+    "pointnext_csv": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\assembly_context_v3_20261020\\a\\closed\\a_pointnext_analysis.csv",
+    "pointnext_sha256": "fa6365f4bd63b16144b837c0a57f1e56b8f843794cad3145e24b7fbbc1076246",
+    "open_csv": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\assembly_context_v3_20261020\\a\\visual\\open_semantic_combined.csv",
+    "open_sha256": "52c371e045a3391a0dc03277b0b0b1954a78bb46009991fad81dc7f3b5b2c7b6",
+    "visual_directory": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\assembly_context_v3_20261020\\a\\visual",
+    "reused_identical_scene": false,
+    "evaluation_split": "development_diagnostics"
+  }
+}

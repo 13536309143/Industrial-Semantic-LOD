@@ -1,0 +1,7 @@
+﻿scene,title,nodes,assembly_nodes,unique_meshes,name_reference_nodes,name_reference_groups,glb_sha256,previously_tested_identical_scene,frozen_confirmation
+a,无可用名称/装配树,1778,0,1778,0,0,3fcbd0e5d17cf911fbb2ad3cfc82be37e819d2d4e9cda23fb4f1e826f37c2621,False,False
+b,K31自动铆压机,1481,62,1277,167,26,97f8f13e427ca5f368ddaf515fea0117aa9cc85b266711fef61c3ac48547886b,True,False
+c,汽车链接器植入-折弯设备,1747,198,1613,125,8,dde06a4a6c8d67374c3a8574b60f4815ef724451b3c62df36bae6417b1212dff,True,False
+d,手机喇叭检测线,1167,118,1072,60,11,0b9a5597b267f63edde781b2dfad3019fb20b4ee75d0ebf3ff708c4b2fc24d7b,True,False
+e,透气阀产线,3347,211,2920,107,7,c27eb7aa2a3066621f9bf9a681cdc568d25f9a104e73e9a8c922ea449ec59d72,True,False
+f,圆形电容穿心焊接机,1480,157,1480,196,43,220dcd99f554c2148a6c1c7028fc72317d46c69def1967e1b58962ddb3fa8a1c,False,False

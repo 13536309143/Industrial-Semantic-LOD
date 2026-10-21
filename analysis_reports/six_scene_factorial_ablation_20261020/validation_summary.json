@@ -1,0 +1,13 @@
+{
+  "status": "passed",
+  "nodes": 11000,
+  "main_conditions": 72,
+  "all_conditions": 138,
+  "policy_rows": 253000,
+  "main_geometry_rows": 132000,
+  "hash_entries_verified": 189,
+  "xlsx_cached_fraction_cells_verified": 1680,
+  "recalculation_verified": true,
+  "deployment_unchanged": true,
+  "formula_errors": 0
+}

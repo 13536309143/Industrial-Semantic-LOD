@@ -1,0 +1,31 @@
+{
+  "inputs": {
+    "E:\\vk_lod_clusters1\\t1\\analysis_reports\\six_scene_factorial_ablation_20261020\\comparison_data.json": "e0b26d13c18011398260f5abaa81aed1acaaea68a483af32744922eb362342cb",
+    "E:\\vk_lod_clusters1\\t1\\tools\\pointclipv2\\factorial_ablation_report.py": "e42971f24b6fae3d8708d2223a80cebc6ee9092a9b78ce50c09f200f29db5487"
+  },
+  "outputs": {
+    "E:\\vk_lod_clusters1\\t1\\analysis_reports\\six_scene_factorial_ablation_20261020\\all_conditions_summary.csv": "695df3ed286c4ffb7d9b43502e99b9688ed458f451e44ccb9485da50ee5ec928",
+    "E:\\vk_lod_clusters1\\t1\\analysis_reports\\six_scene_factorial_ablation_20261020\\blind_name_reference_comparison.csv": "95c41610e13ec713fbcc5c80181c984b98a03e8e551fd00c51c7b8629e5e71fd",
+    "E:\\vk_lod_clusters1\\t1\\analysis_reports\\six_scene_factorial_ablation_20261020\\changed_nodes.csv": "5b066febac6ce9e7a3fcdc0bcf9656ebc355ffdfc52e0df1d317368d3dbd52c4",
+    "E:\\vk_lod_clusters1\\t1\\analysis_reports\\six_scene_factorial_ablation_20261020\\comparison_data.json": "e0b26d13c18011398260f5abaa81aed1acaaea68a483af32744922eb362342cb",
+    "E:\\vk_lod_clusters1\\t1\\analysis_reports\\six_scene_factorial_ablation_20261020\\geometry_comparison.csv": "6362edfaa976bcd373560fdd7278eb5a76aece4017aea8e6072658addda85939",
+    "E:\\vk_lod_clusters1\\t1\\analysis_reports\\six_scene_factorial_ablation_20261020\\low_confidence_candidate_types.csv": "63c518e3aaa68dab522d2caceab0ff8f8abea2b47a37eeb5f116e40977fd39fc",
+    "E:\\vk_lod_clusters1\\t1\\analysis_reports\\six_scene_factorial_ablation_20261020\\main_72_comparison.csv": "3f3e84748d571144c0fd7cf7c8fe23ebc4977f5a79ad2dd211d9c6438845775e",
+    "E:\\vk_lod_clusters1\\t1\\analysis_reports\\six_scene_factorial_ablation_20261020\\main_confidence_and_conflicts.csv": "0150d4e019a897b18b180b523bb0673c572a634158b9f9425c8c68f149d2f514",
+    "E:\\vk_lod_clusters1\\t1\\analysis_reports\\six_scene_factorial_ablation_20261020\\priority_allocation.png": "30a06c0a7d7905efed9938225d02a55d88463547eb8da585ff68364a5edfc8fd",
+    "E:\\vk_lod_clusters1\\t1\\analysis_reports\\six_scene_factorial_ablation_20261020\\priority_allocation.svg": "e03532874e98acf0c63bb9df9c523ccb9b39bfa6b98174d3d864b761a0d39d49",
+    "E:\\vk_lod_clusters1\\t1\\analysis_reports\\six_scene_factorial_ablation_20261020\\priority_distribution_long.csv": "457047af7b839a3bf42b7bc5e85d9ae7999325c30e39566323de8d4f2be89bc1",
+    "E:\\vk_lod_clusters1\\t1\\analysis_reports\\six_scene_factorial_ablation_20261020\\priority_transitions.csv": "eeb02d2ee5d9a7544341389dd2ce28f2e9036d2cda67f8d89e51852934201afb",
+    "E:\\vk_lod_clusters1\\t1\\analysis_reports\\six_scene_factorial_ablation_20261020\\run_status.json": "25640a7becfd3dc445137f825bb3ec900071a9bb1f5a6077d19346113b7626fa",
+    "E:\\vk_lod_clusters1\\t1\\analysis_reports\\six_scene_factorial_ablation_20261020\\scene_inventory.csv": "da460b5d7bd81f756fa2748d7860c8b5c55b523f83ada3082384713733c8fae0",
+    "E:\\vk_lod_clusters1\\t1\\analysis_reports\\six_scene_factorial_ablation_20261020\\scene_macro_comparison.csv": "d765e45e6b56c048bf97b6e0393b079a123165cd325d22bb07c5c2eb955cb3e0",
+    "E:\\vk_lod_clusters1\\t1\\analysis_reports\\six_scene_factorial_ablation_20261020\\source_confidence_summary.csv": "0c3f54d69c1be3e93a8563854851ded050a6c4d2c408dd2147b77787627a9b2c",
+    "E:\\vk_lod_clusters1\\t1\\analysis_reports\\six_scene_factorial_ablation_20261020\\source_uncertainty_nodes.csv": "82858ee61f1db29d513b46e38c0687a8243e47fdc5a781185f391be7750c1947",
+    "E:\\vk_lod_clusters1\\t1\\analysis_reports\\six_scene_factorial_ablation_20261020\\supplementary_controls.csv": "13c1c27fc41aef80d763f098fd8379756489710044a60b320fd6908b6d8f38bb",
+    "E:\\vk_lod_clusters1\\t1\\analysis_reports\\six_scene_factorial_ablation_20261020\\tree_pairs.csv": "d7e450be9cbce7963808bb3dcc58d6cee4f141dd240c2ae639d152f085c0734b",
+    "E:\\vk_lod_clusters1\\t1\\analysis_reports\\six_scene_factorial_ablation_20261020\\tree_pairs_with_total.csv": "5941015aedc85097dec43a280075575b2cdddb672fafc6883fc4b866a4205946",
+    "E:\\vk_lod_clusters1\\t1\\analysis_reports\\six_scene_factorial_ablation_20261020\\workbook_data.json": "f2e2da45d8e2745b53171e9ff8ad1b69744b7428eca32cd8829ae804d18ca80e",
+    "E:\\vk_lod_clusters1\\t1\\analysis_reports\\six_scene_factorial_ablation_20261020\\六模型六组合与结构树消融分析.md": "19892f41d379c827fad24ea4ca3e4d0c488df146100adf580bead3b427d53a6e",
+    "E:\\vk_lod_clusters1\\t1\\analysis_reports\\six_scene_factorial_ablation_20261020\\六模型六组合与结构树消融完整对比.xlsx": "dc74330b58e28a0618659dbe75f28a4ebd3b2199ac3fae18ed35530e852d94b6"
+  }
+}

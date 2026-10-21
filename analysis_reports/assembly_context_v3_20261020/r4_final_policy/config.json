@@ -1,0 +1,24 @@
+{
+  "config": {
+    "schema": 1,
+    "version": "assembly_context_v3_final_4",
+    "max_context_fraction": 0.55,
+    "slender_aspect": 6.0,
+    "thin_ratio": 0.025,
+    "feature_length": 24.0,
+    "curved_length": 35.0,
+    "component_count": 4,
+    "large_scene_ratio": 0.12,
+    "large_local_ratio": 0.45,
+    "small_local_ratio": 0.2,
+    "context_strength": 0.55,
+    "scope_decay": 0.8,
+    "guard_error_factor": 1.05,
+    "guard_error_slack": 0.002,
+    "guard_axis_slack": 0.02,
+    "guard_max_far_ratio": 0.92,
+    "calibrated_probabilities": false,
+    "visibility_measured": false
+  },
+  "refinement": "scoped"
+}

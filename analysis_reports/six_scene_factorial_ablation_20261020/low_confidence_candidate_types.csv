@@ -1,0 +1,263 @@
+﻿scene,branch,candidate_type,total_candidates,low_confidence_candidates,within_type_low_fraction,share_of_low_pool,low_faces,mean_source_score,score_scope
+a,N,bearings_bushings_guides,242,219,0.9049586776859504,0.19278169014084506,407032,0.4112915659615816,supervised probability threshold/margin
+a,N,gears_pulleys_chains,74,43,0.581081081081081,0.037852112676056336,32500,0.67086879264664,supervised probability threshold/margin
+a,N,handles_controls,151,133,0.8807947019867549,0.11707746478873239,380491,0.4243940126816958,supervised probability threshold/margin
+a,N,joints_clamps_structural_connectors,167,83,0.49700598802395207,0.07306338028169014,130526,0.641964118548496,supervised probability threshold/margin
+a,N,motors_gearmotors,80,62,0.775,0.05457746478873239,177358,0.5584714904427528,supervised probability threshold/margin
+a,N,nuts,85,12,0.1411764705882353,0.01056338028169014,6802,0.762217606867061,supervised probability threshold/margin
+a,N,pins_rivets_keys,350,305,0.8714285714285714,0.26848591549295775,448030,0.5033655280726297,supervised probability threshold/margin
+a,N,pipe_fittings_valves_nozzles,66,47,0.7121212121212122,0.04137323943661972,125382,0.48090964442852774,supervised probability threshold/margin
+a,N,plates_discs_shapes,259,68,0.2625482625482625,0.05985915492957746,239577,0.7982181749633841,supervised probability threshold/margin
+a,N,rotating_fluid_machinery,41,36,0.8780487804878049,0.03169014084507042,82440,0.4083874556349545,supervised probability threshold/margin
+a,N,screws_bolts_studs,140,43,0.30714285714285716,0.037852112676056336,17712,0.6858990562813623,supervised probability threshold/margin
+a,N,springs,17,17,1.0,0.014964788732394365,60838,0.26761847646797404,supervised probability threshold/margin
+a,N,washers_rings_spacers,78,47,0.6025641025641025,0.04137323943661972,121136,0.6106967209623411,supervised probability threshold/margin
+a,N,wheels_castors,28,21,0.75,0.018485915492957746,44364,0.601185604929924,supervised probability threshold/margin
+a,C,aluminum_extrusion,20,20,1.0,0.0186219739292365,22588,0.6077189001329247,uncalibrated quality; low means no object-level output
+a,C,camera_lens,3,3,1.0,0.002793296089385475,7954,0.5504465548357668,uncalibrated quality; low means no object-level output
+a,C,cap_nut,85,69,0.8117647058823529,0.06424581005586592,144078,0.6506781341118191,uncalibrated quality; low means no object-level output
+a,C,coil_spring,8,8,1.0,0.0074487895716946,2648,0.5844679732724678,uncalibrated quality; low means no object-level output
+a,C,die_block,28,28,1.0,0.0260707635009311,28596,0.5770132735156075,uncalibrated quality; low means no object-level output
+a,C,dowel_pin,482,53,0.10995850622406639,0.049348230912476726,398576,0.6837860830876009,uncalibrated quality; low means no object-level output
+a,C,feature_plate,26,26,1.0,0.024208566108007448,64036,0.6254266981049456,uncalibrated quality; low means no object-level output
+a,C,flat_washer,127,124,0.9763779527559056,0.1154562383612663,276602,0.5550814103700472,uncalibrated quality; low means no object-level output
+a,C,flexible_hose,1,1,1.0,0.000931098696461825,2296,0.6134192635735305,uncalibrated quality; low means no object-level output
+a,C,hex_nut,142,50,0.352112676056338,0.04655493482309125,53632,0.747084874671294,uncalibrated quality; low means no object-level output
+a,C,mounting_bracket,9,9,1.0,0.008379888268156424,12144,0.6317093211779289,uncalibrated quality; low means no object-level output
+a,C,mounting_plate,51,51,1.0,0.04748603351955307,87094,0.6025815796999319,uncalibrated quality; low means no object-level output
+a,C,nozzle,26,26,1.0,0.024208566108007448,217936,0.6145668337939735,uncalibrated quality; low means no object-level output
+a,C,pipe_fitting,2,2,1.0,0.00186219739292365,2324,0.592630399323629,uncalibrated quality; low means no object-level output
+a,C,plain_block,272,272,1.0,0.2532588454376164,579180,0.6444891568143486,uncalibrated quality; low means no object-level output
+a,C,plain_shaft,18,18,1.0,0.01675977653631285,13452,0.5780235121123461,uncalibrated quality; low means no object-level output
+a,C,proximity_sensor,1,1,1.0,0.000931098696461825,832,0.5655385313595759,uncalibrated quality; low means no object-level output
+a,C,punch_tool,66,44,0.6666666666666666,0.040968342644320296,78726,0.6288375288423803,uncalibrated quality; low means no object-level output
+a,C,retaining_ring,29,16,0.5517241379310345,0.0148975791433892,52746,0.6590464932243136,uncalibrated quality; low means no object-level output
+a,C,shaft_key,304,187,0.6151315789473685,0.17411545623836128,2390107,0.6342084998887096,uncalibrated quality; low means no object-level output
+a,C,slotted_nut,10,9,0.9,0.008379888268156424,13680,0.6052530151261178,uncalibrated quality; low means no object-level output
+a,C,suction_cup,2,2,1.0,0.00186219739292365,11872,0.6035077798151159,uncalibrated quality; low means no object-level output
+a,C,threaded_stud,66,55,0.8333333333333334,0.051210428305400374,72230,0.6791251315208158,uncalibrated quality; low means no object-level output
+b,N,bearings_bushings_guides,244,153,0.6270491803278688,0.15208747514910537,165400,0.5332349520482,supervised probability threshold/margin
+b,N,gears_pulleys_chains,6,3,0.5,0.002982107355864811,7802,0.5871932581067085,supervised probability threshold/margin
+b,N,handles_controls,204,182,0.8921568627450981,0.18091451292246521,325550,0.44417525002477215,supervised probability threshold/margin
+b,N,joints_clamps_structural_connectors,168,143,0.8511904761904762,0.14214711729622267,197414,0.48686278602551847,supervised probability threshold/margin
+b,N,motors_gearmotors,66,27,0.4090909090909091,0.0268389662027833,143156,0.7187984082283396,supervised probability threshold/margin
+b,N,nuts,107,65,0.6074766355140186,0.06461232604373758,153802,0.5468181396756217,supervised probability threshold/margin
+b,N,pins_rivets_keys,214,164,0.7663551401869159,0.16302186878727634,231722,0.5259246550430762,supervised probability threshold/margin
+b,N,pipe_fittings_valves_nozzles,65,59,0.9076923076923077,0.05864811133200795,184302,0.40150597576911634,supervised probability threshold/margin
+b,N,plates_discs_shapes,250,104,0.416,0.10337972166998012,132170,0.7112177528142929,supervised probability threshold/margin
+b,N,rotating_fluid_machinery,17,15,0.8823529411764706,0.014910536779324055,69306,0.44840433141764474,supervised probability threshold/margin
+b,N,screws_bolts_studs,22,19,0.8636363636363636,0.018886679920477135,12292,0.4367880347100171,supervised probability threshold/margin
+b,N,springs,53,41,0.7735849056603774,0.040755467196819085,216120,0.5840433495786955,supervised probability threshold/margin
+b,N,washers_rings_spacers,59,31,0.5254237288135594,0.030815109343936383,12760,0.6979550082804793,supervised probability threshold/margin
+b,N,wheels_castors,6,0,0.0,0.0,0,0.9498508969942728,supervised probability threshold/margin
+b,C,aluminum_extrusion,4,4,1.0,0.0035460992907801418,9190,0.5346913447474497,uncalibrated quality; low means no object-level output
+b,C,cap_nut,132,63,0.4772727272727273,0.05585106382978723,465846,0.7536115245936055,uncalibrated quality; low means no object-level output
+b,C,die_block,91,91,1.0,0.08067375886524823,104934,0.5795760570617239,uncalibrated quality; low means no object-level output
+b,C,dowel_pin,251,97,0.38645418326693226,0.08599290780141844,60204,0.6829268168658811,uncalibrated quality; low means no object-level output
+b,C,feature_plate,14,14,1.0,0.012411347517730497,41558,0.6025347276157121,uncalibrated quality; low means no object-level output
+b,C,flat_washer,43,43,1.0,0.038120567375886524,19366,0.7347706478655167,uncalibrated quality; low means no object-level output
+b,C,hex_nut,61,11,0.18032786885245902,0.00975177304964539,14248,0.7296339727215911,uncalibrated quality; low means no object-level output
+b,C,machine_base,3,3,1.0,0.0026595744680851063,8580,0.6694681387054914,uncalibrated quality; low means no object-level output
+b,C,mounting_plate,13,13,1.0,0.01152482269503546,16128,0.5620027641410198,uncalibrated quality; low means no object-level output
+b,C,nozzle,5,5,1.0,0.004432624113475178,8240,0.5633228250980459,uncalibrated quality; low means no object-level output
+b,C,plain_block,535,535,1.0,0.47429078014184395,1308536,0.6720535982667792,uncalibrated quality; low means no object-level output
+b,C,plain_shaft,4,4,1.0,0.0035460992907801418,26408,0.6027539021317021,uncalibrated quality; low means no object-level output
+b,C,punch_tool,4,4,1.0,0.0035460992907801418,6830,0.5854525079347473,uncalibrated quality; low means no object-level output
+b,C,retaining_ring,3,3,1.0,0.0026595744680851063,4136,0.569089947984514,uncalibrated quality; low means no object-level output
+b,C,shaft_key,212,139,0.6556603773584906,0.12322695035460993,282720,0.6210542626084943,uncalibrated quality; low means no object-level output
+b,C,slotted_nut,4,4,1.0,0.0035460992907801418,20364,0.64190042125294,uncalibrated quality; low means no object-level output
+b,C,sprocket,18,18,1.0,0.015957446808510637,81172,0.6162677317826195,uncalibrated quality; low means no object-level output
+b,C,suction_cup,1,1,1.0,0.0008865248226950354,2698,0.6599806396833223,uncalibrated quality; low means no object-level output
+b,C,threaded_stud,82,75,0.9146341463414634,0.06648936170212766,208404,0.689932182912176,uncalibrated quality; low means no object-level output
+b,C,timing_belt,1,1,1.0,0.0008865248226950354,2108,0.7014240142095667,uncalibrated quality; low means no object-level output
+c,N,bearings_bushings_guides,177,123,0.6949152542372882,0.10856134157105031,1397652,0.5127541296562906,supervised probability threshold/margin
+c,N,gears_pulleys_chains,14,7,0.5,0.00617828773168579,34258,0.696018153003284,supervised probability threshold/margin
+c,N,handles_controls,224,199,0.8883928571428571,0.17563989408649602,1333489,0.4407351645641029,supervised probability threshold/margin
+c,N,joints_clamps_structural_connectors,202,146,0.7227722772277227,0.12886142983230361,573870,0.5455936501816948,supervised probability threshold/margin
+c,N,motors_gearmotors,28,15,0.5357142857142857,0.01323918799646955,98362,0.620020038315228,supervised probability threshold/margin
+c,N,nuts,86,26,0.3023255813953488,0.02294792586054722,88616,0.7213340904130492,supervised probability threshold/margin
+c,N,pins_rivets_keys,214,168,0.7850467289719626,0.14827890556045895,342934,0.5191962661169399,supervised probability threshold/margin
+c,N,pipe_fittings_valves_nozzles,127,72,0.5669291338582677,0.06354810238305383,308690,0.6046167606209206,supervised probability threshold/margin
+c,N,plates_discs_shapes,292,107,0.3664383561643836,0.09443954104148279,326116,0.7330341201836932,supervised probability threshold/margin
+c,N,rotating_fluid_machinery,167,147,0.8802395209580839,0.1297440423654016,1916994,0.5232916499326329,supervised probability threshold/margin
+c,N,screws_bolts_studs,139,78,0.5611510791366906,0.06884377758164166,92090,0.6122548000203619,supervised probability threshold/margin
+c,N,springs,19,5,0.2631578947368421,0.00441306266548985,16148,0.7820566492645364,supervised probability threshold/margin
+c,N,washers_rings_spacers,52,34,0.6538461538461539,0.03000882612533098,147650,0.5121849236580042,supervised probability threshold/margin
+c,N,wheels_castors,6,6,1.0,0.00529567519858782,311330,0.2653309454520543,supervised probability threshold/margin
+c,C,aluminum_extrusion,13,13,1.0,0.010383386581469648,54240,0.5812573034707574,uncalibrated quality; low means no object-level output
+c,C,camera_lens,3,3,1.0,0.0023961661341853034,27000,0.6568250218782762,uncalibrated quality; low means no object-level output
+c,C,cap_nut,77,39,0.5064935064935064,0.031150159744408944,341850,0.7069473257973158,uncalibrated quality; low means no object-level output
+c,C,coil_spring,13,13,1.0,0.010383386581469648,503898,0.6142424558262088,uncalibrated quality; low means no object-level output
+c,C,die_block,49,49,1.0,0.03913738019169329,148744,0.5947614762081451,uncalibrated quality; low means no object-level output
+c,C,dowel_pin,269,31,0.11524163568773234,0.02476038338658147,44960,0.7388917801685824,uncalibrated quality; low means no object-level output
+c,C,feature_plate,40,40,1.0,0.03194888178913738,1037496,0.6362263100780224,uncalibrated quality; low means no object-level output
+c,C,flat_washer,54,53,0.9814814814814815,0.04233226837060703,920648,0.6605223282714742,uncalibrated quality; low means no object-level output
+c,C,flexible_hose,1,1,1.0,0.0007987220447284345,620,0.5609851503725808,uncalibrated quality; low means no object-level output
+c,C,frame_beam,1,1,1.0,0.0007987220447284345,16724,0.7123278112179792,uncalibrated quality; low means no object-level output
+c,C,hex_nut,77,31,0.4025974025974026,0.02476038338658147,100542,0.7358853973927739,uncalibrated quality; low means no object-level output
+c,C,lead_screw,9,9,1.0,0.00718849840255591,140064,0.781656140555629,uncalibrated quality; low means no object-level output
+c,C,mounting_bracket,3,3,1.0,0.0023961661341853034,7302,0.6249795022812679,uncalibrated quality; low means no object-level output
+c,C,mounting_plate,38,38,1.0,0.03035143769968051,70144,0.5759947857070288,uncalibrated quality; low means no object-level output
+c,C,nozzle,12,12,1.0,0.009584664536741214,55494,0.6246615167513224,uncalibrated quality; low means no object-level output
+c,C,plain_block,493,493,1.0,0.3937699680511182,3421468,0.670422877985991,uncalibrated quality; low means no object-level output
+c,C,plain_shaft,5,5,1.0,0.003993610223642172,7264,0.6323764607777866,uncalibrated quality; low means no object-level output
+c,C,proximity_sensor,98,98,1.0,0.07827476038338659,232848,0.42155584040439514,uncalibrated quality; low means no object-level output
+c,C,punch_tool,26,26,1.0,0.020766773162939296,1309478,0.5952924921181201,uncalibrated quality; low means no object-level output
+c,C,retaining_ring,26,20,0.7692307692307693,0.01597444089456869,621458,0.7209617961939951,uncalibrated quality; low means no object-level output
+c,C,seal_ring,4,4,1.0,0.003194888178913738,2576,0.6459908303752886,uncalibrated quality; low means no object-level output
+c,C,shaft_key,361,203,0.5623268698060941,0.1621405750798722,1001766,0.6493678373881282,uncalibrated quality; low means no object-level output
+c,C,slotted_nut,38,36,0.9473684210526315,0.02875399361022364,194152,0.6752386704134072,uncalibrated quality; low means no object-level output
+c,C,sprocket,1,1,1.0,0.0007987220447284345,4576,0.5481692442079255,uncalibrated quality; low means no object-level output
+c,C,suction_cup,4,4,1.0,0.003194888178913738,131179,0.5512374026731178,uncalibrated quality; low means no object-level output
+c,C,threaded_stud,31,25,0.8064516129032258,0.019968051118210862,106544,0.669327667616621,uncalibrated quality; low means no object-level output
+c,C,timing_belt,1,1,1.0,0.0007987220447284345,3096,0.5788762601767331,uncalibrated quality; low means no object-level output
+d,N,bearings_bushings_guides,100,93,0.93,0.12827586206896552,132516,0.37836982429027555,supervised probability threshold/margin
+d,N,gears_pulleys_chains,21,20,0.9523809523809523,0.027586206896551724,22234,0.45915873774460386,supervised probability threshold/margin
+d,N,handles_controls,98,82,0.8367346938775511,0.11310344827586206,135946,0.4752387845394563,supervised probability threshold/margin
+d,N,joints_clamps_structural_connectors,118,56,0.4745762711864407,0.07724137931034483,72506,0.6763681294554371,supervised probability threshold/margin
+d,N,motors_gearmotors,23,13,0.5652173913043478,0.01793103448275862,59464,0.6677119194165521,supervised probability threshold/margin
+d,N,nuts,35,21,0.6,0.028965517241379312,45532,0.4752072811126709,supervised probability threshold/margin
+d,N,pins_rivets_keys,178,150,0.8426966292134831,0.20689655172413793,229212,0.4921154935708207,supervised probability threshold/margin
+d,N,pipe_fittings_valves_nozzles,24,20,0.8333333333333334,0.027586206896551724,29060,0.3645739754041036,supervised probability threshold/margin
+d,N,plates_discs_shapes,288,104,0.3611111111111111,0.14344827586206896,134786,0.752662725901852,supervised probability threshold/margin
+d,N,rotating_fluid_machinery,22,20,0.9090909090909091,0.027586206896551724,39038,0.4740926345640963,supervised probability threshold/margin
+d,N,screws_bolts_studs,127,27,0.2125984251968504,0.037241379310344824,14578,0.7098964105440876,supervised probability threshold/margin
+d,N,springs,36,36,1.0,0.0496551724137931,47428,0.30677490474449265,supervised probability threshold/margin
+d,N,washers_rings_spacers,88,74,0.8409090909090909,0.10206896551724139,129258,0.4224474706094373,supervised probability threshold/margin
+d,N,wheels_castors,9,9,1.0,0.012413793103448275,12104,0.29555757343769073,supervised probability threshold/margin
+d,C,aluminum_extrusion,35,35,1.0,0.04065040650406504,78700,0.6139427355038843,uncalibrated quality; low means no object-level output
+d,C,camera_lens,1,1,1.0,0.0011614401858304297,1106,0.575031526645196,uncalibrated quality; low means no object-level output
+d,C,cap_nut,39,38,0.9743589743589743,0.04413472706155633,57622,0.6106886363745384,uncalibrated quality; low means no object-level output
+d,C,die_block,50,50,1.0,0.05807200929152149,33400,0.6107144475476545,uncalibrated quality; low means no object-level output
+d,C,dowel_pin,273,72,0.26373626373626374,0.08362369337979095,50826,0.6698717000995612,uncalibrated quality; low means no object-level output
+d,C,feature_plate,25,25,1.0,0.029036004645760744,94740,0.6521284284684329,uncalibrated quality; low means no object-level output
+d,C,flat_washer,82,80,0.975609756097561,0.09291521486643438,155824,0.6196018496567787,uncalibrated quality; low means no object-level output
+d,C,hex_nut,61,41,0.6721311475409836,0.047619047619047616,60434,0.6702608269990352,uncalibrated quality; low means no object-level output
+d,C,mounting_bracket,4,4,1.0,0.004645760743321719,8226,0.6314851727265561,uncalibrated quality; low means no object-level output
+d,C,mounting_plate,68,63,0.9264705882352942,0.07317073170731707,78252,0.5917622839606054,uncalibrated quality; low means no object-level output
+d,C,pipe_fitting,2,2,1.0,0.0023228803716608595,7092,0.6313446714552637,uncalibrated quality; low means no object-level output
+d,C,plain_block,243,243,1.0,0.28222996515679444,560066,0.647592050996898,uncalibrated quality; low means no object-level output
+d,C,punch_tool,2,2,1.0,0.0023228803716608595,26256,0.5148552688316422,uncalibrated quality; low means no object-level output
+d,C,retaining_ring,20,1,0.05,0.0011614401858304297,4162,0.7353863785365007,uncalibrated quality; low means no object-level output
+d,C,shaft_key,226,175,0.7743362831858407,0.2032520325203252,183822,0.5956691969633116,uncalibrated quality; low means no object-level output
+d,C,slotted_nut,14,14,1.0,0.016260162601626018,15512,0.6448203088245487,uncalibrated quality; low means no object-level output
+d,C,sprocket,3,3,1.0,0.003484320557491289,8692,0.5633540273422751,uncalibrated quality; low means no object-level output
+d,C,suction_cup,2,2,1.0,0.0023228803716608595,5656,0.5205315681281455,uncalibrated quality; low means no object-level output
+d,C,threaded_stud,17,10,0.5882352941176471,0.011614401858304297,16460,0.7004392268268838,uncalibrated quality; low means no object-level output
+e,N,bearings_bushings_guides,438,212,0.4840182648401826,0.125,899202,0.6298188070456187,supervised probability threshold/margin
+e,N,gears_pulleys_chains,36,13,0.3611111111111111,0.0076650943396226415,39496,0.7066239317258199,supervised probability threshold/margin
+e,N,handles_controls,217,200,0.9216589861751152,0.1179245283018868,1309760,0.424820637373331,supervised probability threshold/margin
+e,N,joints_clamps_structural_connectors,332,217,0.6536144578313253,0.12794811320754718,502352,0.5888098271406559,supervised probability threshold/margin
+e,N,motors_gearmotors,37,23,0.6216216216216216,0.013561320754716982,259202,0.6163252201434728,supervised probability threshold/margin
+e,N,nuts,20,8,0.4,0.0047169811320754715,10032,0.7408691063523293,supervised probability threshold/margin
+e,N,pins_rivets_keys,617,438,0.7098865478119936,0.25825471698113206,766588,0.5576220558325321,supervised probability threshold/margin
+e,N,pipe_fittings_valves_nozzles,316,148,0.46835443037974683,0.08726415094339622,493910,0.6214647661375848,supervised probability threshold/margin
+e,N,plates_discs_shapes,637,152,0.23861852433281006,0.08962264150943396,257400,0.7979854558429313,supervised probability threshold/margin
+e,N,rotating_fluid_machinery,46,27,0.5869565217391305,0.015919811320754717,1020020,0.573699015962041,supervised probability threshold/margin
+e,N,screws_bolts_studs,174,82,0.47126436781609193,0.04834905660377359,125052,0.5954293693447935,supervised probability threshold/margin
+e,N,springs,26,14,0.5384615384615384,0.008254716981132075,72408,0.64151003326361,supervised probability threshold/margin
+e,N,washers_rings_spacers,448,159,0.3549107142857143,0.09375,668006,0.7094902176343437,supervised probability threshold/margin
+e,N,wheels_castors,3,3,1.0,0.001768867924528302,36110,0.22970437506834665,supervised probability threshold/margin
+e,C,aluminum_extrusion,24,24,1.0,0.010889292196007259,27774,0.5110116231419349,uncalibrated quality; low means no object-level output
+e,C,camera_lens,3,3,1.0,0.0013611615245009074,10652,0.5424714370284408,uncalibrated quality; low means no object-level output
+e,C,cap_nut,71,61,0.8591549295774648,0.027676950998185117,575578,0.6876112680727429,uncalibrated quality; low means no object-level output
+e,C,coil_spring,12,12,1.0,0.0054446460980036296,590256,0.6330623594529324,uncalibrated quality; low means no object-level output
+e,C,die_block,34,34,1.0,0.015426497277676952,68362,0.547887695011249,uncalibrated quality; low means no object-level output
+e,C,dowel_pin,819,99,0.12087912087912088,0.044918330308529944,94780,0.71484015675391,uncalibrated quality; low means no object-level output
+e,C,feature_plate,50,50,1.0,0.022686025408348458,422670,0.6534045194539114,uncalibrated quality; low means no object-level output
+e,C,flat_washer,310,284,0.9161290322580645,0.12885662431941924,1346574,0.615083587835338,uncalibrated quality; low means no object-level output
+e,C,hex_nut,66,62,0.9393939393939394,0.028130671506352088,481918,0.6153579441878843,uncalibrated quality; low means no object-level output
+e,C,inspection_light,1,1,1.0,0.00045372050816696913,12,0.3229196866656656,uncalibrated quality; low means no object-level output
+e,C,mounting_bracket,2,2,1.0,0.0009074410163339383,2864,0.6109844129365394,uncalibrated quality; low means no object-level output
+e,C,mounting_plate,70,51,0.7285714285714285,0.023139745916515426,70186,0.5666409288070516,uncalibrated quality; low means no object-level output
+e,C,nozzle,178,176,0.9887640449438202,0.07985480943738657,1293130,0.6233803102385022,uncalibrated quality; low means no object-level output
+e,C,pipe_fitting,31,31,1.0,0.014065335753176044,186124,0.5897520567851876,uncalibrated quality; low means no object-level output
+e,C,plain_block,714,714,1.0,0.323956442831216,5464442,0.6489013259002552,uncalibrated quality; low means no object-level output
+e,C,plain_shaft,9,9,1.0,0.004083484573502722,49582,0.6062241362203064,uncalibrated quality; low means no object-level output
+e,C,punch_tool,37,37,1.0,0.01678765880217786,108652,0.5428198442586551,uncalibrated quality; low means no object-level output
+e,C,retaining_ring,209,102,0.4880382775119617,0.04627949183303085,85700,0.6730982215067403,uncalibrated quality; low means no object-level output
+e,C,shaft_key,496,259,0.5221774193548387,0.11751361161524501,1134374,0.6320120957103894,uncalibrated quality; low means no object-level output
+e,C,slotted_nut,65,65,1.0,0.029491833030852996,175590,0.6354493528008639,uncalibrated quality; low means no object-level output
+e,C,sprocket,7,7,1.0,0.003176043557168784,42964,0.6278032530718519,uncalibrated quality; low means no object-level output
+e,C,suction_cup,1,1,1.0,0.00045372050816696913,3310,0.6368006711079671,uncalibrated quality; low means no object-level output
+e,C,threaded_stud,138,120,0.8695652173913043,0.0544464609800363,419118,0.6470329417174959,uncalibrated quality; low means no object-level output
+f,N,bearings_bushings_guides,272,226,0.8308823529411765,0.2435344827586207,134078,0.5023246123181546,supervised probability threshold/margin
+f,N,gears_pulleys_chains,30,8,0.26666666666666666,0.008620689655172414,29918,0.8604928553104401,supervised probability threshold/margin
+f,N,handles_controls,230,207,0.9,0.22306034482758622,87240,0.4659574738663176,supervised probability threshold/margin
+f,N,joints_clamps_structural_connectors,135,71,0.5259259259259259,0.07650862068965517,51526,0.6242755978195755,supervised probability threshold/margin
+f,N,motors_gearmotors,14,2,0.14285714285714285,0.0021551724137931034,1094,0.829451824937548,supervised probability threshold/margin
+f,N,nuts,29,6,0.20689655172413793,0.00646551724137931,3584,0.7406633141739615,supervised probability threshold/margin
+f,N,pins_rivets_keys,185,146,0.7891891891891892,0.15732758620689655,87070,0.5279436504518663,supervised probability threshold/margin
+f,N,pipe_fittings_valves_nozzles,46,40,0.8695652173913043,0.04310344827586207,24972,0.42385769732620404,supervised probability threshold/margin
+f,N,plates_discs_shapes,163,77,0.4723926380368098,0.08297413793103449,59808,0.6953469578839518,supervised probability threshold/margin
+f,N,rotating_fluid_machinery,14,14,1.0,0.015086206896551725,8152,0.22119624593428203,supervised probability threshold/margin
+f,N,screws_bolts_studs,149,86,0.5771812080536913,0.09267241379310345,35736,0.5674380308029635,supervised probability threshold/margin
+f,N,springs,40,7,0.175,0.007543103448275862,2446,0.8545569345355034,supervised probability threshold/margin
+f,N,washers_rings_spacers,169,34,0.20118343195266272,0.036637931034482756,24572,0.7282668857355795,supervised probability threshold/margin
+f,N,wheels_castors,4,4,1.0,0.004310344827586207,2414,0.445460706949234,supervised probability threshold/margin
+f,C,aluminum_extrusion,1,1,1.0,0.0010834236186348862,312,0.6657538138886632,uncalibrated quality; low means no object-level output
+f,C,camera_lens,1,1,1.0,0.0010834236186348862,360,0.6222990938590617,uncalibrated quality; low means no object-level output
+f,C,cap_nut,70,51,0.7285714285714285,0.0552546045503792,36364,0.6982407055724846,uncalibrated quality; low means no object-level output
+f,C,die_block,42,42,1.0,0.04550379198266522,13946,0.5673088707926498,uncalibrated quality; low means no object-level output
+f,C,dowel_pin,316,12,0.0379746835443038,0.013001083423618635,71646,0.7288522544353799,uncalibrated quality; low means no object-level output
+f,C,feature_plate,4,4,1.0,0.004333694474539545,5396,0.6246072734259221,uncalibrated quality; low means no object-level output
+f,C,flat_washer,203,154,0.7586206896551724,0.1668472372697725,77906,0.6578266512563483,uncalibrated quality; low means no object-level output
+f,C,flexible_hose,2,2,1.0,0.0021668472372697724,1540,0.6487651348300483,uncalibrated quality; low means no object-level output
+f,C,hex_bolt,2,2,1.0,0.0021668472372697724,1380,0.6819855947691184,uncalibrated quality; low means no object-level output
+f,C,hex_nut,49,25,0.5102040816326531,0.027085590465872156,17740,0.6780570641677928,uncalibrated quality; low means no object-level output
+f,C,mounting_bracket,1,1,1.0,0.0010834236186348862,692,0.6258558684659736,uncalibrated quality; low means no object-level output
+f,C,mounting_plate,16,16,1.0,0.01733477789815818,6828,0.5960405316112216,uncalibrated quality; low means no object-level output
+f,C,nozzle,7,7,1.0,0.007583965330444204,7404,0.5980908875290936,uncalibrated quality; low means no object-level output
+f,C,plain_block,285,285,1.0,0.3087757313109426,250195,0.6754005475513034,uncalibrated quality; low means no object-level output
+f,C,plain_shaft,20,20,1.0,0.021668472372697724,2956,0.6130512578074795,uncalibrated quality; low means no object-level output
+f,C,punch_tool,52,52,1.0,0.056338028169014086,21292,0.6075536394816208,uncalibrated quality; low means no object-level output
+f,C,retaining_ring,30,14,0.4666666666666667,0.015167930660888408,6328,0.6908214124824956,uncalibrated quality; low means no object-level output
+f,C,shaft_key,307,168,0.5472312703583062,0.1820151679306609,87180,0.6348413984029109,uncalibrated quality; low means no object-level output
+f,C,slotted_nut,26,26,1.0,0.028169014084507043,12740,0.6213470657215693,uncalibrated quality; low means no object-level output
+f,C,sprocket,19,18,0.9473684210526315,0.01950162513542795,23014,0.6480230150872882,uncalibrated quality; low means no object-level output
+f,C,threaded_stud,27,22,0.8148148148148148,0.023835319609967497,14970,0.6946193164186789,uncalibrated quality; low means no object-level output
+ALL,N,bearings_bushings_guides,1473,1026,0.6965376782077393,0.15489130434782608,3135880,0.5232378022248293,supervised probability threshold/margin
+ALL,N,gears_pulleys_chains,181,94,0.5193370165745856,0.014190821256038648,166208,0.684018149395674,supervised probability threshold/margin
+ALL,N,handles_controls,1124,1003,0.8923487544483986,0.15141908212560387,3572476,0.44426122950754554,supervised probability threshold/margin
+ALL,N,joints_clamps_structural_connectors,1122,716,0.6381461675579323,0.10809178743961352,1528194,0.5871518545264441,supervised probability threshold/margin
+ALL,N,motors_gearmotors,248,142,0.5725806451612904,0.021437198067632852,738636,0.6421480165013382,supervised probability threshold/margin
+ALL,N,nuts,362,138,0.3812154696132597,0.020833333333333332,308368,0.6581813325457151,supervised probability threshold/margin
+ALL,N,pins_rivets_keys,1758,1371,0.7798634812286689,0.20697463768115942,2105556,0.5285283012466083,supervised probability threshold/margin
+ALL,N,pipe_fittings_valves_nozzles,644,386,0.5993788819875776,0.058272946859903384,1166316,0.5578483682334053,supervised probability threshold/margin
+ALL,N,plates_discs_shapes,1889,612,0.3239809422975119,0.09239130434782608,1149857,0.7607274024242948,supervised probability threshold/margin
+ALL,N,rotating_fluid_machinery,307,259,0.8436482084690554,0.03910024154589372,3135950,0.49405017912582,supervised probability threshold/margin
+ALL,N,screws_bolts_studs,751,335,0.44607190412782954,0.050573671497584544,297460,0.6245651702271321,supervised probability threshold/margin
+ALL,N,springs,191,120,0.6282722513089005,0.018115942028985508,415388,0.5877922658676876,supervised probability threshold/margin
+ALL,N,washers_rings_spacers,894,379,0.42393736017897093,0.057216183574879224,1103382,0.6639277453657232,supervised probability threshold/margin
+ALL,N,wheels_castors,56,43,0.7678571428571429,0.006491545893719807,406322,0.5224153947617326,supervised probability threshold/margin
+ALL,C,aluminum_extrusion,97,97,1.0,0.013034130610051061,192804,0.5800774931824659,uncalibrated quality; low means no object-level output
+ALL,C,camera_lens,11,11,1.0,0.0014780972856758936,47072,0.5860508783392463,uncalibrated quality; low means no object-level output
+ALL,C,cap_nut,474,321,0.6772151898734177,0.043133566245632894,1621338,0.6977498164010539,uncalibrated quality; low means no object-level output
+ALL,C,coil_spring,33,33,1.0,0.0044342918570276805,1096802,0.6138680007683529,uncalibrated quality; low means no object-level output
+ALL,C,die_block,294,294,1.0,0.039505509271701156,397982,0.581741434579284,uncalibrated quality; low means no object-level output
+ALL,C,dowel_pin,2410,364,0.15103734439834024,0.04891158290782048,720992,0.7047335215174777,uncalibrated quality; low means no object-level output
+ALL,C,feature_plate,159,159,1.0,0.02136522440204246,1665896,0.6391037642677957,uncalibrated quality; low means no object-level output
+ALL,C,flat_washer,819,738,0.9010989010989011,0.09916689062080086,2796920,0.6261059301681591,uncalibrated quality; low means no object-level output
+ALL,C,flexible_hose,4,4,1.0,0.0005374899220639613,4456,0.6179836709015519,uncalibrated quality; low means no object-level output
+ALL,C,frame_beam,1,1,1.0,0.0001343724805159903,16724,0.7123278112179792,uncalibrated quality; low means no object-level output
+ALL,C,hex_bolt,2,2,1.0,0.0002687449610319806,1380,0.6819855947691184,uncalibrated quality; low means no object-level output
+ALL,C,hex_nut,456,220,0.4824561403508772,0.029561945713517872,728514,0.7060991908906749,uncalibrated quality; low means no object-level output
+ALL,C,inspection_light,1,1,1.0,0.0001343724805159903,12,0.3229196866656656,uncalibrated quality; low means no object-level output
+ALL,C,lead_screw,9,9,1.0,0.001209352324643913,140064,0.781656140555629,uncalibrated quality; low means no object-level output
+ALL,C,machine_base,3,3,1.0,0.00040311744154797097,8580,0.6694681387054914,uncalibrated quality; low means no object-level output
+ALL,C,mounting_bracket,19,19,1.0,0.002553077129803816,31228,0.6281098832994969,uncalibrated quality; low means no object-level output
+ALL,C,mounting_plate,256,232,0.90625,0.031174415479709755,328632,0.5834642468241844,uncalibrated quality; low means no object-level output
+ALL,C,nozzle,228,226,0.9912280701754386,0.030368180596613812,1582204,0.6203492168434493,uncalibrated quality; low means no object-level output
+ALL,C,pipe_fitting,35,35,1.0,0.0047030368180596615,195540,0.59229325433996,uncalibrated quality; low means no object-level output
+ALL,C,plain_block,2542,2542,1.0,0.3415748454716474,11583887,0.6603217056296118,uncalibrated quality; low means no object-level output
+ALL,C,plain_shaft,56,56,1.0,0.007524858908895459,99662,0.60168506272447,uncalibrated quality; low means no object-level output
+ALL,C,proximity_sensor,99,99,1.0,0.013302875571083042,233680,0.42301021102010394,uncalibrated quality; low means no object-level output
+ALL,C,punch_tool,187,165,0.8823529411764706,0.022171459285138403,1551234,0.5990883730410963,uncalibrated quality; low means no object-level output
+ALL,C,retaining_ring,317,156,0.4921135646687697,0.02096210696049449,774530,0.6803612715729216,uncalibrated quality; low means no object-level output
+ALL,C,seal_ring,4,4,1.0,0.0005374899220639613,2576,0.6459908303752886,uncalibrated quality; low means no object-level output
+ALL,C,shaft_key,1906,1131,0.593389296956978,0.15197527546358505,5079969,0.6305772425141858,uncalibrated quality; low means no object-level output
+ALL,C,slotted_nut,157,154,0.9808917197452229,0.02069336199946251,432038,0.6418211291486818,uncalibrated quality; low means no object-level output
+ALL,C,sprocket,48,47,0.9791666666666666,0.006315506584251545,160418,0.6257939699267362,uncalibrated quality; low means no object-level output
+ALL,C,suction_cup,10,10,1.0,0.0013437248051599033,154715,0.5749809617370285,uncalibrated quality; low means no object-level output
+ALL,C,threaded_stud,361,307,0.850415512465374,0.04125235151840903,837726,0.670633212553084,uncalibrated quality; low means no object-level output
+ALL,C,timing_belt,2,2,1.0,0.0002687449610319806,5204,0.64015013719315,uncalibrated quality; low means no object-level output

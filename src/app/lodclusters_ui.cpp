@@ -78,7 +78,7 @@ const char* semanticLodModeName(uint32_t mode)
     case SEMANTIC_LOD_POINTNEXT_POINTCLIP_STRUCTURE:
       return "PointNeXt + PointCLIP + structure";
     case SEMANTIC_LOD_POINTNEXT_POINTCLIP_STRUCTURE_METADATA:
-      return "PointNeXt + open semantics + structure + CAD context";
+      return "PointNeXt + open semantics + geometry + assembly/CAD context";
     default:
       return "PointNeXt + PointCLIP + structure";
   }
@@ -1456,16 +1456,16 @@ void LodClusters::onUIRender()
         {
           static const char* policyNames[] = {
               "",
-              "P1 micro / uncertain",
-              "P2 repeated fastener",
-              "P3 large static bulk",
-              "P4 ordinary low detail",
-              "P5 balanced visible",
-              "P6 high-detail shape",
-              "P7 interface / fluid",
-              "P8 structural / control",
-              "P9 motion / precision",
-              "P10 critical preserve",
+              "P1 micro repeated part",
+              "P2 ordinary standard part",
+              "P3 simple bulk silhouette",
+              "P4 surface / support",
+              "P5 unresolved / balanced",
+              "P6 thin / slender silhouette",
+              "P7 functional interface",
+              "P8 control / actuation",
+              "P9 precision / tooling",
+              "P10 sensitive process detail",
           };
 
           std::array<uint64_t, 11> instanceCounts = {};

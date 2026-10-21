@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "policy_files": 90,
+  "policy_rows": 165000,
+  "selected_nodes": 11000,
+  "semantic_decisions_unchanged": true,
+  "no_geometry_removal": true,
+  "deployed": false,
+  "runtime_quality_measured": false,
+  "memory_or_frame_time_measured": false,
+  "coefficients": "explicit engineering priors, not accuracy calibrated"
+}

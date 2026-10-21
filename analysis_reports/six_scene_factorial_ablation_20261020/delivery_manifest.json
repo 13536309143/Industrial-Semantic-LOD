@@ -1,0 +1,24 @@
+{
+  "validation": {
+    "status": "passed",
+    "nodes": 11000,
+    "main_conditions": 72,
+    "all_conditions": 138,
+    "policy_rows": 253000,
+    "main_geometry_rows": 132000,
+    "hash_entries_verified": 189,
+    "xlsx_cached_fraction_cells_verified": 1680,
+    "recalculation_verified": true,
+    "deployment_unchanged": true,
+    "formula_errors": 0
+  },
+  "authoring_source_sha256": "18a46f4edb5189183d4656c8c201358c7f9d5764379d2e92120532745476fe63",
+  "outputs": {
+    "E:\\vk_lod_clusters1\\t1\\analysis_reports\\six_scene_factorial_ablation_20261020\\六模型六组合与结构树消融完整对比.xlsx": "dc74330b58e28a0618659dbe75f28a4ebd3b2199ac3fae18ed35530e852d94b6",
+    "E:\\vk_lod_clusters1\\t1\\analysis_reports\\six_scene_factorial_ablation_20261020\\六模型六组合与结构树消融分析.md": "19892f41d379c827fad24ea4ca3e4d0c488df146100adf580bead3b427d53a6e",
+    "E:\\vk_lod_clusters1\\t1\\analysis_reports\\six_scene_factorial_ablation_20261020\\main_72_comparison.csv": "3f3e84748d571144c0fd7cf7c8fe23ebc4977f5a79ad2dd211d9c6438845775e",
+    "E:\\vk_lod_clusters1\\t1\\analysis_reports\\six_scene_factorial_ablation_20261020\\validation_summary.json": "9e6fee4074b93331985b87148640b63d7b17b9b6b21a9cdd5ec9242a043aa6ce",
+    "E:\\vk_lod_clusters1\\t1\\analysis_reports\\six_scene_factorial_ablation_20261020\\provenance.json": "76a9737e79a40a1cd6e90f6f9fa1693246d6c7ce528e1350ab66791e2f1b9533",
+    "E:\\vk_lod_clusters1\\t1\\analysis_reports\\six_scene_factorial_ablation_20261020\\report_provenance.json": "04f623774791263fd36eb6bd09aa235d36268a7034a9d4c0f0abd3cf931283fe"
+  }
+}

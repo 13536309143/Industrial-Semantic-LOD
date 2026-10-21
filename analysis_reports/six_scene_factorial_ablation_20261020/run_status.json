@@ -1,0 +1,25 @@
+{
+  "status": "complete",
+  "models": [
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f"
+  ],
+  "main_modes": [
+    "N",
+    "C",
+    "NG",
+    "CG",
+    "NC",
+    "NCG"
+  ],
+  "main_conditions": 72,
+  "failed": [],
+  "scene": "f",
+  "stage": "policy_and_geometry_complete",
+  "total_nodes": 11000,
+  "total_policy_rows": 253000
+}

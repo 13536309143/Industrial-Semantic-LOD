@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "version": "assembly_context_v3_scoped_2",
+  "max_context_fraction": 0.55,
+  "slender_aspect": 6.0,
+  "thin_ratio": 0.025,
+  "feature_length": 14.0,
+  "curved_length": 35.0,
+  "component_count": 4,
+  "large_scene_ratio": 0.12,
+  "large_local_ratio": 0.45,
+  "small_local_ratio": 0.20,
+  "context_strength": 0.55,
+  "scope_decay": 0.8,
+  "calibrated_probabilities": false,
+  "visibility_measured": false
+}

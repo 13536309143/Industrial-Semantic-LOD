@@ -1,0 +1,28 @@
+{
+  "status": "passed",
+  "version": "adaptive_p10_v4.3",
+  "scenes": 6,
+  "nodes": 11000,
+  "policy_conditions": 96,
+  "policy_rows": 176000,
+  "primary_runtime_conditions": 24,
+  "rejected_gpu_candidate_conditions": 6,
+  "ten_profile_counts": {
+    "1": 2,
+    "2": 677,
+    "3": 59,
+    "4": 1740,
+    "5": 1912,
+    "6": 5010,
+    "7": 443,
+    "8": 372,
+    "9": 290,
+    "10": 495
+  },
+  "hash_entries": 145,
+  "native_and_policy_tests_passed": 65,
+  "strict_image_quality_gate": "SSIM>=.98; edge-region SSIM>=.97; 2px edge recall>=.99",
+  "no_deletions": true,
+  "disabled_branch_isolation": true,
+  "scope": "development diagnostics; no independent accuracy or interactive FPS claim"
+}

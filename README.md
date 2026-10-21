@@ -119,6 +119,10 @@ The latest [four-scene full semantic test and overall assessment](analysis_repor
 
 Run **`run_open_semantic_v2.bat`** for the upgraded open branch: a 66-label/12-family taxonomy, pose/local views, independent surface-normal shading, cross-render agreement, three-level abstention and explicit semantic identities with unified N/C/G fusion. A seventh renderer strategy adds separately marked CAD context. [Usage and method](tools/pointclipv2/OPEN_SEMANTIC_V2.md) · [Upgrade comparison](analysis_reports/open_semantic_v2_20261019/开放语义分支升级与对照分析.md). Engineering thresholds remain uncalibrated; evidence coverage and policy changes are not accuracy gains.
 
+Run **`run_adaptive_p10_comparison.bat`** for the current ten-profile geometry policy; `run_assembly_context_comparison.bat` forwards to it. Strategy seven uses assembly/CAD evidence (CLI index 6); strategy six excludes leaf/ancestor names. `--policies-only` and `--no-export` remain supported. Run `run_adaptive_p10_runtime_validation.bat` separately for real application memory/GPU timing and image diagnostics. [Current definitions](tools/pointclipv2/ADAPTIVE_P10_V4.md) · [Six-scene validation](analysis_reports/adaptive_p10_v4_20261020/P1-P10策略重构与六模型验证.md). The old runner remains `run_assembly_context_v3_legacy.bat` and its [v3 report](analysis_reports/assembly_context_v3_20261020/六模型结构树辅助与策略优化实验报告.md) is preserved. Name-assisted outputs are not blind recognition accuracy; GPU timings are not interactive desktop FPS.
+
+The full paired ablation is available as a [six-mode/tree comparison](analysis_reports/six_scene_factorial_ablation_20261020/六模型六组合与结构树消融分析.md) and an [Excel workbook](analysis_reports/six_scene_factorial_ablation_20261020/六模型六组合与结构树消融完整对比.xlsx). All 72 primary conditions disable leaf-name hints and incumbent migration guards; H0 removes all parent assistance. Topology-only, G-only and metadata controls are separate. Experimental policy files do not replace deployed results.
+
 ### 1. Industrial part classification
 
 | Configuration | Test OA | Test mAcc | Test macro-F1 |

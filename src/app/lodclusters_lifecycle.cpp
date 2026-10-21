@@ -184,7 +184,7 @@ void LodClusters::onAttach(nvapp::Application* app)
     m_ui.enumAdd(GUI_SEMANTIC_LOD_MODE, int(SEMANTIC_LOD_POINTCLIP_STRUCTURE), "PointCLIP + structure");
     m_ui.enumAdd(GUI_SEMANTIC_LOD_MODE, int(SEMANTIC_LOD_POINTNEXT_POINTCLIP), "PointNeXt + PointCLIP");
     m_ui.enumAdd(GUI_SEMANTIC_LOD_MODE, int(SEMANTIC_LOD_POINTNEXT_POINTCLIP_STRUCTURE), "PointNeXt + PointCLIP + structure");
-    m_ui.enumAdd(GUI_SEMANTIC_LOD_MODE, int(SEMANTIC_LOD_POINTNEXT_POINTCLIP_STRUCTURE_METADATA), "PointNeXt + open semantics + structure + CAD context");
+    m_ui.enumAdd(GUI_SEMANTIC_LOD_MODE, int(SEMANTIC_LOD_POINTNEXT_POINTCLIP_STRUCTURE_METADATA), "PointNeXt + open semantics + geometry + assembly/CAD context");
 
   }
 

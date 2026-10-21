@@ -119,6 +119,10 @@ ISPointNet 联合监督类别证据、门控开放词汇证据与显式网格描
 
 开放语义工程升级入口为 **`run_open_semantic_v2.bat`**，采用66类/12上层类别词库、姿态与局部视图、独立表面法线着色、双渲染一致性与三层拒识判别，并输出可追溯的开放身份及统一N/C/G配置。应用新增第七项CAD上下文辅助策略，元数据证据与纯视觉分开。[使用与方法说明](tools/pointclipv2/OPEN_SEMANTIC_V2.md) · [升级对照报告](analysis_reports/open_semantic_v2_20261019/开放语义分支升级与对照分析.md)。工程阈值尚未人工标定，证据覆盖或P等级变化不是准确率提升。
 
+当前P1–P10自适应保护使用 **`run_adaptive_p10_comparison.bat`**；原入口`run_assembly_context_comparison.bat`也转入新版。默认全量处理a–f，第七项加载装配/CAD辅助的实测配置（命令行索引6），第六项保留无名称和父结构的对照。支持`--policies-only`、`--no-export`。真实程序内存、GPU时间和图像核验另用`run_adaptive_p10_runtime_validation.bat`。[新版规则与复现](tools/pointclipv2/ADAPTIVE_P10_V4.md) · [新版六模型验证](analysis_reports/adaptive_p10_v4_20261020/P1-P10策略重构与六模型验证.md)。旧v3入口单独保留为`run_assembly_context_v3_legacy.bat`，[旧实验报告](analysis_reports/assembly_context_v3_20261020/六模型结构树辅助与策略优化实验报告.md)不覆盖。名称辅助不是盲识别准确率，GPU时间也不等于桌面交互FPS。
+
+六模型的完整成对消融见[六组合与结构树开关报告](analysis_reports/six_scene_factorial_ablation_20261020/六模型六组合与结构树消融分析.md)及[Excel对比表](analysis_reports/six_scene_factorial_ablation_20261020/六模型六组合与结构树消融完整对比.xlsx)。主72组固定叶名称与迁移回退关闭，H0完全关闭父组辅助；另有HT、纯G与名称辅助附表。逐节点策略只生成到独立实验目录，不替换部署结果。
+
 ### 1. 工业零件分类
 
 | 配置 | 测试 OA | 测试 mAcc | 测试 Macro-F1 |

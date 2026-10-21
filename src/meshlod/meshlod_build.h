@@ -111,6 +111,12 @@ clodConfig clodDefaultConfig(size_t max_triangles)
 	config.feature_hard_lock_ratio = 1.0f;
 	config.hierarchy_depth_decay = 0.0f;
 	config.hierarchy_min_ratio = config.simplify_ratio;
+	config.simplify_error_relative = 0.0f;
+	config.simplify_error_absolute = 0.0f;
+	config.max_axis_shrink = 0.0f;
+	config.preserve_components = false;
+	config.base_simplify_ratio = 1.0f;
+	config.base_error_relative = 0.0f;
 
 	return config;
 }
@@ -210,6 +216,39 @@ size_t clodBuild(clodConfig config, clodMesh mesh, void* output_context, clodOut
 
 
 	meshopt_generatePositionRemap(&context.remap[0], mesh.vertex_positions, mesh.vertex_count, mesh.vertex_positions_stride);
+	context.mesh.component_ids = nullptr;
+	if(config.simplify_error_relative > 0)
+		context.config.simplify_error_absolute = config.simplify_error_relative * meshopt_simplifyScale(mesh.vertex_positions, mesh.vertex_count, mesh.vertex_positions_stride);
+	if(config.preserve_components)
+	{
+		// Weld seam duplicates before unioning faces. Storage is transient during build.
+		context.component_ids = context.remap;
+		auto root = [&](unsigned int v) {
+			while(context.component_ids[v] != v)
+			{
+				context.component_ids[v] = context.component_ids[context.component_ids[v]];
+				v = context.component_ids[v];
+			}
+			return v;
+		};
+		for(size_t i = 0; i < mesh.index_count; i += 3)
+		{
+			unsigned int a = root(mesh.indices[i]);
+			for(size_t j = 1; j < 3; ++j)
+			{
+				unsigned int b = root(mesh.indices[i+j]);
+				context.component_ids[b] = a;
+			}
+		}
+		unsigned int first = mesh.index_count ? root(mesh.indices[0]) : 0;
+		bool multiple = false;
+		for(size_t i = 0; i < mesh.vertex_count; ++i)
+			context.component_ids[i] = root(unsigned(i));
+		for(size_t i = 0; i < mesh.index_count; ++i)
+			multiple |= context.component_ids[mesh.indices[i]] != first;
+		if(multiple)
+			context.mesh.component_ids = context.component_ids.data();
+	}
 	if (mesh.attribute_protect_mask)
 	{
 		size_t max_attributes = mesh.vertex_attributes_stride / sizeof(float);
@@ -234,6 +273,22 @@ size_t clodBuild(clodConfig config, clodMesh mesh, void* output_context, clodOut
 		analyzeFeatureConstraints(context);
 	}
 
+	float baseError = 0.0f;
+	if(config.base_simplify_ratio < 1.0f && config.base_error_relative > 0.0f)
+	{
+		// Reduce redundant source tessellation before creating the finest clusters.
+		// Positions/attributes keep their original indexing; no instance is removed.
+		clodConfig baseConfig = context.config;
+		baseConfig.simplify_error_absolute = config.base_error_relative * meshopt_simplifyScale(mesh.vertex_positions, mesh.vertex_count, mesh.vertex_positions_stride);
+		baseConfig.simplify_fallback_permissive = false;
+		baseConfig.simplify_fallback_sloppy = false;
+		baseConfig.max_axis_shrink = 0.005f;
+		std::vector<unsigned int> source(mesh.indices, mesh.indices + mesh.index_count);
+		context.base_indices = simplify(baseConfig, context.mesh, source, context.locks,
+		    std::max(size_t(3), size_t(float(mesh.index_count / 3) * config.base_simplify_ratio) * 3), &baseError);
+		context.mesh.indices = context.base_indices.data();
+		context.mesh.index_count = context.base_indices.size();
+	}
 	uint64_t clusterStart = mesh.timing_stats ? timestampMicroseconds() : 0;
 	context.clusters = clusterize(config, context.mesh, context.mesh.indices, context.mesh.index_count);
 	if (mesh.timing_stats)
@@ -243,7 +298,7 @@ size_t clodBuild(clodConfig config, clodMesh mesh, void* output_context, clodOut
 
 	for (Cluster& cluster : context.clusters)
 
-		cluster.bounds = boundsCompute(context.mesh, cluster.indices, 0.f);
+		cluster.bounds = boundsCompute(context.mesh, cluster.indices, baseError);
 
 	context.pending.resize(context.clusters.size());
 	for (size_t i = 0; i < context.clusters.size(); ++i)

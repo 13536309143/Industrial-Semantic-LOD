@@ -54,6 +54,13 @@ struct clodConfig
 	float feature_hard_lock_ratio;
 	float hierarchy_depth_decay;
 	float hierarchy_min_ratio;
+	// Zero retains legacy behavior. Positive limits are independent of semantic confidence.
+	float simplify_error_relative;
+	float simplify_error_absolute;
+	float max_axis_shrink;
+	bool preserve_components;
+	float base_simplify_ratio;
+	float base_error_relative;
 };
 
 struct clodFeatureMetrics
@@ -93,6 +100,7 @@ struct clodMesh
 	unsigned int attribute_protect_mask;
 	const float* feature_importance;
 	const unsigned char* feature_lock;
+	const unsigned int* component_ids;
 	clodFeatureMetrics* feature_metrics;
 #ifdef __cplusplus
 	clodTimingStats* timing_stats;
