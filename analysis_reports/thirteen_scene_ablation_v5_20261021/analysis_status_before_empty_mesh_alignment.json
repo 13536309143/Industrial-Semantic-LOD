@@ -1,0 +1,50 @@
+{
+  "status": "partial_failure",
+  "models": [
+    "M1",
+    "M2",
+    "M3",
+    "M4",
+    "M5",
+    "M6",
+    "M7",
+    "M8",
+    "M9",
+    "M10",
+    "M11",
+    "M12",
+    "M13"
+  ],
+  "complete": [
+    "M1",
+    "M2",
+    "M3",
+    "M4",
+    "M5",
+    "M6",
+    "M7",
+    "M8",
+    "M9",
+    "M10",
+    "M11",
+    "M12"
+  ],
+  "failed": [
+    {
+      "scene": "M13",
+      "error": ""
+    }
+  ],
+  "policy_version": "adaptive_p10_v5.0",
+  "main_conditions": 182,
+  "total_conditions": 299,
+  "current_scene": "M13",
+  "current_stage": "geometry_and_context",
+  "scenes_completed": 12,
+  "unique_nodes": 53004,
+  "actual_policy_files": 276,
+  "actual_policy_rows": 1219092,
+  "classification_accuracy_measured": false,
+  "renderer_quality_or_performance_measured": false,
+  "deployed": false
+}

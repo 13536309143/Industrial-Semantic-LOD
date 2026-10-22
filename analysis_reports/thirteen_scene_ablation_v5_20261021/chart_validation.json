@@ -1,0 +1,21 @@
+{
+  "status": "passed_numeric_checks",
+  "scenes": 13,
+  "all_priority_counts_reconcile": true,
+  "all_node_and_face_fractions_sum_to_one": true,
+  "figures": [
+    "E:\\vk_lod_clusters1\\t1\\analysis_reports\\thirteen_scene_ablation_v5_20261021\\figures\\01_overall_priority_heatmap.png",
+    "E:\\vk_lod_clusters1\\t1\\analysis_reports\\thirteen_scene_ablation_v5_20261021\\figures\\01_overall_priority_heatmap.svg",
+    "E:\\vk_lod_clusters1\\t1\\analysis_reports\\thirteen_scene_ablation_v5_20261021\\figures\\02_tree_change_heatmap.png",
+    "E:\\vk_lod_clusters1\\t1\\analysis_reports\\thirteen_scene_ablation_v5_20261021\\figures\\02_tree_change_heatmap.svg",
+    "E:\\vk_lod_clusters1\\t1\\analysis_reports\\thirteen_scene_ablation_v5_20261021\\figures\\03_full_fusion_node_distribution.png",
+    "E:\\vk_lod_clusters1\\t1\\analysis_reports\\thirteen_scene_ablation_v5_20261021\\figures\\03_full_fusion_node_distribution.svg",
+    "E:\\vk_lod_clusters1\\t1\\analysis_reports\\thirteen_scene_ablation_v5_20261021\\figures\\03_full_fusion_face_distribution.png",
+    "E:\\vk_lod_clusters1\\t1\\analysis_reports\\thirteen_scene_ablation_v5_20261021\\figures\\03_full_fusion_face_distribution.svg",
+    "E:\\vk_lod_clusters1\\t1\\analysis_reports\\thirteen_scene_ablation_v5_20261021\\figures\\04_unresolved_evidence.png",
+    "E:\\vk_lod_clusters1\\t1\\analysis_reports\\thirteen_scene_ablation_v5_20261021\\figures\\04_unresolved_evidence.svg",
+    "E:\\vk_lod_clusters1\\t1\\analysis_reports\\thirteen_scene_ablation_v5_20261021\\figures\\05_unknown_geometry_families.png",
+    "E:\\vk_lod_clusters1\\t1\\analysis_reports\\thirteen_scene_ablation_v5_20261021\\figures\\05_unknown_geometry_families.svg"
+  ],
+  "interactive_html": true
+}

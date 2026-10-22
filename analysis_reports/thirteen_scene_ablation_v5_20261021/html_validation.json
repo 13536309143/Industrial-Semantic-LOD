@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "page_errors": [],
+  "scenes": 13,
+  "branch_rows": 7,
+  "priority_bins": 70,
+  "scene_and_basis_selectors": true,
+  "topology_control": true,
+  "paired_scene_rows": 13
+}

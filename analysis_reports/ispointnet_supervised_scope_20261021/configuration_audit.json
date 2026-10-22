@@ -1,0 +1,56 @@
+{
+  "official_architecture_vs_current": [
+    [
+      "/cls_args/num_classes",
+      40,
+      14
+    ]
+  ],
+  "official_after_14_class_adaptation_equals_current": true,
+  "industrial_equals_pointnext_s": true,
+  "stride2_vs_stride4": [
+    [
+      "/encoder_args/strides",
+      [
+        1,
+        2,
+        2,
+        2,
+        2,
+        1
+      ],
+      [
+        1,
+        4,
+        4,
+        4,
+        4,
+        1
+      ]
+    ]
+  ],
+  "deployment_inference_equals_experimental_stride2": true,
+  "shared_code": {
+    "openpoints/models/backbone/pointnext.py": {
+      "gpt_t1_equal": true,
+      "sha256": [
+        "0827d36cc3804b248c76ef539588a0113aa65bdb07afb71e294ff37bc7060151",
+        "0827d36cc3804b248c76ef539588a0113aa65bdb07afb71e294ff37bc7060151"
+      ]
+    },
+    "openpoints/transforms/point_transform_cpu.py": {
+      "gpt_t1_equal": true,
+      "sha256": [
+        "2ed9b1412ba26a56d371ce315ae3ee84eb933c6821dc86577f955559c30170d9",
+        "2ed9b1412ba26a56d371ce315ae3ee84eb933c6821dc86577f955559c30170d9"
+      ]
+    },
+    "openpoints/dataset/industrial_part.py": {
+      "gpt_t1_equal": true,
+      "sha256": [
+        "b739fd49e7b637de225762fa886493f1cb3d0795dbadaa9707a2778182de2e22",
+        "b739fd49e7b637de225762fa886493f1cb3d0795dbadaa9707a2778182de2e22"
+      ]
+    }
+  }
+}

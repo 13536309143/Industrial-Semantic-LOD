@@ -1,0 +1,524 @@
+{
+  "data_kind": "EXISTING_ALGORITHM_OUTPUT_NOT_HUMAN_GROUND_TRUTH",
+  "is_synthetic": false,
+  "is_human_annotated": false,
+  "source_sha256": {
+    "analysis_reports\\thirteen_scene_ablation_v5_20261021\\models\\M1.md": "e80c34770e8ec60684ded49a34f1c408624fa5ca61566646820b41e113023525",
+    "analysis_reports\\thirteen_scene_ablation_v5_20261021\\models\\M2.md": "b9f3a074bee1a9b4dd941c50a3a2542fa8d254d1d26733c3f9bedf669727996c",
+    "analysis_reports\\thirteen_scene_ablation_v5_20261021\\models\\M3.md": "8e5310b6ed2efb4775c6380e05e701abe7dedf0b999e2d2e7c28d485871b6daf",
+    "analysis_reports\\thirteen_scene_ablation_v5_20261021\\models\\M4.md": "7acdb4bbf7bb63909ef349b05135ec2ce3ca23e936eb5916455d708f573ee774",
+    "analysis_reports\\thirteen_scene_ablation_v5_20261021\\models\\M5.md": "34a81da94c6fdc7134bdf42dc26d440c35d747b0eb04fe34c6a6234518c2a0b6",
+    "analysis_reports\\thirteen_scene_ablation_v5_20261021\\models\\M6.md": "8e9c0febae42d1f4008a0a18c7ddc19a72d2e07ab45a594d1b69f7e3c3c77cb2",
+    "analysis_reports\\thirteen_scene_ablation_v5_20261021\\models\\M7.md": "5d64d357377a63178a55ba54903d132df1a01d4d91e00e2fe3c9ebcc3d1c22ff",
+    "analysis_reports\\thirteen_scene_ablation_v5_20261021\\models\\M8.md": "cf0077d5607bedc2cc51b4dcebbca2c3f42c0b8ac21dd0e28344d2b237599957",
+    "analysis_reports\\thirteen_scene_ablation_v5_20261021\\models\\M9.md": "c6d146f5b138fd5806f3fef1af71fc4d9f2c51b0777d878d0cdcfa40a1c64ab3",
+    "analysis_reports\\thirteen_scene_ablation_v5_20261021\\models\\M10.md": "dded469c8144e9ec681c10fd33c3017a2a3ae6756583cc5c4571a8365fe1576c",
+    "analysis_reports\\thirteen_scene_ablation_v5_20261021\\models\\M11.md": "71dca63fda83802a2bb7391cbbc5826ea5b816b6bdbfc5c0ae50e8f687358911",
+    "analysis_reports\\thirteen_scene_ablation_v5_20261021\\models\\M12.md": "ae9b2ef3524c5a6599e8d645b4a7d120412fdb5a761b7f70dff67e64945ed969",
+    "analysis_reports\\thirteen_scene_ablation_v5_20261021\\models\\M13.md": "ff6370f612b7354c3f5584428c1900fcef7c2046643077fa2e3ea0ee6a6abb6d"
+  },
+  "valid_geometry_instances": 68972,
+  "tree_change_totals": {
+    "priority_changed": 11449,
+    "raised": 11449,
+    "lowered": 0,
+    "function_changed": 1075,
+    "identity_changed": 77
+  },
+  "models": [
+    {
+      "id": "M1",
+      "name": "手机喇叭检测线",
+      "geometry_instances": 1167,
+      "distributions": {
+        "NCG_H0": [
+          "0.00%",
+          "8.14%",
+          "41.65%",
+          "23.74%",
+          "17.74%",
+          "6.68%",
+          "0.34%",
+          "1.03%",
+          "0.69%",
+          "0.00%"
+        ],
+        "NCG_H1": [
+          "0.00%",
+          "8.14%",
+          "35.39%",
+          "29.22%",
+          "17.74%",
+          "7.37%",
+          "0.43%",
+          "1.03%",
+          "0.69%",
+          "0.00%"
+        ]
+      },
+      "tree_changes": {
+        "priority_changed": 79,
+        "raised": 79,
+        "lowered": 0,
+        "function_changed": 32,
+        "identity_changed": 26
+      }
+    },
+    {
+      "id": "M2",
+      "name": "圆形电容穿心焊接机",
+      "geometry_instances": 1480,
+      "distributions": {
+        "NCG_H0": [
+          "0.00%",
+          "6.55%",
+          "49.86%",
+          "29.93%",
+          "7.77%",
+          "1.28%",
+          "0.41%",
+          "0.68%",
+          "3.51%",
+          "0.00%"
+        ],
+        "NCG_H1": [
+          "0.00%",
+          "3.24%",
+          "41.35%",
+          "32.16%",
+          "8.65%",
+          "5.07%",
+          "5.34%",
+          "0.68%",
+          "3.51%",
+          "0.00%"
+        ]
+      },
+      "tree_changes": {
+        "priority_changed": 283,
+        "raised": 283,
+        "lowered": 0,
+        "function_changed": 132,
+        "identity_changed": 12
+      }
+    },
+    {
+      "id": "M3",
+      "name": "K31自动铆压机",
+      "geometry_instances": 1481,
+      "distributions": {
+        "NCG_H0": [
+          "0.00%",
+          "13.77%",
+          "46.93%",
+          "25.93%",
+          "6.89%",
+          "1.08%",
+          "0.41%",
+          "2.36%",
+          "2.63%",
+          "0.00%"
+        ],
+        "NCG_H1": [
+          "0.00%",
+          "9.72%",
+          "43.42%",
+          "30.79%",
+          "7.02%",
+          "1.89%",
+          "2.16%",
+          "2.36%",
+          "2.63%",
+          "0.00%"
+        ]
+      },
+      "tree_changes": {
+        "priority_changed": 192,
+        "raised": 192,
+        "lowered": 0,
+        "function_changed": 36,
+        "identity_changed": 1
+      }
+    },
+    {
+      "id": "M4",
+      "name": "极耳生产线",
+      "geometry_instances": 5451,
+      "distributions": {
+        "NCG_H0": [
+          "0.00%",
+          "15.69%",
+          "66.37%",
+          "11.94%",
+          "1.80%",
+          "0.06%",
+          "0.48%",
+          "1.05%",
+          "2.62%",
+          "0.00%"
+        ],
+        "NCG_H1": [
+          "0.00%",
+          "13.50%",
+          "65.57%",
+          "14.46%",
+          "2.26%",
+          "0.06%",
+          "0.50%",
+          "1.05%",
+          "2.62%",
+          "0.00%"
+        ]
+      },
+      "tree_changes": {
+        "priority_changed": 306,
+        "raised": 306,
+        "lowered": 0,
+        "function_changed": 1,
+        "identity_changed": 0
+      }
+    },
+    {
+      "id": "M5",
+      "name": "汽车链接器植入折弯设备",
+      "geometry_instances": 1747,
+      "distributions": {
+        "NCG_H0": [
+          "0.11%",
+          "17.23%",
+          "42.53%",
+          "21.92%",
+          "10.76%",
+          "0.46%",
+          "2.80%",
+          "1.89%",
+          "2.29%",
+          "0.00%"
+        ],
+        "NCG_H1": [
+          "0.11%",
+          "14.65%",
+          "39.67%",
+          "24.79%",
+          "11.10%",
+          "2.35%",
+          "3.15%",
+          "1.89%",
+          "2.29%",
+          "0.00%"
+        ]
+      },
+      "tree_changes": {
+        "priority_changed": 143,
+        "raised": 143,
+        "lowered": 0,
+        "function_changed": 39,
+        "identity_changed": 0
+      }
+    },
+    {
+      "id": "M6",
+      "name": "透气阀产线",
+      "geometry_instances": 3347,
+      "distributions": {
+        "NCG_H0": [
+          "0.00%",
+          "20.68%",
+          "38.84%",
+          "24.71%",
+          "3.11%",
+          "1.14%",
+          "5.29%",
+          "1.05%",
+          "5.20%",
+          "0.00%"
+        ],
+        "NCG_H1": [
+          "0.00%",
+          "16.85%",
+          "40.10%",
+          "24.17%",
+          "6.12%",
+          "1.22%",
+          "5.29%",
+          "1.05%",
+          "5.20%",
+          "0.00%"
+        ]
+      },
+      "tree_changes": {
+        "priority_changed": 315,
+        "raised": 315,
+        "lowered": 0,
+        "function_changed": 3,
+        "identity_changed": 0
+      }
+    },
+    {
+      "id": "M7",
+      "name": "焊接过渡线",
+      "geometry_instances": 1026,
+      "distributions": {
+        "NCG_H0": [
+          "0.00%",
+          "12.18%",
+          "67.64%",
+          "8.09%",
+          "7.70%",
+          "1.85%",
+          "0.10%",
+          "0.49%",
+          "1.95%",
+          "0.00%"
+        ],
+        "NCG_H1": [
+          "0.00%",
+          "8.19%",
+          "66.57%",
+          "11.99%",
+          "8.28%",
+          "2.05%",
+          "0.49%",
+          "0.49%",
+          "1.95%",
+          "0.00%"
+        ]
+      },
+      "tree_changes": {
+        "priority_changed": 102,
+        "raised": 102,
+        "lowered": 0,
+        "function_changed": 4,
+        "identity_changed": 0
+      }
+    },
+    {
+      "id": "M8",
+      "name": "转子自动生产线",
+      "geometry_instances": 6103,
+      "distributions": {
+        "NCG_H0": [
+          "0.39%",
+          "21.45%",
+          "54.10%",
+          "12.31%",
+          "4.13%",
+          "1.49%",
+          "1.33%",
+          "2.62%",
+          "2.18%",
+          "0.00%"
+        ],
+        "NCG_H1": [
+          "0.39%",
+          "15.70%",
+          "56.53%",
+          "14.24%",
+          "4.57%",
+          "2.20%",
+          "1.57%",
+          "2.62%",
+          "2.18%",
+          "0.00%"
+        ]
+      },
+      "tree_changes": {
+        "priority_changed": 599,
+        "raised": 599,
+        "lowered": 0,
+        "function_changed": 64,
+        "identity_changed": 12
+      }
+    },
+    {
+      "id": "M9",
+      "name": "MK地盖组装线",
+      "geometry_instances": 3118,
+      "distributions": {
+        "NCG_H0": [
+          "0.00%",
+          "9.78%",
+          "38.07%",
+          "22.55%",
+          "8.88%",
+          "2.89%",
+          "11.80%",
+          "2.12%",
+          "3.91%",
+          "0.00%"
+        ],
+        "NCG_H1": [
+          "0.00%",
+          "7.92%",
+          "36.27%",
+          "25.37%",
+          "9.40%",
+          "2.98%",
+          "12.03%",
+          "2.12%",
+          "3.91%",
+          "0.00%"
+        ]
+      },
+      "tree_changes": {
+        "priority_changed": 194,
+        "raised": 194,
+        "lowered": 0,
+        "function_changed": 23,
+        "identity_changed": 13
+      }
+    },
+    {
+      "id": "M10",
+      "name": "刷架总线",
+      "geometry_instances": 5198,
+      "distributions": {
+        "NCG_H0": [
+          "2.89%",
+          "23.97%",
+          "45.65%",
+          "15.31%",
+          "3.94%",
+          "2.06%",
+          "1.85%",
+          "0.94%",
+          "3.37%",
+          "0.02%"
+        ],
+        "NCG_H1": [
+          "2.89%",
+          "14.16%",
+          "48.13%",
+          "18.91%",
+          "4.81%",
+          "4.91%",
+          "1.87%",
+          "0.94%",
+          "3.37%",
+          "0.02%"
+        ]
+      },
+      "tree_changes": {
+        "priority_changed": 955,
+        "raised": 955,
+        "lowered": 0,
+        "function_changed": 142,
+        "identity_changed": 1
+      }
+    },
+    {
+      "id": "M11",
+      "name": "圆柱分选并入支架设备",
+      "geometry_instances": 15723,
+      "distributions": {
+        "NCG_H0": [
+          "0.18%",
+          "40.11%",
+          "35.47%",
+          "13.24%",
+          "2.88%",
+          "0.71%",
+          "1.59%",
+          "2.97%",
+          "2.86%",
+          "0.00%"
+        ],
+        "NCG_H1": [
+          "0.18%",
+          "32.06%",
+          "35.23%",
+          "17.80%",
+          "3.77%",
+          "1.85%",
+          "3.28%",
+          "2.97%",
+          "2.86%",
+          "0.00%"
+        ]
+      },
+      "tree_changes": {
+        "priority_changed": 2550,
+        "raised": 2550,
+        "lowered": 0,
+        "function_changed": 448,
+        "identity_changed": 9
+      }
+    },
+    {
+      "id": "M12",
+      "name": "磁保持继电器产线",
+      "geometry_instances": 7163,
+      "distributions": {
+        "NCG_H0": [
+          "0.00%",
+          "55.37%",
+          "31.29%",
+          "4.24%",
+          "3.41%",
+          "0.85%",
+          "0.39%",
+          "0.96%",
+          "3.49%",
+          "0.00%"
+        ],
+        "NCG_H1": [
+          "0.00%",
+          "22.38%",
+          "62.98%",
+          "5.19%",
+          "3.71%",
+          "0.89%",
+          "0.39%",
+          "0.96%",
+          "3.49%",
+          "0.00%"
+        ]
+      },
+      "tree_changes": {
+        "priority_changed": 2484,
+        "raised": 2484,
+        "lowered": 0,
+        "function_changed": 0,
+        "identity_changed": 0
+      }
+    },
+    {
+      "id": "M13",
+      "name": "软包动力电池模组组装线",
+      "geometry_instances": 15968,
+      "distributions": {
+        "NCG_H0": [
+          "4.79%",
+          "52.67%",
+          "29.33%",
+          "5.05%",
+          "1.23%",
+          "2.22%",
+          "0.24%",
+          "1.10%",
+          "3.36%",
+          "0.00%"
+        ],
+        "NCG_H1": [
+          "4.79%",
+          "36.37%",
+          "41.79%",
+          "7.64%",
+          "1.50%",
+          "2.74%",
+          "0.70%",
+          "1.10%",
+          "3.36%",
+          "0.00%"
+        ]
+      },
+      "tree_changes": {
+        "priority_changed": 3247,
+        "raised": 3247,
+        "lowered": 0,
+        "function_changed": 151,
+        "identity_changed": 3
+      }
+    }
+  ]
+}

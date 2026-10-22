@@ -1,0 +1,282 @@
+{
+  "data_kind": "SYNTHETIC_P10_FORMAT_DEMO_NOT_GROUND_TRUTH",
+  "is_synthetic": true,
+  "is_measured": false,
+  "is_human_annotated": false,
+  "allowed_use": "table_layout_and_software_pipeline_testing_only",
+  "not_evidence_of_algorithm_effectiveness": true,
+  "generation_seed": 20261022,
+  "generation_method": "Arbitrary gamma weights normalized using largest remainder to 10000 basis points",
+  "source_fields_used": [
+    "id",
+    "name"
+  ],
+  "excluded_inputs": [
+    "actual_strategy_distribution",
+    "actual_geometry",
+    "algorithm_predictions",
+    "human_annotations"
+  ],
+  "models": [
+    {
+      "simulation_id": "SIM_ONLY_M1",
+      "scene_name_for_layout_only": "手机喇叭检测线",
+      "is_synthetic": true,
+      "is_human_annotated": false,
+      "is_measured": false,
+      "actual_node_assignment": null,
+      "hypothetical_percent_basis_points": {
+        "P1": 1402,
+        "P2": 242,
+        "P3": 2277,
+        "P4": 2097,
+        "P5": 2205,
+        "P6": 869,
+        "P7": 339,
+        "P8": 386,
+        "P9": 113,
+        "P10": 70
+      }
+    },
+    {
+      "simulation_id": "SIM_ONLY_M2",
+      "scene_name_for_layout_only": "圆形电容穿心焊接机",
+      "is_synthetic": true,
+      "is_human_annotated": false,
+      "is_measured": false,
+      "actual_node_assignment": null,
+      "hypothetical_percent_basis_points": {
+        "P1": 534,
+        "P2": 586,
+        "P3": 2736,
+        "P4": 790,
+        "P5": 2265,
+        "P6": 566,
+        "P7": 157,
+        "P8": 694,
+        "P9": 87,
+        "P10": 1585
+      }
+    },
+    {
+      "simulation_id": "SIM_ONLY_M3",
+      "scene_name_for_layout_only": "K31自动铆压机",
+      "is_synthetic": true,
+      "is_human_annotated": false,
+      "is_measured": false,
+      "actual_node_assignment": null,
+      "hypothetical_percent_basis_points": {
+        "P1": 78,
+        "P2": 1901,
+        "P3": 3021,
+        "P4": 1500,
+        "P5": 191,
+        "P6": 639,
+        "P7": 1121,
+        "P8": 1097,
+        "P9": 422,
+        "P10": 30
+      }
+    },
+    {
+      "simulation_id": "SIM_ONLY_M4",
+      "scene_name_for_layout_only": "极耳生产线",
+      "is_synthetic": true,
+      "is_human_annotated": false,
+      "is_measured": false,
+      "actual_node_assignment": null,
+      "hypothetical_percent_basis_points": {
+        "P1": 777,
+        "P2": 517,
+        "P3": 882,
+        "P4": 1873,
+        "P5": 914,
+        "P6": 1483,
+        "P7": 1238,
+        "P8": 1217,
+        "P9": 642,
+        "P10": 457
+      }
+    },
+    {
+      "simulation_id": "SIM_ONLY_M5",
+      "scene_name_for_layout_only": "汽车链接器植入折弯设备",
+      "is_synthetic": true,
+      "is_human_annotated": false,
+      "is_measured": false,
+      "actual_node_assignment": null,
+      "hypothetical_percent_basis_points": {
+        "P1": 284,
+        "P2": 1154,
+        "P3": 1577,
+        "P4": 1744,
+        "P5": 1942,
+        "P6": 550,
+        "P7": 1115,
+        "P8": 1085,
+        "P9": 356,
+        "P10": 193
+      }
+    },
+    {
+      "simulation_id": "SIM_ONLY_M6",
+      "scene_name_for_layout_only": "透气阀产线",
+      "is_synthetic": true,
+      "is_human_annotated": false,
+      "is_measured": false,
+      "actual_node_assignment": null,
+      "hypothetical_percent_basis_points": {
+        "P1": 274,
+        "P2": 354,
+        "P3": 3080,
+        "P4": 1774,
+        "P5": 852,
+        "P6": 1472,
+        "P7": 1444,
+        "P8": 608,
+        "P9": 89,
+        "P10": 53
+      }
+    },
+    {
+      "simulation_id": "SIM_ONLY_M7",
+      "scene_name_for_layout_only": "焊接过渡线",
+      "is_synthetic": true,
+      "is_human_annotated": false,
+      "is_measured": false,
+      "actual_node_assignment": null,
+      "hypothetical_percent_basis_points": {
+        "P1": 254,
+        "P2": 650,
+        "P3": 3037,
+        "P4": 2018,
+        "P5": 2144,
+        "P6": 361,
+        "P7": 803,
+        "P8": 292,
+        "P9": 228,
+        "P10": 213
+      }
+    },
+    {
+      "simulation_id": "SIM_ONLY_M8",
+      "scene_name_for_layout_only": "转子自动生产线",
+      "is_synthetic": true,
+      "is_human_annotated": false,
+      "is_measured": false,
+      "actual_node_assignment": null,
+      "hypothetical_percent_basis_points": {
+        "P1": 76,
+        "P2": 704,
+        "P3": 1731,
+        "P4": 1659,
+        "P5": 1064,
+        "P6": 2681,
+        "P7": 1057,
+        "P8": 111,
+        "P9": 616,
+        "P10": 301
+      }
+    },
+    {
+      "simulation_id": "SIM_ONLY_M9",
+      "scene_name_for_layout_only": "MK地盖组装线",
+      "is_synthetic": true,
+      "is_human_annotated": false,
+      "is_measured": false,
+      "actual_node_assignment": null,
+      "hypothetical_percent_basis_points": {
+        "P1": 292,
+        "P2": 1294,
+        "P3": 5196,
+        "P4": 544,
+        "P5": 604,
+        "P6": 624,
+        "P7": 135,
+        "P8": 824,
+        "P9": 384,
+        "P10": 103
+      }
+    },
+    {
+      "simulation_id": "SIM_ONLY_M10",
+      "scene_name_for_layout_only": "刷架总线",
+      "is_synthetic": true,
+      "is_human_annotated": false,
+      "is_measured": false,
+      "actual_node_assignment": null,
+      "hypothetical_percent_basis_points": {
+        "P1": 49,
+        "P2": 704,
+        "P3": 2195,
+        "P4": 3100,
+        "P5": 591,
+        "P6": 1263,
+        "P7": 986,
+        "P8": 497,
+        "P9": 462,
+        "P10": 153
+      }
+    },
+    {
+      "simulation_id": "SIM_ONLY_M11",
+      "scene_name_for_layout_only": "圆柱分选并入支架设备",
+      "is_synthetic": true,
+      "is_human_annotated": false,
+      "is_measured": false,
+      "actual_node_assignment": null,
+      "hypothetical_percent_basis_points": {
+        "P1": 157,
+        "P2": 2323,
+        "P3": 1895,
+        "P4": 1792,
+        "P5": 831,
+        "P6": 1520,
+        "P7": 1014,
+        "P8": 261,
+        "P9": 71,
+        "P10": 136
+      }
+    },
+    {
+      "simulation_id": "SIM_ONLY_M12",
+      "scene_name_for_layout_only": "磁保持继电器产线",
+      "is_synthetic": true,
+      "is_human_annotated": false,
+      "is_measured": false,
+      "actual_node_assignment": null,
+      "hypothetical_percent_basis_points": {
+        "P1": 370,
+        "P2": 2383,
+        "P3": 1097,
+        "P4": 2332,
+        "P5": 830,
+        "P6": 1292,
+        "P7": 331,
+        "P8": 446,
+        "P9": 397,
+        "P10": 522
+      }
+    },
+    {
+      "simulation_id": "SIM_ONLY_M13",
+      "scene_name_for_layout_only": "软包动力电池模组组装线",
+      "is_synthetic": true,
+      "is_human_annotated": false,
+      "is_measured": false,
+      "actual_node_assignment": null,
+      "hypothetical_percent_basis_points": {
+        "P1": 945,
+        "P2": 2618,
+        "P3": 2877,
+        "P4": 609,
+        "P5": 645,
+        "P6": 695,
+        "P7": 300,
+        "P8": 537,
+        "P9": 637,
+        "P10": 137
+      }
+    }
+  ]
+}

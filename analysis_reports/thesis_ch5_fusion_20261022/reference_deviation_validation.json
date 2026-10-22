@@ -1,0 +1,34 @@
+{
+  "status": "passed",
+  "residuals_checked": 1820,
+  "mean_absolute_error_identity_passed": true,
+  "common_linear_color_scales_no_clipping": true,
+  "source_unchanged": true,
+  "visual_review_passed": true,
+  "images": [
+    {
+      "file": "analysis_reports\\thesis_ch5_fusion_20261022\\figures\\05_reference_absolute_deviation_and_distance.png",
+      "pixels": [
+        3492,
+        2492
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ]
+    },
+    {
+      "file": "analysis_reports\\thesis_ch5_fusion_20261022\\figures\\06_reference_signed_deviation_all_models.png",
+      "pixels": [
+        4676,
+        4803
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ]
+    }
+  ],
+  "svg_files_valid": true,
+  "accuracy_inferred": false
+}

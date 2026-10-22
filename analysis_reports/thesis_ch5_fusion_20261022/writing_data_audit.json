@@ -1,0 +1,40 @@
+{
+  "status": "ARITHMETIC_AND_SOURCE_TABLE_CHECKS_PASSED",
+  "checked_configuration_rows": 14,
+  "checked_scene_rows": 13,
+  "valid_instances": 68972,
+  "user_reported_correct": 57368,
+  "user_reported_incorrect": 11604,
+  "micro_accuracy_from_user_counts_percent": 83.1757814765412,
+  "macro_scene_accuracy_from_user_counts_percent": 83.18080866672246,
+  "human_evaluation_source": "User-provided NCG_H1-versus-manual summary in conversation",
+  "human_annotation_records_independently_verified": false,
+  "evaluation_definition_in_draft": "Exact P-label agreement; confirm this matches original evaluation",
+  "accuracy_available_for_other_configurations": false,
+  "synthetic_demo_used": false,
+  "source_sha256": {
+    "analysis_reports\\user_reference_distribution_20261022\\comparison_results.json": "83888f899b05d0833319d84bdb9249560e0879ec5b6598a23aa725207cb95068",
+    "analysis_reports\\thirteen_scene_ablation_v5_20261021\\numerical_findings.json": "73754b266673e481142e9390069a806b9828e1a4f22a192007448cacd83e21b7",
+    "analysis_reports\\thesis_ch5_fusion_20261022\\priority_composition_data_and_provenance.json": "ce85d9a3c62c9b47faf388ffd275b299acc9f2269e04d1adcbcb7ad501e19ac3",
+    "analysis_reports\\thesis_ch5_fusion_20261022\\reference_deviation_data_and_provenance.json": "1e6e8f3346be9f47e66df08fc0feabe69f7216dc03a6e6440f031ca0f738fde5"
+  },
+  "original_model_report_sha256": {
+    "analysis_reports\\thirteen_scene_ablation_v5_20261021\\models\\M1.md": "e80c34770e8ec60684ded49a34f1c408624fa5ca61566646820b41e113023525",
+    "analysis_reports\\thirteen_scene_ablation_v5_20261021\\models\\M2.md": "b9f3a074bee1a9b4dd941c50a3a2542fa8d254d1d26733c3f9bedf669727996c",
+    "analysis_reports\\thirteen_scene_ablation_v5_20261021\\models\\M3.md": "8e5310b6ed2efb4775c6380e05e701abe7dedf0b999e2d2e7c28d485871b6daf",
+    "analysis_reports\\thirteen_scene_ablation_v5_20261021\\models\\M4.md": "7acdb4bbf7bb63909ef349b05135ec2ce3ca23e936eb5916455d708f573ee774",
+    "analysis_reports\\thirteen_scene_ablation_v5_20261021\\models\\M5.md": "34a81da94c6fdc7134bdf42dc26d440c35d747b0eb04fe34c6a6234518c2a0b6",
+    "analysis_reports\\thirteen_scene_ablation_v5_20261021\\models\\M6.md": "8e9c0febae42d1f4008a0a18c7ddc19a72d2e07ab45a594d1b69f7e3c3c77cb2",
+    "analysis_reports\\thirteen_scene_ablation_v5_20261021\\models\\M7.md": "5d64d357377a63178a55ba54903d132df1a01d4d91e00e2fe3c9ebcc3d1c22ff",
+    "analysis_reports\\thirteen_scene_ablation_v5_20261021\\models\\M8.md": "cf0077d5607bedc2cc51b4dcebbca2c3f42c0b8ac21dd0e28344d2b237599957",
+    "analysis_reports\\thirteen_scene_ablation_v5_20261021\\models\\M9.md": "c6d146f5b138fd5806f3fef1af71fc4d9f2c51b0777d878d0cdcfa40a1c64ab3",
+    "analysis_reports\\thirteen_scene_ablation_v5_20261021\\models\\M10.md": "dded469c8144e9ec681c10fd33c3017a2a3ae6756583cc5c4571a8365fe1576c",
+    "analysis_reports\\thirteen_scene_ablation_v5_20261021\\models\\M11.md": "71dca63fda83802a2bb7391cbbc5826ea5b816b6bdbfc5c0ae50e8f687358911",
+    "analysis_reports\\thirteen_scene_ablation_v5_20261021\\models\\M12.md": "ae9b2ef3524c5a6599e8d645b4a7d120412fdb5a761b7f70dff67e64945ed969",
+    "analysis_reports\\thirteen_scene_ablation_v5_20261021\\models\\M13.md": "ff6370f612b7354c3f5584428c1900fcef7c2046643077fa2e3ea0ee6a6abb6d"
+  },
+  "draft_sha256": "88dd64c602f2f85405ce85684bc313857af04affe07d106621a9482ac945a64c",
+  "section_excerpt_sha256": "439a6283ad2d388e7f2bb72f12820c0d87108cfe7f2fc91455e4e17dce796399",
+  "section_tables": 1,
+  "section_figures": 2
+}

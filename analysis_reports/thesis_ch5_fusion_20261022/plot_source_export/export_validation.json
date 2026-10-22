@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "workbook_sheets": 8,
+  "workbook_cells_compared": 28085,
+  "TVD_values": 182,
+  "signed_deviations": 1820,
+  "CSV_files": 22,
+  "per_model_matrices": 13,
+  "source_hashes_unchanged": true,
+  "numeric_tolerance": 1e-12,
+  "visual_review_passed": true,
+  "visually_reviewed_sheets": 8,
+  "workbook_sha256": "05850d019198fb34641660516f678fa402070d09543783806e587f1020376274"
+}

@@ -1,0 +1,32 @@
+{
+  "status": "passed",
+  "reviewed_at_utc": "2026-10-21T17:49:14.220035+00:00",
+  "scientific_figures": [
+    "E:\\vk_lod_clusters1\\t1\\analysis_reports\\thirteen_scene_ablation_v5_20261021\\figures\\01_overall_priority_heatmap.png",
+    "E:\\vk_lod_clusters1\\t1\\analysis_reports\\thirteen_scene_ablation_v5_20261021\\figures\\02_tree_change_heatmap.png",
+    "E:\\vk_lod_clusters1\\t1\\analysis_reports\\thirteen_scene_ablation_v5_20261021\\figures\\03_full_fusion_face_distribution.png",
+    "E:\\vk_lod_clusters1\\t1\\analysis_reports\\thirteen_scene_ablation_v5_20261021\\figures\\03_full_fusion_node_distribution.png",
+    "E:\\vk_lod_clusters1\\t1\\analysis_reports\\thirteen_scene_ablation_v5_20261021\\figures\\04_unresolved_evidence.png",
+    "E:\\vk_lod_clusters1\\t1\\analysis_reports\\thirteen_scene_ablation_v5_20261021\\figures\\05_unknown_geometry_families.png"
+  ],
+  "workbook_views": [
+    "E:\\vk_lod_clusters1\\t1\\analysis_reports\\thirteen_scene_ablation_v5_20261021\\workbook_qa\\0_主结果.png",
+    "E:\\vk_lod_clusters1\\t1\\analysis_reports\\thirteen_scene_ablation_v5_20261021\\workbook_qa\\1_主结果.png",
+    "E:\\vk_lod_clusters1\\t1\\analysis_reports\\thirteen_scene_ablation_v5_20261021\\workbook_qa\\2_P档分布.png",
+    "E:\\vk_lod_clusters1\\t1\\analysis_reports\\thirteen_scene_ablation_v5_20261021\\workbook_qa\\3_成对对照.png",
+    "E:\\vk_lod_clusters1\\t1\\analysis_reports\\thirteen_scene_ablation_v5_20261021\\workbook_qa\\4_未知件几何.png",
+    "E:\\vk_lod_clusters1\\t1\\analysis_reports\\thirteen_scene_ablation_v5_20261021\\workbook_qa\\5_低置信候选.png",
+    "E:\\vk_lod_clusters1\\t1\\analysis_reports\\thirteen_scene_ablation_v5_20261021\\workbook_qa\\6_全部组合.png",
+    "E:\\vk_lod_clusters1\\t1\\analysis_reports\\thirteen_scene_ablation_v5_20261021\\workbook_qa\\7_场景与口径.png",
+    "E:\\vk_lod_clusters1\\t1\\analysis_reports\\thirteen_scene_ablation_v5_20261021\\workbook_qa\\8_全部组合.png"
+  ],
+  "browser_views": [
+    "E:\\vk_lod_clusters1\\t1\\analysis_reports\\thirteen_scene_ablation_v5_20261021\\html_qa\\overview.png",
+    "E:\\vk_lod_clusters1\\t1\\analysis_reports\\thirteen_scene_ablation_v5_20261021\\html_qa\\selected_scene.png"
+  ],
+  "all_seven_sheets_reviewed": true,
+  "exported_P10_fraction_verified": 1.4498637128109957e-05,
+  "exported_P10_number_format": "0.0000%",
+  "native_excel_application_recalculation_tested": false,
+  "native_workbook_and_report_copy_identical": true
+}

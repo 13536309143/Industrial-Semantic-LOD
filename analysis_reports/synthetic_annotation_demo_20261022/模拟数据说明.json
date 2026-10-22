@@ -1,0 +1,12 @@
+{
+  "dataset_kind": "SYNTHETIC_FORMAT_DEMO_NOT_GROUND_TRUTH",
+  "seed": 20261022,
+  "scenes": 13,
+  "fictional_objects": 520,
+  "objects_per_scene": 40,
+  "contains_human_annotations": false,
+  "contains_real_node_mapping": false,
+  "contains_algorithm_predictions": false,
+  "contains_empirical_accuracy_results": false,
+  "data_sha256": "743d79fa2b63a9d65d191a21c5cc936cd1370c25bb0d36526164a03a8d049161"
+}

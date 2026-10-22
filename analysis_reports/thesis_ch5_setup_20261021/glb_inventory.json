@@ -1,0 +1,466 @@
+[
+  {
+    "id": "M1",
+    "file": "1.glb",
+    "bytes": 58071788,
+    "size_MiB": 55.38157272338867,
+    "total_nodes": 1285,
+    "active_nodes": 1285,
+    "unique_mesh_definitions": 1072,
+    "active_unique_meshes": 1072,
+    "mesh_instances": 1167,
+    "source_triangles_unique": 1609544,
+    "source_triangles_instances": 1723934,
+    "hierarchy_nodes": 118,
+    "max_node_depth": 6,
+    "nontriangle_primitives": 0,
+    "unreachable_mesh_nodes": 0,
+    "json_sha256": "68ed59be33d2129b53b968df28b5427b3c96b033de2d2c4fcb23628fb15cf886",
+    "root_names": [
+      "装配体"
+    ],
+    "node_name_examples": [
+      "装配体",
+      "镜向皮带机装配体",
+      "马达座斜撑-1-1",
+      "马达座固定板-1-1-1",
+      "马达座-1-1",
+      "马达-1-1",
+      "阻挡气缸座-1",
+      "阻挡块-1"
+    ],
+    "asset": {
+      "generator": "Khronos glTF Blender I/O v5.0.21",
+      "version": "2.0"
+    }
+  },
+  {
+    "id": "M2",
+    "file": "2.glb",
+    "bytes": 136773692,
+    "size_MiB": 130.43755722045898,
+    "total_nodes": 1638,
+    "active_nodes": 1638,
+    "unique_mesh_definitions": 1480,
+    "active_unique_meshes": 1480,
+    "mesh_instances": 1480,
+    "source_triangles_unique": 2911273,
+    "source_triangles_instances": 2911273,
+    "hierarchy_nodes": 157,
+    "max_node_depth": 5,
+    "nontriangle_primitives": 0,
+    "unreachable_mesh_nodes": 0,
+    "json_sha256": "a9c879ffaee5db3436ee1251193ae0d6f1ad0e125cb5aa3fc9c6fcb12df1326a",
+    "root_names": [
+      "current camera",
+      "圆形电容穿心焊接机"
+    ],
+    "node_name_examples": [
+      "圆形电容穿心焊接机",
+      "触摸屏盒件",
+      "6806ZZ-2",
+      "6806ZZ-1",
+      "小转动轴-1",
+      "摆动杆-1",
+      "挡圈-1",
+      "6907ZZ-4"
+    ],
+    "asset": {
+      "generator": "SOLIDWORKSGLTF",
+      "version": "2.0"
+    }
+  },
+  {
+    "id": "M3",
+    "file": "3.glb",
+    "bytes": 109519656,
+    "size_MiB": 104.44608306884766,
+    "total_nodes": 1543,
+    "active_nodes": 1543,
+    "unique_mesh_definitions": 1277,
+    "active_unique_meshes": 1277,
+    "mesh_instances": 1481,
+    "source_triangles_unique": 2965388,
+    "source_triangles_instances": 3433060,
+    "hierarchy_nodes": 62,
+    "max_node_depth": 5,
+    "nontriangle_primitives": 0,
+    "unreachable_mesh_nodes": 0,
+    "json_sha256": "fef01c911d8ce3feb13d1c70682d7cea74d66111d29c6079c3747ba09aa78b6b",
+    "root_names": [
+      "K31自动铆压机"
+    ],
+    "node_name_examples": [
+      "K31自动铆压机",
+      "O0100-ZD20018",
+      "O003-ZD20018-1",
+      "O002-ZD20018-1",
+      "O001-ZD20018-1",
+      "AOC显示器-ZD20018-1",
+      "M0100-ZD20018-移位组",
+      "气缸PB16x15SR_1.5_+_CMSG-2_-4.001"
+    ],
+    "asset": {
+      "generator": "Khronos glTF Blender I/O v5.0.21",
+      "version": "2.0"
+    }
+  },
+  {
+    "id": "M4",
+    "file": "4.glb",
+    "bytes": 482380236,
+    "size_MiB": 460.03364181518555,
+    "total_nodes": 5920,
+    "active_nodes": 5920,
+    "unique_mesh_definitions": 5451,
+    "active_unique_meshes": 5451,
+    "mesh_instances": 5451,
+    "source_triangles_unique": 10553614,
+    "source_triangles_instances": 10553614,
+    "hierarchy_nodes": 468,
+    "max_node_depth": 8,
+    "nontriangle_primitives": 0,
+    "unreachable_mesh_nodes": 0,
+    "json_sha256": "9f4640f81cfca32c86421b662eab616272819d4b684b0c07b00b4aa7a958beb0",
+    "root_names": [
+      "current camera",
+      "极耳生产线"
+    ],
+    "node_name_examples": [
+      "极耳生产线",
+      "A1_X2_90E85206_X0_",
+      "0.3-0.5-40-14",
+      "0.3-0.5-40-12",
+      "0.3-0.5-40-9",
+      "0.3-0.5-40-7",
+      "0.3-0.5-40-5",
+      "0.3-0.5-40-2"
+    ],
+    "asset": {
+      "generator": "SOLIDWORKSGLTF",
+      "version": "2.0"
+    }
+  },
+  {
+    "id": "M5",
+    "file": "5.glb",
+    "bytes": 385601804,
+    "size_MiB": 367.7385368347168,
+    "total_nodes": 1946,
+    "active_nodes": 1946,
+    "unique_mesh_definitions": 1613,
+    "active_unique_meshes": 1613,
+    "mesh_instances": 1747,
+    "source_triangles_unique": 11327715,
+    "source_triangles_instances": 11760345,
+    "hierarchy_nodes": 198,
+    "max_node_depth": 7,
+    "nontriangle_primitives": 0,
+    "unreachable_mesh_nodes": 0,
+    "json_sha256": "295324d1599e55b96ade4de7c8f7fd83bd7395d47c887240e7f99055600a7286",
+    "root_names": [
+      "汽车链接器植入折弯设备-总装"
+    ],
+    "node_name_examples": [
+      "汽车链接器植入折弯设备-总装",
+      "浮动接头-M8-1",
+      "注塑机套件",
+      "注塑机摸具-3",
+      "注塑机摸具-2",
+      "注塑机摸具-1",
+      "注塑机-1",
+      "PL4M3-M-2"
+    ],
+    "asset": {
+      "generator": "Khronos glTF Blender I/O v5.0.21",
+      "version": "2.0"
+    }
+  },
+  {
+    "id": "M6",
+    "file": "6.glb",
+    "bytes": 421102000,
+    "size_MiB": 401.5941619873047,
+    "total_nodes": 3558,
+    "active_nodes": 3558,
+    "unique_mesh_definitions": 2920,
+    "active_unique_meshes": 2920,
+    "mesh_instances": 3347,
+    "source_triangles_unique": 12610720,
+    "source_triangles_instances": 15496224,
+    "hierarchy_nodes": 211,
+    "max_node_depth": 6,
+    "nontriangle_primitives": 0,
+    "unreachable_mesh_nodes": 0,
+    "json_sha256": "5ef344f5973755c57c7b514e81665a8ad764885983e6c8b9c3ee51e16a15ba20",
+    "root_names": [
+      "透气阀产线"
+    ],
+    "node_name_examples": [
+      "透气阀产线",
+      "透气阀产品-152",
+      "滑道3",
+      "JX028-db009--1",
+      "JX028-db008-2",
+      "JX028-db008-1",
+      "JX028-db004-4",
+      "JX028-db004-2"
+    ],
+    "asset": {
+      "generator": "Khronos glTF Blender I/O v5.0.21",
+      "version": "2.0"
+    }
+  },
+  {
+    "id": "M7",
+    "file": "7.glb",
+    "bytes": 560895172,
+    "size_MiB": 534.911319732666,
+    "total_nodes": 1144,
+    "active_nodes": 1144,
+    "unique_mesh_definitions": 598,
+    "active_unique_meshes": 598,
+    "mesh_instances": 1026,
+    "source_triangles_unique": 13059901,
+    "source_triangles_instances": 19905661,
+    "hierarchy_nodes": 117,
+    "max_node_depth": 7,
+    "nontriangle_primitives": 0,
+    "unreachable_mesh_nodes": 0,
+    "json_sha256": "ff80736aa5c71fc1e081270494c223c69fe2cd8bf9c156bf1d68c75f47747401",
+    "root_names": [
+      "current camera",
+      "焊接过渡线"
+    ],
+    "node_name_examples": [
+      "焊接过渡线",
+      "03-中间-转接",
+      "BS25-C2121A-2 转接-104",
+      "BS25-C2121A-2 转接-102",
+      "BS25-C2121A-2 转接-100",
+      "BS25-C2121A-2 转接-98",
+      "BS25-C2121A-2 转接-80",
+      "BS25-C2121A-2 转接-74"
+    ],
+    "asset": {
+      "generator": "SOLIDWORKSGLTF",
+      "version": "2.0"
+    }
+  },
+  {
+    "id": "M8",
+    "file": "8.glb",
+    "bytes": 884596360,
+    "size_MiB": 843.616828918457,
+    "total_nodes": 7188,
+    "active_nodes": 7188,
+    "unique_mesh_definitions": 5532,
+    "active_unique_meshes": 5532,
+    "mesh_instances": 6103,
+    "source_triangles_unique": 19775351,
+    "source_triangles_instances": 20703307,
+    "hierarchy_nodes": 1078,
+    "max_node_depth": 13,
+    "nontriangle_primitives": 0,
+    "unreachable_mesh_nodes": 0,
+    "json_sha256": "8313f92342eff2a591d5d2c4390e982b225f077b2ccb155659a27848ad47a4f9",
+    "root_names": [
+      "current camera",
+      "转子自动生产线-总装"
+    ],
+    "node_name_examples": [
+      "转子自动生产线-总装",
+      "转子激光焊锡工站",
+      "JGHX-01-001A",
+      "JGHX-01-001A-1/HD-0A-018-BBG-1",
+      "JGHX-01-001A-1/GB／T276-94深沟球轴承608-2Z-2",
+      "JGHX-01-001A-1/GB／T276-94深沟球轴承608-2Z-1",
+      "半田-M446J-BBB",
+      "JGHX-01-001A-1/半田-M446J-BBB-1/2x28.5-5"
+    ],
+    "asset": {
+      "generator": "SOLIDWORKSGLTF",
+      "version": "2.0"
+    }
+  },
+  {
+    "id": "M9",
+    "file": "9.glb",
+    "bytes": 1040583516,
+    "size_MiB": 992.3777732849121,
+    "total_nodes": 3538,
+    "active_nodes": 3538,
+    "unique_mesh_definitions": 3118,
+    "active_unique_meshes": 3118,
+    "mesh_instances": 3118,
+    "source_triangles_unique": 23921390,
+    "source_triangles_instances": 23921390,
+    "hierarchy_nodes": 419,
+    "max_node_depth": 7,
+    "nontriangle_primitives": 0,
+    "unreachable_mesh_nodes": 0,
+    "json_sha256": "f2f91f0a2999eb8fe491fcfaef50bc62f6d572853c463be2077e5909c1df451d",
+    "root_names": [
+      "current camera",
+      "JQ2415-000 MK地盖线(支撑卡&内托组装)"
+    ],
+    "node_name_examples": [
+      "JQ2415-000 MK地盖线(支撑卡&内托组装)",
+      "支撑卡传输皮带线 W-24052301S-WMB3060-L-W460-L4514-H482-V20-LA20-海绵4mm-1-1",
+      "热熔胶供胶机 10L-1-2",
+      "热熔胶供胶机 10L-1-1",
+      "镜向JQ2415-100 支撑卡组装设备-1",
+      "镜向JQ2415-421 支撑卡组装-1",
+      "镜向JQ2415-421 支撑卡组装-1-1/JQ2415-421A18-1-1",
+      "镜向JQ2415-421 支撑卡组装-1-1/JQ2415-421A18-1-2"
+    ],
+    "asset": {
+      "generator": "SOLIDWORKSGLTF",
+      "version": "2.0"
+    }
+  },
+  {
+    "id": "M10",
+    "file": "10.glb",
+    "bytes": 1402828992,
+    "size_MiB": 1337.8419799804688,
+    "total_nodes": 6899,
+    "active_nodes": 6899,
+    "unique_mesh_definitions": 4292,
+    "active_unique_meshes": 4292,
+    "mesh_instances": 5198,
+    "source_triangles_unique": 32211963,
+    "source_triangles_instances": 47591131,
+    "hierarchy_nodes": 1146,
+    "max_node_depth": 10,
+    "nontriangle_primitives": 0,
+    "unreachable_mesh_nodes": 0,
+    "json_sha256": "48f54f5c9d21adc739d5d524f8bee5d685bcc7b435a800a4c8a898fa7a932c41",
+    "root_names": [
+      "current camera",
+      "刷架总线"
+    ],
+    "node_name_examples": [
+      "刷架总线",
+      "刷架线总装",
+      "设备6总装",
+      "6-40-3-下架总装",
+      "6-40-3-前门装配",
+      "6-40-3-CL233-65荷叶装配（钣金）",
+      "设备6总装-1/6-40-3-下架总装-1/6-40-3-前门装配-1/6-40-3-CL233-65荷叶装配（钣金）-2/6-40-3-CL233-65-1-2",
+      "设备6总装-1/6-40-3-下架总装-1/6-40-3-前门装配-1/6-40-3-CL233-65荷叶装配（钣金）-2/6-40-3-CL233-65-1-1"
+    ],
+    "asset": {
+      "generator": "SOLIDWORKSGLTF",
+      "version": "2.0"
+    }
+  },
+  {
+    "id": "M11",
+    "file": "11.glb",
+    "bytes": 1736202524,
+    "size_MiB": 1655.7717552185059,
+    "total_nodes": 17922,
+    "active_nodes": 17922,
+    "unique_mesh_definitions": 15000,
+    "active_unique_meshes": 15000,
+    "mesh_instances": 15723,
+    "source_triangles_unique": 36233550,
+    "source_triangles_instances": 37068620,
+    "hierarchy_nodes": 2198,
+    "max_node_depth": 11,
+    "nontriangle_primitives": 0,
+    "unreachable_mesh_nodes": 0,
+    "json_sha256": "d7e9b8ecca62e055556a8fc69fdbfda48106c500af38278dcae946db51b82208",
+    "root_names": [
+      "current camera",
+      "CZXD-圆柱分选并入支架设备"
+    ],
+    "node_name_examples": [
+      "CZXD-圆柱分选并入支架设备",
+      "CZXD-PD358-圆柱模组生产线B",
+      "CZXD-PD358-04-顶升移栽工位1-A-1B",
+      "CZXD-PD358-04-05-移载过渡组件4-A-2B",
+      "PD358-04-顶升移栽工位1-A-1B-1/PD358-04-05-移载过渡组件4-A-2-1/PD358-04-05-032-A(默认)-1",
+      "PD358-04-顶升移栽工位1-A-1B-1/PD358-04-05-移载过渡组件4-A-2-1/PD358-04-05-033-A-3",
+      "PD358-04-顶升移栽工位1-A-1B-1/PD358-04-05-移载过渡组件4-A-2-1/PD358-QDB06-8-2",
+      "PD358-04-顶升移栽工位1-A-1B-1/PD358-04-05-移载过渡组件4-A-2-1/PD358-04-05-033-A-2"
+    ],
+    "asset": {
+      "generator": "SOLIDWORKSGLTF",
+      "version": "2.0"
+    }
+  },
+  {
+    "id": "M12",
+    "file": "12.glb",
+    "bytes": 1921185028,
+    "size_MiB": 1832.1848182678223,
+    "total_nodes": 7903,
+    "active_nodes": 7903,
+    "unique_mesh_definitions": 7130,
+    "active_unique_meshes": 7130,
+    "mesh_instances": 7163,
+    "source_triangles_unique": 44437406,
+    "source_triangles_instances": 51857040,
+    "hierarchy_nodes": 739,
+    "max_node_depth": 10,
+    "nontriangle_primitives": 0,
+    "unreachable_mesh_nodes": 0,
+    "json_sha256": "a309865d5150407fe34bba5c82cd294a7b522594211bbc6d779bcf6a82d521b6",
+    "root_names": [
+      "current camera",
+      "磁保持继电器产线"
+    ],
+    "node_name_examples": [
+      "磁保持继电器产线",
+      "07-装盖板机",
+      "TR5V-MTXJ-0401-轭铁料斗组-1",
+      "磁路下料机械手-3",
+      "回流传送带A-2",
+      "磁路下料机械手-2",
+      "磁路下料机械手-1",
+      "焊线桌-1"
+    ],
+    "asset": {
+      "generator": "SOLIDWORKSGLTF",
+      "version": "2.0"
+    }
+  },
+  {
+    "id": "M13",
+    "file": "13.glb",
+    "bytes": 2085071172,
+    "size_MiB": 1988.4788246154785,
+    "total_nodes": 18046,
+    "active_nodes": 18046,
+    "unique_mesh_definitions": 14152,
+    "active_unique_meshes": 14152,
+    "mesh_instances": 15970,
+    "source_triangles_unique": 47224751,
+    "source_triangles_instances": 52003855,
+    "hierarchy_nodes": 2075,
+    "max_node_depth": 11,
+    "nontriangle_primitives": 0,
+    "unreachable_mesh_nodes": 0,
+    "json_sha256": "5432bf0d0ab0986e5a4ef9ada06a69d6c970ed2e76dee4d9ca31fd1b2533fed9",
+    "root_names": [
+      "current camera",
+      "软包动力电池模组组装线体总装图OM"
+    ],
+    "node_name_examples": [
+      "软包动力电池模组组装线体总装图OM",
+      "B中段总装配体OM",
+      "BLXDLHDA06-23-000-AOM",
+      "BLXM16X120脚杯OM",
+      "BLXDLHDA06-23-000-AOM-1/BLXM16X120脚杯OM-2/BLXM16X120OM-1",
+      "BLXDLHDA06-23-000-AOM-1/BLXM16X120脚杯OM-2/BLXM16X150脚杯-3OM-1",
+      "BLXDLHDA06-23-000-AOM-1/BLXM16X120脚杯OM-2/BLXM16X150脚杯-1OM-1",
+      "BLXM16X120脚杯OM"
+    ],
+    "asset": {
+      "generator": "SOLIDWORKSGLTF",
+      "version": "2.0"
+    }
+  }
+]

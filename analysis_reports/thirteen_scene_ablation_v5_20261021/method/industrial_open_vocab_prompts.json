@@ -1,0 +1,681 @@
+{
+  "templates": [
+    "a depth-map rendering of a mechanical {name}.",
+    "a multi-view CAD rendering of a {name}.",
+    "a point cloud projection of an industrial {name}.",
+    "an isolated 3D mechanical component: {name}.",
+    "a close-up engineering model of a {name}.",
+    "a rendered industrial machine part: {name}."
+  ],
+  "labels": [
+    {
+      "id": "tiny_unknown_detail",
+      "name": "tiny unknown detail part",
+      "role": "micro_uncertain",
+      "aliases": ["tiny miscellaneous part", "small unclassified component", "small isolated detail", "minor assembly detail", "tiny CAD fragment", "small ambiguous mechanical part"]
+    },
+    {
+      "id": "small_visual_fragment",
+      "name": "small visual fragment",
+      "role": "micro_uncertain",
+      "aliases": ["tiny mesh fragment", "small decorative detail", "minor non structural detail", "tiny background component", "small low confidence part"]
+    },
+    {
+      "id": "tiny_cap_or_plug",
+      "name": "tiny cap or plug",
+      "role": "micro_uncertain",
+      "aliases": ["small end cap", "tiny plastic plug", "small sealing plug", "minor cap detail", "small cover plug"]
+    },
+    {
+      "id": "small_wire_or_clip_detail",
+      "name": "small wire clip or detail",
+      "role": "micro_uncertain",
+      "aliases": ["tiny retaining clip", "small wire detail", "small cable clip", "minor clip component", "small snap detail"]
+    },
+
+    {
+      "id": "hex_head_bolt",
+      "name": "hex head bolt",
+      "role": "repeated_fastener",
+      "aliases": ["hex bolt", "external hex bolt", "six sided bolt head", "standard hexagonal head bolt", "heavy hex bolt", "flange hex bolt"]
+    },
+    {
+      "id": "socket_head_screw",
+      "name": "socket head screw",
+      "role": "repeated_fastener",
+      "aliases": ["socket cap screw", "allen screw", "cylindrical head screw", "internal hex screw", "cap head screw", "socket head bolt"]
+    },
+    {
+      "id": "countersunk_screw",
+      "name": "countersunk screw",
+      "role": "repeated_fastener",
+      "aliases": ["flat head screw", "countersunk bolt", "conical head screw", "flush head screw", "countersunk machine screw"]
+    },
+    {
+      "id": "set_screw",
+      "name": "set screw",
+      "role": "repeated_fastener",
+      "aliases": ["grub screw", "headless screw", "threaded set screw", "socket set screw", "locking set screw"]
+    },
+    {
+      "id": "threaded_rod_or_stud",
+      "name": "threaded rod or stud",
+      "role": "repeated_fastener",
+      "aliases": ["threaded stud", "double ended stud", "fully threaded rod", "stud bolt", "long threaded fastener", "threaded bar"]
+    },
+    {
+      "id": "self_tapping_screw",
+      "name": "self tapping screw",
+      "role": "repeated_fastener",
+      "aliases": ["tapping screw", "sheet metal screw", "thread forming screw", "self drilling screw", "pointed screw"]
+    },
+    {
+      "id": "hex_nut",
+      "name": "hex nut",
+      "role": "repeated_fastener",
+      "aliases": ["standard hexagonal nut", "six sided nut", "machine nut", "heavy hex nut", "threaded hex nut"]
+    },
+    {
+      "id": "lock_nut",
+      "name": "lock nut",
+      "role": "repeated_fastener",
+      "aliases": ["nylock nut", "self locking nut", "prevailing torque nut", "locking hex nut", "jam nut"]
+    },
+    {
+      "id": "cap_nut",
+      "name": "cap nut",
+      "role": "repeated_fastener",
+      "aliases": ["acorn nut", "domed cap nut", "closed end nut", "decorative cap nut", "blind nut"]
+    },
+    {
+      "id": "slotted_castle_nut",
+      "name": "slotted castle nut",
+      "role": "repeated_fastener",
+      "aliases": ["castle nut", "slotted nut", "crown nut", "cotter pin nut", "castellated nut"]
+    },
+    {
+      "id": "wing_nut",
+      "name": "wing nut",
+      "role": "repeated_fastener",
+      "aliases": ["butterfly nut", "hand tightening nut", "thumb wing nut", "two wing nut"]
+    },
+    {
+      "id": "flat_washer",
+      "name": "flat washer",
+      "role": "repeated_fastener",
+      "aliases": ["plain washer", "round washer", "thin washer", "bolt washer", "annular washer"]
+    },
+    {
+      "id": "spring_washer",
+      "name": "spring washer",
+      "role": "repeated_fastener",
+      "aliases": ["split lock washer", "helical spring washer", "lock washer", "spring lock washer", "split washer"]
+    },
+    {
+      "id": "retaining_ring",
+      "name": "retaining ring",
+      "role": "repeated_fastener",
+      "aliases": ["snap ring", "circlip", "external retaining ring", "internal retaining ring", "grooved retaining ring"]
+    },
+    {
+      "id": "spacer_sleeve",
+      "name": "spacer sleeve",
+      "role": "repeated_fastener",
+      "aliases": ["cylindrical spacer", "distance sleeve", "standoff spacer", "round spacer", "tube spacer"]
+    },
+    {
+      "id": "rivet",
+      "name": "rivet",
+      "role": "repeated_fastener",
+      "aliases": ["solid rivet", "blind rivet", "pop rivet", "round head rivet", "conventional rivet"]
+    },
+    {
+      "id": "rivet_nut",
+      "name": "rivet nut",
+      "role": "repeated_fastener",
+      "aliases": ["threaded insert rivet", "blind rivet nut", "nutsert", "rivet threaded insert", "captive rivet nut"]
+    },
+    {
+      "id": "cylindrical_pin",
+      "name": "cylindrical pin",
+      "role": "repeated_fastener",
+      "aliases": ["dowel pin", "straight pin", "round locating pin", "parallel pin", "precision dowel"]
+    },
+    {
+      "id": "taper_pin",
+      "name": "taper pin",
+      "role": "repeated_fastener",
+      "aliases": ["conical pin", "tapered locating pin", "tapered dowel", "taper fastening pin"]
+    },
+    {
+      "id": "split_pin",
+      "name": "split pin",
+      "role": "repeated_fastener",
+      "aliases": ["cotter pin", "hairpin cotter", "split cotter", "retaining split pin", "bent safety pin"]
+    },
+    {
+      "id": "roll_pin",
+      "name": "roll pin",
+      "role": "repeated_fastener",
+      "aliases": ["spring pin", "slotted spring pin", "coiled spring pin", "elastic cylindrical pin", "hollow roll pin"]
+    },
+    {
+      "id": "shaft_key",
+      "name": "shaft key",
+      "role": "repeated_fastener",
+      "aliases": ["parallel key", "woodruff key", "machine key", "drive key", "keyway insert", "rectangular shaft key"]
+    },
+
+    {
+      "id": "large_foundation_block",
+      "name": "large foundation block",
+      "role": "large_static_bulk",
+      "aliases": ["concrete foundation", "machine foundation block", "static base block", "large base foundation", "heavy support block", "ground base"]
+    },
+    {
+      "id": "machine_base_bed",
+      "name": "machine base bed",
+      "role": "large_static_bulk",
+      "aliases": ["machine bed", "large machine base", "equipment base frame", "rigid base bed", "static machine support", "base casting"]
+    },
+    {
+      "id": "building_wall_panel",
+      "name": "building wall panel",
+      "role": "large_static_bulk",
+      "aliases": ["structural wall", "wall slab", "large wall surface", "building shell wall", "architectural wall panel"]
+    },
+    {
+      "id": "floor_slab",
+      "name": "floor slab",
+      "role": "large_static_bulk",
+      "aliases": ["large floor plate", "ground slab", "platform slab", "flat floor panel", "base floor panel"]
+    },
+    {
+      "id": "large_static_frame",
+      "name": "large static frame",
+      "role": "large_static_bulk",
+      "aliases": ["building frame", "large support frame", "static structural frame", "rectangular frame structure", "equipment frame"]
+    },
+    {
+      "id": "large_cover_enclosure",
+      "name": "large cover enclosure",
+      "role": "large_static_bulk",
+      "aliases": ["machine enclosure", "large cover shell", "protective enclosure", "housing cover", "sheet metal enclosure", "outer cover"]
+    },
+    {
+      "id": "support_beam_or_column",
+      "name": "support beam or column",
+      "role": "large_static_bulk",
+      "aliases": ["structural beam", "steel beam", "support column", "I beam", "rectangular support post", "vertical frame post"]
+    },
+    {
+      "id": "large_plain_plate",
+      "name": "large plain plate",
+      "role": "large_static_bulk",
+      "aliases": ["large flat plate", "large mounting plate", "large rectangular plate", "plain base plate", "large cover plate"]
+    },
+    {
+      "id": "large_tank_or_vessel",
+      "name": "large tank or vessel",
+      "role": "large_static_bulk",
+      "aliases": ["storage tank", "pressure vessel shell", "large cylindrical tank", "static vessel", "tank body"]
+    },
+    {
+      "id": "pipe_rack_static_support",
+      "name": "pipe rack static support",
+      "role": "large_static_bulk",
+      "aliases": ["pipe support frame", "rack support", "large pipe rack", "static service rack", "industrial rack frame"]
+    },
+
+    {
+      "id": "plain_rectangular_block",
+      "name": "plain rectangular block",
+      "role": "ordinary_low_detail",
+      "aliases": ["simple block", "low detail block", "rectangular solid part", "plain cuboid component", "simple mechanical block"]
+    },
+    {
+      "id": "simple_cover_plate",
+      "name": "simple cover plate",
+      "role": "ordinary_low_detail",
+      "aliases": ["plain cover", "flat cover plate", "low detail cover", "simple panel cover", "rectangular cover"]
+    },
+    {
+      "id": "simple_bracket",
+      "name": "simple bracket",
+      "role": "ordinary_low_detail",
+      "aliases": ["low detail bracket", "plain mounting bracket", "simple L bracket", "generic support bracket", "angle bracket"]
+    },
+    {
+      "id": "protective_guard",
+      "name": "protective guard",
+      "role": "ordinary_low_detail",
+      "aliases": ["simple guard cover", "safety guard", "mesh guard panel", "protective shield", "guard plate"]
+    },
+    {
+      "id": "plain_disc",
+      "name": "plain disc",
+      "role": "ordinary_low_detail",
+      "aliases": ["simple circular disc", "solid round disc", "low detail disc", "round plate", "circular plate"]
+    },
+    {
+      "id": "generic_mounting_pad",
+      "name": "generic mounting pad",
+      "role": "ordinary_low_detail",
+      "aliases": ["simple mounting pad", "plain pad block", "small base pad", "flat support pad", "mounting block"]
+    },
+    {
+      "id": "simple_plug",
+      "name": "simple plug",
+      "role": "ordinary_low_detail",
+      "aliases": ["solid plug", "round plug", "threaded plug body", "blanking plug", "end plug"]
+    },
+    {
+      "id": "plain_cap",
+      "name": "plain cap",
+      "role": "ordinary_low_detail",
+      "aliases": ["simple cap", "end cap", "cover cap", "protective cap", "round cap"]
+    },
+
+    {
+      "id": "visible_housing_body",
+      "name": "visible housing body",
+      "role": "balanced_visible",
+      "aliases": ["mechanical housing", "component housing", "visible casing", "equipment housing", "box housing", "cast housing"]
+    },
+    {
+      "id": "moderate_support_bracket",
+      "name": "moderate support bracket",
+      "role": "balanced_visible",
+      "aliases": ["visible support bracket", "mounting bracket with holes", "medium detail bracket", "structural support bracket", "gusset bracket"]
+    },
+    {
+      "id": "visible_cover_panel",
+      "name": "visible cover panel",
+      "role": "balanced_visible",
+      "aliases": ["formed cover panel", "visible access cover", "service cover", "inspection cover", "sheet metal cover panel"]
+    },
+    {
+      "id": "mounting_flange_plate",
+      "name": "mounting flange plate",
+      "role": "balanced_visible",
+      "aliases": ["flanged mounting plate", "bolt hole mounting plate", "interface plate", "adapter plate", "round mounting flange"]
+    },
+    {
+      "id": "moderate_frame_member",
+      "name": "moderate frame member",
+      "role": "balanced_visible",
+      "aliases": ["visible frame member", "small frame support", "equipment frame member", "cross member", "support rail"]
+    },
+    {
+      "id": "generic_cast_part",
+      "name": "generic cast part",
+      "role": "balanced_visible",
+      "aliases": ["cast metal component", "moderate detail casting", "irregular cast part", "machined casting", "cast bracket body"]
+    },
+
+    {
+      "id": "complex_curved_housing",
+      "name": "complex curved housing",
+      "role": "high_detail_shape",
+      "aliases": ["curved shell housing", "complex cover shell", "organic shaped housing", "rounded industrial casing", "detailed enclosure shell"]
+    },
+    {
+      "id": "fan_blade_set",
+      "name": "fan blade set",
+      "role": "high_detail_shape",
+      "aliases": ["fan blades", "axial fan blades", "curved fan impeller blades", "cooling fan blade geometry", "radial fan blades"]
+    },
+    {
+      "id": "ribbed_shell",
+      "name": "ribbed shell",
+      "role": "high_detail_shape",
+      "aliases": ["ribbed housing", "cooling fin shell", "reinforced ribbed cover", "detailed ribbed surface", "finned casing"]
+    },
+    {
+      "id": "thin_sheet_metal_part",
+      "name": "thin sheet metal part",
+      "role": "high_detail_shape",
+      "aliases": ["bent sheet metal part", "formed thin plate", "folded metal bracket", "thin wall sheet component", "sheet metal shell"]
+    },
+    {
+      "id": "perforated_panel",
+      "name": "perforated panel",
+      "role": "high_detail_shape",
+      "aliases": ["panel with many holes", "perforated plate", "ventilation grille", "hole pattern panel", "screen panel"]
+    },
+    {
+      "id": "detailed_cover_with_features",
+      "name": "detailed cover with features",
+      "role": "high_detail_shape",
+      "aliases": ["cover with ribs and holes", "feature rich cover", "complex access cover", "detailed machine cover", "shaped protective cover"]
+    },
+    {
+      "id": "complex_bracket_with_cutouts",
+      "name": "complex bracket with cutouts",
+      "role": "high_detail_shape",
+      "aliases": ["bracket with openings", "lightweight bracket", "profiled bracket", "cutout support bracket", "detailed structural bracket"]
+    },
+    {
+      "id": "toothed_profile_part",
+      "name": "toothed profile part",
+      "role": "high_detail_shape",
+      "aliases": ["serrated profile", "notched profile part", "toothed edge component", "detailed toothed shape", "profiled mechanical edge"]
+    },
+
+    {
+      "id": "pipe_elbow",
+      "name": "pipe elbow",
+      "role": "interface_fluid",
+      "aliases": ["elbow fitting", "ninety degree pipe elbow", "curved pipe connector", "pipe bend fitting", "hydraulic elbow"]
+    },
+    {
+      "id": "tee_pipe_fitting",
+      "name": "tee pipe fitting",
+      "role": "interface_fluid",
+      "aliases": ["T fitting", "three way pipe connector", "pipe tee", "branch pipe fitting", "tee connector"]
+    },
+    {
+      "id": "straight_pipe_connector",
+      "name": "straight pipe connector",
+      "role": "interface_fluid",
+      "aliases": ["pipe coupling", "straight fitting", "tube connector", "hose connector", "union fitting", "adapter fitting"]
+    },
+    {
+      "id": "flanged_pipe_fitting",
+      "name": "flanged pipe fitting",
+      "role": "interface_fluid",
+      "aliases": ["pipe flange", "flanged connector", "bolt flange fitting", "flanged adapter", "flange coupling"]
+    },
+    {
+      "id": "valve_body",
+      "name": "valve body",
+      "role": "interface_fluid",
+      "aliases": ["industrial valve", "ball valve body", "gate valve body", "control valve body", "hydraulic valve body"]
+    },
+    {
+      "id": "nozzle",
+      "name": "nozzle",
+      "role": "interface_fluid",
+      "aliases": ["spray nozzle", "fluid nozzle", "tapered nozzle", "jet nozzle", "discharge nozzle"]
+    },
+    {
+      "id": "socket_fitting",
+      "name": "socket fitting",
+      "role": "interface_fluid",
+      "aliases": ["threaded socket", "pipe socket", "female socket fitting", "socket connector", "coupler socket"]
+    },
+    {
+      "id": "hydraulic_manifold",
+      "name": "hydraulic manifold",
+      "role": "interface_fluid",
+      "aliases": ["fluid manifold block", "valve manifold", "pneumatic manifold", "hydraulic distribution block", "multi port manifold"]
+    },
+    {
+      "id": "hose_clamp_connector",
+      "name": "hose clamp connector",
+      "role": "interface_fluid",
+      "aliases": ["hose barb connector", "barbed hose fitting", "clamped hose connector", "fluid hose adapter", "hose coupling"]
+    },
+    {
+      "id": "seal_gasket_interface",
+      "name": "seal gasket interface",
+      "role": "interface_fluid",
+      "aliases": ["gasket ring", "sealing flange", "O ring seat", "seal interface", "fluid sealing ring"]
+    },
+
+    {
+      "id": "clamp",
+      "name": "clamp",
+      "role": "structural_control",
+      "aliases": ["mechanical clamp", "pipe clamp", "holding clamp", "C clamp", "mounting clamp", "shaft collar clamp"]
+    },
+    {
+      "id": "hinge",
+      "name": "hinge",
+      "role": "structural_control",
+      "aliases": ["mechanical hinge", "door hinge", "pivot hinge", "leaf hinge", "articulated hinge"]
+    },
+    {
+      "id": "fork_joint",
+      "name": "fork joint",
+      "role": "structural_control",
+      "aliases": ["clevis joint", "yoke joint", "forked linkage joint", "articulated fork joint", "clevis bracket"]
+    },
+    {
+      "id": "articulated_joint",
+      "name": "articulated joint",
+      "role": "structural_control",
+      "aliases": ["joint linkage", "pivot joint", "ball joint", "universal joint support", "mechanical articulation"]
+    },
+    {
+      "id": "mounting_bracket_control",
+      "name": "mounting bracket control part",
+      "role": "structural_control",
+      "aliases": ["control mounting bracket", "sensor bracket", "actuator bracket", "adjustable mounting bracket", "precision mounting bracket"]
+    },
+    {
+      "id": "collar",
+      "name": "collar",
+      "role": "structural_control",
+      "aliases": ["shaft collar", "split collar", "clamping collar", "stop collar", "round retaining collar"]
+    },
+    {
+      "id": "handle",
+      "name": "handle",
+      "role": "structural_control",
+      "aliases": ["pull handle", "machine handle", "grip handle", "door handle", "control handle"]
+    },
+    {
+      "id": "lever",
+      "name": "lever",
+      "role": "structural_control",
+      "aliases": ["control lever", "hand lever", "actuating lever", "operating lever", "toggle lever"]
+    },
+    {
+      "id": "knob",
+      "name": "knob",
+      "role": "structural_control",
+      "aliases": ["control knob", "hand knob", "round knob", "adjustment knob", "star knob"]
+    },
+    {
+      "id": "switch_actuator",
+      "name": "switch actuator",
+      "role": "structural_control",
+      "aliases": ["switch handle", "toggle switch lever", "control switch", "rotary switch knob", "push button actuator"]
+    },
+    {
+      "id": "mounting_fixture",
+      "name": "mounting fixture",
+      "role": "structural_control",
+      "aliases": ["fixture block", "work holding fixture", "locating fixture", "clamping fixture", "assembly fixture"]
+    },
+    {
+      "id": "hook_or_latch",
+      "name": "hook or latch",
+      "role": "structural_control",
+      "aliases": ["mechanical hook", "latch hook", "locking latch", "catch latch", "retaining hook"]
+    },
+
+    {
+      "id": "linear_guide",
+      "name": "linear guide",
+      "role": "motion_precision",
+      "aliases": ["linear rail", "guide rail", "linear bearing guide", "precision guideway", "linear motion rail"]
+    },
+    {
+      "id": "slider_block",
+      "name": "slider block",
+      "role": "motion_precision",
+      "aliases": ["linear slider", "guide carriage", "sliding block", "linear guide carriage", "motion carriage"]
+    },
+    {
+      "id": "shaft",
+      "name": "shaft",
+      "role": "motion_precision",
+      "aliases": ["round shaft", "drive shaft", "rotating shaft", "precision shaft", "transmission shaft"]
+    },
+    {
+      "id": "axle",
+      "name": "axle",
+      "role": "motion_precision",
+      "aliases": ["wheel axle", "pin axle", "rotary axle", "support axle", "axle shaft"]
+    },
+    {
+      "id": "coupling",
+      "name": "coupling",
+      "role": "motion_precision",
+      "aliases": ["shaft coupling", "flexible coupling", "rigid coupling", "jaw coupling", "drive coupling"]
+    },
+    {
+      "id": "cam",
+      "name": "cam",
+      "role": "motion_precision",
+      "aliases": ["cam wheel", "eccentric cam", "cam plate", "profile cam", "rotating cam"]
+    },
+    {
+      "id": "crank_linkage",
+      "name": "crank linkage",
+      "role": "motion_precision",
+      "aliases": ["crank arm", "connecting rod", "linkage arm", "motion linkage", "crank lever"]
+    },
+    {
+      "id": "wheel",
+      "name": "wheel",
+      "role": "motion_precision",
+      "aliases": ["solid wheel", "roller wheel", "machine wheel", "transport wheel", "running wheel"]
+    },
+    {
+      "id": "castor",
+      "name": "castor",
+      "role": "motion_precision",
+      "aliases": ["caster wheel", "swivel castor", "castor assembly", "caster bracket and wheel", "industrial caster"]
+    },
+    {
+      "id": "roller",
+      "name": "roller",
+      "role": "motion_precision",
+      "aliases": ["cylindrical roller", "conveyor roller", "guide roller", "track roller", "idler roller"]
+    },
+    {
+      "id": "bushing_guide",
+      "name": "bushing guide",
+      "role": "motion_precision",
+      "aliases": ["guide bushing", "plain guide bushing", "sliding bushing", "sleeve guide", "linear bushing"]
+    },
+    {
+      "id": "precision_locating_pin",
+      "name": "precision locating pin",
+      "role": "motion_precision",
+      "aliases": ["locating pin", "alignment pin", "fixture locating pin", "precision dowel pin", "positioning pin"]
+    },
+
+    {
+      "id": "ball_bearing",
+      "name": "ball bearing",
+      "role": "critical_preserve",
+      "aliases": ["radial ball bearing", "deep groove ball bearing", "rolling ball bearing", "sealed ball bearing", "bearing ring assembly"]
+    },
+    {
+      "id": "roller_bearing",
+      "name": "roller bearing",
+      "role": "critical_preserve",
+      "aliases": ["cylindrical roller bearing", "tapered roller bearing", "needle roller bearing", "bearing with rollers", "rolling element bearing"]
+    },
+    {
+      "id": "plain_bearing",
+      "name": "plain bearing",
+      "role": "critical_preserve",
+      "aliases": ["sleeve bearing", "journal bearing", "plain bushing bearing", "flanged plain bearing", "sliding bearing"]
+    },
+    {
+      "id": "flanged_bearing",
+      "name": "flanged bearing",
+      "role": "critical_preserve",
+      "aliases": ["flange mounted bearing", "bearing block", "flanged block bearing", "pillow block bearing", "bearing housing"]
+    },
+    {
+      "id": "spur_gear",
+      "name": "spur gear",
+      "role": "critical_preserve",
+      "aliases": ["straight gear", "toothed gear wheel", "cylindrical gear", "right spur gear", "gear with teeth"]
+    },
+    {
+      "id": "bevel_gear",
+      "name": "bevel gear",
+      "role": "critical_preserve",
+      "aliases": ["right angle gear", "conical gear", "bevel tooth gear", "miter gear", "angular gear"]
+    },
+    {
+      "id": "worm_gear",
+      "name": "worm gear",
+      "role": "critical_preserve",
+      "aliases": ["worm wheel", "worm drive gear", "helical worm gear", "worm transmission wheel", "screw gear"]
+    },
+    {
+      "id": "pulley",
+      "name": "pulley",
+      "role": "critical_preserve",
+      "aliases": ["belt pulley", "timing pulley", "V belt pulley", "grooved pulley", "drive pulley"]
+    },
+    {
+      "id": "sprocket",
+      "name": "sprocket",
+      "role": "critical_preserve",
+      "aliases": ["chain sprocket", "toothed chain wheel", "chain drive sprocket", "roller chain sprocket", "drive sprocket"]
+    },
+    {
+      "id": "chain_drive",
+      "name": "chain drive",
+      "role": "critical_preserve",
+      "aliases": ["roller chain", "chain transmission", "chain wheel assembly", "linked chain drive", "mechanical chain"]
+    },
+    {
+      "id": "electric_motor",
+      "name": "electric motor",
+      "role": "critical_preserve",
+      "aliases": ["drive motor", "industrial motor", "motor body", "electric drive unit", "servo motor"]
+    },
+    {
+      "id": "geared_motor",
+      "name": "geared motor",
+      "role": "critical_preserve",
+      "aliases": ["gear motor", "helical geared motor", "motor gearbox", "geared drive unit", "reduction motor"]
+    },
+    {
+      "id": "rotor",
+      "name": "rotor",
+      "role": "critical_preserve",
+      "aliases": ["motor rotor", "rotating rotor", "rotor shaft assembly", "electric rotor", "round rotor"]
+    },
+    {
+      "id": "impeller",
+      "name": "impeller",
+      "role": "critical_preserve",
+      "aliases": ["pump impeller", "centrifugal impeller", "fluid impeller", "impeller wheel", "curved blade impeller"]
+    },
+    {
+      "id": "turbine_wheel",
+      "name": "turbine wheel",
+      "role": "critical_preserve",
+      "aliases": ["turbine rotor", "turbine blade wheel", "radial turbine", "bladed turbine wheel", "rotating turbine"]
+    },
+    {
+      "id": "coil_spring",
+      "name": "coil spring",
+      "role": "critical_preserve",
+      "aliases": ["helical spring", "compression spring", "extension spring", "metal coil spring", "round wire spring"]
+    },
+    {
+      "id": "torsion_spring",
+      "name": "torsion spring",
+      "role": "critical_preserve",
+      "aliases": ["twist spring", "rotary torsion spring", "spring with arms", "coil torsion spring", "angular spring"]
+    },
+    {
+      "id": "transmission_assembly_part",
+      "name": "transmission assembly part",
+      "role": "critical_preserve",
+      "aliases": ["drive transmission component", "powertrain component", "mechanical transmission part", "gearbox internal part", "critical drive part"]
+    }
+  ]
+}

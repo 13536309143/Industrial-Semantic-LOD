@@ -1,0 +1,41 @@
+{
+  "status": "passed",
+  "original_percentage_fields_checked": 1820,
+  "all_182_bars_sum_to_100": true,
+  "aggregate_counts_match_all_rows": true,
+  "source_hashes_unchanged": true,
+  "png_images": [
+    {
+      "file": "analysis_reports\\thesis_ch5_fusion_20261022\\figures\\03_priority_composition_configuration_facets.png",
+      "pixels": [
+        3052,
+        3361
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ]
+    },
+    {
+      "file": "analysis_reports\\thesis_ch5_fusion_20261022\\figures\\04_priority_composition_model_facets_overview.png",
+      "pixels": [
+        4641,
+        4831
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ]
+    }
+  ],
+  "svg_files_valid": true,
+  "synthetic_demo_used": false,
+  "visually_reviewed": true,
+  "visual_checks": [
+    "Chinese labels legible",
+    "No overlapping model tick labels",
+    "Shared palette and scale",
+    "Ordered legend P1 through P10",
+    "Tiny proportions not inflated"
+  ]
+}

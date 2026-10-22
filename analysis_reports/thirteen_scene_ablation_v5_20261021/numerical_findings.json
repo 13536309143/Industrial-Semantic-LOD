@@ -1,0 +1,248 @@
+{
+  "scenes": 13,
+  "nodes": 68972,
+  "source_triangle_instances": 298929454,
+  "source_mesh_references": 68974,
+  "excluded_empty_meshes": 2,
+  "N_unresolved": 0.6033172881749116,
+  "C_unresolved": 0.7374876761584411,
+  "NC_unresolved": 0.5132372556979644,
+  "NC_conflicts": 9174,
+  "NC_conflict_fraction": 0.13301049701328074,
+  "NCG_H0_unknown_function": 0.6467117090993446,
+  "NCG_H1_unknown_function": 0.6478281041582091,
+  "tree": {
+    "priority_changed": 11449,
+    "priority_raised": 11449,
+    "priority_lowered": 0,
+    "function_changed": 1075,
+    "identity_changed": 77,
+    "action_changed": 11493
+  },
+  "tree_priority_changed_fraction": 0.1659948964797309,
+  "geometry_pairs": [
+    {
+      "reference": "N_H0",
+      "comparison": "NG_H0",
+      "priority_changed": 50905,
+      "priority_changed_fraction": 0.7380531230064374
+    },
+    {
+      "reference": "C_H0",
+      "comparison": "CG_H0",
+      "priority_changed": 57107,
+      "priority_changed_fraction": 0.8279736704749754
+    },
+    {
+      "reference": "NC_H0",
+      "comparison": "NCG_H0",
+      "priority_changed": 52521,
+      "priority_changed_fraction": 0.7614829206054631
+    }
+  ],
+  "NCG_H0_requested_far_fraction": 0.22602098340611726,
+  "NCG_H1_requested_far_fraction": 0.22993066083790328,
+  "largest_tree_fraction": [
+    {
+      "scene": "M12",
+      "title": "磁保持继电器产线",
+      "fraction": 0.34678207454976967,
+      "count": 2484
+    },
+    {
+      "scene": "M13",
+      "title": "软包动力电池模组组装线",
+      "fraction": 0.2033441883767535,
+      "count": 3247
+    },
+    {
+      "scene": "M2",
+      "title": "圆形电容穿心焊接机",
+      "fraction": 0.1912162162162162,
+      "count": 283
+    }
+  ],
+  "no_accuracy_or_rendering_claim": true,
+  "tree_decomposition": [
+    {
+      "mode": "N",
+      "topology_priority_changed": 0,
+      "topology_function_changed": 0,
+      "topology_identity_changed": 0,
+      "topology_action_changed": 0,
+      "ancestor_names_priority_changed": 961,
+      "ancestor_names_function_changed": 961,
+      "ancestor_names_identity_changed": 0,
+      "ancestor_names_action_changed": 961
+    },
+    {
+      "mode": "C",
+      "topology_priority_changed": 0,
+      "topology_function_changed": 0,
+      "topology_identity_changed": 0,
+      "topology_action_changed": 0,
+      "ancestor_names_priority_changed": 384,
+      "ancestor_names_function_changed": 384,
+      "ancestor_names_identity_changed": 0,
+      "ancestor_names_action_changed": 384
+    },
+    {
+      "mode": "G",
+      "topology_priority_changed": 14511,
+      "topology_function_changed": 0,
+      "topology_identity_changed": 0,
+      "topology_action_changed": 14511,
+      "ancestor_names_priority_changed": 0,
+      "ancestor_names_function_changed": 0,
+      "ancestor_names_identity_changed": 0,
+      "ancestor_names_action_changed": 0
+    },
+    {
+      "mode": "NC",
+      "topology_priority_changed": 0,
+      "topology_function_changed": 0,
+      "topology_identity_changed": 0,
+      "topology_action_changed": 0,
+      "ancestor_names_priority_changed": 998,
+      "ancestor_names_function_changed": 998,
+      "ancestor_names_identity_changed": 0,
+      "ancestor_names_action_changed": 998
+    },
+    {
+      "mode": "NG",
+      "topology_priority_changed": 11038,
+      "topology_function_changed": 0,
+      "topology_identity_changed": 0,
+      "topology_action_changed": 11038,
+      "ancestor_names_priority_changed": 961,
+      "ancestor_names_function_changed": 961,
+      "ancestor_names_identity_changed": 0,
+      "ancestor_names_action_changed": 961
+    },
+    {
+      "mode": "CG",
+      "topology_priority_changed": 13362,
+      "topology_function_changed": 83,
+      "topology_identity_changed": 83,
+      "topology_action_changed": 13419,
+      "ancestor_names_priority_changed": 384,
+      "ancestor_names_function_changed": 384,
+      "ancestor_names_identity_changed": 0,
+      "ancestor_names_action_changed": 384
+    },
+    {
+      "mode": "NCG",
+      "topology_priority_changed": 10469,
+      "topology_function_changed": 77,
+      "topology_identity_changed": 77,
+      "topology_action_changed": 10513,
+      "ancestor_names_priority_changed": 998,
+      "ancestor_names_function_changed": 998,
+      "ancestor_names_identity_changed": 0,
+      "ancestor_names_action_changed": 998
+    }
+  ],
+  "NCG_H1_priorities": [
+    {
+      "priority": "P1",
+      "nodes": 969,
+      "node_fraction": 0.01404917937713855,
+      "source_triangle_fraction": 0.004819177169473571
+    },
+    {
+      "priority": "P2",
+      "nodes": 16320,
+      "node_fraction": 0.2366177579307545,
+      "source_triangle_fraction": 0.07074939828445276
+    },
+    {
+      "priority": "P3",
+      "nodes": 31766,
+      "node_fraction": 0.4605637070115409,
+      "source_triangle_fraction": 0.27418967553461626
+    },
+    {
+      "priority": "P4",
+      "nodes": 10460,
+      "node_fraction": 0.15165574436003015,
+      "source_triangle_fraction": 0.18210183798081
+    },
+    {
+      "priority": "P5",
+      "nodes": 2967,
+      "node_fraction": 0.043017456359102244,
+      "source_triangle_fraction": 0.11897252854849158
+    },
+    {
+      "priority": "P6",
+      "nodes": 1570,
+      "node_fraction": 0.022762860291132635,
+      "source_triangle_fraction": 0.136439853799084
+    },
+    {
+      "priority": "P7",
+      "nodes": 1603,
+      "node_fraction": 0.023241315316360263,
+      "source_triangle_fraction": 0.024337411060202853
+    },
+    {
+      "priority": "P8",
+      "nodes": 1174,
+      "node_fraction": 0.01702139998840109,
+      "source_triangle_fraction": 0.11987092446233151
+    },
+    {
+      "priority": "P9",
+      "nodes": 2142,
+      "node_fraction": 0.03105608072841153,
+      "source_triangle_fraction": 0.06847620642962804
+    },
+    {
+      "priority": "P10",
+      "nodes": 1,
+      "node_fraction": 1.4498637128109957e-05,
+      "source_triangle_fraction": 4.298673090942721e-05
+    }
+  ],
+  "unknown_geometry_families": [
+    {
+      "family": "compact_curved",
+      "H0_count": 12190,
+      "H1_count": 12190
+    },
+    {
+      "family": "compact_featured",
+      "H0_count": 3614,
+      "H1_count": 3614
+    },
+    {
+      "family": "compact_simple",
+      "H0_count": 15376,
+      "H1_count": 15376
+    },
+    {
+      "family": "distributed_components",
+      "H0_count": 1983,
+      "H1_count": 1986
+    },
+    {
+      "family": "elongated_sheet",
+      "H0_count": 344,
+      "H1_count": 344
+    },
+    {
+      "family": "plate",
+      "H0_count": 8921,
+      "H1_count": 8923
+    },
+    {
+      "family": "rod",
+      "H0_count": 2177,
+      "H1_count": 2249
+    }
+  ],
+  "NCG_H1_standard_fastener_nodes": 16732,
+  "NCG_H1_unknown_function_nodes": 44682,
+  "tree_function_withdrawn_to_unknown": 77,
+  "tree_function_resolved_from_unknown": 0
+}

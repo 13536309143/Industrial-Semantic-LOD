@@ -1,0 +1,16 @@
+{
+  "policy_unit_tests_passed": 21,
+  "orchestrator_tests_passed": 7,
+  "historical_identical_scene_matches": {
+    "M1": "d",
+    "M2": "f",
+    "M3": "b",
+    "M5": "c"
+  },
+  "paired_old_variants_checked": 60,
+  "all_P_histograms_equal": true,
+  "full_semantic_pipeline_unit_tests_passed": 89,
+  "full_test_command": "python -X utf8 -m unittest discover -s tools/pointclipv2/tests -q",
+  "post_empty_mesh_adapter_suite_tests": 91,
+  "post_empty_mesh_adapter_suite_passed": true
+}

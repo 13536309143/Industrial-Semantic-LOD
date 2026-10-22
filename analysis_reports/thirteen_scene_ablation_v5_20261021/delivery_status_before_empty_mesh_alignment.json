@@ -1,0 +1,7 @@
+{
+  "status": "failed",
+  "steps": [],
+  "stage": "failed",
+  "updated_at_utc": "2026-10-21T17:15:59.518396+00:00",
+  "error": "Upstream stage failed; final artifacts not published"
+}

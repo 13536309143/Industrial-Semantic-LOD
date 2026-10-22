@@ -1,0 +1,530 @@
+{
+  "status": "inference_complete",
+  "started_at_utc": "2026-10-21T14:00:24.831371+00:00",
+  "models": [
+    "M1",
+    "M2",
+    "M3",
+    "M4",
+    "M5",
+    "M6",
+    "M7",
+    "M8",
+    "M9",
+    "M10",
+    "M11",
+    "M12",
+    "M13"
+  ],
+  "stages": [
+    {
+      "scene": "M6",
+      "stage": "open_surface",
+      "returncode": 0,
+      "wall_seconds": 152.72768169999472,
+      "log": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\thirteen_scene_ablation_v5_20261021\\logs\\M6_open_surface.log",
+      "command": [
+        "E:\\vk_lod_clusters1\\t1\\tools\\pointclipv2\\run_open_shading_v2.py",
+        "--glb",
+        "E:\\vk_lod_clusters1\\t1\\_downloaded_resources\\6.glb",
+        "--output-dir",
+        "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\thirteen_scene_ablation_v5_20261021\\M6\\visual"
+      ]
+    },
+    {
+      "scene": "M6",
+      "stage": "combine",
+      "returncode": 0,
+      "wall_seconds": 34.77530799998203,
+      "log": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\thirteen_scene_ablation_v5_20261021\\logs\\M6_combine.log",
+      "command": [
+        "E:\\vk_lod_clusters1\\t1\\tools\\pointclipv2\\combine_open_renderings.py",
+        "--glb",
+        "E:\\vk_lod_clusters1\\t1\\_downloaded_resources\\6.glb",
+        "--output-dir",
+        "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\thirteen_scene_ablation_v5_20261021\\M6\\visual"
+      ]
+    },
+    {
+      "scene": "M7",
+      "stage": "open_surface",
+      "returncode": 0,
+      "wall_seconds": 137.02511859999504,
+      "log": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\thirteen_scene_ablation_v5_20261021\\logs\\M7_open_surface.log",
+      "command": [
+        "E:\\vk_lod_clusters1\\t1\\tools\\pointclipv2\\run_open_shading_v2.py",
+        "--glb",
+        "E:\\vk_lod_clusters1\\t1\\_downloaded_resources\\7.glb",
+        "--output-dir",
+        "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\thirteen_scene_ablation_v5_20261021\\M7\\visual"
+      ]
+    },
+    {
+      "scene": "M7",
+      "stage": "combine",
+      "returncode": 0,
+      "wall_seconds": 12.652572400023928,
+      "log": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\thirteen_scene_ablation_v5_20261021\\logs\\M7_combine.log",
+      "command": [
+        "E:\\vk_lod_clusters1\\t1\\tools\\pointclipv2\\combine_open_renderings.py",
+        "--glb",
+        "E:\\vk_lod_clusters1\\t1\\_downloaded_resources\\7.glb",
+        "--output-dir",
+        "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\thirteen_scene_ablation_v5_20261021\\M7\\visual"
+      ]
+    },
+    {
+      "scene": "M8",
+      "stage": "supervised",
+      "returncode": 0,
+      "wall_seconds": 155.58654740001657,
+      "log": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\thirteen_scene_ablation_v5_20261021\\logs\\M8_supervised.log",
+      "command": [
+        "E:\\vk_lod_clusters1\\t1\\tools\\pointnext_lod\\batch_analyze_glb_lod.py",
+        "--resources-dir",
+        "E:\\vk_lod_clusters1\\t1\\_downloaded_resources",
+        "--models",
+        "8.glb",
+        "--output-dir",
+        "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\thirteen_scene_ablation_v5_20261021\\M8\\closed",
+        "--pointnext-root",
+        "E:\\vk_lod_clusters1\\t1\\tools\\pointnext_lod\\PointNeXt",
+        "--cfg",
+        "E:\\vk_lod_clusters1\\t1\\tools\\pointnext_lod\\PointNeXt\\cfgs\\industrial_part\\pointnext-s-14class-encoder-compare-inference.yaml",
+        "--ckpt",
+        "E:\\vk_lod_clusters1\\t1\\models\\pointnext\\industrial-part-14class-best.pth",
+        "--classes-file",
+        "E:\\vk_lod_clusters1\\t1\\tools\\pointnext_lod\\industrial_part_14classes.txt",
+        "--num-points",
+        "8192",
+        "--batch-size",
+        "16",
+        "--pointnext-only",
+        "--skip-existing"
+      ]
+    },
+    {
+      "scene": "M8",
+      "stage": "open_depth",
+      "returncode": 0,
+      "wall_seconds": 660.5926013000135,
+      "log": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\thirteen_scene_ablation_v5_20261021\\logs\\M8_open_depth.log",
+      "command": [
+        "E:\\vk_lod_clusters1\\t1\\tools\\pointclipv2\\run_open_semantic_v2.py",
+        "--glb",
+        "E:\\vk_lod_clusters1\\t1\\_downloaded_resources\\8.glb",
+        "--output-dir",
+        "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\thirteen_scene_ablation_v5_20261021\\M8\\visual"
+      ]
+    },
+    {
+      "scene": "M8",
+      "stage": "open_surface",
+      "returncode": 0,
+      "wall_seconds": 335.8301322000043,
+      "log": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\thirteen_scene_ablation_v5_20261021\\logs\\M8_open_surface.log",
+      "command": [
+        "E:\\vk_lod_clusters1\\t1\\tools\\pointclipv2\\run_open_shading_v2.py",
+        "--glb",
+        "E:\\vk_lod_clusters1\\t1\\_downloaded_resources\\8.glb",
+        "--output-dir",
+        "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\thirteen_scene_ablation_v5_20261021\\M8\\visual"
+      ]
+    },
+    {
+      "scene": "M8",
+      "stage": "combine",
+      "returncode": 0,
+      "wall_seconds": 60.22260469998582,
+      "log": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\thirteen_scene_ablation_v5_20261021\\logs\\M8_combine.log",
+      "command": [
+        "E:\\vk_lod_clusters1\\t1\\tools\\pointclipv2\\combine_open_renderings.py",
+        "--glb",
+        "E:\\vk_lod_clusters1\\t1\\_downloaded_resources\\8.glb",
+        "--output-dir",
+        "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\thirteen_scene_ablation_v5_20261021\\M8\\visual"
+      ]
+    },
+    {
+      "scene": "M9",
+      "stage": "supervised",
+      "returncode": 0,
+      "wall_seconds": 140.83599759999197,
+      "log": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\thirteen_scene_ablation_v5_20261021\\logs\\M9_supervised.log",
+      "command": [
+        "E:\\vk_lod_clusters1\\t1\\tools\\pointnext_lod\\batch_analyze_glb_lod.py",
+        "--resources-dir",
+        "E:\\vk_lod_clusters1\\t1\\_downloaded_resources",
+        "--models",
+        "9.glb",
+        "--output-dir",
+        "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\thirteen_scene_ablation_v5_20261021\\M9\\closed",
+        "--pointnext-root",
+        "E:\\vk_lod_clusters1\\t1\\tools\\pointnext_lod\\PointNeXt",
+        "--cfg",
+        "E:\\vk_lod_clusters1\\t1\\tools\\pointnext_lod\\PointNeXt\\cfgs\\industrial_part\\pointnext-s-14class-encoder-compare-inference.yaml",
+        "--ckpt",
+        "E:\\vk_lod_clusters1\\t1\\models\\pointnext\\industrial-part-14class-best.pth",
+        "--classes-file",
+        "E:\\vk_lod_clusters1\\t1\\tools\\pointnext_lod\\industrial_part_14classes.txt",
+        "--num-points",
+        "8192",
+        "--batch-size",
+        "16",
+        "--pointnext-only",
+        "--skip-existing"
+      ]
+    },
+    {
+      "scene": "M9",
+      "stage": "open_depth",
+      "returncode": 0,
+      "wall_seconds": 411.7678457000002,
+      "log": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\thirteen_scene_ablation_v5_20261021\\logs\\M9_open_depth.log",
+      "command": [
+        "E:\\vk_lod_clusters1\\t1\\tools\\pointclipv2\\run_open_semantic_v2.py",
+        "--glb",
+        "E:\\vk_lod_clusters1\\t1\\_downloaded_resources\\9.glb",
+        "--output-dir",
+        "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\thirteen_scene_ablation_v5_20261021\\M9\\visual"
+      ]
+    },
+    {
+      "scene": "M9",
+      "stage": "open_surface",
+      "returncode": 0,
+      "wall_seconds": 225.51754100000835,
+      "log": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\thirteen_scene_ablation_v5_20261021\\logs\\M9_open_surface.log",
+      "command": [
+        "E:\\vk_lod_clusters1\\t1\\tools\\pointclipv2\\run_open_shading_v2.py",
+        "--glb",
+        "E:\\vk_lod_clusters1\\t1\\_downloaded_resources\\9.glb",
+        "--output-dir",
+        "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\thirteen_scene_ablation_v5_20261021\\M9\\visual"
+      ]
+    },
+    {
+      "scene": "M9",
+      "stage": "combine",
+      "returncode": 0,
+      "wall_seconds": 33.68647850002162,
+      "log": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\thirteen_scene_ablation_v5_20261021\\logs\\M9_combine.log",
+      "command": [
+        "E:\\vk_lod_clusters1\\t1\\tools\\pointclipv2\\combine_open_renderings.py",
+        "--glb",
+        "E:\\vk_lod_clusters1\\t1\\_downloaded_resources\\9.glb",
+        "--output-dir",
+        "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\thirteen_scene_ablation_v5_20261021\\M9\\visual"
+      ]
+    },
+    {
+      "scene": "M10",
+      "stage": "supervised",
+      "returncode": 0,
+      "wall_seconds": 250.2788728000014,
+      "log": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\thirteen_scene_ablation_v5_20261021\\logs\\M10_supervised.log",
+      "command": [
+        "E:\\vk_lod_clusters1\\t1\\tools\\pointnext_lod\\batch_analyze_glb_lod.py",
+        "--resources-dir",
+        "E:\\vk_lod_clusters1\\t1\\_downloaded_resources",
+        "--models",
+        "10.glb",
+        "--output-dir",
+        "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\thirteen_scene_ablation_v5_20261021\\M10\\closed",
+        "--pointnext-root",
+        "E:\\vk_lod_clusters1\\t1\\tools\\pointnext_lod\\PointNeXt",
+        "--cfg",
+        "E:\\vk_lod_clusters1\\t1\\tools\\pointnext_lod\\PointNeXt\\cfgs\\industrial_part\\pointnext-s-14class-encoder-compare-inference.yaml",
+        "--ckpt",
+        "E:\\vk_lod_clusters1\\t1\\models\\pointnext\\industrial-part-14class-best.pth",
+        "--classes-file",
+        "E:\\vk_lod_clusters1\\t1\\tools\\pointnext_lod\\industrial_part_14classes.txt",
+        "--num-points",
+        "8192",
+        "--batch-size",
+        "16",
+        "--pointnext-only",
+        "--skip-existing"
+      ]
+    },
+    {
+      "scene": "M10",
+      "stage": "open_depth",
+      "returncode": 0,
+      "wall_seconds": 692.8957717999874,
+      "log": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\thirteen_scene_ablation_v5_20261021\\logs\\M10_open_depth.log",
+      "command": [
+        "E:\\vk_lod_clusters1\\t1\\tools\\pointclipv2\\run_open_semantic_v2.py",
+        "--glb",
+        "E:\\vk_lod_clusters1\\t1\\_downloaded_resources\\10.glb",
+        "--output-dir",
+        "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\thirteen_scene_ablation_v5_20261021\\M10\\visual"
+      ]
+    },
+    {
+      "scene": "M10",
+      "stage": "open_surface",
+      "returncode": 0,
+      "wall_seconds": 394.95483560001594,
+      "log": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\thirteen_scene_ablation_v5_20261021\\logs\\M10_open_surface.log",
+      "command": [
+        "E:\\vk_lod_clusters1\\t1\\tools\\pointclipv2\\run_open_shading_v2.py",
+        "--glb",
+        "E:\\vk_lod_clusters1\\t1\\_downloaded_resources\\10.glb",
+        "--output-dir",
+        "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\thirteen_scene_ablation_v5_20261021\\M10\\visual"
+      ]
+    },
+    {
+      "scene": "M10",
+      "stage": "combine",
+      "returncode": 0,
+      "wall_seconds": 56.24233829998411,
+      "log": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\thirteen_scene_ablation_v5_20261021\\logs\\M10_combine.log",
+      "command": [
+        "E:\\vk_lod_clusters1\\t1\\tools\\pointclipv2\\combine_open_renderings.py",
+        "--glb",
+        "E:\\vk_lod_clusters1\\t1\\_downloaded_resources\\10.glb",
+        "--output-dir",
+        "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\thirteen_scene_ablation_v5_20261021\\M10\\visual"
+      ]
+    },
+    {
+      "scene": "M11",
+      "stage": "supervised",
+      "returncode": 0,
+      "wall_seconds": 335.8976086000039,
+      "log": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\thirteen_scene_ablation_v5_20261021\\logs\\M11_supervised.log",
+      "command": [
+        "E:\\vk_lod_clusters1\\t1\\tools\\pointnext_lod\\batch_analyze_glb_lod.py",
+        "--resources-dir",
+        "E:\\vk_lod_clusters1\\t1\\_downloaded_resources",
+        "--models",
+        "11.glb",
+        "--output-dir",
+        "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\thirteen_scene_ablation_v5_20261021\\M11\\closed",
+        "--pointnext-root",
+        "E:\\vk_lod_clusters1\\t1\\tools\\pointnext_lod\\PointNeXt",
+        "--cfg",
+        "E:\\vk_lod_clusters1\\t1\\tools\\pointnext_lod\\PointNeXt\\cfgs\\industrial_part\\pointnext-s-14class-encoder-compare-inference.yaml",
+        "--ckpt",
+        "E:\\vk_lod_clusters1\\t1\\models\\pointnext\\industrial-part-14class-best.pth",
+        "--classes-file",
+        "E:\\vk_lod_clusters1\\t1\\tools\\pointnext_lod\\industrial_part_14classes.txt",
+        "--num-points",
+        "8192",
+        "--batch-size",
+        "16",
+        "--pointnext-only",
+        "--skip-existing"
+      ]
+    },
+    {
+      "scene": "M11",
+      "stage": "open_depth",
+      "returncode": 0,
+      "wall_seconds": 1682.944740499981,
+      "log": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\thirteen_scene_ablation_v5_20261021\\logs\\M11_open_depth.log",
+      "command": [
+        "E:\\vk_lod_clusters1\\t1\\tools\\pointclipv2\\run_open_semantic_v2.py",
+        "--glb",
+        "E:\\vk_lod_clusters1\\t1\\_downloaded_resources\\11.glb",
+        "--output-dir",
+        "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\thirteen_scene_ablation_v5_20261021\\M11\\visual"
+      ]
+    },
+    {
+      "scene": "M11",
+      "stage": "open_surface",
+      "returncode": 0,
+      "wall_seconds": 830.6971639000112,
+      "log": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\thirteen_scene_ablation_v5_20261021\\logs\\M11_open_surface.log",
+      "command": [
+        "E:\\vk_lod_clusters1\\t1\\tools\\pointclipv2\\run_open_shading_v2.py",
+        "--glb",
+        "E:\\vk_lod_clusters1\\t1\\_downloaded_resources\\11.glb",
+        "--output-dir",
+        "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\thirteen_scene_ablation_v5_20261021\\M11\\visual"
+      ]
+    },
+    {
+      "scene": "M11",
+      "stage": "combine",
+      "returncode": 0,
+      "wall_seconds": 156.5629126999993,
+      "log": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\thirteen_scene_ablation_v5_20261021\\logs\\M11_combine.log",
+      "command": [
+        "E:\\vk_lod_clusters1\\t1\\tools\\pointclipv2\\combine_open_renderings.py",
+        "--glb",
+        "E:\\vk_lod_clusters1\\t1\\_downloaded_resources\\11.glb",
+        "--output-dir",
+        "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\thirteen_scene_ablation_v5_20261021\\M11\\visual"
+      ]
+    },
+    {
+      "scene": "M12",
+      "stage": "supervised",
+      "returncode": 0,
+      "wall_seconds": 298.2754705999978,
+      "log": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\thirteen_scene_ablation_v5_20261021\\logs\\M12_supervised.log",
+      "command": [
+        "E:\\vk_lod_clusters1\\t1\\tools\\pointnext_lod\\batch_analyze_glb_lod.py",
+        "--resources-dir",
+        "E:\\vk_lod_clusters1\\t1\\_downloaded_resources",
+        "--models",
+        "12.glb",
+        "--output-dir",
+        "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\thirteen_scene_ablation_v5_20261021\\M12\\closed",
+        "--pointnext-root",
+        "E:\\vk_lod_clusters1\\t1\\tools\\pointnext_lod\\PointNeXt",
+        "--cfg",
+        "E:\\vk_lod_clusters1\\t1\\tools\\pointnext_lod\\PointNeXt\\cfgs\\industrial_part\\pointnext-s-14class-encoder-compare-inference.yaml",
+        "--ckpt",
+        "E:\\vk_lod_clusters1\\t1\\models\\pointnext\\industrial-part-14class-best.pth",
+        "--classes-file",
+        "E:\\vk_lod_clusters1\\t1\\tools\\pointnext_lod\\industrial_part_14classes.txt",
+        "--num-points",
+        "8192",
+        "--batch-size",
+        "16",
+        "--pointnext-only",
+        "--skip-existing"
+      ]
+    },
+    {
+      "scene": "M12",
+      "stage": "open_depth",
+      "returncode": 0,
+      "wall_seconds": 891.9433568000095,
+      "log": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\thirteen_scene_ablation_v5_20261021\\logs\\M12_open_depth.log",
+      "command": [
+        "E:\\vk_lod_clusters1\\t1\\tools\\pointclipv2\\run_open_semantic_v2.py",
+        "--glb",
+        "E:\\vk_lod_clusters1\\t1\\_downloaded_resources\\12.glb",
+        "--output-dir",
+        "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\thirteen_scene_ablation_v5_20261021\\M12\\visual"
+      ]
+    },
+    {
+      "scene": "M12",
+      "stage": "open_surface",
+      "returncode": 0,
+      "wall_seconds": 505.5152143999876,
+      "log": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\thirteen_scene_ablation_v5_20261021\\logs\\M12_open_surface.log",
+      "command": [
+        "E:\\vk_lod_clusters1\\t1\\tools\\pointclipv2\\run_open_shading_v2.py",
+        "--glb",
+        "E:\\vk_lod_clusters1\\t1\\_downloaded_resources\\12.glb",
+        "--output-dir",
+        "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\thirteen_scene_ablation_v5_20261021\\M12\\visual"
+      ]
+    },
+    {
+      "scene": "M12",
+      "stage": "combine",
+      "returncode": 0,
+      "wall_seconds": 73.99952349998057,
+      "log": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\thirteen_scene_ablation_v5_20261021\\logs\\M12_combine.log",
+      "command": [
+        "E:\\vk_lod_clusters1\\t1\\tools\\pointclipv2\\combine_open_renderings.py",
+        "--glb",
+        "E:\\vk_lod_clusters1\\t1\\_downloaded_resources\\12.glb",
+        "--output-dir",
+        "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\thirteen_scene_ablation_v5_20261021\\M12\\visual"
+      ]
+    },
+    {
+      "scene": "M13",
+      "stage": "supervised",
+      "returncode": 0,
+      "wall_seconds": 357.3169933000172,
+      "log": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\thirteen_scene_ablation_v5_20261021\\logs\\M13_supervised.log",
+      "command": [
+        "E:\\vk_lod_clusters1\\t1\\tools\\pointnext_lod\\batch_analyze_glb_lod.py",
+        "--resources-dir",
+        "E:\\vk_lod_clusters1\\t1\\_downloaded_resources",
+        "--models",
+        "13.glb",
+        "--output-dir",
+        "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\thirteen_scene_ablation_v5_20261021\\M13\\closed",
+        "--pointnext-root",
+        "E:\\vk_lod_clusters1\\t1\\tools\\pointnext_lod\\PointNeXt",
+        "--cfg",
+        "E:\\vk_lod_clusters1\\t1\\tools\\pointnext_lod\\PointNeXt\\cfgs\\industrial_part\\pointnext-s-14class-encoder-compare-inference.yaml",
+        "--ckpt",
+        "E:\\vk_lod_clusters1\\t1\\models\\pointnext\\industrial-part-14class-best.pth",
+        "--classes-file",
+        "E:\\vk_lod_clusters1\\t1\\tools\\pointnext_lod\\industrial_part_14classes.txt",
+        "--num-points",
+        "8192",
+        "--batch-size",
+        "16",
+        "--pointnext-only",
+        "--skip-existing"
+      ]
+    },
+    {
+      "scene": "M13",
+      "stage": "open_depth",
+      "returncode": 0,
+      "wall_seconds": 1787.7593135999923,
+      "log": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\thirteen_scene_ablation_v5_20261021\\logs\\M13_open_depth.log",
+      "command": [
+        "E:\\vk_lod_clusters1\\t1\\tools\\pointclipv2\\run_open_semantic_v2.py",
+        "--glb",
+        "E:\\vk_lod_clusters1\\t1\\_downloaded_resources\\13.glb",
+        "--output-dir",
+        "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\thirteen_scene_ablation_v5_20261021\\M13\\visual"
+      ]
+    },
+    {
+      "scene": "M13",
+      "stage": "open_surface",
+      "returncode": 0,
+      "wall_seconds": 849.6145730999997,
+      "log": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\thirteen_scene_ablation_v5_20261021\\logs\\M13_open_surface.log",
+      "command": [
+        "E:\\vk_lod_clusters1\\t1\\tools\\pointclipv2\\run_open_shading_v2.py",
+        "--glb",
+        "E:\\vk_lod_clusters1\\t1\\_downloaded_resources\\13.glb",
+        "--output-dir",
+        "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\thirteen_scene_ablation_v5_20261021\\M13\\visual"
+      ]
+    },
+    {
+      "scene": "M13",
+      "stage": "combine",
+      "returncode": 0,
+      "wall_seconds": 153.03547209998942,
+      "log": "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\thirteen_scene_ablation_v5_20261021\\logs\\M13_combine.log",
+      "command": [
+        "E:\\vk_lod_clusters1\\t1\\tools\\pointclipv2\\combine_open_renderings.py",
+        "--glb",
+        "E:\\vk_lod_clusters1\\t1\\_downloaded_resources\\13.glb",
+        "--output-dir",
+        "E:\\vk_lod_clusters1\\t1\\lod_analysis_outputs\\thirteen_scene_ablation_v5_20261021\\M13\\visual"
+      ]
+    }
+  ],
+  "failed": [],
+  "policy_version": "adaptive_p10_v5.0",
+  "deployment_modified": false,
+  "evidence_ready": [
+    "M1",
+    "M2",
+    "M3",
+    "M4",
+    "M5",
+    "M6",
+    "M7",
+    "M8",
+    "M9",
+    "M10",
+    "M11",
+    "M12",
+    "M13"
+  ],
+  "current_scene": "M13",
+  "current_stage": "combine",
+  "completed_at_utc": "2026-10-21T17:15:40.127175+00:00"
+}

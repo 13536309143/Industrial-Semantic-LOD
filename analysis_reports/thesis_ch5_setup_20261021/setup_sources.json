@@ -1,0 +1,47 @@
+{
+  "scope": "Chapter 5 setup draft; GLB metadata inventory, not completed 13-scene benchmarks",
+  "glb_count": 13,
+  "mesh_instances": 68974,
+  "source_triangles_instances": 298929454,
+  "source_triangles_unique": 258842566,
+  "triangle_basis": "glTF primitive index count; active default scene; expanded by node instances",
+  "depth_basis": "scene root is depth 1",
+  "model_names": {
+    "M1": "手机喇叭检测线",
+    "M2": "圆形电容穿心焊接机",
+    "M3": "K31自动铆压机",
+    "M4": "极耳生产线",
+    "M5": "汽车链接器植入折弯设备",
+    "M6": "透气阀产线",
+    "M7": "焊接过渡线",
+    "M8": "转子自动生产线",
+    "M9": "MK地盖组装线",
+    "M10": "刷架总线",
+    "M11": "圆柱分选并入支架设备",
+    "M12": "磁保持继电器产线",
+    "M13": "软包动力电池模组组装线"
+  },
+  "name_evidence": "M1 full SHA256 matches former scene d; other names from root assembly nodes, abbreviated for presentation",
+  "M1_sha256": "0b9a5597b267f63edde781b2dfad3019fb20b4ee75d0ebf3ff708c4b2fc24d7b",
+  "hardware": {
+    "cpu": "Intel Core i5-10400F @2.90GHz",
+    "physical_memory_bytes": 34287771648,
+    "gpu": "NVIDIA GeForce RTX 3060",
+    "gpu_memory_MiB": 12288,
+    "current_os": "Windows 11 x64"
+  },
+  "supervised_environment_source": "experiments/pointnext/encoder-compare-two-seeds-20261019/pointnext_s/seed_2027/environment.json",
+  "training_protocol_source": "experiments/pointnext/encoder-compare-two-seeds-20261019/source_protocol.json",
+  "training_seeds_included": [
+    2026,
+    2027
+  ],
+  "training_seed_2028_excluded": true,
+  "scene_statistics_are_accuracy_labels": false,
+  "original_docx_modified": false,
+  "outputs": {
+    "第五章开头与5.1实验设置.md": "89d99e87adf0c3132f3ccbc38308505649b5087be4bc543ea9586bd0cf96cc9b",
+    "glb_inventory.json": "5963c10b77f013dad0236202c260ead5cc35c2bc5caabd8e4766beac81b2dd72",
+    "glb_inventory.csv": "2690d5f7ab22bf94c398ac354646596ca7afcee297216f5739da17324cd84396"
+  }
+}

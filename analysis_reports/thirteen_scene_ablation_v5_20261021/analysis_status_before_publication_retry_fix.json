@@ -1,0 +1,31 @@
+{
+  "status": "running",
+  "models": [
+    "M1",
+    "M2",
+    "M3",
+    "M4",
+    "M5",
+    "M6",
+    "M7",
+    "M8",
+    "M9",
+    "M10",
+    "M11",
+    "M12",
+    "M13"
+  ],
+  "complete": [
+    "M1",
+    "M2",
+    "M3",
+    "M4",
+    "M5"
+  ],
+  "failed": [],
+  "policy_version": "adaptive_p10_v5.0",
+  "main_conditions": 182,
+  "total_conditions": 299,
+  "current_scene": "M6",
+  "current_stage": "waiting_for_verified_evidence"
+}

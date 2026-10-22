@@ -1,0 +1,36 @@
+{
+  "status": "passed",
+  "images": [
+    {
+      "file": "analysis_reports\\thesis_ch5_fusion_20261022\\figures\\01_fourteen_configurations_paired_comparison.png",
+      "size": [
+        3636,
+        1853
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ]
+    },
+    {
+      "file": "analysis_reports\\thesis_ch5_fusion_20261022\\figures\\02_thirteen_scenes_fourteen_configurations_heatmap.png",
+      "size": [
+        4160,
+        2539
+      ],
+      "dpi": [
+        299.9994,
+        299.9994
+      ]
+    }
+  ],
+  "visually_inspected": true,
+  "checks": [
+    "Chinese labels legible",
+    "No text overlap or cropped labels",
+    "All fourteen configurations represented",
+    "Shared heatmap scale",
+    "Best configurations correctly highlighted",
+    "Metric labeled as distance, not accuracy"
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "status": "running",
+  "scenes": [
+    {
+      "scene": "M1",
+      "nodes": 1167,
+      "source_faces": 1723934,
+      "conditions": 23,
+      "policy_rows": 26841,
+      "depth_geometry_errors": 0,
+      "shading_geometry_errors": 0,
+      "all_policy_keys_unique_and_complete": true,
+      "all_P_counts_and_face_counts_reconcile": true,
+      "all_ratios_ordered_and_finite": true,
+      "all_nodes_retained": true,
+      "source_hashes_verified": true
+    },
+    {
+      "scene": "M2",
+      "nodes": 1480,
+      "source_faces": 2911273,
+      "conditions": 23,
+      "policy_rows": 34040,
+      "depth_geometry_errors": 0,
+      "shading_geometry_errors": 0,
+      "all_policy_keys_unique_and_complete": true,
+      "all_P_counts_and_face_counts_reconcile": true,
+      "all_ratios_ordered_and_finite": true,
+      "all_nodes_retained": true,
+      "source_hashes_verified": true
+    },
+    {
+      "scene": "M3",
+      "nodes": 1481,
+      "source_faces": 3433060,
+      "conditions": 23,
+      "policy_rows": 34063,
+      "depth_geometry_errors": 0,
+      "shading_geometry_errors": 0,
+      "all_policy_keys_unique_and_complete": true,
+      "all_P_counts_and_face_counts_reconcile": true,
+      "all_ratios_ordered_and_finite": true,
+      "all_nodes_retained": true,
+      "source_hashes_verified": true
+    },
+    {
+      "scene": "M4",
+      "nodes": 5451,
+      "source_faces": 10553614,
+      "conditions": 23,
+      "policy_rows": 125373,
+      "depth_geometry_errors": 0,
+      "shading_geometry_errors": 0,
+      "all_policy_keys_unique_and_complete": true,
+      "all_P_counts_and_face_counts_reconcile": true,
+      "all_ratios_ordered_and_finite": true,
+      "all_nodes_retained": true,
+      "source_hashes_verified": true
+    },
+    {
+      "scene": "M5",
+      "nodes": 1747,
+      "source_faces": 11760345,
+      "conditions": 23,
+      "policy_rows": 40181,
+      "depth_geometry_errors": 0,
+      "shading_geometry_errors": 0,
+      "all_policy_keys_unique_and_complete": true,
+      "all_P_counts_and_face_counts_reconcile": true,
+      "all_ratios_ordered_and_finite": true,
+      "all_nodes_retained": true,
+      "source_hashes_verified": true
+    }
+  ],
+  "failed": []
+}

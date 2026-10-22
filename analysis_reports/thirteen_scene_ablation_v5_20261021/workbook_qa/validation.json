@@ -1,0 +1,22 @@
+{
+  "sheets": [
+    "主结果",
+    "P档分布",
+    "成对对照",
+    "未知件几何",
+    "低置信候选",
+    "全部组合",
+    "场景与口径"
+  ],
+  "native_charts": 2,
+  "priority_fraction_cells_reconciled": 6440,
+  "source_and_pooled_counts_reconciled": true,
+  "paired_condition_labels_verified": true,
+  "calculation_engine": "Artifact Tool",
+  "native_excel_application_recalculation_tested": false,
+  "source_edit_propagation": true,
+  "source_restored": true,
+  "qa_only": false,
+  "output": "E:\\vk_lod_clusters1\\t1\\outputs\\thirteen_scene_ablation_20261021\\十三模型全量消融与结构树对照.xlsx",
+  "error_scan": "{\"kind\":\"notice\",\"message\":\"Cell search matched 0 entries.\"}"
+}
