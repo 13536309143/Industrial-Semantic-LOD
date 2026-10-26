@@ -1399,7 +1399,8 @@ void LodClusters::onUIRender()
             rowFmt("Assembly LOD pixels", "{:.2f}", cfg.assemblyLodPixelThreshold);
             rowText("Semantic LOD mode", semanticLodModeName(cfg.semanticLodMode));
             rowBool("Feature constraints", cfg.featureConstraints);
-            rowFmt("Feature importance weight", "{:.2f}", cfg.featureImportanceWeight);
+            rowFmt("Feature normal weight scale", "{:.2f}", cfg.featureImportanceWeight);
+            rowFmt("Feature anchor budget", "{:.3f}", cfg.featureAnchorBudget);
             rowFmt("Feature protect threshold", "{:.2f}", cfg.featureProtectThreshold);
             rowFmt("Feature critical threshold", "{:.2f}", cfg.featureCriticalThreshold);
             rowFmt("Meshopt fill weight", "{:.3f}", cfg.meshoptFillWeight);

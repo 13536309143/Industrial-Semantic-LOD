@@ -506,7 +506,8 @@ void Scene::applySemanticPolicyToConfig(clodConfig& config, const SemanticLodPol
   if(!policy.valid)
     return;
 
-  config.simplify_ratio = clampf(policy.simplifyRatio, 0.24f, 0.96f);
+  const float budgetContrast = 1.0f + 0.35f * clampf(policy.confidence, 0.0f, 1.0f);
+  config.simplify_ratio = clampf(powf(clampf(policy.simplifyRatio, 0.02f, 0.96f), budgetContrast), 0.12f, 0.96f);
   config.simplify_error_merge_previous *= policy.errorMergeScale;
   config.semantic_priority = int(std::min<uint32_t>(std::max<uint32_t>(policy.priority, 1), 10));
   config.semantic_confidence = policy.confidence;

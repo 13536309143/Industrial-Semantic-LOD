@@ -29,6 +29,7 @@ LodClusters::LodClusters(const Info& info)
   m_info.parameterRegistry->add({"supersample"}, &m_tweak.supersample);
   m_info.parameterRegistry->add({"debugui"}, &m_showDebugUI);
   m_info.parameterRegistry->add({"sequencescreenshot", "save screenshot at end of each sequence. 0 disabled (default), 1 full window, 2 rendered viewport"},(int*)&m_sequenceScreenshotMode, true);
+  m_info.parameterRegistry->add({"sequencelossless", "write sequence captures directly as lossless PNG"}, &m_sequenceLossless);
   m_info.parameterRegistry->add({"dumpspirv", "dumps compiled spirv into working directory"}, &m_resources.m_dumpSpirv);
   m_info.parameterRegistry->add({"camerastring"}, &m_cameraString);
   m_info.parameterRegistry->add({"cameraspeed"}, &m_cameraSpeed);
@@ -57,7 +58,10 @@ LodClusters::LodClusters(const Info& info)
   m_info.parameterRegistry->add({"assemblylodpixels"}, &m_sceneConfig.assemblyLodPixelThreshold);
   m_info.parameterRegistry->add({"meshoptfillweight"}, &m_sceneConfig.meshoptFillWeight);
   m_info.parameterRegistry->add({"featureconstraints"}, &m_sceneConfig.featureConstraints);
-  m_info.parameterRegistry->add({"featureimportanceweight"}, &m_sceneConfig.featureImportanceWeight);
+  m_info.parameterRegistry->add({"featurequalityguard", "validate automatic protection against ordinary geometry and normal error"}, &m_sceneConfig.featureQualityGuard);
+  m_info.parameterRegistry->add({"featureseamprotection", "enable soft seam hints on detected critical rims"}, &m_sceneConfig.featureSeamProtection);
+  m_info.parameterRegistry->add({"featureimportanceweight", "bounded source-normal soft metric scale; legacy option name retained"}, &m_sceneConfig.featureImportanceWeight);
+  m_info.parameterRegistry->add({"featureanchorbudget", "maximum fraction of welded vertices used as geometric anchors"}, &m_sceneConfig.featureAnchorBudget);
   m_info.parameterRegistry->add({"featureprotectthreshold"}, &m_sceneConfig.featureProtectThreshold);
   m_info.parameterRegistry->add({"featurecriticalthreshold"}, &m_sceneConfig.featureCriticalThreshold);
   m_info.parameterRegistry->add({"semanticlodmode"}, &m_sceneConfig.semanticLodMode);

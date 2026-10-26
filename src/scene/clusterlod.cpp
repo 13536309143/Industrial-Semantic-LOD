@@ -501,7 +501,10 @@ namespace lodclusters {
      clodInfo.simplify_error_merge_additive = m_config.lodErrorMergeAdditive;
      clodInfo.simplify_error_edge_limit = m_config.lodErrorEdgeLimit;
      clodInfo.feature_constraints = m_config.featureConstraints;
+     clodInfo.feature_quality_guard = m_config.featureQualityGuard;
+     clodInfo.feature_seam_protection = m_config.featureSeamProtection;
      clodInfo.feature_attribute_weight = m_config.featureImportanceWeight;
+     clodInfo.feature_hard_lock_ratio = std::max(0.0f, std::min(0.35f, m_config.featureAnchorBudget));
      clodInfo.feature_protect_threshold = m_config.featureProtectThreshold;
      clodInfo.feature_critical_threshold = m_config.featureCriticalThreshold;
 

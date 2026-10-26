@@ -45,13 +45,16 @@ struct clodConfig
 	bool optimize_bounds;
 	bool optimize_clusters;
 	bool feature_constraints;
-	float feature_attribute_weight;
+	bool feature_seam_protection; // Soft automatic seam hints, separate from caller flags.
+	bool feature_quality_guard; // Adaptive automatic proposals against true feature-off surface/curve baseline; caller locks remain mandatory.
+	float feature_attribute_weight; // Scale of bounded source-normal attributes, not an importance-label penalty.
 	float feature_protect_threshold;
 	float feature_critical_threshold;
 	int semantic_priority;
 	float semantic_confidence;
 	float feature_soft_scale;
-	float feature_hard_lock_ratio;
+	float feature_hard_lock_ratio; // Maximum fraction of welded vertices selected as genuine geometric Lock anchors.
+	float feature_rim_budget_ratio; // Separate adaptive whole-rim proposal: anchor positions per current triangle budget; zero disables it.
 	float hierarchy_depth_decay;
 	float hierarchy_min_ratio;
 	// Zero retains legacy behavior. Positive limits are independent of semantic confidence.
@@ -76,9 +79,9 @@ struct clodFeatureMetrics
 	uint64_t circular_hole_vertices = 0;
 	uint64_t functional_boundary_vertices = 0;
 	uint64_t cylindrical_vertices = 0;
-	uint64_t thin_wall_vertices = 0;
+	uint64_t thin_wall_vertices = 0; // Compatibility name: anisotropic short-edge detail proxy, not measured thickness.
 	uint64_t protected_vertices = 0;
-	uint64_t critical_vertices = 0;
+	uint64_t critical_vertices = 0; // Proposed geometric anchors; strict mode retains all, adaptive mode validates their complete-curve benefit.
 	uint64_t feature_importance_sum_ppm = 0;
 	uint64_t feature_importance_max_ppm = 0;
 };
@@ -99,7 +102,11 @@ struct clodMesh
 	size_t attribute_count;
 	unsigned int attribute_protect_mask;
 	const float* feature_importance;
+	// Number of appended geometric normal attributes (zero for caller attributes).
+	size_t feature_attribute_count;
 	const unsigned char* feature_lock;
+    const unsigned char* feature_seam_protect; // Budget-sensitive geometric seam hint, never a hard lock.
+    const unsigned char* feature_user_lock; // Original caller feature flags, never relaxed.
 	const unsigned int* component_ids;
 	clodFeatureMetrics* feature_metrics;
 #ifdef __cplusplus

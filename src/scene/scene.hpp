@@ -40,7 +40,7 @@ enum SemanticLodMode : uint32_t
 // Build-time scene settings that affect cache identity and GPU-visible payload layout.
 struct SceneConfig
 {
-  static const uint32_t version = 9;
+  static const uint32_t version = 17;
 
 
   uint32_t clusterVertices    = 128;
@@ -83,13 +83,16 @@ struct SceneConfig
   float    assemblyLodPixelThreshold   = 24.0f;
 
   bool  featureConstraints        = true;
-  float featureImportanceWeight   = 4.0f;
+  bool  featureQualityGuard       = true;
+  bool  featureSeamProtection     = true;
+  float featureImportanceWeight   = 4.0f; // Bounded normal metric scale, not a scalar label weight.
+  float featureAnchorBudget       = 0.03f;
   float featureProtectThreshold   = 0.78f;
   float featureCriticalThreshold  = 0.93f;
 
   uint32_t semanticLodMode = SEMANTIC_LOD_POINTNEXT_POINTCLIP_STRUCTURE;
 
-  uint32_t reservedData[11] = {};
+  uint32_t reservedData[10] = {};
 
 
 };

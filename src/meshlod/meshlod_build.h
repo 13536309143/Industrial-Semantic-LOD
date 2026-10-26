@@ -102,13 +102,16 @@ clodConfig clodDefaultConfig(size_t max_triangles)
 	config.simplify_fallback_permissive = true;
 	config.simplify_fallback_sloppy = true;
 	config.feature_constraints = true;
+	config.feature_seam_protection = true;
+	config.feature_quality_guard = true;
 	config.feature_attribute_weight = 4.0f;
 	config.feature_protect_threshold = 0.78f;
 	config.feature_critical_threshold = 0.93f;
 	config.semantic_priority = 0;
 	config.semantic_confidence = 1.0f;
 	config.feature_soft_scale = 1.0f;
-	config.feature_hard_lock_ratio = 1.0f;
+	config.feature_hard_lock_ratio = 0.03f;
+	config.feature_rim_budget_ratio = 0.25f;
 	config.hierarchy_depth_decay = 0.0f;
 	config.hierarchy_min_ratio = config.simplify_ratio;
 	config.simplify_error_relative = 0.0f;
@@ -211,6 +214,8 @@ size_t clodBuild(clodConfig config, clodMesh mesh, void* output_context, clodOut
 	context.output_callback = output_callback;
 
 	context.locks.resize(mesh.vertex_count);
+    if (mesh.vertex_lock)
+        std::copy(mesh.vertex_lock, mesh.vertex_lock + mesh.vertex_count, context.locks.begin());
 
 	context.remap.resize(mesh.vertex_count);
 

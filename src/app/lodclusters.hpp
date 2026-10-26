@@ -244,6 +244,7 @@ private:
   int            m_frames                 = 0;
   double         m_animTime               = 0;
   ScreenshotMode m_sequenceScreenshotMode = SCREENSHOT_OFF;
+  bool m_sequenceLossless = false;
 
   Tweak m_tweak;
   Tweak m_tweakLast;

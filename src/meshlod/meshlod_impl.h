@@ -50,7 +50,9 @@ struct IterationContext
 	std::vector<unsigned int> component_ids;
 	std::vector<unsigned int> base_indices;
 	std::vector<float> feature_importance;
+	std::vector<float> feature_normals;
 	std::vector<unsigned char> feature_locks;
+    std::vector<unsigned char> feature_seam_protect;
 	std::vector<float> feature_attributes;
 	std::vector<float> feature_attribute_weights;
 

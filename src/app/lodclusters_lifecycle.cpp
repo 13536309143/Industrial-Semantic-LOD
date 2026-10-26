@@ -318,7 +318,7 @@ void LodClusters::parameterSequenceCallback(const nvutils::ParameterSequencer::S
       screenshotMode = SCREENSHOT_VIEWPORT;
     }
 
-    std::string filename = fmt::format("screenshot_{}_{}.jpg", state.index, state.description);
+    std::string filename = fmt::format("screenshot_{}_{}.{}", state.index, state.description, m_sequenceLossless ? "png" : "jpg");
     if(screenshotMode == SCREENSHOT_WINDOW)
     {
       m_app->saveScreenShot(std::filesystem::path(filename), 100);
