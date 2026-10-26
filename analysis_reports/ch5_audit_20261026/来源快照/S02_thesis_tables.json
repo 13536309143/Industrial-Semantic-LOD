@@ -1,0 +1,3911 @@
+[
+  {
+    "index": 671,
+    "caption": "表5-1 实验平台配置",
+    "section": "5.1.1 实验环境",
+    "rows": [
+      [
+        {
+          "text": "配置项目",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "具体配置",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "处理器",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "Intel Core i5-10400F，主频2.90 GHz",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "运行内存",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "32GB",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "显卡",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "NVIDIA GeForce RTX 3060，显存12 GB",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "操作系统",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "Windows11",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "监督学习环境",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "Python 3.10.20，PyTorch 2.2.0",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "GPU计算环境",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "CUDA 12.1，cuDNN 8.8.1",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "渲染开发环境",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "C++20，Visual Studio 2022，CMake 4.2.1",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "图形开发环境",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "Vulkan SDK 1.4.335.0",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ]
+    ]
+  },
+  {
+    "index": 680,
+    "caption": "表5-2 工业三维场景模型规模",
+    "section": "5.1.2 实验数据",
+    "rows": [
+      [
+        {
+          "text": "场景编号",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "模型名称",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "网格实例数",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "原始三角形数/万",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "最大节点层级深度",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "M1",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "喇叭检测线",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "1,167",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "172.39",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "6",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "M2",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "电容焊接机 ",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "1,480",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "291.13",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "5",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "M3",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "自动铆压机",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "1,481",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "343.31",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "5",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "M4",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "极耳生产线 ",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "5,451",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "1,055.36",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "8",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "M5",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "折弯设备机",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "1,747",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "1,176.03",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "7",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "M6",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "透气阀产线",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "3,347",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "1,549.62",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "6",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "M7",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "焊接生产线",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "1,026",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "1,990.57",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "7",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "M8",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "转子生产线",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "6,103",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "2,070.33",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "13",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "M9",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "地盖线产线",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "3,118",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "2,392.14",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "7",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "M10",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "刷架总产线",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "5,198",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "4,759.11",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "10",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "M11",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "电池分选线",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "15,723",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "3,706.86",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "11",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "M12",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "继电器产线",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "7,163",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "5,185.70",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "10",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "M13",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "电池模组产线",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "15,968",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "5,200.39",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "11",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ]
+    ]
+  },
+  {
+    "index": 694,
+    "caption": "表5-3 监督编码方法对比",
+    "section": "5.2.2 不同监督编码方法对比",
+    "rows": [
+      [
+        {
+          "text": "方法",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "参数量／M",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "OA／%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "mAcc／%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "Macro-F1／%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "延迟／ms",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "PointNet",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "3.473",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "67.64±0.47",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "39.67±0.33",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "39.97±0.43",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "4.27",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "PointNet++ ",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "1.466",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "94.63±0.23",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "91.04±0.58",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "91.26±0.46",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "21.05",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "PointNeXt（四分下采样）",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "1.367",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "94.80±0.13",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "91.52±0.21",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "91.70±0.48",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "9.56",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "ISPointNet监督语义分支",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "1.367",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "95.40±0.03",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "92.45±0.04",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "92.91±0.21",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "25.00",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ]
+    ]
+  },
+  {
+    "index": 701,
+    "caption": "表5-4 两种下采样配置的分类别F1对比",
+    "section": "5.2.3 渐进式下采样配置方法对比",
+    "rows": [
+      [
+        {
+          "text": "零件类别",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "样本数",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "四级四分下采样\nF1／%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "四级二分下采样\nF1／%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "差值／\n百分点",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "螺钉／螺栓／螺柱",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "4208",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "97.04",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "97.14",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.10",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "螺母",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "469",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "97.15",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "97.52",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.37",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "垫圈／环／隔套",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "767",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "97.09",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "97.43",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.34",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "销／铆钉／键",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "2941",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "97.26",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "97.54",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.28",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "轴承／衬套／导向件",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "562",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "88.77",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "90.64",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "1.87",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "齿轮／带轮／链条",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "234",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "92.02",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "92.62",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.60",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "电机／减速电机",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "222",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "94.05",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "96.22",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "2.17",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "管件／阀门／喷嘴",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "735",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "81.52",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "83.12",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "1.60",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "连接件／夹具",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "361",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "88.61",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "90.13",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "1.52",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "轮／脚轮",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "105",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "94.74",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "96.17",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "1.44",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "旋转流体机械",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "136",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "93.03",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "94.14",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "1.11",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "板／盘／形状件",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "138",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "85.65",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "84.87",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "−0.78",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "把手／控制件",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "562",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "92.03",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "94.72",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "2.69",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "弹簧",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "102",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "84.88",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "88.54",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "3.66",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ]
+    ]
+  },
+  {
+    "index": 718,
+    "caption": "表5-5 不同分支组合的宏平均分布距离",
+    "section": "5.3.2 多源分支消融结果与分析",
+    "rows": [
+      [
+        {
+          "text": "信息组合",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "配置记号",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "H0距离／百分点↓",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "H1距离／百分点↓",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "距离减少量",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "监督语义",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "N",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "72.9",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "72.61",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.29",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "开放语义",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "C",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "77.29",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "76.68",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.62",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "显式几何",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "G",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "18.93",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "14.02",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "4.91",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "监督＋开放语义",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "NC",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "68.12",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "67.67",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.46",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "监督语义＋几何",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "NG",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "13.1",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "6.13",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "6.97",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "开放语义＋几何",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "CG",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "21.27",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "12.2",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "9.07",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "完整融合",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "NCG",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "11.01",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "3.85",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "7.16",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ]
+    ]
+  },
+  {
+    "index": 725,
+    "caption": "表5-6 完整融合配置NCG_H1的逐实例人工对照结果",
+    "section": "5.3.2 多源分支消融结果与分析",
+    "rows": [
+      [
+        {
+          "text": "模型",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "实例数",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "正确数",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "错误数",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "准确率",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "M1",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "1,167",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "960",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "207",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "82.26%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "M2",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "1,480",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "1,165",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "315",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "78.72%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "M3",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "1,481",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "1,185",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "296",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "80.01%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "M4",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "5,451",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "4,710",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "741",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "86.41%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "M5",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "1,747",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "1,459",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "288",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "83.51%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "M6",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "3,347",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "2,731",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "616",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "81.60%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "M7",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "1,026",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "881",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "145",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "85.87%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "M8",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "6,103",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "4,644",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "1,459",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "76.09%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "M9",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "3,118",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "2,625",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "493",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "84.19%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "M10",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "5,198",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "4,631",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "567",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "89.09%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "M11",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "15,723",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "11,839",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "3,884",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "75.30%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "M12",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "7,163",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "6,454",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "709",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "90.10%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "M13",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "15,968",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "14,084",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "1,884",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "88.20%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "合计",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "68,972",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "57,368",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "11,604",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "83.18%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ]
+    ]
+  },
+  {
+    "index": 748,
+    "caption": "表5-7 不同目标保留率下的平均指标",
+    "section": "5.4.2 实验结果与分析",
+    "rows": [
+      [
+        {
+          "text": "目标保留率",
+          "span": 1,
+          "vmerge": "restart",
+          "images": 0
+        },
+        {
+          "text": "策略",
+          "span": 1,
+          "vmerge": "restart",
+          "images": 0
+        },
+        {
+          "text": "实际均值",
+          "span": 5,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "",
+          "span": 1,
+          "vmerge": "continue",
+          "images": 0
+        },
+        {
+          "text": "",
+          "span": 1,
+          "vmerge": "continue",
+          "images": 0
+        },
+        {
+          "text": "几何RMS(%)",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "几何P95(%)",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "RMSE",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "PSNR(dB)",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "SSIM",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "12.5%",
+          "span": 1,
+          "vmerge": "restart",
+          "images": 0
+        },
+        {
+          "text": "A",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.041562",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.077277",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "17.880",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "23.743",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.939628",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "",
+          "span": 1,
+          "vmerge": "continue",
+          "images": 0
+        },
+        {
+          "text": "B",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.047035",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.060199",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "17.771",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "23.810",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.939885",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "",
+          "span": 1,
+          "vmerge": "continue",
+          "images": 0
+        },
+        {
+          "text": "C",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.039732",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.074505",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "17.906",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "23.728",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.939429",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "",
+          "span": 1,
+          "vmerge": "continue",
+          "images": 0
+        },
+        {
+          "text": "D",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.034878",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.054952",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "17.640",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "23.860",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.941207",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "25%",
+          "span": 1,
+          "vmerge": "restart",
+          "images": 0
+        },
+        {
+          "text": "A",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.017031",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.026691",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "16.764",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "24.333",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.945177",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "",
+          "span": 1,
+          "vmerge": "continue",
+          "images": 0
+        },
+        {
+          "text": "B",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.015463",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.020975",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "16.579",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "24.437",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.945849",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "",
+          "span": 1,
+          "vmerge": "continue",
+          "images": 0
+        },
+        {
+          "text": "C",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.014837",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.024953",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "16.810",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "24.316",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.945107",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "",
+          "span": 1,
+          "vmerge": "continue",
+          "images": 0
+        },
+        {
+          "text": "D",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.013794",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.019677",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "16.589",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "24.432",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.945776",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "50%",
+          "span": 1,
+          "vmerge": "restart",
+          "images": 0
+        },
+        {
+          "text": "A",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.003684",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.003345",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "13.509",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "26.557",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.960046",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "",
+          "span": 1,
+          "vmerge": "continue",
+          "images": 0
+        },
+        {
+          "text": "B",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.003432",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.002289",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "12.942",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "27.037",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.962351",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "",
+          "span": 1,
+          "vmerge": "continue",
+          "images": 0
+        },
+        {
+          "text": "C",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.003636",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.003109",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "13.508",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "26.558",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.960072",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "",
+          "span": 1,
+          "vmerge": "continue",
+          "images": 0
+        },
+        {
+          "text": "D",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.003361",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.002128",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "12.950",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "27.030",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.962193",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "75%",
+          "span": 1,
+          "vmerge": "restart",
+          "images": 0
+        },
+        {
+          "text": "A",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.002962",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.000607",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "10.751",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "28.927",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.972510",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "",
+          "span": 1,
+          "vmerge": "continue",
+          "images": 0
+        },
+        {
+          "text": "B",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.000628",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "3.45E-08",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "4.787",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "35.416",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.991155",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "",
+          "span": 1,
+          "vmerge": "continue",
+          "images": 0
+        },
+        {
+          "text": "C",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.002905",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.000565",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "10.694",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "28.979",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.972732",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "",
+          "span": 1,
+          "vmerge": "continue",
+          "images": 0
+        },
+        {
+          "text": "D",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.000573",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "2.82E-08",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "4.774",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "35.469",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.991165",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ]
+    ]
+  },
+  {
+    "index": 751,
+    "caption": "表5-8 不同目标保留率下的最佳改善率",
+    "section": "5.4.2 实验结果与分析",
+    "rows": [
+      [
+        {
+          "text": "目标保留率",
+          "span": 1,
+          "vmerge": "restart",
+          "images": 0
+        },
+        {
+          "text": "策略",
+          "span": 1,
+          "vmerge": "restart",
+          "images": 0
+        },
+        {
+          "text": "最佳改善率（相对策略A，%）",
+          "span": 5,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "",
+          "span": 1,
+          "vmerge": "continue",
+          "images": 0
+        },
+        {
+          "text": "",
+          "span": 1,
+          "vmerge": "continue",
+          "images": 0
+        },
+        {
+          "text": "RMS降低率",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "P95降低率",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "RMSE降低率",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "对应MSE降低率",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "SSIM失真降低率",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "12.5%",
+          "span": 1,
+          "vmerge": "restart",
+          "images": 0
+        },
+        {
+          "text": "A",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.00%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.00%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.00%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.00%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.00%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "",
+          "span": 1,
+          "vmerge": "continue",
+          "images": 0
+        },
+        {
+          "text": "B",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "20.16%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "38.09%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "1.38%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "2.72%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.72%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "",
+          "span": 1,
+          "vmerge": "continue",
+          "images": 0
+        },
+        {
+          "text": "C",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "6.72%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "5.67%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.40%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.51%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.21%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "",
+          "span": 1,
+          "vmerge": "continue",
+          "images": 0
+        },
+        {
+          "text": "D",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "24.37%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "44.83%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "3.05%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "5.93%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "5.94%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "25%",
+          "span": 1,
+          "vmerge": "restart",
+          "images": 0
+        },
+        {
+          "text": "A",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.00%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.00%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.00%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.00%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.00%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "",
+          "span": 1,
+          "vmerge": "continue",
+          "images": 0
+        },
+        {
+          "text": "B",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "13.39%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "43.77%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "1.92%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "4.02%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "1.74%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "",
+          "span": 1,
+          "vmerge": "continue",
+          "images": 0
+        },
+        {
+          "text": "C",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "18.35%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "11.32%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.44%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.86%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.56%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "",
+          "span": 1,
+          "vmerge": "continue",
+          "images": 0
+        },
+        {
+          "text": "D",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "30.74%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "52.67%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "2.08%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "4.04%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "2.24%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "50%",
+          "span": 1,
+          "vmerge": "restart",
+          "images": 0
+        },
+        {
+          "text": "A",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.00%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.00%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.00%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.00%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.00%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "",
+          "span": 1,
+          "vmerge": "continue",
+          "images": 0
+        },
+        {
+          "text": "B",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "22.99%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "62.16%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "9.25%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "16.71%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "10.91%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "",
+          "span": 1,
+          "vmerge": "continue",
+          "images": 0
+        },
+        {
+          "text": "C",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "4.77%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "8.77%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.07%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.14%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.35%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "",
+          "span": 1,
+          "vmerge": "continue",
+          "images": 0
+        },
+        {
+          "text": "D",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "27.36%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "65.52%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "9.13%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "16.51%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "10.68%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "75%",
+          "span": 1,
+          "vmerge": "restart",
+          "images": 0
+        },
+        {
+          "text": "A",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.00%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.00%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.00%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.00%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "0.00%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "",
+          "span": 1,
+          "vmerge": "continue",
+          "images": 0
+        },
+        {
+          "text": "B",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "85.18%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "100.00%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "80.54%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "96.24%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "85.22%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "",
+          "span": 1,
+          "vmerge": "continue",
+          "images": 0
+        },
+        {
+          "text": "C",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "2.82%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "7.55%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "1.24%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "2.31%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "2.41%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "",
+          "span": 1,
+          "vmerge": "continue",
+          "images": 0
+        },
+        {
+          "text": "D",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "86.60%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "100.00%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "80.88%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "96.43%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "85.44%",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ]
+    ]
+  },
+  {
+    "index": 774,
+    "caption": "表5-9 策略A与策略D的整体与局部多示例对照",
+    "section": "5.4.2 实验结果与分析",
+    "rows": [
+      [
+        {
+          "text": "模型名",
+          "span": 1,
+          "vmerge": "restart",
+          "images": 0
+        },
+        {
+          "text": "整体及局部场景渲染图",
+          "span": 2,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "局部像素误差改善热力图",
+          "span": 1,
+          "vmerge": "restart",
+          "images": 0
+        },
+        {
+          "text": "局部边缘轮廓误差",
+          "span": 2,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "",
+          "span": 1,
+          "vmerge": "continue",
+          "images": 0
+        },
+        {
+          "text": "策略A",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "策略D",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "",
+          "span": 1,
+          "vmerge": "continue",
+          "images": 0
+        },
+        {
+          "text": "策略A",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "策略D",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        }
+      ],
+      [
+        {
+          "text": "M3_75%_整机",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "",
+          "span": 1,
+          "vmerge": null,
+          "images": 1
+        },
+        {
+          "text": "",
+          "span": 1,
+          "vmerge": null,
+          "images": 1
+        },
+        {
+          "text": "",
+          "span": 1,
+          "vmerge": null,
+          "images": 1
+        },
+        {
+          "text": "",
+          "span": 1,
+          "vmerge": null,
+          "images": 1
+        },
+        {
+          "text": "",
+          "span": 1,
+          "vmerge": null,
+          "images": 1
+        }
+      ],
+      [
+        {
+          "text": "M4_75%_整机",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "",
+          "span": 1,
+          "vmerge": null,
+          "images": 1
+        },
+        {
+          "text": "",
+          "span": 1,
+          "vmerge": null,
+          "images": 1
+        },
+        {
+          "text": "",
+          "span": 1,
+          "vmerge": null,
+          "images": 1
+        },
+        {
+          "text": "",
+          "span": 1,
+          "vmerge": null,
+          "images": 1
+        },
+        {
+          "text": "",
+          "span": 1,
+          "vmerge": null,
+          "images": 1
+        }
+      ],
+      [
+        {
+          "text": "M1_25%_圆盘外缘",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "",
+          "span": 1,
+          "vmerge": null,
+          "images": 1
+        },
+        {
+          "text": "",
+          "span": 1,
+          "vmerge": null,
+          "images": 1
+        },
+        {
+          "text": "",
+          "span": 1,
+          "vmerge": null,
+          "images": 1
+        },
+        {
+          "text": "",
+          "span": 1,
+          "vmerge": null,
+          "images": 1
+        },
+        {
+          "text": "",
+          "span": 1,
+          "vmerge": null,
+          "images": 1
+        }
+      ],
+      [
+        {
+          "text": "M1_12.5%_块状部件端角",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "",
+          "span": 1,
+          "vmerge": null,
+          "images": 1
+        },
+        {
+          "text": "",
+          "span": 1,
+          "vmerge": null,
+          "images": 1
+        },
+        {
+          "text": "",
+          "span": 1,
+          "vmerge": null,
+          "images": 1
+        },
+        {
+          "text": "",
+          "span": 1,
+          "vmerge": null,
+          "images": 1
+        },
+        {
+          "text": "",
+          "span": 1,
+          "vmerge": null,
+          "images": 1
+        }
+      ],
+      [
+        {
+          "text": "M2_25%_齿轮及轴段",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "",
+          "span": 1,
+          "vmerge": null,
+          "images": 1
+        },
+        {
+          "text": "",
+          "span": 1,
+          "vmerge": null,
+          "images": 1
+        },
+        {
+          "text": "",
+          "span": 1,
+          "vmerge": null,
+          "images": 1
+        },
+        {
+          "text": "",
+          "span": 1,
+          "vmerge": null,
+          "images": 1
+        },
+        {
+          "text": "",
+          "span": 1,
+          "vmerge": null,
+          "images": 1
+        }
+      ],
+      [
+        {
+          "text": "M2_12.5%_齿轮齿缘与下轴段",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "",
+          "span": 1,
+          "vmerge": null,
+          "images": 1
+        },
+        {
+          "text": "",
+          "span": 1,
+          "vmerge": null,
+          "images": 1
+        },
+        {
+          "text": "",
+          "span": 1,
+          "vmerge": null,
+          "images": 1
+        },
+        {
+          "text": "",
+          "span": 1,
+          "vmerge": null,
+          "images": 1
+        },
+        {
+          "text": "",
+          "span": 1,
+          "vmerge": null,
+          "images": 1
+        }
+      ],
+      [
+        {
+          "text": "M3_12.5%_圆形孔口",
+          "span": 1,
+          "vmerge": null,
+          "images": 0
+        },
+        {
+          "text": "",
+          "span": 1,
+          "vmerge": null,
+          "images": 1
+        },
+        {
+          "text": "",
+          "span": 1,
+          "vmerge": null,
+          "images": 1
+        },
+        {
+          "text": "",
+          "span": 1,
+          "vmerge": null,
+          "images": 1
+        },
+        {
+          "text": "",
+          "span": 1,
+          "vmerge": null,
+          "images": 1
+        },
+        {
+          "text": "",
+          "span": 1,
+          "vmerge": null,
+          "images": 1
+        }
+      ]
+    ]
+  }
+]

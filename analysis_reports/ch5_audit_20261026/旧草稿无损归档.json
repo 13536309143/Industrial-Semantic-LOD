@@ -1,0 +1,11 @@
+{
+  "target": "E:\\vk_lod_clusters1\\t1\\.artifacts\\ch54_rebuilt_20261025\\revision1_draft",
+  "archive": "E:\\vk_lod_clusters1\\t1\\.artifacts\\_archived\\revision1_draft_20261026.zip",
+  "source_files": 93899,
+  "source_bytes": 6404674326,
+  "archive_bytes": 1883751762,
+  "zip_crc_verified": true,
+  "archive_sha256": "56741511a86ba29e7445fa4b427248e6db854f4b0ff30bcbd5929746a556cef5",
+  "removed_files": 93899,
+  "reclaimed_bytes": 4520922564
+}

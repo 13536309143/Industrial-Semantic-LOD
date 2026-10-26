@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "sheets": 17,
+  "raw_training_runs": 8,
+  "raw_fusion_conditions": 182,
+  "raw_simplification_conditions": 64,
+  "independent_mean_best_checks": 160,
+  "classification_difference_errors": 5,
+  "instance_counts_arithmetic_only": true
+}

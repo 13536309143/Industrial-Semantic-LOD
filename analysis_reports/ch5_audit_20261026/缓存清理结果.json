@@ -1,0 +1,14 @@
+{
+  "deleted_files": 911,
+  "deleted_bytes": 51151810,
+  "skipped": [],
+  "scope": "E:\\vk_lod_clusters1\\t1\\.artifacts",
+  "preserved": [
+    "最终64组结果",
+    "全部训练结果和权重",
+    "原始模型与策略文件",
+    "完整正负实验记录",
+    "当前展示图与独立小图",
+    "所有外部目录链接的目标"
+  ]
+}

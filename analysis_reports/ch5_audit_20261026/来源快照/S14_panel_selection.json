@@ -1,0 +1,1527 @@
+{
+  "cases": [
+    {
+      "number": 1,
+      "name": "01_M1_75%_整景可见表面",
+      "model": 1,
+      "kind": "whole",
+      "mesh": null,
+      "ratio": 0.75,
+      "label": "整景可见表面",
+      "view": "az_090",
+      "box": [
+        449,
+        140,
+        1471,
+        1034
+      ],
+      "roi": [
+        470,
+        200,
+        1000,
+        670
+      ],
+      "panels": {
+        "A_full": {
+          "file": "图5-5_A_D十二例独立小图/01_M1_75%_整景可见表面/01_A_整体.png",
+          "local_file": "01_M1_75%_整景可见表面/01_A_整体.png",
+          "title": "A 整体",
+          "width": 1022,
+          "height": 894,
+          "sha256": "46f86b674f5193b43d29297e6680d8cb8433bfdcdb4569eb2616baa8f4711528"
+        },
+        "D_full": {
+          "file": "图5-5_A_D十二例独立小图/01_M1_75%_整景可见表面/02_D_整体.png",
+          "local_file": "01_M1_75%_整景可见表面/02_D_整体.png",
+          "title": "D 整体",
+          "width": 1022,
+          "height": 894,
+          "sha256": "74da22c8222c8167c66922c727fb3367bf5180ad6364bd478bc313b49190fe55"
+        },
+        "A_zoom": {
+          "file": "图5-5_A_D十二例独立小图/01_M1_75%_整景可见表面/03_A_局部放大.png",
+          "local_file": "01_M1_75%_整景可见表面/03_A_局部放大.png",
+          "title": "A 局部放大",
+          "width": 530,
+          "height": 470,
+          "sha256": "14afef6b9351cb4be8c55feb2ae5aa5c755c508bb0b7d54426dd524729bb30d6"
+        },
+        "D_zoom": {
+          "file": "图5-5_A_D十二例独立小图/01_M1_75%_整景可见表面/04_D_局部放大.png",
+          "local_file": "01_M1_75%_整景可见表面/04_D_局部放大.png",
+          "title": "D 局部放大",
+          "width": 530,
+          "height": 470,
+          "sha256": "3c28055dd9dc619ced82716c0a9e9cee4497e0debd8e6df0a7540f7100769f1c"
+        },
+        "A_error": {
+          "file": "图5-5_A_D十二例独立小图/01_M1_75%_整景可见表面/05_A_像素误差.png",
+          "local_file": "01_M1_75%_整景可见表面/05_A_像素误差.png",
+          "title": "A 像素误差",
+          "width": 530,
+          "height": 470,
+          "sha256": "f546b65912b49aa00da87ff02188be90f86f4ca17f8941b5de535ee0ab1b77e8"
+        },
+        "D_error": {
+          "file": "图5-5_A_D十二例独立小图/01_M1_75%_整景可见表面/06_D_像素误差.png",
+          "local_file": "01_M1_75%_整景可见表面/06_D_像素误差.png",
+          "title": "D 像素误差",
+          "width": 530,
+          "height": 470,
+          "sha256": "d05f8c7b9206c695fc7b99431ec65ad6a92ba6eef71b1ef978a47bcc1196d078"
+        },
+        "improvement": {
+          "file": "图5-5_A_D十二例独立小图/01_M1_75%_整景可见表面/07_A减D_像素误差改善.png",
+          "local_file": "01_M1_75%_整景可见表面/07_A减D_像素误差改善.png",
+          "title": "D相对A的像素误差改善",
+          "width": 530,
+          "height": 470,
+          "sha256": "4aaf3362395cbd6d8508975c8017a163265cbf861b90b8f9d1ea4570c29588c3"
+        },
+        "A_outline": {
+          "file": "图5-5_A_D十二例独立小图/01_M1_75%_整景可见表面/08_A_边缘轮廓误差.png",
+          "local_file": "01_M1_75%_整景可见表面/08_A_边缘轮廓误差.png",
+          "title": "A 边缘／轮廓",
+          "width": 530,
+          "height": 470,
+          "sha256": "f7e68e3f1b886a9c07001ad36faa30469c2f07e6138644e221688a73607013d2"
+        },
+        "D_outline": {
+          "file": "图5-5_A_D十二例独立小图/01_M1_75%_整景可见表面/09_D_边缘轮廓误差.png",
+          "local_file": "01_M1_75%_整景可见表面/09_D_边缘轮廓误差.png",
+          "title": "D 边缘／轮廓",
+          "width": 530,
+          "height": 470,
+          "sha256": "b0eacf55d2f4ebb86bebc75a9975a0c849e1213f19867bb3c6300e9a617fbdf6"
+        },
+        "A_locator": {
+          "file": "图5-5_A_D十二例独立小图/01_M1_75%_整景可见表面/10_A_局部定位.png",
+          "local_file": "01_M1_75%_整景可见表面/10_A_局部定位.png",
+          "title": "A 放大区域定位",
+          "width": 1022,
+          "height": 894,
+          "sha256": "64a549b3846f43a5e58e119aabf51b086aba2b95bf7819a3795aa70c5e8d903e"
+        },
+        "D_locator": {
+          "file": "图5-5_A_D十二例独立小图/01_M1_75%_整景可见表面/11_D_局部定位.png",
+          "local_file": "01_M1_75%_整景可见表面/11_D_局部定位.png",
+          "title": "D 放大区域定位",
+          "width": 1022,
+          "height": 894,
+          "sha256": "9120fa2cec0ba4c832a3459cd62403af99e0c5f3d9a3b5fdaab210a6cb1b428a"
+        }
+      },
+      "summary": "所示固定整景视角RMSE：A 38.500 → D 2.041，降低94.70%。",
+      "caution": "所示值为单视角结果；不替代主表12视角均值。可见差异包含表面着色变化。",
+      "numeric": {
+        "A_rmse": 38.500025014522095,
+        "D_rmse": 2.0413572926348333,
+        "rmse_reduction": 94.69777671088568,
+        "aggregation": "illustrated single whole-scene view"
+      },
+      "source_reference_used_internally": true,
+      "selection": "Post hoc illustration; candidate geometry and view gains used for selection. Full64 main conditions unchanged."
+    },
+    {
+      "number": 2,
+      "name": "02_M2_75%_整景可见表面",
+      "model": 2,
+      "kind": "whole",
+      "mesh": null,
+      "ratio": 0.75,
+      "label": "整景可见表面",
+      "view": "az_270",
+      "box": [
+        392,
+        157,
+        1528,
+        990
+      ],
+      "roi": [
+        656,
+        570,
+        1053,
+        982
+      ],
+      "panels": {
+        "A_full": {
+          "file": "图5-5_A_D十二例独立小图/02_M2_75%_整景可见表面/01_A_整体.png",
+          "local_file": "02_M2_75%_整景可见表面/01_A_整体.png",
+          "title": "A 整体",
+          "width": 1136,
+          "height": 833,
+          "sha256": "591152444b436cafdcfbfddcb2f3a50e1012db526a010ccd9f29243e7baf2dc8"
+        },
+        "D_full": {
+          "file": "图5-5_A_D十二例独立小图/02_M2_75%_整景可见表面/02_D_整体.png",
+          "local_file": "02_M2_75%_整景可见表面/02_D_整体.png",
+          "title": "D 整体",
+          "width": 1136,
+          "height": 833,
+          "sha256": "1b8d3caa0e1a1974a64292651e1b26ea68c2734e0dfdf24d027b887a7bafb220"
+        },
+        "A_zoom": {
+          "file": "图5-5_A_D十二例独立小图/02_M2_75%_整景可见表面/03_A_局部放大.png",
+          "local_file": "02_M2_75%_整景可见表面/03_A_局部放大.png",
+          "title": "A 局部放大",
+          "width": 397,
+          "height": 412,
+          "sha256": "906c4283867a1800e7d426d4fd0114d27376ca49b50e2362b6e85b5ec9fd4526"
+        },
+        "D_zoom": {
+          "file": "图5-5_A_D十二例独立小图/02_M2_75%_整景可见表面/04_D_局部放大.png",
+          "local_file": "02_M2_75%_整景可见表面/04_D_局部放大.png",
+          "title": "D 局部放大",
+          "width": 397,
+          "height": 412,
+          "sha256": "7f70a4c302969e184cc5a04932241aac16941ef3d821c3506118a16a5b875e47"
+        },
+        "A_error": {
+          "file": "图5-5_A_D十二例独立小图/02_M2_75%_整景可见表面/05_A_像素误差.png",
+          "local_file": "02_M2_75%_整景可见表面/05_A_像素误差.png",
+          "title": "A 像素误差",
+          "width": 397,
+          "height": 412,
+          "sha256": "a2cda7817cd4b71c81c8fd44fe2f4a0798e68c54537e27b95bd55d7a4ee89a46"
+        },
+        "D_error": {
+          "file": "图5-5_A_D十二例独立小图/02_M2_75%_整景可见表面/06_D_像素误差.png",
+          "local_file": "02_M2_75%_整景可见表面/06_D_像素误差.png",
+          "title": "D 像素误差",
+          "width": 397,
+          "height": 412,
+          "sha256": "2993bd80a0a5e4c0b369b04c52249d0fc5099fc328785ed1d4d6a9a9fff167d9"
+        },
+        "improvement": {
+          "file": "图5-5_A_D十二例独立小图/02_M2_75%_整景可见表面/07_A减D_像素误差改善.png",
+          "local_file": "02_M2_75%_整景可见表面/07_A减D_像素误差改善.png",
+          "title": "D相对A的像素误差改善",
+          "width": 397,
+          "height": 412,
+          "sha256": "c233a44cd87cd164f6a3511db40c2f286b3ccc5805d8d7d33eacccd86bef80a4"
+        },
+        "A_outline": {
+          "file": "图5-5_A_D十二例独立小图/02_M2_75%_整景可见表面/08_A_边缘轮廓误差.png",
+          "local_file": "02_M2_75%_整景可见表面/08_A_边缘轮廓误差.png",
+          "title": "A 边缘／轮廓",
+          "width": 397,
+          "height": 412,
+          "sha256": "cd1b43e2eede1f5be3d53cd8cea39ebfd28dbdf63c8c1d16c1c9a917b204a3fb"
+        },
+        "D_outline": {
+          "file": "图5-5_A_D十二例独立小图/02_M2_75%_整景可见表面/09_D_边缘轮廓误差.png",
+          "local_file": "02_M2_75%_整景可见表面/09_D_边缘轮廓误差.png",
+          "title": "D 边缘／轮廓",
+          "width": 397,
+          "height": 412,
+          "sha256": "d4d659acdf929371c0af5eab392e2401669c3cf75ea4dc9bf23e259415c41c57"
+        },
+        "A_locator": {
+          "file": "图5-5_A_D十二例独立小图/02_M2_75%_整景可见表面/10_A_局部定位.png",
+          "local_file": "02_M2_75%_整景可见表面/10_A_局部定位.png",
+          "title": "A 放大区域定位",
+          "width": 1136,
+          "height": 833,
+          "sha256": "d0e3ca82d264649a0f4d82c4b5d38798818160f1abe7f690785a30c21b3c1af2"
+        },
+        "D_locator": {
+          "file": "图5-5_A_D十二例独立小图/02_M2_75%_整景可见表面/11_D_局部定位.png",
+          "local_file": "02_M2_75%_整景可见表面/11_D_局部定位.png",
+          "title": "D 放大区域定位",
+          "width": 1136,
+          "height": 833,
+          "sha256": "95246add4ca94eba77f66b2c5f7fcd5d3a3579d53877be935b4462243e5c5644"
+        }
+      },
+      "summary": "所示固定整景视角RMSE：A 13.793 → D 7.245，降低47.47%。",
+      "caution": "所示值为单视角结果；不替代主表12视角均值。可见差异包含表面着色变化。",
+      "numeric": {
+        "A_rmse": 13.792746813004063,
+        "D_rmse": 7.245486735102715,
+        "rmse_reduction": 47.46886292241997,
+        "aggregation": "illustrated single whole-scene view"
+      },
+      "source_reference_used_internally": true,
+      "selection": "Post hoc illustration; candidate geometry and view gains used for selection. Full64 main conditions unchanged."
+    },
+    {
+      "number": 3,
+      "name": "03_M3_75%_整景可见表面",
+      "model": 3,
+      "kind": "whole",
+      "mesh": null,
+      "ratio": 0.75,
+      "label": "整景可见表面",
+      "view": "az_090",
+      "box": [
+        361,
+        205,
+        1559,
+        944
+      ],
+      "roi": [
+        1230,
+        310,
+        1530,
+        690
+      ],
+      "panels": {
+        "A_full": {
+          "file": "图5-5_A_D十二例独立小图/03_M3_75%_整景可见表面/01_A_整体.png",
+          "local_file": "03_M3_75%_整景可见表面/01_A_整体.png",
+          "title": "A 整体",
+          "width": 1198,
+          "height": 739,
+          "sha256": "51feb352516b50612823d0704bcab18fc78cc21f655b7a54f27770bd58590721"
+        },
+        "D_full": {
+          "file": "图5-5_A_D十二例独立小图/03_M3_75%_整景可见表面/02_D_整体.png",
+          "local_file": "03_M3_75%_整景可见表面/02_D_整体.png",
+          "title": "D 整体",
+          "width": 1198,
+          "height": 739,
+          "sha256": "f100c13a8ab9142bd99d4bcf0bf014a33b1a79f7170c3c9954b14fe0c6882472"
+        },
+        "A_zoom": {
+          "file": "图5-5_A_D十二例独立小图/03_M3_75%_整景可见表面/03_A_局部放大.png",
+          "local_file": "03_M3_75%_整景可见表面/03_A_局部放大.png",
+          "title": "A 局部放大",
+          "width": 300,
+          "height": 380,
+          "sha256": "b03c98419b1e24bc2fb8f871fd2548297a7146a2f8a77c9bbbc111e71155979f"
+        },
+        "D_zoom": {
+          "file": "图5-5_A_D十二例独立小图/03_M3_75%_整景可见表面/04_D_局部放大.png",
+          "local_file": "03_M3_75%_整景可见表面/04_D_局部放大.png",
+          "title": "D 局部放大",
+          "width": 300,
+          "height": 380,
+          "sha256": "cd397c1ec08e477859ee5630250f9e685127697b617fa87996c52b1dc7b5c728"
+        },
+        "A_error": {
+          "file": "图5-5_A_D十二例独立小图/03_M3_75%_整景可见表面/05_A_像素误差.png",
+          "local_file": "03_M3_75%_整景可见表面/05_A_像素误差.png",
+          "title": "A 像素误差",
+          "width": 300,
+          "height": 380,
+          "sha256": "d84c9bc383e3613700df030bb47a428e678351f589133c863dd24f2ddb1226d5"
+        },
+        "D_error": {
+          "file": "图5-5_A_D十二例独立小图/03_M3_75%_整景可见表面/06_D_像素误差.png",
+          "local_file": "03_M3_75%_整景可见表面/06_D_像素误差.png",
+          "title": "D 像素误差",
+          "width": 300,
+          "height": 380,
+          "sha256": "2117e5ecc1e9c4485ca4c7cbc926bf3763081ed2f8a3ba7d8056a649d6ce6c20"
+        },
+        "improvement": {
+          "file": "图5-5_A_D十二例独立小图/03_M3_75%_整景可见表面/07_A减D_像素误差改善.png",
+          "local_file": "03_M3_75%_整景可见表面/07_A减D_像素误差改善.png",
+          "title": "D相对A的像素误差改善",
+          "width": 300,
+          "height": 380,
+          "sha256": "4bc75a4d076a3daf92d6c4cacab67b361241c795bc1bcfd59cf81d0eef04cd62"
+        },
+        "A_outline": {
+          "file": "图5-5_A_D十二例独立小图/03_M3_75%_整景可见表面/08_A_边缘轮廓误差.png",
+          "local_file": "03_M3_75%_整景可见表面/08_A_边缘轮廓误差.png",
+          "title": "A 边缘／轮廓",
+          "width": 300,
+          "height": 380,
+          "sha256": "f4ab5fd573d22d7516edd17dabc39fa9d4f6ccef0c2da26446634d1a35ef9b8a"
+        },
+        "D_outline": {
+          "file": "图5-5_A_D十二例独立小图/03_M3_75%_整景可见表面/09_D_边缘轮廓误差.png",
+          "local_file": "03_M3_75%_整景可见表面/09_D_边缘轮廓误差.png",
+          "title": "D 边缘／轮廓",
+          "width": 300,
+          "height": 380,
+          "sha256": "57a59f13e4d0265e83fb88482b59c5fe1a63ed0bc77bcf30077b554018aba58e"
+        },
+        "A_locator": {
+          "file": "图5-5_A_D十二例独立小图/03_M3_75%_整景可见表面/10_A_局部定位.png",
+          "local_file": "03_M3_75%_整景可见表面/10_A_局部定位.png",
+          "title": "A 放大区域定位",
+          "width": 1198,
+          "height": 739,
+          "sha256": "cab919f7d3efb3d60ea0156fff98d9908f4b72779926824263f5d8f384981615"
+        },
+        "D_locator": {
+          "file": "图5-5_A_D十二例独立小图/03_M3_75%_整景可见表面/11_D_局部定位.png",
+          "local_file": "03_M3_75%_整景可见表面/11_D_局部定位.png",
+          "title": "D 放大区域定位",
+          "width": 1198,
+          "height": 739,
+          "sha256": "ff67c42d41fdc83b5132498162fc85b4a1703253243c969ca36ed63a0b9ba452"
+        }
+      },
+      "summary": "所示固定整景视角RMSE：A 9.111 → D 3.179，降低65.11%。",
+      "caution": "所示值为单视角结果；不替代主表12视角均值。可见差异包含表面着色变化。",
+      "numeric": {
+        "A_rmse": 9.111214386200478,
+        "D_rmse": 3.1787043021301398,
+        "rmse_reduction": 65.11217750572862,
+        "aggregation": "illustrated single whole-scene view"
+      },
+      "source_reference_used_internally": true,
+      "selection": "Post hoc illustration; candidate geometry and view gains used for selection. Full64 main conditions unchanged."
+    },
+    {
+      "number": 4,
+      "name": "04_M4_75%_整景可见表面",
+      "model": 4,
+      "kind": "whole",
+      "mesh": null,
+      "ratio": 0.75,
+      "label": "整景可见表面",
+      "view": "az_315",
+      "box": [
+        319,
+        298,
+        1408,
+        939
+      ],
+      "roi": [
+        805,
+        475,
+        1186,
+        795
+      ],
+      "panels": {
+        "A_full": {
+          "file": "图5-5_A_D十二例独立小图/04_M4_75%_整景可见表面/01_A_整体.png",
+          "local_file": "04_M4_75%_整景可见表面/01_A_整体.png",
+          "title": "A 整体",
+          "width": 1089,
+          "height": 641,
+          "sha256": "52354ca6a568c959bec9b437f3d6b12217b2ccf8d0001580e2ff1432c86d6ee4"
+        },
+        "D_full": {
+          "file": "图5-5_A_D十二例独立小图/04_M4_75%_整景可见表面/02_D_整体.png",
+          "local_file": "04_M4_75%_整景可见表面/02_D_整体.png",
+          "title": "D 整体",
+          "width": 1089,
+          "height": 641,
+          "sha256": "d161721e9180aac9e7d5056beba36596288004d0d6c070a42c961bb567f166dc"
+        },
+        "A_zoom": {
+          "file": "图5-5_A_D十二例独立小图/04_M4_75%_整景可见表面/03_A_局部放大.png",
+          "local_file": "04_M4_75%_整景可见表面/03_A_局部放大.png",
+          "title": "A 局部放大",
+          "width": 381,
+          "height": 320,
+          "sha256": "05c3b16e27bd1091fb7a21cf9f09d89dfea86150e1e73548164bcaed648e24bf"
+        },
+        "D_zoom": {
+          "file": "图5-5_A_D十二例独立小图/04_M4_75%_整景可见表面/04_D_局部放大.png",
+          "local_file": "04_M4_75%_整景可见表面/04_D_局部放大.png",
+          "title": "D 局部放大",
+          "width": 381,
+          "height": 320,
+          "sha256": "47dae21e8aa9ab6ba3903056748736b9a6aca991c8b5e5e5fa227fcc195bf2f2"
+        },
+        "A_error": {
+          "file": "图5-5_A_D十二例独立小图/04_M4_75%_整景可见表面/05_A_像素误差.png",
+          "local_file": "04_M4_75%_整景可见表面/05_A_像素误差.png",
+          "title": "A 像素误差",
+          "width": 381,
+          "height": 320,
+          "sha256": "6e3a5baf6452901a27abe2e78b6e9daaeec560681cf4fbbe1ab4619e3ca8fcc3"
+        },
+        "D_error": {
+          "file": "图5-5_A_D十二例独立小图/04_M4_75%_整景可见表面/06_D_像素误差.png",
+          "local_file": "04_M4_75%_整景可见表面/06_D_像素误差.png",
+          "title": "D 像素误差",
+          "width": 381,
+          "height": 320,
+          "sha256": "92df51197608b95cdb5081c3a6020680d0b06b67db412d1ca2f782f33710fbe4"
+        },
+        "improvement": {
+          "file": "图5-5_A_D十二例独立小图/04_M4_75%_整景可见表面/07_A减D_像素误差改善.png",
+          "local_file": "04_M4_75%_整景可见表面/07_A减D_像素误差改善.png",
+          "title": "D相对A的像素误差改善",
+          "width": 381,
+          "height": 320,
+          "sha256": "34557a51ff7d6c75aad02cb48462d9f6469a484c51f86c6bd816937cfda9ad46"
+        },
+        "A_outline": {
+          "file": "图5-5_A_D十二例独立小图/04_M4_75%_整景可见表面/08_A_边缘轮廓误差.png",
+          "local_file": "04_M4_75%_整景可见表面/08_A_边缘轮廓误差.png",
+          "title": "A 边缘／轮廓",
+          "width": 381,
+          "height": 320,
+          "sha256": "3861f336c285867b5f6ddb35059cd81cbd72ce438e001f97054cf5bfb873fbf0"
+        },
+        "D_outline": {
+          "file": "图5-5_A_D十二例独立小图/04_M4_75%_整景可见表面/09_D_边缘轮廓误差.png",
+          "local_file": "04_M4_75%_整景可见表面/09_D_边缘轮廓误差.png",
+          "title": "D 边缘／轮廓",
+          "width": 381,
+          "height": 320,
+          "sha256": "574bf2aa72061a00fb184c239565d3dc9ae8792a4e4a461866d83b3b3d756b69"
+        },
+        "A_locator": {
+          "file": "图5-5_A_D十二例独立小图/04_M4_75%_整景可见表面/10_A_局部定位.png",
+          "local_file": "04_M4_75%_整景可见表面/10_A_局部定位.png",
+          "title": "A 放大区域定位",
+          "width": 1089,
+          "height": 641,
+          "sha256": "a546858991b286beae9f9e250b9c9c9a86b9409fb8bc1bf144f834669e9941ce"
+        },
+        "D_locator": {
+          "file": "图5-5_A_D十二例独立小图/04_M4_75%_整景可见表面/11_D_局部定位.png",
+          "local_file": "04_M4_75%_整景可见表面/11_D_局部定位.png",
+          "title": "D 放大区域定位",
+          "width": 1089,
+          "height": 641,
+          "sha256": "29de0d528ed969e178bda663253906e651bf10fd6d6a3ee449ce763ff5e7e854"
+        }
+      },
+      "summary": "所示固定整景视角RMSE：A 5.951 → D 3.006，降低49.49%。",
+      "caution": "所示值为单视角结果；不替代主表12视角均值。可见差异包含表面着色变化。",
+      "numeric": {
+        "A_rmse": 5.950795583352337,
+        "D_rmse": 3.0057111383192607,
+        "rmse_reduction": 49.49060010181,
+        "aggregation": "illustrated single whole-scene view"
+      },
+      "source_reference_used_internally": true,
+      "selection": "Post hoc illustration; candidate geometry and view gains used for selection. Full64 main conditions unchanged."
+    },
+    {
+      "number": 5,
+      "name": "05_M1_25%_圆盘外缘",
+      "model": 1,
+      "kind": "local",
+      "mesh": 7,
+      "ratio": 0.25,
+      "label": "圆盘外缘",
+      "view": "oblique_a",
+      "box": [
+        549,
+        342,
+        1371,
+        873
+      ],
+      "roi": [
+        891,
+        621,
+        1236,
+        865
+      ],
+      "panels": {
+        "A_full": {
+          "file": "图5-5_A_D十二例独立小图/05_M1_25%_圆盘外缘/01_A_整体.png",
+          "local_file": "05_M1_25%_圆盘外缘/01_A_整体.png",
+          "title": "A 整体",
+          "width": 822,
+          "height": 531,
+          "sha256": "d7b8463c5a182299a7e2e9987ee44f629642b1b98d53c844facdd226d4a4da82"
+        },
+        "D_full": {
+          "file": "图5-5_A_D十二例独立小图/05_M1_25%_圆盘外缘/02_D_整体.png",
+          "local_file": "05_M1_25%_圆盘外缘/02_D_整体.png",
+          "title": "D 整体",
+          "width": 822,
+          "height": 531,
+          "sha256": "2565434a32345e74cff9b55e11f080ba9b97c77858ea68cd7d97f91019c204fc"
+        },
+        "A_zoom": {
+          "file": "图5-5_A_D十二例独立小图/05_M1_25%_圆盘外缘/03_A_局部放大.png",
+          "local_file": "05_M1_25%_圆盘外缘/03_A_局部放大.png",
+          "title": "A 局部放大",
+          "width": 345,
+          "height": 244,
+          "sha256": "8f65a026f18af2bf95305e70506e7ded123f66327665f4d27f6b49a04ef74538"
+        },
+        "D_zoom": {
+          "file": "图5-5_A_D十二例独立小图/05_M1_25%_圆盘外缘/04_D_局部放大.png",
+          "local_file": "05_M1_25%_圆盘外缘/04_D_局部放大.png",
+          "title": "D 局部放大",
+          "width": 345,
+          "height": 244,
+          "sha256": "09b0072fe4898c51b71fd0cb8990b325dd760acafad1b997c97efeca55a5a523"
+        },
+        "A_error": {
+          "file": "图5-5_A_D十二例独立小图/05_M1_25%_圆盘外缘/05_A_像素误差.png",
+          "local_file": "05_M1_25%_圆盘外缘/05_A_像素误差.png",
+          "title": "A 像素误差",
+          "width": 345,
+          "height": 244,
+          "sha256": "1212de91c5cc6e70681e9740f7ff508769f55ca594f7256d34c0521d3ebe67ac"
+        },
+        "D_error": {
+          "file": "图5-5_A_D十二例独立小图/05_M1_25%_圆盘外缘/06_D_像素误差.png",
+          "local_file": "05_M1_25%_圆盘外缘/06_D_像素误差.png",
+          "title": "D 像素误差",
+          "width": 345,
+          "height": 244,
+          "sha256": "ed3ac37452f2c272c957a385fe259976a4ace05e8d3cc234998be143e93adf15"
+        },
+        "improvement": {
+          "file": "图5-5_A_D十二例独立小图/05_M1_25%_圆盘外缘/07_A减D_像素误差改善.png",
+          "local_file": "05_M1_25%_圆盘外缘/07_A减D_像素误差改善.png",
+          "title": "D相对A的像素误差改善",
+          "width": 345,
+          "height": 244,
+          "sha256": "ed21bb48a6f94bbf990d29015e67e301749b12cc02625b72cb2c0b07c4c01370"
+        },
+        "A_outline": {
+          "file": "图5-5_A_D十二例独立小图/05_M1_25%_圆盘外缘/08_A_边缘轮廓误差.png",
+          "local_file": "05_M1_25%_圆盘外缘/08_A_边缘轮廓误差.png",
+          "title": "A 边缘／轮廓",
+          "width": 345,
+          "height": 244,
+          "sha256": "d739bc89011d11df93a0f4836640f87cf1c8d13b55e8ce3ee9879146c438d958"
+        },
+        "D_outline": {
+          "file": "图5-5_A_D十二例独立小图/05_M1_25%_圆盘外缘/09_D_边缘轮廓误差.png",
+          "local_file": "05_M1_25%_圆盘外缘/09_D_边缘轮廓误差.png",
+          "title": "D 边缘／轮廓",
+          "width": 345,
+          "height": 244,
+          "sha256": "9378ced8f8b19a8ad14105696f54f3e994a3361beac683a5fa424fdfd2fc30dd"
+        },
+        "A_locator": {
+          "file": "图5-5_A_D十二例独立小图/05_M1_25%_圆盘外缘/10_A_局部定位.png",
+          "local_file": "05_M1_25%_圆盘外缘/10_A_局部定位.png",
+          "title": "A 放大区域定位",
+          "width": 822,
+          "height": 531,
+          "sha256": "dd20bc87da91248533fdcf29bd915ab42f2edbe204dc2875e81f087791d3240d"
+        },
+        "D_locator": {
+          "file": "图5-5_A_D十二例独立小图/05_M1_25%_圆盘外缘/11_D_局部定位.png",
+          "local_file": "05_M1_25%_圆盘外缘/11_D_局部定位.png",
+          "title": "D 放大区域定位",
+          "width": 822,
+          "height": 531,
+          "sha256": "fa40408ca8050c9cfe3b98bb04c09cdf5b014df048dec58fcee23c6ceba0f4d4"
+        }
+      },
+      "summary": "部件面数A/D：1110/1110；部件几何RMS：0.273067% → 0.158669%，降低41.89%；四视角投影边界RMS降低46.99%；四视角图像RMSE降低0.13%。",
+      "caution": "部件面数相同或更少；局部几何误差按原始部件包围盒对角线归一化。",
+      "numeric": {
+        "A_faces": 1110,
+        "D_faces": 1110,
+        "A_geometry_rms": 0.2730674117948303,
+        "D_geometry_rms": 0.15866933459539703,
+        "geometry_rms_reduction": 41.893712782317095,
+        "outline_rms_reduction": 46.98854868854879,
+        "A_rmse": 20.984734677580946,
+        "D_rmse": 20.956843126192258,
+        "rmse_reduction": 0.13291352889244212,
+        "aggregation": "four-view mean for image and projected boundary; original part diagonal for geometry"
+      },
+      "source_reference_used_internally": true,
+      "selection": "Post hoc illustration; candidate geometry and view gains used for selection. Full64 main conditions unchanged."
+    },
+    {
+      "number": 6,
+      "name": "06_M1_25%_轴状部件外缘",
+      "model": 1,
+      "kind": "local",
+      "mesh": 14,
+      "ratio": 0.25,
+      "label": "轴状部件外缘",
+      "view": "oblique_b",
+      "box": [
+        597,
+        46,
+        1354,
+        894
+      ],
+      "roi": [
+        704,
+        54,
+        1021,
+        432
+      ],
+      "panels": {
+        "A_full": {
+          "file": "图5-5_A_D十二例独立小图/06_M1_25%_轴状部件外缘/01_A_整体.png",
+          "local_file": "06_M1_25%_轴状部件外缘/01_A_整体.png",
+          "title": "A 整体",
+          "width": 757,
+          "height": 848,
+          "sha256": "c87ba3eb31790f97b1aec94f785ce50c396cb2af8a3ef8fcfc9faef90f8bf1b9"
+        },
+        "D_full": {
+          "file": "图5-5_A_D十二例独立小图/06_M1_25%_轴状部件外缘/02_D_整体.png",
+          "local_file": "06_M1_25%_轴状部件外缘/02_D_整体.png",
+          "title": "D 整体",
+          "width": 757,
+          "height": 848,
+          "sha256": "ecba26497f97aa606ea4aee42dd6b1c8b1c7d827b105a91157c524d4cab001af"
+        },
+        "A_zoom": {
+          "file": "图5-5_A_D十二例独立小图/06_M1_25%_轴状部件外缘/03_A_局部放大.png",
+          "local_file": "06_M1_25%_轴状部件外缘/03_A_局部放大.png",
+          "title": "A 局部放大",
+          "width": 317,
+          "height": 378,
+          "sha256": "f587159ec2efb6b6ff0b3465a0242c172efacaf83f84b2ee7ff5a2b018ce032b"
+        },
+        "D_zoom": {
+          "file": "图5-5_A_D十二例独立小图/06_M1_25%_轴状部件外缘/04_D_局部放大.png",
+          "local_file": "06_M1_25%_轴状部件外缘/04_D_局部放大.png",
+          "title": "D 局部放大",
+          "width": 317,
+          "height": 378,
+          "sha256": "2643c1fb650968be973927fa90d956a2b51cc75ad5089baaccec02e9f721450d"
+        },
+        "A_error": {
+          "file": "图5-5_A_D十二例独立小图/06_M1_25%_轴状部件外缘/05_A_像素误差.png",
+          "local_file": "06_M1_25%_轴状部件外缘/05_A_像素误差.png",
+          "title": "A 像素误差",
+          "width": 317,
+          "height": 378,
+          "sha256": "acb2d36a598927fc14ea6f271fbc2ff58b302fceeb4021be4ed1345d4ecd0717"
+        },
+        "D_error": {
+          "file": "图5-5_A_D十二例独立小图/06_M1_25%_轴状部件外缘/06_D_像素误差.png",
+          "local_file": "06_M1_25%_轴状部件外缘/06_D_像素误差.png",
+          "title": "D 像素误差",
+          "width": 317,
+          "height": 378,
+          "sha256": "c0c24f5859ba3b409b65dadc004d6f7c040ec1ce44ea8ea8275bce035e749ba6"
+        },
+        "improvement": {
+          "file": "图5-5_A_D十二例独立小图/06_M1_25%_轴状部件外缘/07_A减D_像素误差改善.png",
+          "local_file": "06_M1_25%_轴状部件外缘/07_A减D_像素误差改善.png",
+          "title": "D相对A的像素误差改善",
+          "width": 317,
+          "height": 378,
+          "sha256": "7c6e2457b4928b8d900d778df8d248f57be86a8ecaeaec7efa7d7d2505b21a08"
+        },
+        "A_outline": {
+          "file": "图5-5_A_D十二例独立小图/06_M1_25%_轴状部件外缘/08_A_边缘轮廓误差.png",
+          "local_file": "06_M1_25%_轴状部件外缘/08_A_边缘轮廓误差.png",
+          "title": "A 边缘／轮廓",
+          "width": 317,
+          "height": 378,
+          "sha256": "b0cdd31c0854bdd95ae975b1c817bf1fde8a24f416bc7d679de7a89567266e35"
+        },
+        "D_outline": {
+          "file": "图5-5_A_D十二例独立小图/06_M1_25%_轴状部件外缘/09_D_边缘轮廓误差.png",
+          "local_file": "06_M1_25%_轴状部件外缘/09_D_边缘轮廓误差.png",
+          "title": "D 边缘／轮廓",
+          "width": 317,
+          "height": 378,
+          "sha256": "eba11b5942fd3596d499a7da4eb537178b41c86737898f63eb0f91bfa3fcb696"
+        },
+        "A_locator": {
+          "file": "图5-5_A_D十二例独立小图/06_M1_25%_轴状部件外缘/10_A_局部定位.png",
+          "local_file": "06_M1_25%_轴状部件外缘/10_A_局部定位.png",
+          "title": "A 放大区域定位",
+          "width": 757,
+          "height": 848,
+          "sha256": "c715e2965516b424e29cbdd04e259e3f08afaa17df5e757d8b2ca5cab4e68040"
+        },
+        "D_locator": {
+          "file": "图5-5_A_D十二例独立小图/06_M1_25%_轴状部件外缘/11_D_局部定位.png",
+          "local_file": "06_M1_25%_轴状部件外缘/11_D_局部定位.png",
+          "title": "D 放大区域定位",
+          "width": 757,
+          "height": 848,
+          "sha256": "75db9e6643502bd04d84d3be32eb5f1acc08c3b2a0fb291cff47d00ba130e0fb"
+        }
+      },
+      "summary": "部件面数A/D：502/502；部件几何RMS：0.482154% → 0.363929%，降低24.52%；四视角投影边界RMS降低22.67%；四视角图像RMSE降低0.50%。",
+      "caution": "部件面数相同或更少；局部几何误差按原始部件包围盒对角线归一化。",
+      "numeric": {
+        "A_faces": 502,
+        "D_faces": 502,
+        "A_geometry_rms": 0.48215409844733625,
+        "D_geometry_rms": 0.36392907830538196,
+        "geometry_rms_reduction": 24.520173223181164,
+        "outline_rms_reduction": 22.66765177145389,
+        "A_rmse": 22.17946078817792,
+        "D_rmse": 22.068452827793323,
+        "rmse_reduction": 0.5004989140392713,
+        "aggregation": "four-view mean for image and projected boundary; original part diagonal for geometry"
+      },
+      "source_reference_used_internally": true,
+      "selection": "Post hoc illustration; candidate geometry and view gains used for selection. Full64 main conditions unchanged."
+    },
+    {
+      "number": 7,
+      "name": "07_M1_12.5%_块状部件端角",
+      "model": 1,
+      "kind": "local",
+      "mesh": 357,
+      "ratio": 0.125,
+      "label": "块状部件端角",
+      "view": "oblique_a",
+      "box": [
+        419,
+        223,
+        1644,
+        989
+      ],
+      "roi": [
+        1196,
+        231,
+        1636,
+        641
+      ],
+      "panels": {
+        "A_full": {
+          "file": "图5-5_A_D十二例独立小图/07_M1_12.5%_块状部件端角/01_A_整体.png",
+          "local_file": "07_M1_12.5%_块状部件端角/01_A_整体.png",
+          "title": "A 整体",
+          "width": 1225,
+          "height": 766,
+          "sha256": "77f8c3d09e69cbb73b5e4bf8c252722f8998364af2553f244afd6d36e6064409"
+        },
+        "D_full": {
+          "file": "图5-5_A_D十二例独立小图/07_M1_12.5%_块状部件端角/02_D_整体.png",
+          "local_file": "07_M1_12.5%_块状部件端角/02_D_整体.png",
+          "title": "D 整体",
+          "width": 1225,
+          "height": 766,
+          "sha256": "22bb62d9d73e86cae86d27a336063214d4a8d8b10af5e557e075201c39db8ce3"
+        },
+        "A_zoom": {
+          "file": "图5-5_A_D十二例独立小图/07_M1_12.5%_块状部件端角/03_A_局部放大.png",
+          "local_file": "07_M1_12.5%_块状部件端角/03_A_局部放大.png",
+          "title": "A 局部放大",
+          "width": 440,
+          "height": 410,
+          "sha256": "f49e9d943ed23dae02e3d407720d555afb64fae86f6b9d1c4137784ed8590ec8"
+        },
+        "D_zoom": {
+          "file": "图5-5_A_D十二例独立小图/07_M1_12.5%_块状部件端角/04_D_局部放大.png",
+          "local_file": "07_M1_12.5%_块状部件端角/04_D_局部放大.png",
+          "title": "D 局部放大",
+          "width": 440,
+          "height": 410,
+          "sha256": "f6e22dcd5060e0a368eb0c3a0b769f33ab250353ff183e782ecd8b30bf96385d"
+        },
+        "A_error": {
+          "file": "图5-5_A_D十二例独立小图/07_M1_12.5%_块状部件端角/05_A_像素误差.png",
+          "local_file": "07_M1_12.5%_块状部件端角/05_A_像素误差.png",
+          "title": "A 像素误差",
+          "width": 440,
+          "height": 410,
+          "sha256": "c885dc4bd6ff779d9d0ad3aa32e437be3ec86a3488a72b696489502066f98edf"
+        },
+        "D_error": {
+          "file": "图5-5_A_D十二例独立小图/07_M1_12.5%_块状部件端角/06_D_像素误差.png",
+          "local_file": "07_M1_12.5%_块状部件端角/06_D_像素误差.png",
+          "title": "D 像素误差",
+          "width": 440,
+          "height": 410,
+          "sha256": "3e848599c904fe83933e142aea9ca15c59091d30eae84a0821d479b22531cbd9"
+        },
+        "improvement": {
+          "file": "图5-5_A_D十二例独立小图/07_M1_12.5%_块状部件端角/07_A减D_像素误差改善.png",
+          "local_file": "07_M1_12.5%_块状部件端角/07_A减D_像素误差改善.png",
+          "title": "D相对A的像素误差改善",
+          "width": 440,
+          "height": 410,
+          "sha256": "408e83e25f69a0b6545357d2519546c5af4822fe2aa3d19d30170cf60ff104cc"
+        },
+        "A_outline": {
+          "file": "图5-5_A_D十二例独立小图/07_M1_12.5%_块状部件端角/08_A_边缘轮廓误差.png",
+          "local_file": "07_M1_12.5%_块状部件端角/08_A_边缘轮廓误差.png",
+          "title": "A 边缘／轮廓",
+          "width": 440,
+          "height": 410,
+          "sha256": "e3affd84ae22927bf4adc3a7c82d1ec8812044731e31b30f35d2f11f65d4f836"
+        },
+        "D_outline": {
+          "file": "图5-5_A_D十二例独立小图/07_M1_12.5%_块状部件端角/09_D_边缘轮廓误差.png",
+          "local_file": "07_M1_12.5%_块状部件端角/09_D_边缘轮廓误差.png",
+          "title": "D 边缘／轮廓",
+          "width": 440,
+          "height": 410,
+          "sha256": "9c7ae58d9d5424a192216f98c147d770370a6ed99d8f3954e6a8bdb0a2ed5bbb"
+        },
+        "A_locator": {
+          "file": "图5-5_A_D十二例独立小图/07_M1_12.5%_块状部件端角/10_A_局部定位.png",
+          "local_file": "07_M1_12.5%_块状部件端角/10_A_局部定位.png",
+          "title": "A 放大区域定位",
+          "width": 1225,
+          "height": 766,
+          "sha256": "9a58afdb6f4293156b64d55f920a403b12b68e3eb3c8788e250fc25c3fe8ac14"
+        },
+        "D_locator": {
+          "file": "图5-5_A_D十二例独立小图/07_M1_12.5%_块状部件端角/11_D_局部定位.png",
+          "local_file": "07_M1_12.5%_块状部件端角/11_D_局部定位.png",
+          "title": "D 放大区域定位",
+          "width": 1225,
+          "height": 766,
+          "sha256": "beeb9fa84a0f4fbd0c0b32feeb7c2e84c155fae1294384ea8412ed8779334c45"
+        }
+      },
+      "summary": "部件面数A/D：154/154；部件几何RMS：1.570236% → 0.698179%，降低55.54%；四视角投影边界RMS降低26.00%；四视角图像RMSE降低1.22%。",
+      "caution": "部件面数相同或更少；局部几何误差按原始部件包围盒对角线归一化。",
+      "numeric": {
+        "A_faces": 154,
+        "D_faces": 154,
+        "A_geometry_rms": 1.5702362260276113,
+        "D_geometry_rms": 0.6981786208261881,
+        "geometry_rms_reduction": 55.53671420557895,
+        "outline_rms_reduction": 26.001729836020903,
+        "A_rmse": 26.058733644915346,
+        "D_rmse": 25.740937655187977,
+        "rmse_reduction": 1.2195373499639617,
+        "aggregation": "four-view mean for image and projected boundary; original part diagonal for geometry"
+      },
+      "source_reference_used_internally": true,
+      "selection": "Post hoc illustration; candidate geometry and view gains used for selection. Full64 main conditions unchanged."
+    },
+    {
+      "number": 8,
+      "name": "08_M2_25%_齿轮及轴段",
+      "model": 2,
+      "kind": "local",
+      "mesh": 943,
+      "ratio": 0.25,
+      "label": "齿轮及轴段",
+      "view": "front",
+      "box": [
+        529,
+        122,
+        1418,
+        999
+      ],
+      "roi": [
+        1062,
+        532,
+        1410,
+        991
+      ],
+      "panels": {
+        "A_full": {
+          "file": "图5-5_A_D十二例独立小图/08_M2_25%_齿轮及轴段/01_A_整体.png",
+          "local_file": "08_M2_25%_齿轮及轴段/01_A_整体.png",
+          "title": "A 整体",
+          "width": 889,
+          "height": 877,
+          "sha256": "671b6573386af656a45e2a3bd72058fd41ed32fa3c956559cc12ced75e489dc9"
+        },
+        "D_full": {
+          "file": "图5-5_A_D十二例独立小图/08_M2_25%_齿轮及轴段/02_D_整体.png",
+          "local_file": "08_M2_25%_齿轮及轴段/02_D_整体.png",
+          "title": "D 整体",
+          "width": 889,
+          "height": 877,
+          "sha256": "5a96daba047499eef1d33d5c85e19979c06cfecabb01fe58980a54a9e1554dc7"
+        },
+        "A_zoom": {
+          "file": "图5-5_A_D十二例独立小图/08_M2_25%_齿轮及轴段/03_A_局部放大.png",
+          "local_file": "08_M2_25%_齿轮及轴段/03_A_局部放大.png",
+          "title": "A 局部放大",
+          "width": 348,
+          "height": 459,
+          "sha256": "39ba35ce7efd900a06ffc3e58fc74bee8f9ca5556673a11fd6bee579d0a6a07d"
+        },
+        "D_zoom": {
+          "file": "图5-5_A_D十二例独立小图/08_M2_25%_齿轮及轴段/04_D_局部放大.png",
+          "local_file": "08_M2_25%_齿轮及轴段/04_D_局部放大.png",
+          "title": "D 局部放大",
+          "width": 348,
+          "height": 459,
+          "sha256": "a0c035cf71c817b544b6cf68dc02e3f223d95f8c96c8390cb7e802da903bede2"
+        },
+        "A_error": {
+          "file": "图5-5_A_D十二例独立小图/08_M2_25%_齿轮及轴段/05_A_像素误差.png",
+          "local_file": "08_M2_25%_齿轮及轴段/05_A_像素误差.png",
+          "title": "A 像素误差",
+          "width": 348,
+          "height": 459,
+          "sha256": "ba4af99fb01d1e0029abda9bf311f21f2eb4000b723be4177aa0be7d87cd2e93"
+        },
+        "D_error": {
+          "file": "图5-5_A_D十二例独立小图/08_M2_25%_齿轮及轴段/06_D_像素误差.png",
+          "local_file": "08_M2_25%_齿轮及轴段/06_D_像素误差.png",
+          "title": "D 像素误差",
+          "width": 348,
+          "height": 459,
+          "sha256": "a488c3278ad56980bad36395b718fe513c3901321579fb1a9049bc0336d8218e"
+        },
+        "improvement": {
+          "file": "图5-5_A_D十二例独立小图/08_M2_25%_齿轮及轴段/07_A减D_像素误差改善.png",
+          "local_file": "08_M2_25%_齿轮及轴段/07_A减D_像素误差改善.png",
+          "title": "D相对A的像素误差改善",
+          "width": 348,
+          "height": 459,
+          "sha256": "0b7beb042446cebd8c40c8b94d2c93e6c193864e6b6fbde07e84f6fabf29a18f"
+        },
+        "A_outline": {
+          "file": "图5-5_A_D十二例独立小图/08_M2_25%_齿轮及轴段/08_A_边缘轮廓误差.png",
+          "local_file": "08_M2_25%_齿轮及轴段/08_A_边缘轮廓误差.png",
+          "title": "A 边缘／轮廓",
+          "width": 348,
+          "height": 459,
+          "sha256": "29ceb2207922d72a7164d2f19794fa5bbd6a69efe3b8611d23efb57e6c9aec7f"
+        },
+        "D_outline": {
+          "file": "图5-5_A_D十二例独立小图/08_M2_25%_齿轮及轴段/09_D_边缘轮廓误差.png",
+          "local_file": "08_M2_25%_齿轮及轴段/09_D_边缘轮廓误差.png",
+          "title": "D 边缘／轮廓",
+          "width": 348,
+          "height": 459,
+          "sha256": "d3c8521c129009e02d7483ee7fd3050b3311a0a904400a386e17c2e8b3aa5007"
+        },
+        "A_locator": {
+          "file": "图5-5_A_D十二例独立小图/08_M2_25%_齿轮及轴段/10_A_局部定位.png",
+          "local_file": "08_M2_25%_齿轮及轴段/10_A_局部定位.png",
+          "title": "A 放大区域定位",
+          "width": 889,
+          "height": 877,
+          "sha256": "51be2943455ea48a712b79633bfe440d5fa390f165df21c5fd39c27bc495e6a2"
+        },
+        "D_locator": {
+          "file": "图5-5_A_D十二例独立小图/08_M2_25%_齿轮及轴段/11_D_局部定位.png",
+          "local_file": "08_M2_25%_齿轮及轴段/11_D_局部定位.png",
+          "title": "D 放大区域定位",
+          "width": 889,
+          "height": 877,
+          "sha256": "5ac4a4f2b1905b9b55f0e860e4319193e0e7910ebb00939adb8dad70d28f0f72"
+        }
+      },
+      "summary": "部件面数A/D：394/788；部件几何RMS：1.094386% → 0.139790%，降低87.23%；四视角投影边界RMS降低89.43%；四视角图像RMSE降低28.22%。",
+      "caution": "局部面数发生重新分配，不能将全部收益归于局部约束。",
+      "numeric": {
+        "A_faces": 394,
+        "D_faces": 788,
+        "A_geometry_rms": 1.0943855504895728,
+        "D_geometry_rms": 0.1397903479485811,
+        "geometry_rms_reduction": 87.22659049308118,
+        "outline_rms_reduction": 89.43295765781718,
+        "A_rmse": 11.732775448703539,
+        "D_rmse": 8.42150548150181,
+        "rmse_reduction": 28.222392746531433,
+        "aggregation": "four-view mean for image and projected boundary; original part diagonal for geometry"
+      },
+      "source_reference_used_internally": true,
+      "selection": "Post hoc illustration; candidate geometry and view gains used for selection. Full64 main conditions unchanged."
+    },
+    {
+      "number": 9,
+      "name": "09_M2_12.5%_齿轮齿缘与下轴段",
+      "model": 2,
+      "kind": "local",
+      "mesh": 950,
+      "ratio": 0.125,
+      "label": "齿轮齿缘与下轴段",
+      "view": "oblique_b",
+      "box": [
+        590,
+        199,
+        1351,
+        942
+      ],
+      "roi": [
+        997,
+        558,
+        1316,
+        934
+      ],
+      "panels": {
+        "A_full": {
+          "file": "图5-5_A_D十二例独立小图/09_M2_12.5%_齿轮齿缘与下轴段/01_A_整体.png",
+          "local_file": "09_M2_12.5%_齿轮齿缘与下轴段/01_A_整体.png",
+          "title": "A 整体",
+          "width": 761,
+          "height": 743,
+          "sha256": "35f0db0299e9f896ac61f57bac2768b8bdaf8b987e903e8954aef84a60661f87"
+        },
+        "D_full": {
+          "file": "图5-5_A_D十二例独立小图/09_M2_12.5%_齿轮齿缘与下轴段/02_D_整体.png",
+          "local_file": "09_M2_12.5%_齿轮齿缘与下轴段/02_D_整体.png",
+          "title": "D 整体",
+          "width": 761,
+          "height": 743,
+          "sha256": "e462744b82bb31b790a02484e317d1cdfa08294f15db0ebff8779c0e59907b53"
+        },
+        "A_zoom": {
+          "file": "图5-5_A_D十二例独立小图/09_M2_12.5%_齿轮齿缘与下轴段/03_A_局部放大.png",
+          "local_file": "09_M2_12.5%_齿轮齿缘与下轴段/03_A_局部放大.png",
+          "title": "A 局部放大",
+          "width": 319,
+          "height": 376,
+          "sha256": "58bc13e46bafa3afd5d2225685d05d77c8143749980d9ddb7a18597696928e7a"
+        },
+        "D_zoom": {
+          "file": "图5-5_A_D十二例独立小图/09_M2_12.5%_齿轮齿缘与下轴段/04_D_局部放大.png",
+          "local_file": "09_M2_12.5%_齿轮齿缘与下轴段/04_D_局部放大.png",
+          "title": "D 局部放大",
+          "width": 319,
+          "height": 376,
+          "sha256": "d6e74bc98b18988e6f2c3845555f239cdd0842e9a8758ba13475b4570f463195"
+        },
+        "A_error": {
+          "file": "图5-5_A_D十二例独立小图/09_M2_12.5%_齿轮齿缘与下轴段/05_A_像素误差.png",
+          "local_file": "09_M2_12.5%_齿轮齿缘与下轴段/05_A_像素误差.png",
+          "title": "A 像素误差",
+          "width": 319,
+          "height": 376,
+          "sha256": "a16ead9c6ea67325466515262614d45e00ed692a1448e0f3492a388cf77a9938"
+        },
+        "D_error": {
+          "file": "图5-5_A_D十二例独立小图/09_M2_12.5%_齿轮齿缘与下轴段/06_D_像素误差.png",
+          "local_file": "09_M2_12.5%_齿轮齿缘与下轴段/06_D_像素误差.png",
+          "title": "D 像素误差",
+          "width": 319,
+          "height": 376,
+          "sha256": "d56dbf76a4edc1205bcff2542ba815e99a62224773748476cd4821995596e98b"
+        },
+        "improvement": {
+          "file": "图5-5_A_D十二例独立小图/09_M2_12.5%_齿轮齿缘与下轴段/07_A减D_像素误差改善.png",
+          "local_file": "09_M2_12.5%_齿轮齿缘与下轴段/07_A减D_像素误差改善.png",
+          "title": "D相对A的像素误差改善",
+          "width": 319,
+          "height": 376,
+          "sha256": "68918380fab9e86e3fa28b30be4d5c809aa3a1d703a5a42e2327ecd0ee5a6b83"
+        },
+        "A_outline": {
+          "file": "图5-5_A_D十二例独立小图/09_M2_12.5%_齿轮齿缘与下轴段/08_A_边缘轮廓误差.png",
+          "local_file": "09_M2_12.5%_齿轮齿缘与下轴段/08_A_边缘轮廓误差.png",
+          "title": "A 边缘／轮廓",
+          "width": 319,
+          "height": 376,
+          "sha256": "29c7a8262898ec090d19070eb8db7e0785db510450ec07a9356e4c58faa73fbe"
+        },
+        "D_outline": {
+          "file": "图5-5_A_D十二例独立小图/09_M2_12.5%_齿轮齿缘与下轴段/09_D_边缘轮廓误差.png",
+          "local_file": "09_M2_12.5%_齿轮齿缘与下轴段/09_D_边缘轮廓误差.png",
+          "title": "D 边缘／轮廓",
+          "width": 319,
+          "height": 376,
+          "sha256": "4091d6e9b29b850d20bc90d3408663dad1591405d4ea9529ee1209f41dd3070d"
+        },
+        "A_locator": {
+          "file": "图5-5_A_D十二例独立小图/09_M2_12.5%_齿轮齿缘与下轴段/10_A_局部定位.png",
+          "local_file": "09_M2_12.5%_齿轮齿缘与下轴段/10_A_局部定位.png",
+          "title": "A 放大区域定位",
+          "width": 761,
+          "height": 743,
+          "sha256": "b6d2cfc98e9abe3dd7d59e4c2c326a9f9bee464fcefa92c5ded5f1e9f0dde6b1"
+        },
+        "D_locator": {
+          "file": "图5-5_A_D十二例独立小图/09_M2_12.5%_齿轮齿缘与下轴段/11_D_局部定位.png",
+          "local_file": "09_M2_12.5%_齿轮齿缘与下轴段/11_D_局部定位.png",
+          "title": "D 放大区域定位",
+          "width": 761,
+          "height": 743,
+          "sha256": "fe9cce794618ed03dd7fa5867e73c38e819c1c5b3fc259155e3e8aeb7f8c5dae"
+        }
+      },
+      "summary": "部件面数A/D：192/386；部件几何RMS：1.868912% → 0.831021%，降低55.53%；四视角投影边界RMS降低56.71%；四视角图像RMSE降低11.35%。",
+      "caution": "局部面数发生重新分配，不能将全部收益归于局部约束。",
+      "numeric": {
+        "A_faces": 192,
+        "D_faces": 386,
+        "A_geometry_rms": 1.8689122190847254,
+        "D_geometry_rms": 0.8310212547417225,
+        "geometry_rms_reduction": 55.53449507924433,
+        "outline_rms_reduction": 56.70716314372114,
+        "A_rmse": 13.0851852835511,
+        "D_rmse": 11.599559964915407,
+        "rmse_reduction": 11.353490886393613,
+        "aggregation": "four-view mean for image and projected boundary; original part diagonal for geometry"
+      },
+      "source_reference_used_internally": true,
+      "selection": "Post hoc illustration; candidate geometry and view gains used for selection. Full64 main conditions unchanged."
+    },
+    {
+      "number": 10,
+      "name": "10_M2_12.5%_块状部件端部",
+      "model": 2,
+      "kind": "local",
+      "mesh": 1291,
+      "ratio": 0.125,
+      "label": "块状部件端部",
+      "view": "oblique_b",
+      "box": [
+        650,
+        304,
+        1430,
+        859
+      ],
+      "roi": [
+        1138,
+        553,
+        1422,
+        851
+      ],
+      "panels": {
+        "A_full": {
+          "file": "图5-5_A_D十二例独立小图/10_M2_12.5%_块状部件端部/01_A_整体.png",
+          "local_file": "10_M2_12.5%_块状部件端部/01_A_整体.png",
+          "title": "A 整体",
+          "width": 780,
+          "height": 555,
+          "sha256": "30918ad05efa7013a6f699f6afa565da47d6c57bcc9d4760f8180fd76f8ff477"
+        },
+        "D_full": {
+          "file": "图5-5_A_D十二例独立小图/10_M2_12.5%_块状部件端部/02_D_整体.png",
+          "local_file": "10_M2_12.5%_块状部件端部/02_D_整体.png",
+          "title": "D 整体",
+          "width": 780,
+          "height": 555,
+          "sha256": "3c494ac5ecfec26ad6fe610409540ae5f3c88ab621258dddaa5fb45c2e976787"
+        },
+        "A_zoom": {
+          "file": "图5-5_A_D十二例独立小图/10_M2_12.5%_块状部件端部/03_A_局部放大.png",
+          "local_file": "10_M2_12.5%_块状部件端部/03_A_局部放大.png",
+          "title": "A 局部放大",
+          "width": 284,
+          "height": 298,
+          "sha256": "e0ef161af061a36964676c8c108f2a14b9a5e7639c735eafd4e7eb60dd8c8cb3"
+        },
+        "D_zoom": {
+          "file": "图5-5_A_D十二例独立小图/10_M2_12.5%_块状部件端部/04_D_局部放大.png",
+          "local_file": "10_M2_12.5%_块状部件端部/04_D_局部放大.png",
+          "title": "D 局部放大",
+          "width": 284,
+          "height": 298,
+          "sha256": "8f70e904ee27a71d20291ba3a7f5fa7029f79326b5cf99c0abbbe71765c4c2d8"
+        },
+        "A_error": {
+          "file": "图5-5_A_D十二例独立小图/10_M2_12.5%_块状部件端部/05_A_像素误差.png",
+          "local_file": "10_M2_12.5%_块状部件端部/05_A_像素误差.png",
+          "title": "A 像素误差",
+          "width": 284,
+          "height": 298,
+          "sha256": "e8a2bb585f580aab2baff7d91312c401b5339c01dd6b1fd72e6b4cc4d7bd6730"
+        },
+        "D_error": {
+          "file": "图5-5_A_D十二例独立小图/10_M2_12.5%_块状部件端部/06_D_像素误差.png",
+          "local_file": "10_M2_12.5%_块状部件端部/06_D_像素误差.png",
+          "title": "D 像素误差",
+          "width": 284,
+          "height": 298,
+          "sha256": "05d4804567694c0fb40ff538286d82870fd244f3416e9b4ad815104d14170001"
+        },
+        "improvement": {
+          "file": "图5-5_A_D十二例独立小图/10_M2_12.5%_块状部件端部/07_A减D_像素误差改善.png",
+          "local_file": "10_M2_12.5%_块状部件端部/07_A减D_像素误差改善.png",
+          "title": "D相对A的像素误差改善",
+          "width": 284,
+          "height": 298,
+          "sha256": "45c0e5438885dc2e73a9b6b07ff9a24370b7ac9b36a09405c506b4b398c25b6e"
+        },
+        "A_outline": {
+          "file": "图5-5_A_D十二例独立小图/10_M2_12.5%_块状部件端部/08_A_边缘轮廓误差.png",
+          "local_file": "10_M2_12.5%_块状部件端部/08_A_边缘轮廓误差.png",
+          "title": "A 边缘／轮廓",
+          "width": 284,
+          "height": 298,
+          "sha256": "089a04ef899594443f70a042c830d86cea175beb3b102dcd1c2c9ac6b2add886"
+        },
+        "D_outline": {
+          "file": "图5-5_A_D十二例独立小图/10_M2_12.5%_块状部件端部/09_D_边缘轮廓误差.png",
+          "local_file": "10_M2_12.5%_块状部件端部/09_D_边缘轮廓误差.png",
+          "title": "D 边缘／轮廓",
+          "width": 284,
+          "height": 298,
+          "sha256": "7fa988ec39fe0a3f86dfaeb16620e6d8c7f195a32df656109a93ab538472c90e"
+        },
+        "A_locator": {
+          "file": "图5-5_A_D十二例独立小图/10_M2_12.5%_块状部件端部/10_A_局部定位.png",
+          "local_file": "10_M2_12.5%_块状部件端部/10_A_局部定位.png",
+          "title": "A 放大区域定位",
+          "width": 780,
+          "height": 555,
+          "sha256": "ea2dec39b5572dec2d2f42201301bde656276ae395219680497f4d4259eca0fb"
+        },
+        "D_locator": {
+          "file": "图5-5_A_D十二例独立小图/10_M2_12.5%_块状部件端部/11_D_局部定位.png",
+          "local_file": "10_M2_12.5%_块状部件端部/11_D_局部定位.png",
+          "title": "D 放大区域定位",
+          "width": 780,
+          "height": 555,
+          "sha256": "cb4019466dd6ab625469cdeec522b28b983863af9c7b24879daccbe1f180487d"
+        }
+      },
+      "summary": "部件面数A/D：48/48；部件几何RMS：1.718885% → 1.150092%，降低33.09%；四视角投影边界RMS降低72.56%；四视角图像RMSE降低13.59%。",
+      "caution": "部件面数相同或更少；局部几何误差按原始部件包围盒对角线归一化。",
+      "numeric": {
+        "A_faces": 48,
+        "D_faces": 48,
+        "A_geometry_rms": 1.7188848137030133,
+        "D_geometry_rms": 1.1500918774963105,
+        "geometry_rms_reduction": 33.09081165138377,
+        "outline_rms_reduction": 72.56328310505822,
+        "A_rmse": 5.796700880786085,
+        "D_rmse": 5.008968400621182,
+        "rmse_reduction": 13.589324278848757,
+        "aggregation": "four-view mean for image and projected boundary; original part diagonal for geometry"
+      },
+      "source_reference_used_internally": true,
+      "selection": "Post hoc illustration; candidate geometry and view gains used for selection. Full64 main conditions unchanged."
+    },
+    {
+      "number": 11,
+      "name": "11_M3_12.5%_圆形孔口",
+      "model": 3,
+      "kind": "local",
+      "mesh": 1249,
+      "ratio": 0.125,
+      "label": "圆形孔口",
+      "view": "front",
+      "box": [
+        537,
+        136,
+        1384,
+        980
+      ],
+      "roi": [
+        741,
+        528,
+        1096,
+        972
+      ],
+      "panels": {
+        "A_full": {
+          "file": "图5-5_A_D十二例独立小图/11_M3_12.5%_圆形孔口/01_A_整体.png",
+          "local_file": "11_M3_12.5%_圆形孔口/01_A_整体.png",
+          "title": "A 整体",
+          "width": 847,
+          "height": 844,
+          "sha256": "21930c3f945fc12c2763654ccbbac3997aac1611d18c2c4afd4628c75bd640a1"
+        },
+        "D_full": {
+          "file": "图5-5_A_D十二例独立小图/11_M3_12.5%_圆形孔口/02_D_整体.png",
+          "local_file": "11_M3_12.5%_圆形孔口/02_D_整体.png",
+          "title": "D 整体",
+          "width": 847,
+          "height": 844,
+          "sha256": "a165e86db757a57bdd2c667b4f4d126710695cba2cf1c56d019f445af1def42b"
+        },
+        "A_zoom": {
+          "file": "图5-5_A_D十二例独立小图/11_M3_12.5%_圆形孔口/03_A_局部放大.png",
+          "local_file": "11_M3_12.5%_圆形孔口/03_A_局部放大.png",
+          "title": "A 局部放大",
+          "width": 355,
+          "height": 444,
+          "sha256": "1e2069dff8dc694689812df0320f189f9f46532bce86bf4f3f682d90b76c9c2d"
+        },
+        "D_zoom": {
+          "file": "图5-5_A_D十二例独立小图/11_M3_12.5%_圆形孔口/04_D_局部放大.png",
+          "local_file": "11_M3_12.5%_圆形孔口/04_D_局部放大.png",
+          "title": "D 局部放大",
+          "width": 355,
+          "height": 444,
+          "sha256": "182e799d953b2f3a837d303add715cfc35acd9a797d1311b5df4f9bf432560d0"
+        },
+        "A_error": {
+          "file": "图5-5_A_D十二例独立小图/11_M3_12.5%_圆形孔口/05_A_像素误差.png",
+          "local_file": "11_M3_12.5%_圆形孔口/05_A_像素误差.png",
+          "title": "A 像素误差",
+          "width": 355,
+          "height": 444,
+          "sha256": "a6553bf1758f11578bffd28362dbed88e7447d40517772e31d35c4fc3446ffa2"
+        },
+        "D_error": {
+          "file": "图5-5_A_D十二例独立小图/11_M3_12.5%_圆形孔口/06_D_像素误差.png",
+          "local_file": "11_M3_12.5%_圆形孔口/06_D_像素误差.png",
+          "title": "D 像素误差",
+          "width": 355,
+          "height": 444,
+          "sha256": "f9823b2ed62aa1953ed8a32e585f1d554c654d97d8c28db193bf10ecc4d1071e"
+        },
+        "improvement": {
+          "file": "图5-5_A_D十二例独立小图/11_M3_12.5%_圆形孔口/07_A减D_像素误差改善.png",
+          "local_file": "11_M3_12.5%_圆形孔口/07_A减D_像素误差改善.png",
+          "title": "D相对A的像素误差改善",
+          "width": 355,
+          "height": 444,
+          "sha256": "e6bae6f90d0f6d503b996a7b4e7e280dde86b6d0cee3639cdfabd7c3391ba538"
+        },
+        "A_outline": {
+          "file": "图5-5_A_D十二例独立小图/11_M3_12.5%_圆形孔口/08_A_边缘轮廓误差.png",
+          "local_file": "11_M3_12.5%_圆形孔口/08_A_边缘轮廓误差.png",
+          "title": "A 边缘／轮廓",
+          "width": 355,
+          "height": 444,
+          "sha256": "6f987935104c2d1f73896a72234bde8e852fb055235e953eb7a37ab1d454edd3"
+        },
+        "D_outline": {
+          "file": "图5-5_A_D十二例独立小图/11_M3_12.5%_圆形孔口/09_D_边缘轮廓误差.png",
+          "local_file": "11_M3_12.5%_圆形孔口/09_D_边缘轮廓误差.png",
+          "title": "D 边缘／轮廓",
+          "width": 355,
+          "height": 444,
+          "sha256": "da0a9530c515a22925cd90af1f3248d42ebdfcc07a31a1b3e31a44d0a251a67d"
+        },
+        "A_locator": {
+          "file": "图5-5_A_D十二例独立小图/11_M3_12.5%_圆形孔口/10_A_局部定位.png",
+          "local_file": "11_M3_12.5%_圆形孔口/10_A_局部定位.png",
+          "title": "A 放大区域定位",
+          "width": 847,
+          "height": 844,
+          "sha256": "6242bd81b5ec51b2c2f08cd01addf75830c87bcbe1ad3ba00ab0528bd8ec21de"
+        },
+        "D_locator": {
+          "file": "图5-5_A_D十二例独立小图/11_M3_12.5%_圆形孔口/11_D_局部定位.png",
+          "local_file": "11_M3_12.5%_圆形孔口/11_D_局部定位.png",
+          "title": "D 放大区域定位",
+          "width": 847,
+          "height": 844,
+          "sha256": "eb29c029153a6f9921f4c7a153a6a3eecb23d7dfeb62d5b05dfa1bf183bfb43d"
+        }
+      },
+      "summary": "部件面数A/D：232/230；部件几何RMS：0.959688% → 0.498331%，降低48.07%；四视角投影边界RMS降低37.22%；四视角图像RMSE降低2.07%。",
+      "caution": "部件面数相同或更少；局部几何误差按原始部件包围盒对角线归一化。",
+      "numeric": {
+        "A_faces": 232,
+        "D_faces": 230,
+        "A_geometry_rms": 0.9596876509385185,
+        "D_geometry_rms": 0.4983310590482067,
+        "geometry_rms_reduction": 48.073619728161766,
+        "outline_rms_reduction": 37.21846240078448,
+        "A_rmse": 21.65176157506575,
+        "D_rmse": 21.204376766730956,
+        "rmse_reduction": 2.066274408129465,
+        "aggregation": "four-view mean for image and projected boundary; original part diagonal for geometry"
+      },
+      "source_reference_used_internally": true,
+      "selection": "Post hoc illustration; candidate geometry and view gains used for selection. Full64 main conditions unchanged."
+    },
+    {
+      "number": 12,
+      "name": "12_M4_25%_圆形部件外缘",
+      "model": 4,
+      "kind": "local",
+      "mesh": 1455,
+      "ratio": 0.25,
+      "label": "圆形部件外缘",
+      "view": "front",
+      "box": [
+        541,
+        0,
+        1379,
+        958
+      ],
+      "roi": [
+        630,
+        0,
+        981,
+        459
+      ],
+      "panels": {
+        "A_full": {
+          "file": "图5-5_A_D十二例独立小图/12_M4_25%_圆形部件外缘/01_A_整体.png",
+          "local_file": "12_M4_25%_圆形部件外缘/01_A_整体.png",
+          "title": "A 整体",
+          "width": 838,
+          "height": 958,
+          "sha256": "c11bd4d933aa9c7de4e660fbf8da1a8e14c698dbeecdf13f6937b0903d74e968"
+        },
+        "D_full": {
+          "file": "图5-5_A_D十二例独立小图/12_M4_25%_圆形部件外缘/02_D_整体.png",
+          "local_file": "12_M4_25%_圆形部件外缘/02_D_整体.png",
+          "title": "D 整体",
+          "width": 838,
+          "height": 958,
+          "sha256": "03631b92754bc02a94966340be2033585791599243da10a839a6022fca30a591"
+        },
+        "A_zoom": {
+          "file": "图5-5_A_D十二例独立小图/12_M4_25%_圆形部件外缘/03_A_局部放大.png",
+          "local_file": "12_M4_25%_圆形部件外缘/03_A_局部放大.png",
+          "title": "A 局部放大",
+          "width": 351,
+          "height": 459,
+          "sha256": "36bb0eadba075fcefc4ea39bea11f9e9221329b85171be3116de65337622e405"
+        },
+        "D_zoom": {
+          "file": "图5-5_A_D十二例独立小图/12_M4_25%_圆形部件外缘/04_D_局部放大.png",
+          "local_file": "12_M4_25%_圆形部件外缘/04_D_局部放大.png",
+          "title": "D 局部放大",
+          "width": 351,
+          "height": 459,
+          "sha256": "ae914eb8147ad832a95f1d17c97347a7969b1bf9609888e97ce0ec7c7f6ff1de"
+        },
+        "A_error": {
+          "file": "图5-5_A_D十二例独立小图/12_M4_25%_圆形部件外缘/05_A_像素误差.png",
+          "local_file": "12_M4_25%_圆形部件外缘/05_A_像素误差.png",
+          "title": "A 像素误差",
+          "width": 351,
+          "height": 459,
+          "sha256": "1a8a26d8535a620f7ff4a4c221081da3499dec218587794292398f5584d11623"
+        },
+        "D_error": {
+          "file": "图5-5_A_D十二例独立小图/12_M4_25%_圆形部件外缘/06_D_像素误差.png",
+          "local_file": "12_M4_25%_圆形部件外缘/06_D_像素误差.png",
+          "title": "D 像素误差",
+          "width": 351,
+          "height": 459,
+          "sha256": "4c91e65182ec36561367199599abd87cfb4fb1d175aeb53db16cd4d57eb5655c"
+        },
+        "improvement": {
+          "file": "图5-5_A_D十二例独立小图/12_M4_25%_圆形部件外缘/07_A减D_像素误差改善.png",
+          "local_file": "12_M4_25%_圆形部件外缘/07_A减D_像素误差改善.png",
+          "title": "D相对A的像素误差改善",
+          "width": 351,
+          "height": 459,
+          "sha256": "cfc4b2311b79b5e651c74562e8b40689a18327672ab6617bf98840d7f24b61e7"
+        },
+        "A_outline": {
+          "file": "图5-5_A_D十二例独立小图/12_M4_25%_圆形部件外缘/08_A_边缘轮廓误差.png",
+          "local_file": "12_M4_25%_圆形部件外缘/08_A_边缘轮廓误差.png",
+          "title": "A 边缘／轮廓",
+          "width": 351,
+          "height": 459,
+          "sha256": "f03d64debd378a416d0db0191515290567a6f173f4d6d5f35a2832417db7397c"
+        },
+        "D_outline": {
+          "file": "图5-5_A_D十二例独立小图/12_M4_25%_圆形部件外缘/09_D_边缘轮廓误差.png",
+          "local_file": "12_M4_25%_圆形部件外缘/09_D_边缘轮廓误差.png",
+          "title": "D 边缘／轮廓",
+          "width": 351,
+          "height": 459,
+          "sha256": "39163d4ae03b3a83bc03db9c3b7fa20bd14022aa96e602692b8fc155b21418b5"
+        },
+        "A_locator": {
+          "file": "图5-5_A_D十二例独立小图/12_M4_25%_圆形部件外缘/10_A_局部定位.png",
+          "local_file": "12_M4_25%_圆形部件外缘/10_A_局部定位.png",
+          "title": "A 放大区域定位",
+          "width": 838,
+          "height": 958,
+          "sha256": "5b18b3382011bcbc84db615cee8f2033c759add88546cc56480fbd4e73680038"
+        },
+        "D_locator": {
+          "file": "图5-5_A_D十二例独立小图/12_M4_25%_圆形部件外缘/11_D_局部定位.png",
+          "local_file": "12_M4_25%_圆形部件外缘/11_D_局部定位.png",
+          "title": "D 放大区域定位",
+          "width": 838,
+          "height": 958,
+          "sha256": "d49335ce7982b046dd536d1d26eaf7719a44fb87a3cb5a277225e5a04e1b8611"
+        }
+      },
+      "summary": "部件面数A/D：507/506；部件几何RMS：0.238313% → 0.061730%，降低74.10%；四视角投影边界RMS降低70.03%；四视角图像RMSE降低1.01%。",
+      "caution": "部件面数相同或更少；局部几何误差按原始部件包围盒对角线归一化。",
+      "numeric": {
+        "A_faces": 507,
+        "D_faces": 506,
+        "A_geometry_rms": 0.23831274201462183,
+        "D_geometry_rms": 0.06173043704661079,
+        "geometry_rms_reduction": 74.09687936752316,
+        "outline_rms_reduction": 70.02926920163289,
+        "A_rmse": 22.197649995995672,
+        "D_rmse": 21.97234508201676,
+        "rmse_reduction": 1.0149944431935731,
+        "aggregation": "four-view mean for image and projected boundary; original part diagonal for geometry"
+      },
+      "source_reference_used_internally": true,
+      "selection": "Post hoc illustration; candidate geometry and view gains used for selection. Full64 main conditions unchanged."
+    }
+  ],
+  "total_cases": 12,
+  "whole_cases": 4,
+  "local_cases": 8,
+  "individual_panels": 132,
+  "legend_images": 3,
+  "comparison_baseline": "A",
+  "comparison_candidate": "D",
+  "main_conditions_retained": 64,
+  "retained_candidates": 24,
+  "original_reference_not_displayed": true,
+  "standalone_panels": true
+}

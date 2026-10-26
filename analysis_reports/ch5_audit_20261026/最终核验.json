@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "paper_tables": 9,
+  "paper_numeric_checks": 308,
+  "rounded_differences_to_fix": 5,
+  "workbook_sheets": 17,
+  "saved_formula_cache_checks": 160,
+  "source_sha256_rechecked": true,
+  "original_Word_unchanged": true,
+  "final_CSV_unchanged": true,
+  "archived_files": 93899,
+  "archive_crc_verified": true,
+  "transient_files_deleted": 911,
+  "net_reclaimed_bytes": 4572074374,
+  "reference_labels_verified": false
+}
