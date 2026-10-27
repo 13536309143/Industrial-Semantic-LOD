@@ -4,6 +4,7 @@
 // Derived renderers reuse these pieces so traversal and raster paths only own their specialized pipelines.
 //==============================================================================
 #include <algorithm>
+#include <cmath>
 #include <random>
 #include <vector>
 #include <volk.h>
@@ -160,6 +161,9 @@ void Renderer::initBasics(Resources& res, RenderScene& rscene, const RendererCon
 
     renderInstance.packedColor    = glm::packUnorm4x8(sceneInstance.color);
     renderInstance.lodErrorScale  = std::max(sceneInstance.lodErrorScale, 0.01f);
+    if(scene.hasSemanticLodPolicies())
+      renderInstance.lodErrorScale=std::clamp(std::pow(renderInstance.lodErrorScale/std::max(config.semanticRuntimePivot,0.01f),
+                                                     std::clamp(config.semanticRuntimeStrength,0.0f,2.0f)),0.10f,2.40f);
     renderInstance.lodPolicyFlags = sceneInstance.lodPolicy;
     renderInstance.twoSided       = sceneInstance.twoSided ? 1 : 0;
     renderInstance.flipWinding =
@@ -171,6 +175,9 @@ void Renderer::initBasics(Resources& res, RenderScene& rscene, const RendererCon
 
   NVVK_DBG_NAME(m_renderInstanceBuffer.buffer);
   res.simpleUploadBuffer(m_renderInstanceBuffer, m_renderInstances.data());
+  if(scene.hasSemanticLodPolicies())
+    LOGI("Semantic runtime calibration: strength %.3f, pivot %.3f, preserve finest %u\n",config.semanticRuntimeStrength,
+         config.semanticRuntimePivot,scene.m_config.reservedData[1]);
   if(config.useSorting)
   {
     VrdxSorterStorageRequirements sorterRequirements = {};

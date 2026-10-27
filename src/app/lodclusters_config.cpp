@@ -66,6 +66,18 @@ LodClusters::LodClusters(const Info& info)
   m_info.parameterRegistry->add({"featurecriticalthreshold"}, &m_sceneConfig.featureCriticalThreshold);
   m_info.parameterRegistry->add({"semanticlodmode"}, &m_sceneConfig.semanticLodMode);
 
+  m_info.parameterRegistry->add({"preservefinest"}, &m_sceneConfig.reservedData[1]);
+  m_info.parameterRegistry->add({"semanticruntimestrength"}, &m_rendererConfig.semanticRuntimeStrength);
+  m_info.parameterRegistry->add({"semanticruntimepivot"}, &m_rendererConfig.semanticRuntimePivot);
+  m_info.parameterRegistry->add({"parallelgroups"}, &m_rendererConfig.useParallelGroups);
+  m_info.parameterRegistry->add({"boundedassemblylod"}, &m_rendererConfig.boundAssemblyLod);
+  m_info.parameterRegistry->add({"groupclusterlanes"}, &m_rendererConfig.groupClusterLanes);
+  m_info.parameterRegistry->add({"floatdepth"}, &m_resources.preferFloatDepth);
+  m_info.parameterRegistry->add({"twopasscostprobe"}, &m_rendererConfig.twoPassCostProbeInterval);
+  m_info.parameterRegistry->add({"twopasscosthysteresis"}, &m_rendererConfig.twoPassCostHysteresis);
+  m_info.parameterRegistry->add({"twopasscostsmoothing"}, &m_rendererConfig.twoPassCostSmoothing);
+  m_info.parameterRegistry->add({"twopasscostwarmup"}, &m_rendererConfig.twoPassCostWarmupFrames);
+
   m_info.parameterRegistry->add({"loderror"}, &m_frameConfig.lodPixelError);
   m_info.parameterRegistry->add({"shadowray"}, &m_frameConfig.frameConstants.doShadow);
   m_info.parameterRegistry->add({"maxtransfermegabytes"}, (uint32_t*)&m_streamingConfig.maxTransferMegaBytes);
@@ -80,6 +92,10 @@ LodClusters::LodClusters(const Info& info)
   m_info.parameterRegistry->add({"adaptivetwopassculling"}, &m_rendererConfig.useAdaptiveTwoPassCulling);
   m_info.parameterRegistry->add({"twopassminclusters"}, &m_rendererConfig.twoPassMinClusters);
   m_info.parameterRegistry->add({"twopassmatrixdelta"}, &m_rendererConfig.twoPassMatrixDelta);
+  m_info.parameterRegistry->add({"adaptivetwopassmode"}, &m_rendererConfig.adaptiveTwoPassMode);
+  m_info.parameterRegistry->add({"twopassmotionpixels"}, &m_rendererConfig.twoPassMotionPixels);
+  m_info.parameterRegistry->add({"twopassfastpixels"}, &m_rendererConfig.twoPassFastPixels);
+  m_info.parameterRegistry->add({"twopassmaxinterval"}, &m_rendererConfig.twoPassMaxInterval);
   m_info.parameterRegistry->add({"forcedinvisculling"}, &m_rendererConfig.useForcedInvisibleCulling);
   m_info.parameterRegistry->add({"separategroups"}, &m_rendererConfig.useSeparateGroups);
   m_info.parameterRegistry->add({"cachingenabledlevels"}, &m_frameConfig.cachingEnabledLevels);

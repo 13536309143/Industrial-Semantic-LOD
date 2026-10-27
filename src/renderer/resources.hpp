@@ -175,6 +175,9 @@ struct QueueStateManager
 class Resources
 {
 public:
+  bool preferFloatDepth = true;
+  uint32_t getFrameCycleIndex() const { return m_cycleIndex; }
+  uint32_t getFrameCycleCount() const { return uint32_t(m_commonBuffers.readBackHost.bufferSize/sizeof(shaderio::Readback)); }
   static constexpr VkPipelineStageFlags2 ALL_SHADER_STAGES =
       VK_PIPELINE_STAGE_FRAGMENT_SHADER_BIT | VK_PIPELINE_STAGE_2_PRE_RASTERIZATION_SHADERS_BIT | VK_PIPELINE_STAGE_2_COMPUTE_SHADER_BIT;
 

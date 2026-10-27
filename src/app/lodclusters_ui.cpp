@@ -337,6 +337,22 @@ void LodClusters::onUIRender()
 
   if(ImGui::Begin("Settings"))
   {
+    if(ImGui::Button("Apply M1/M10 unified quality preset"))
+    {
+      m_sceneConfig.reservedData[1]=1;
+      m_sceneConfig.semanticLodMode=SEMANTIC_LOD_POINTNEXT_POINTCLIP_STRUCTURE_METADATA;
+      m_sceneConfig.featureConstraints=true;
+      m_sceneConfig.assemblyCullingMinInstances=8;m_sceneConfig.assemblyLodPixelThreshold=24;
+      m_rendererConfig.useCulling=true;m_rendererConfig.useSeparateGroups=true;
+      m_rendererConfig.useTwoPassCulling=true;m_rendererConfig.useAdaptiveTwoPassCulling=true;
+      m_rendererConfig.adaptiveTwoPassMode=2;
+      m_rendererConfig.useParallelGroups=true;m_rendererConfig.boundAssemblyLod=true;m_rendererConfig.groupClusterLanes=8;
+      m_rendererConfig.semanticRuntimeStrength=0;m_rendererConfig.semanticRuntimePivot=1;
+      m_frameConfig.lodPixelError=.5f;
+      m_tweak.supersample=1;m_tweak.useStreaming=false;m_tweak.facetShading=true;
+      m_frameConfig.visualize=0;m_frameConfig.frameConstants.doShadow=0;
+    }
+    if(ImGui::IsItemHovered())ImGui::SetTooltip("Tested on M1/M10. Preserves original finest geometry, keeps offline semantic constraints, uses uniform runtime error scaling. May rebuild the geometry cache.");
     ImGui::PushItemWidth(170 * ImGui::GetWindowDpiScale());
 
 
@@ -395,11 +411,29 @@ void LodClusters::onUIRender()
                        "Use two pass culling in rasterization, otherwise uses only last frame's hiz");
           ImGui::BeginDisabled(!m_rendererConfig.useTwoPassCulling);
           PE::Checkbox("Adaptive TwoPass", &m_rendererConfig.useAdaptiveTwoPassCulling,
-                       "Only run the second pass when the scene is large enough and culling matrices changed");
+                       "Screen-space motion, accumulated motion and bounded refresh; moving single-pass frames use conservative visibility");
           PE::InputIntClamped("TwoPass min clusters", (int*)&m_rendererConfig.twoPassMinClusters, 0, 1 << 28, 256, 1024,
                               ImGuiInputTextFlags_EnterReturnsTrue);
+          PE::InputIntClamped("Adaptive mode (0 legacy, 1 motion, 2 cost)", (int*)&m_rendererConfig.adaptiveTwoPassMode, 0, 2, 1, 1,
+                              ImGuiInputTextFlags_EnterReturnsTrue);
+          ImGui::BeginDisabled(m_rendererConfig.adaptiveTwoPassMode != 0);
           PE::InputFloat("TwoPass matrix delta", &m_rendererConfig.twoPassMatrixDelta, 0.0001f, 0.001f, "%.6f",
                          ImGuiInputTextFlags_EnterReturnsTrue);
+          ImGui::EndDisabled();
+          ImGui::BeginDisabled(m_rendererConfig.adaptiveTwoPassMode != 1);
+          PE::InputFloat("TwoPass accumulated pixels", &m_rendererConfig.twoPassMotionPixels, 1.0f, 4.0f, "%.2f",
+                         ImGuiInputTextFlags_EnterReturnsTrue);
+          PE::InputFloat("TwoPass fast-motion pixels", &m_rendererConfig.twoPassFastPixels, 1.0f, 4.0f, "%.2f",
+                         ImGuiInputTextFlags_EnterReturnsTrue);
+          PE::InputIntClamped("TwoPass refresh bound", (int*)&m_rendererConfig.twoPassMaxInterval, 1, 120, 1, 4,
+                              ImGuiInputTextFlags_EnterReturnsTrue);
+          ImGui::EndDisabled();
+          ImGui::BeginDisabled(m_rendererConfig.adaptiveTwoPassMode != 2);
+          PE::InputIntClamped("Cost calibration frames", (int*)&m_rendererConfig.twoPassCostWarmupFrames, 8, 256, 4, 8, ImGuiInputTextFlags_EnterReturnsTrue);
+          PE::InputIntClamped("Cost base probe interval", (int*)&m_rendererConfig.twoPassCostProbeInterval, 1, 120, 1, 4, ImGuiInputTextFlags_EnterReturnsTrue);
+          PE::InputFloat("Cost switch hysteresis", &m_rendererConfig.twoPassCostHysteresis, .01f, .05f, "%.3f", ImGuiInputTextFlags_EnterReturnsTrue);
+          PE::InputFloat("Cost smoothing", &m_rendererConfig.twoPassCostSmoothing, .05f, .1f, "%.3f", ImGuiInputTextFlags_EnterReturnsTrue);
+          ImGui::EndDisabled();
           ImGui::EndDisabled();
 
           ImGui::EndDisabled();
@@ -443,6 +477,25 @@ void LodClusters::onUIRender()
 
         ImGui::TableNextColumn();
         ImGui::Text("%s", readback.twoPassCullingActive ? "yes" : "no");
+
+        ImGui::TableNextRow();
+        ImGui::TableNextColumn();
+        ImGui::Text("Screen / accumulated motion");
+        ImGui::TableNextColumn();
+        ImGui::Text("%.2f / %.2f px", readback.adaptiveMotionPixels, readback.adaptiveAccumulatedPixels);
+        ImGui::TableNextRow();
+        ImGui::TableNextColumn();
+        ImGui::Text("Refresh age / trigger reason");
+        ImGui::TableNextColumn();
+        const uint32_t reason=readback.adaptiveTriggerReason;
+        ImGui::Text("%u / %s",readback.adaptiveRefreshAge,
+                    (reason&16u)?"streaming":(reason&32u)?"fixed":(reason&1u)?"startup":
+                    (reason&2u)?"fast motion":(reason&4u)?"accumulated motion":(reason&8u)?"refresh bound":"none");
+        ImGui::TableNextRow();
+        ImGui::TableNextColumn();
+        ImGui::Text("Conservative moving frame");
+        ImGui::TableNextColumn();
+        ImGui::Text("%s",readback.adaptiveTemporalBypass?"yes":"no");
 
         ImGui::TableNextRow();
 
@@ -1427,6 +1480,10 @@ void LodClusters::onUIRender()
             rowBool("Adaptive two-pass", m_rendererConfig.useAdaptiveTwoPassCulling);
             rowFmt("Two-pass min clusters", "{}", m_rendererConfig.twoPassMinClusters);
             rowFmt("Two-pass matrix delta", "{:.6f}", m_rendererConfig.twoPassMatrixDelta);
+            rowFmt("Adaptive mode", "{}", m_rendererConfig.adaptiveTwoPassMode);
+            rowFmt("Accumulated motion px", "{:.2f}", m_rendererConfig.twoPassMotionPixels);
+            rowFmt("Fast motion px", "{:.2f}", m_rendererConfig.twoPassFastPixels);
+            rowFmt("Refresh frame bound", "{}", m_rendererConfig.twoPassMaxInterval);
             rowBool("Separate groups", m_rendererConfig.useSeparateGroups);
             rowBool("Instance sorting", m_rendererConfig.useSorting);
             rowBool("Render stats", m_rendererConfig.useRenderStats);

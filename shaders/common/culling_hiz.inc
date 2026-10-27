@@ -27,6 +27,11 @@ int fastMipmapLevel(float maxsize)
 
 bool intersectHiz(vec4 clipMin, vec4 clipMax, uint idx)
 {
+#ifdef ADAPTIVE_TEMPORAL_GUARD
+    // Moving single-pass frames use current frusta. A previous-frame Hi-Z is
+    // not a conservative occlusion oracle there: keep the candidate instead.
+    if(build.adaptiveTemporalBypass != 0u) return true;
+#endif
 
     if (clipMax.w <= 0.0) return false;
 

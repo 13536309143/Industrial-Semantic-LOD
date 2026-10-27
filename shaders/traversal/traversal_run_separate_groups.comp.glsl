@@ -149,7 +149,18 @@ bool queryWasVisible(mat4x3 instanceTransform, BBox bbox, out vec4 outClipMin, o
 void main()
 {
 
-  uint threadReadIndex = getGlobalInvocationIndex(gl_GlobalInvocationID);
+  uint invocation = getGlobalInvocationIndex(gl_GlobalInvocationID);
+#if PARALLEL_GROUPS
+  // Consecutive lanes process consecutive clusters of the same group.
+  // Stride within each group; several small groups can share a subgroup.
+  uint threadReadIndex = invocation / uint(GROUP_CLUSTER_LANES);
+  uint firstCluster = invocation % uint(GROUP_CLUSTER_LANES);
+  const uint clusterStride = uint(GROUP_CLUSTER_LANES);
+#else
+  uint threadReadIndex = invocation;
+  uint firstCluster = 0u;
+  const uint clusterStride = 1u;
+#endif
   if(threadReadIndex >= min(build.traversalGroupCounter, build.maxTraversalInfos))
   {
     return;
@@ -183,7 +194,7 @@ void main()
   Group    group    = groupRef.d;
 #endif
 
-  for(uint clusterIndex = 0; clusterIndex < groupClusterCount; clusterIndex++)
+  for(uint clusterIndex = firstCluster; clusterIndex < groupClusterCount; clusterIndex += clusterStride)
   {
     bool            forceCluster   = false;
     bool            isValid        = true;

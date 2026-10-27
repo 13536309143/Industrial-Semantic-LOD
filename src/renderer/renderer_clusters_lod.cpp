@@ -13,6 +13,8 @@
 #include <cmath>
 #include "renderer.hpp"
 #include "shaderio.h"
+#include "adaptive_two_pass.hpp"
+#include "adaptive_cost.hpp"
 
 namespace {
 float matrixMaxAbsDelta(const glm::mat4& a, const glm::mat4& b)
@@ -85,6 +87,14 @@ private:
   nvvk::Buffer m_assemblyNodeBuffer;
   nvvk::Buffer m_assemblyStateBuffer;
   shaderio::SceneBuilding m_sceneBuildShaderio;
+  AdaptiveTwoPassController m_adaptiveTwoPass;
+  AdaptiveCostController m_adaptiveCost;
+  VkQueryPool m_costQueries = VK_NULL_HANDLE;
+  double m_timestampPeriod = 0;
+  struct CostSample { bool pending=false; bool dual=false; bool eligible=false; };
+  std::vector<CostSample> m_costSamples;
+  bool m_lastCostValid=false,m_lastCostDual=false;
+  uint64_t m_lastCostFrame=0;
 };
 
 
@@ -108,6 +118,10 @@ bool RendererRasterClustersLod::initShaders(Resources& res, RenderScene& rscene,
 
 
   options.SetOptimizationLevel(shaderc_optimization_level_performance);
+  options.AddMacroDefinition("PARALLEL_GROUPS", config.useParallelGroups ? "1" : "0");
+  options.AddMacroDefinition("QUALITY_BOUNDED_ASSEMBLY", config.boundAssemblyLod ? "1" : "0");
+  options.AddMacroDefinition("GROUP_CLUSTER_LANES",fmt::format("{}",std::clamp(config.groupClusterLanes,1u,32u)));
+
 
 
   options.AddMacroDefinition("SUBGROUP_SIZE", fmt::format("{}", res.m_physicalDeviceInfo.properties11.subgroupSize));
@@ -116,6 +130,7 @@ bool RendererRasterClustersLod::initShaders(Resources& res, RenderScene& rscene,
   options.AddMacroDefinition("CLUSTER_TRIANGLE_COUNT", fmt::format("{}", meshletTriangles));
 
   options.AddMacroDefinition("TARGETS_RASTERIZATION", "1");
+  options.AddMacroDefinition("ADAPTIVE_TEMPORAL_GUARD", "1");
 
   options.AddMacroDefinition("USE_STREAMING", rscene.useStreaming ? "1" : "0");
 
@@ -424,6 +439,23 @@ bool RendererRasterClustersLod::init(Resources& res, RenderScene& rscene, const 
     }
   }
 
+  if(config.adaptiveTwoPassMode==2)
+  {
+    m_adaptiveCost.reset();
+    m_lastCostValid=false;
+    m_costSamples.resize(res.getFrameCycleCount());
+    VkPhysicalDeviceProperties properties{};
+    vkGetPhysicalDeviceProperties(res.m_physicalDevice,&properties);
+    m_timestampPeriod=properties.limits.timestampPeriod;
+    if(!m_costSamples.empty()&&m_timestampPeriod>0)
+    {
+      VkQueryPoolCreateInfo poolInfo{VK_STRUCTURE_TYPE_QUERY_POOL_CREATE_INFO};
+      poolInfo.queryType=VK_QUERY_TYPE_TIMESTAMP;poolInfo.queryCount=uint32_t(m_costSamples.size()*2);
+      if(vkCreateQueryPool(res.m_device,&poolInfo,nullptr,&m_costQueries)!=VK_SUCCESS)
+      { m_costQueries=VK_NULL_HANDLE;LOGW("Cost feedback unavailable; falling back to motion scheduler\n"); }
+    }
+  }
+
   return true;
 }
 
@@ -437,6 +469,24 @@ static uint32_t getWorkGroupCount(uint32_t numThreads, uint32_t workGroupSize)
 void RendererRasterClustersLod::render(VkCommandBuffer cmd, Resources& res, RenderScene& rscene, const FrameConfig& frame, nvvk::ProfilerGpuTimer& profiler)
 {
   VkMemoryBarrier memBarrier = { VK_STRUCTURE_TYPE_MEMORY_BARRIER };
+  const AdaptiveCostSettings costSettings{m_config.twoPassCostProbeInterval,m_config.twoPassCostHysteresis,m_config.twoPassCostSmoothing,m_config.twoPassCostWarmupFrames};
+  const uint32_t costSlot=res.getFrameCycleIndex();
+  bool costSlotReady=m_costQueries!=VK_NULL_HANDLE&&costSlot<m_costSamples.size();
+  if(costSlotReady&&m_costSamples[costSlot].pending)
+  {
+    uint64_t values[4]{};
+    VkResult result=vkGetQueryPoolResults(res.m_device,m_costQueries,costSlot*2,2,sizeof(values),values,
+        2*sizeof(uint64_t),VK_QUERY_RESULT_64_BIT|VK_QUERY_RESULT_WITH_AVAILABILITY_BIT);
+    if(result==VK_SUCCESS&&values[1]&&values[3])
+    {
+      if(m_costSamples[costSlot].eligible)
+        m_adaptiveCost.observe(m_costSamples[costSlot].dual,double(values[2]-values[0])*m_timestampPeriod/1e6,costSettings);
+      m_costSamples[costSlot].pending=false;
+    }
+    else costSlotReady=false; // Never block the CPU waiting for a timing result.
+  }
+
+
 
   {
 
@@ -459,10 +509,50 @@ void RendererRasterClustersLod::render(VkCommandBuffer cmd, Resources& res, Rend
   const bool sceneLargeEnough = !rscene.scene || rscene.scene->m_totalClustersCount >= m_config.twoPassMinClusters;
   const bool cameraMovedEnough =
       matrixMaxAbsDelta(frame.cullViewProjMatrix, frame.cullViewProjMatrixLast) >= m_config.twoPassMatrixDelta;
-  const bool twoPassActive = twoPassRequested
+  bool twoPassActive = twoPassRequested
                              && (!m_config.useAdaptiveTwoPassCulling
                                  || (!frame.freezeCulling && sceneLargeEnough && cameraMovedEnough));
+  m_sceneBuildShaderio.adaptiveTemporalBypass=0;
+  m_sceneBuildShaderio.adaptiveTriggerReason=0;
+  m_sceneBuildShaderio.adaptiveMotionPixels=0;
+  m_sceneBuildShaderio.adaptiveAccumulatedPixels=0;
+  m_sceneBuildShaderio.adaptiveRefreshAge=0;
+  float screenMotion=0;
+  if(m_config.adaptiveTwoPassMode==1||m_config.adaptiveTwoPassMode==2)
+  {
+    const float motion=projectedSceneMotion(frame.cullViewProjMatrix,frame.cullViewProjMatrixLast,
+        rscene.scene->m_gridBbox.lo,rscene.scene->m_gridBbox.hi,frame.frameConstants.viewportf);
+    screenMotion=motion;
+    AdaptiveTwoPassSettings settings{m_config.twoPassMotionPixels,m_config.twoPassFastPixels,m_config.twoPassMaxInterval};
+    const auto decision=(m_config.adaptiveTwoPassMode==2&&m_costQueries!=VK_NULL_HANDLE)
+        ? m_adaptiveCost.update(motion,twoPassRequested,m_config.useAdaptiveTwoPassCulling,
+            sceneLargeEnough,frame.freezeCulling,rscene.useStreaming,costSettings)
+        : m_adaptiveTwoPass.update(motion,twoPassRequested,m_config.useAdaptiveTwoPassCulling,
+            sceneLargeEnough,frame.freezeCulling,rscene.useStreaming,settings);
+    twoPassActive=decision.active;
+    m_sceneBuildShaderio.adaptiveTemporalBypass=decision.bypassTemporal ? 1u : 0u;
+    m_sceneBuildShaderio.adaptiveTriggerReason=decision.reason;
+    m_sceneBuildShaderio.adaptiveMotionPixels=motion;
+    m_sceneBuildShaderio.adaptiveAccumulatedPixels=decision.accumulatedPixels;
+    m_sceneBuildShaderio.adaptiveRefreshAge=decision.age;
+    if(decision.bypassTemporal)
+      m_sceneBuildShaderio.cullViewProjMatrixLast=frame.cullViewProjMatrix;
+  }
   m_sceneBuildShaderio.twoPassCullingActive = twoPassActive ? 1u : 0u;
+  if(m_config.adaptiveTwoPassMode==2&&m_config.useRenderStats&&twoPassRequested
+      &&m_config.useAdaptiveTwoPassCulling&&m_frameIndex%60==0)
+    LOGI("COST_FEEDBACK_CSV,%u,%.6f,%.6f,%u,%u\n",m_frameIndex,m_adaptiveCost.singleCost(),
+        m_adaptiveCost.dualCost(),twoPassActive?1u:0u,m_sceneBuildShaderio.adaptiveTriggerReason);
+  const bool measureCost=costSlotReady&&twoPassRequested&&m_config.useAdaptiveTwoPassCulling
+      &&sceneLargeEnough&&!frame.freezeCulling&&!rscene.useStreaming
+      &&(screenMotion>.001f||(m_sceneBuildShaderio.adaptiveTriggerReason&(AdaptiveCostController::CostDual|AdaptiveCostController::CostSingle))!=0);
+  if(measureCost)
+  {
+    vkCmdResetQueryPool(cmd,m_costQueries,costSlot*2,2);
+    vkCmdWriteTimestamp(cmd,VK_PIPELINE_STAGE_TOP_OF_PIPE_BIT,m_costQueries,costSlot*2);
+  }
+
+
 
   vkCmdUpdateBuffer(cmd, res.m_commonBuffers.frameConstants.buffer, 0, sizeof(shaderio::FrameConstants), (const uint32_t*)&frame.frameConstants);
   vkCmdUpdateBuffer(cmd, m_sceneBuildBuffer.buffer, 0, sizeof(shaderio::SceneBuilding), (const uint32_t*)&m_sceneBuildShaderio);
@@ -580,8 +670,11 @@ void RendererRasterClustersLod::render(VkCommandBuffer cmd, Resources& res, Rend
 
         vkCmdPipelineBarrier(cmd, VK_PIPELINE_STAGE_COMPUTE_SHADER_BIT, VK_PIPELINE_STAGE_COMPUTE_SHADER_BIT | VK_PIPELINE_STAGE_DRAW_INDIRECT_BIT, 0, 1, &memBarrier, 0, nullptr, 0, nullptr);
 
+        {
+          auto groupTimer = profiler.cmdFrameSection(cmd, "Group Visibility");
         vkCmdBindPipeline(cmd, VK_PIPELINE_BIND_POINT_COMPUTE, m_pipelines.computeTraversalGroups);
         vkCmdDispatchIndirect(cmd, m_sceneBuildBuffer.buffer, offsetof(shaderio::SceneBuilding, indirectDispatchGroups));
+        }
       }
 
 
@@ -695,14 +788,25 @@ void RendererRasterClustersLod::render(VkCommandBuffer cmd, Resources& res, Rend
   m_resourceActualUsage                    = m_resourceReservedUsage;
 
   m_resourceActualUsage.geometryMemBytes   = rscene.getGeometrySize(false);
+  if(measureCost)
+  {
+    vkCmdWriteTimestamp(cmd,VK_PIPELINE_STAGE_BOTTOM_OF_PIPE_BIT,m_costQueries,costSlot*2+1);
+    const bool eligible=m_lastCostValid&&m_lastCostFrame+1==m_frameIndex&&m_lastCostDual==twoPassActive;
+    m_costSamples[costSlot]={true,twoPassActive,eligible};
+    m_lastCostValid=true;m_lastCostFrame=m_frameIndex;m_lastCostDual=twoPassActive;
+  }
   m_frameIndex++;
 }
 
 
 void RendererRasterClustersLod::updatedFrameBuffer(Resources& res, RenderScene& rscene)
 {
+  m_adaptiveTwoPass.reset();
 
   vkDeviceWaitIdle(res.m_device);
+  m_adaptiveCost.reset();
+  m_lastCostValid=false;
+  for(auto& sample:m_costSamples)sample.pending=false;
 
 
   VkWriteDescriptorSet writes[2];
@@ -726,6 +830,9 @@ void RendererRasterClustersLod::updatedFrameBuffer(Resources& res, RenderScene& 
 
 void RendererRasterClustersLod::deinit(Resources& res)
 {
+  if(m_costQueries)vkDestroyQueryPool(res.m_device,m_costQueries,nullptr);
+  m_costQueries=VK_NULL_HANDLE;m_costSamples.clear();m_adaptiveCost.reset();
+
 
 
   res.destroyPipelines(m_pipelines);

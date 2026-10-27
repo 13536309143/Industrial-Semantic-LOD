@@ -163,6 +163,11 @@ void main()
     }
   #endif
     readback.twoPassCullingActive = build.twoPassCullingActive;
+    readback.adaptiveTemporalBypass = build.adaptiveTemporalBypass;
+    readback.adaptiveTriggerReason = build.adaptiveTriggerReason;
+    readback.adaptiveMotionPixels = build.adaptiveMotionPixels;
+    readback.adaptiveAccumulatedPixels = build.adaptiveAccumulatedPixels;
+    readback.adaptiveRefreshAge = build.adaptiveRefreshAge;
 
   #if USE_TWO_PASS_CULLING
 

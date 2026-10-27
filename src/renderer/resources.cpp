@@ -542,7 +542,16 @@ void Resources::updateFramebufferRenderSizeDependent(VkCommandBuffer cmd)
   VkSampleCountFlagBits samplesUsed = VK_SAMPLE_COUNT_1_BIT;
 
 
-  m_frameBuffer.depthStencilFormat = nvvk::findDepthStencilFormat(m_physicalDevice);
+  // Reversed Z needs floating-point depth to retain precision far from the near
+  // plane. The generic helper prefers D24, which quantizes close CAD surfaces
+  // to the same depth and makes their winner depend on parallel draw order.
+  m_frameBuffer.depthStencilFormat = preferFloatDepth
+      ? nvvk::findSupportedFormat(m_physicalDevice,
+          {VK_FORMAT_D32_SFLOAT_S8_UINT,VK_FORMAT_D24_UNORM_S8_UINT,VK_FORMAT_D16_UNORM_S8_UINT},
+          VK_IMAGE_TILING_OPTIMAL,VK_FORMAT_FEATURE_DEPTH_STENCIL_ATTACHMENT_BIT | VK_FORMAT_FEATURE_SAMPLED_IMAGE_BIT)
+      : nvvk::findDepthStencilFormat(m_physicalDevice);
+  LOGI("Depth format: %s (reversed Z)\n",m_frameBuffer.depthStencilFormat==VK_FORMAT_D32_SFLOAT_S8_UINT
+      ? "D32_SFLOAT_S8_UINT" : "fixed-point fallback");
 
   {
     VkImageCreateInfo dsImageInfo = {VK_STRUCTURE_TYPE_IMAGE_CREATE_INFO};
@@ -744,7 +753,9 @@ void Resources::cmdBuildHiz(VkCommandBuffer cmd, const FrameConfig& frame, nvvk:
   auto timerSection = profiler.cmdFrameSection(cmd, "HiZ");
 
 
-  cmdImageTransition(cmd, m_frameBuffer.imgDepthStencil, VK_IMAGE_ASPECT_DEPTH_BIT,
+  // A single layout is tracked for this depth/stencil resource. Transition
+  // both aspects together so sampled descriptors and the next render agree.
+  cmdImageTransition(cmd, m_frameBuffer.imgDepthStencil, VK_IMAGE_ASPECT_DEPTH_BIT | VK_IMAGE_ASPECT_STENCIL_BIT,
                      VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL);
 
 

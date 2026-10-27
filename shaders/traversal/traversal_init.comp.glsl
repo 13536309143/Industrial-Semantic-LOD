@@ -170,7 +170,14 @@ void main()
     mat4 transform = build.traversalViewMatrix * toMat4(worldMatrix);
 
 
-    if (assemblyForceLowDetail || !testForTraversal(mat4x3(transform), uniformScale, traversalMetric, errorScale))
+    bool errorAllowsCoarse = !testForTraversal(mat4x3(transform), uniformScale, traversalMetric, errorScale);
+#if QUALITY_BOUNDED_ASSEMBLY
+    // A small projected assembly must not override the geometric error budget.
+    bool selectCoarse = errorAllowsCoarse;
+#else
+    bool selectCoarse = assemblyForceLowDetail || errorAllowsCoarse;
+#endif
+    if (selectCoarse)
     {
 
     #if TARGETS_RASTERIZATION

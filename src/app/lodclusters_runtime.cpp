@@ -151,6 +151,13 @@ void LodClusters::handleChanges()
        || rendererCfgChanged(m_rendererConfig.useAdaptiveTwoPassCulling)
        || rendererCfgChanged(m_rendererConfig.twoPassMinClusters)
        || rendererCfgChanged(m_rendererConfig.twoPassMatrixDelta) || rendererCfgChanged(m_rendererConfig.useDepthOnly)
+       || rendererCfgChanged(m_rendererConfig.adaptiveTwoPassMode) || rendererCfgChanged(m_rendererConfig.twoPassMotionPixels)
+       || rendererCfgChanged(m_rendererConfig.twoPassFastPixels) || rendererCfgChanged(m_rendererConfig.twoPassMaxInterval)
+       || rendererCfgChanged(m_rendererConfig.semanticRuntimeStrength) || rendererCfgChanged(m_rendererConfig.semanticRuntimePivot)
+       || rendererCfgChanged(m_rendererConfig.useParallelGroups) || rendererCfgChanged(m_rendererConfig.boundAssemblyLod)
+       || rendererCfgChanged(m_rendererConfig.groupClusterLanes) || rendererCfgChanged(m_rendererConfig.twoPassCostProbeInterval)
+       || rendererCfgChanged(m_rendererConfig.twoPassCostHysteresis) || rendererCfgChanged(m_rendererConfig.twoPassCostSmoothing)
+       || rendererCfgChanged(m_rendererConfig.twoPassCostWarmupFrames)
        || rendererCfgChanged(m_rendererConfig.useForcedInvisibleCulling))
     {
 

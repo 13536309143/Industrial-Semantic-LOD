@@ -498,7 +498,10 @@ uint64_t Scene::semanticPolicyHashForMesh(uint32_t meshIndex) const
   const SemanticLodPolicy* policy = findSemanticMeshPolicy(meshIndex);
   if(!policy)
     return 0;
-  return hashCombine(m_semanticLodFingerprint, policy->rowHash);
+  uint64_t hash=hashCombine(m_semanticLodFingerprint, policy->rowHash);
+  // A lossless finest level must never silently reuse a pre-simplified cache.
+  if(m_config.reservedData[1]) hash=hashCombine(hash,0x5052455345525645ull);
+  return hash;
 }
 
 void Scene::applySemanticPolicyToConfig(clodConfig& config, const SemanticLodPolicy& policy) const
@@ -523,6 +526,11 @@ void Scene::applySemanticPolicyToConfig(clodConfig& config, const SemanticLodPol
     config.preserve_components = policy.preserveComponents;
     config.base_simplify_ratio = policy.baseSimplifyRatio;
     config.base_error_relative = policy.baseErrorRelative;
+    if(m_config.reservedData[1])
+    {
+      config.base_simplify_ratio=1.0f;
+      config.base_error_relative=0.0f;
+    }
     // Sloppy fallback and error truncation invalidate a measured quality budget.
     config.simplify_fallback_sloppy = false;
     config.simplify_error_edge_limit = 0.0f;

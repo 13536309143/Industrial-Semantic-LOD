@@ -92,7 +92,7 @@ struct SceneConfig
 
   uint32_t semanticLodMode = SEMANTIC_LOD_POINTNEXT_POINTCLIP_STRUCTURE;
 
-  uint32_t reservedData[10] = {};
+  uint32_t reservedData[10] = {0,1};
 
 
 };
@@ -177,6 +177,7 @@ public:
 
   const std::filesystem::path& getFilePath() const { return m_filePath; }
   const std::filesystem::path& getCacheFilePath() const { return m_cacheFilePath; }
+  bool hasSemanticLodPolicies() const { return !m_semanticLodPath.empty(); }
 
 
   struct Range

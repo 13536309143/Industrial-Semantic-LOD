@@ -41,6 +41,11 @@ struct SceneBuilding
   uint32_t pass;
   uint32_t frameIndex;
   uint32_t twoPassCullingActive;
+  uint32_t adaptiveTemporalBypass;
+  uint32_t adaptiveTriggerReason;
+  float adaptiveMotionPixels;
+  float adaptiveAccumulatedPixels;
+  uint32_t adaptiveRefreshAge;
 
   uint32_t numGeometries;
   uint32_t numRenderInstances;

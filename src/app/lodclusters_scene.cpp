@@ -29,7 +29,7 @@ void LodClusters::initScene(std::filesystem::path filePath, std::string cacheSuf
     m_sceneLoading  = true;
     m_sceneProgress = 0;
 
-    std::thread([=, this]() {
+    std::thread loader([=, this]() {
       auto scene = std::make_unique<Scene>();
       if(scene->init(filePath, m_sceneConfig, m_sceneLoaderConfig, cacheSuffix, configChange) != Scene::SCENE_RESULT_SUCCESS)
       {
@@ -63,7 +63,11 @@ void LodClusters::initScene(std::filesystem::path filePath, std::string cacheSuf
       }
       m_sceneLoading = false;
 
-    }).detach();
+    });
+    // In headless runs the application frame budget must not expire while the
+    // scene is still loading. Interactive loading remains asynchronous.
+    if(m_app && m_app->isHeadless())loader.join();
+    else loader.detach();
 
     return;
   }

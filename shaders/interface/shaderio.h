@@ -320,6 +320,11 @@ struct Readback
   uint     numTraversedTasksPass0;
   uint     numTraversedTasksPass1;
   uint     twoPassCullingActive;
+  uint     adaptiveTemporalBypass;
+  uint     adaptiveTriggerReason;
+  float    adaptiveMotionPixels;
+  float    adaptiveAccumulatedPixels;
+  uint     adaptiveRefreshAge;
 
 
 #ifdef __cplusplus

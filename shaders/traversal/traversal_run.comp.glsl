@@ -562,7 +562,12 @@ void main()
     uint groupCount = atomicAdd(buildRW.traversalGroupCounter,0);
 
     groupCount = min(groupCount,build.maxTraversalInfos);
+    groupCount = min(groupCount,build.maxTraversalInfos);
+#if PARALLEL_GROUPS
+    uint workGroupCount = (groupCount * uint(GROUP_CLUSTER_LANES) + TRAVERSAL_GROUPS_WORKGROUP - 1) / TRAVERSAL_GROUPS_WORKGROUP;
+#else
     uint workGroupCount = (groupCount + TRAVERSAL_GROUPS_WORKGROUP - 1) / TRAVERSAL_GROUPS_WORKGROUP;
+#endif
   #if USE_16BIT_DISPATCH
 
     uvec3 grid = fit16bitLaunchGrid(workGroupCount);

@@ -70,6 +70,19 @@ struct RendererConfig
   uint32_t numTraversalTaskBits = 22;
   uint32_t twoPassMinClusters   = 4096;
   float    twoPassMatrixDelta   = 0.0005f;
+  uint32_t adaptiveTwoPassMode  = 2; // 0: legacy matrix delta, 1: screen-motion scheduler
+  float    twoPassMotionPixels  = 8.0f;
+  float    twoPassFastPixels    = 24.0f;
+  uint32_t twoPassMaxInterval   = 8;
+  float semanticRuntimeStrength = 1.0f;
+  float semanticRuntimePivot = 1.0f;
+  bool useParallelGroups = true;
+  bool boundAssemblyLod = true;
+  uint32_t groupClusterLanes = 8;
+  uint32_t twoPassCostProbeInterval = 16;
+  float twoPassCostHysteresis = .05f;
+  float twoPassCostSmoothing = .25f;
+  uint32_t twoPassCostWarmupFrames = 32;
 };
 
 
