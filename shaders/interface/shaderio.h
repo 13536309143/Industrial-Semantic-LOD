@@ -308,6 +308,12 @@ struct FrameConstants
 // GPU-written counters, debug values, and packed picking results read back by the CPU.
 struct Readback
 {
+  uint     numInitializedInstances;
+  uint     numCompactedCandidates;
+  uint     numInitializationInvocations;
+  uint     numAssemblyRejectedInstances;
+  uint     numLowDetailInstances;
+  uint     numQueuedRootInstances;
   uint     numRenderClusters;
 
   uint     numTraversalTasks;

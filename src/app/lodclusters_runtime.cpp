@@ -155,6 +155,8 @@ void LodClusters::handleChanges()
        || rendererCfgChanged(m_rendererConfig.twoPassFastPixels) || rendererCfgChanged(m_rendererConfig.twoPassMaxInterval)
        || rendererCfgChanged(m_rendererConfig.semanticRuntimeStrength) || rendererCfgChanged(m_rendererConfig.semanticRuntimePivot)
        || rendererCfgChanged(m_rendererConfig.useParallelGroups) || rendererCfgChanged(m_rendererConfig.boundAssemblyLod)
+       || rendererCfgChanged(m_rendererConfig.useAssemblyCompact) || rendererCfgChanged(m_rendererConfig.useAssemblyEarlyExit) || rendererCfgChanged(m_rendererConfig.useAssemblyPrefilter) || rendererCfgChanged(m_rendererConfig.useLowDetailFastPath)
+       || rendererCfgChanged(m_rendererConfig.useHizOcclusion)
        || rendererCfgChanged(m_rendererConfig.groupClusterLanes) || rendererCfgChanged(m_rendererConfig.twoPassCostProbeInterval)
        || rendererCfgChanged(m_rendererConfig.twoPassCostHysteresis) || rendererCfgChanged(m_rendererConfig.twoPassCostSmoothing)
        || rendererCfgChanged(m_rendererConfig.twoPassCostWarmupFrames)
@@ -220,6 +222,8 @@ void LodClusters::onRender(VkCommandBuffer cmd)
 
 
   m_resources.beginFrame(m_app->getFrameCycleIndex());
+  if(!m_benchOutput.empty() && m_renderer)
+    benchmarkPrepare();
 
 
   m_frameConfig.windowSize = m_windowSize;
@@ -363,6 +367,11 @@ void LodClusters::onRender(VkCommandBuffer cmd)
     }
 
 
+    if(m_resources.benchmarkQueries != VK_NULL_HANDLE)
+    {
+      vkCmdResetQueryPool(cmd, m_resources.benchmarkQueries, m_resources.getFrameCycleIndex()*24, 24);
+      m_resources.benchmarkTimestamp(cmd, 0, VK_PIPELINE_STAGE_TOP_OF_PIPE_BIT);
+    }
     m_renderer->render(cmd, m_resources, *m_renderScene, m_frameConfig, m_profilerGpuTimer);
   }
   else
@@ -378,6 +387,11 @@ void LodClusters::onRender(VkCommandBuffer cmd)
 
 
   m_resources.endFrame();
+  if(m_resources.benchmarkQueries != VK_NULL_HANDLE && m_renderer)
+  {
+    m_resources.benchmarkTimestamp(cmd, 1);
+    benchmarkCapture(cmd);
+  }
 
 
   VkSemaphoreSubmitInfo semSubmit = m_resources.m_queueStates.primary.advanceSignalSubmit(VK_PIPELINE_STAGE_2_BOTTOM_OF_PIPE_BIT);
@@ -396,3 +410,4 @@ void LodClusters::onRender(VkCommandBuffer cmd)
 }
 
 }
+

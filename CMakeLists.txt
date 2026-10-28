@@ -43,8 +43,11 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
   nvpro2::nvvkglsl
   meshoptimizer
   cgltf
+  libzstd_static
 )
 # CPU-only diagnostic probe for offline semantic-policy geometry experiments.
+add_library(framecodec SHARED tools/framecodec.cpp)
+target_link_libraries(framecodec PRIVATE libzstd_static)
 add_library(semantic_geometry_probe SHARED tools/pointclipv2/native/semantic_geometry_probe.cpp src/meshlod/meshlod.cpp)
 target_include_directories(semantic_geometry_probe PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/src/meshlod")
 target_link_libraries(semantic_geometry_probe PRIVATE meshoptimizer)

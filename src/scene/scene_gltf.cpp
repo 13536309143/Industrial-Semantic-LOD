@@ -867,8 +867,11 @@ Scene::GltfNodeImportResult Scene::addInstancesFromNodeGLTF(const std::vector<si
   {
     lodclusters::Scene::Instance instance{};
     const ptrdiff_t              meshIndex   = (node->mesh) - data->meshes;
-    const cgltf_material*        material    = node->mesh->primitives[0].material;
-    bool                         addInstance = true;
+    // Empty mesh references carry no drawable geometry. Do not dereference a
+    // nonexistent first primitive; still visit any children of this node.
+    const bool                   hasPrimitives = node->mesh->primitives_count > 0;
+    const cgltf_material*        material = hasPrimitives ? node->mesh->primitives[0].material : nullptr;
+    bool                         addInstance = hasPrimitives;
 
     if(material)
     {

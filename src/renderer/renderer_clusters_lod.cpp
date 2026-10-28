@@ -58,6 +58,7 @@ private:
     shaderc::SpvCompilationResult graphicsFragment;
     shaderc::SpvCompilationResult computeTraversalPresort;
     shaderc::SpvCompilationResult computeAssemblyVisibility;
+    shaderc::SpvCompilationResult computeAssemblyCandidates;
     shaderc::SpvCompilationResult computeTraversalInit;
     shaderc::SpvCompilationResult computeTraversalRun;
     shaderc::SpvCompilationResult computeTraversalGroups;
@@ -71,6 +72,7 @@ private:
     VkPipeline graphicsBboxes          = nullptr;
     VkPipeline computeTraversalPresort = nullptr;
     VkPipeline computeAssemblyVisibility = nullptr;
+    VkPipeline computeAssemblyCandidates = nullptr;
     VkPipeline computeTraversalInit    = nullptr;
     VkPipeline computeTraversalRun     = nullptr;
     VkPipeline computeTraversalGroups  = nullptr;
@@ -86,6 +88,7 @@ private:
   nvvk::Buffer m_sceneDataBuffer;
   nvvk::Buffer m_assemblyNodeBuffer;
   nvvk::Buffer m_assemblyStateBuffer;
+  nvvk::Buffer m_candidateRanges, m_candidateMembers, m_candidateInstances, m_candidateControl;
   shaderio::SceneBuilding m_sceneBuildShaderio;
   AdaptiveTwoPassController m_adaptiveTwoPass;
   AdaptiveCostController m_adaptiveCost;
@@ -120,6 +123,11 @@ bool RendererRasterClustersLod::initShaders(Resources& res, RenderScene& rscene,
   options.SetOptimizationLevel(shaderc_optimization_level_performance);
   options.AddMacroDefinition("PARALLEL_GROUPS", config.useParallelGroups ? "1" : "0");
   options.AddMacroDefinition("QUALITY_BOUNDED_ASSEMBLY", config.boundAssemblyLod ? "1" : "0");
+  options.AddMacroDefinition("USE_COMPACT_CANDIDATES",config.useAssemblyCompact && config.useAssemblyPrefilter && !config.useSorting ? "1":"0");
+  options.AddMacroDefinition("USE_ASSEMBLY_PREFILTER", config.useAssemblyPrefilter ? "1" : "0");
+  options.AddMacroDefinition("USE_ASSEMBLY_EARLY_EXIT", config.useAssemblyEarlyExit ? "1" : "0");
+  options.AddMacroDefinition("USE_LOW_DETAIL_FAST_PATH", config.useLowDetailFastPath ? "1" : "0");
+  options.AddMacroDefinition("USE_HIZ_OCCLUSION", config.useHizOcclusion ? "1" : "0");
   options.AddMacroDefinition("GROUP_CLUSTER_LANES",fmt::format("{}",std::clamp(config.groupClusterLanes,1u,32u)));
 
 
@@ -177,6 +185,8 @@ bool RendererRasterClustersLod::initShaders(Resources& res, RenderScene& rscene,
     res.compileShader(m_shaders.computeTraversalPresort, VK_SHADER_STAGE_COMPUTE_BIT, "traversal/traversal_presort.comp.glsl", &options);
 
     res.compileShader(m_shaders.computeAssemblyVisibility, VK_SHADER_STAGE_COMPUTE_BIT, "traversal/assembly_visibility.comp.glsl", &options);
+    if(config.useAssemblyCompact && config.useAssemblyPrefilter && !config.useSorting)
+      res.compileShader(m_shaders.computeAssemblyCandidates,VK_SHADER_STAGE_COMPUTE_BIT,"traversal/assembly_candidates.comp.glsl",&options);
 
     res.compileShader(m_shaders.computeTraversalInit, VK_SHADER_STAGE_COMPUTE_BIT, "traversal/traversal_init.comp.glsl", &options);
 
@@ -231,6 +241,42 @@ bool RendererRasterClustersLod::init(Resources& res, RenderScene& rscene, const 
     m_sceneBuildShaderio.assemblyCullingMinInstances = rscene.scene->m_config.assemblyCullingMinInstances;
     m_sceneBuildShaderio.assemblyLodPixelThreshold = rscene.scene->m_config.assemblyLodPixelThreshold;
 
+    if(config.useAssemblyCompact && config.useAssemblyPrefilter && !config.useSorting
+       && m_sceneBuildShaderio.numAssemblyNodes && m_sceneBuildShaderio.numRenderInstances)
+    {
+      const uint32_t invalid=~0u;
+      std::vector<std::vector<uint32_t>> buckets(m_sceneBuildShaderio.numAssemblyNodes+1);
+      for(uint32_t id=0;id<m_renderInstances.size();++id) {
+        uint32_t a=m_renderInstances[id].assemblyID;
+        buckets[a<m_sceneBuildShaderio.numAssemblyNodes?a:m_sceneBuildShaderio.numAssemblyNodes].push_back(id);
+      }
+      std::vector<shaderio::AssemblyCandidateRange> ranges;
+      std::vector<uint32_t> members;members.reserve(m_renderInstances.size());
+      constexpr uint32_t chunkSize=128;
+      uint32_t activeAssemblies=0;
+      for(uint32_t a=0;a<buckets.size();++a) {
+        const auto& ids=buckets[a];
+        if(!ids.empty() && a<m_sceneBuildShaderio.numAssemblyNodes) activeAssemblies++;
+        uint32_t start=uint32_t(members.size());members.insert(members.end(),ids.begin(),ids.end());
+        for(uint32_t first=0;first<ids.size();first+=chunkSize)
+          ranges.push_back({a<m_sceneBuildShaderio.numAssemblyNodes?a:invalid,start+first,
+             std::min(chunkSize,uint32_t(ids.size())-first),first==0?1u:0u});
+      }
+      res.createBuffer(m_candidateRanges,ranges.size()*sizeof(shaderio::AssemblyCandidateRange),VK_BUFFER_USAGE_STORAGE_BUFFER_BIT);
+      res.createBuffer(m_candidateMembers,members.size()*sizeof(uint32_t),VK_BUFFER_USAGE_STORAGE_BUFFER_BIT);
+      res.createBuffer(m_candidateInstances,members.size()*sizeof(uint32_t)*res.getFrameCycleCount(),VK_BUFFER_USAGE_STORAGE_BUFFER_BIT);
+      res.simpleUploadBuffer(m_candidateRanges,ranges.data());res.simpleUploadBuffer(m_candidateMembers,members.data());
+      m_sceneBuildShaderio.candidateRanges=m_candidateRanges.address;
+      m_sceneBuildShaderio.candidateMembers=m_candidateMembers.address;
+      m_sceneBuildShaderio.candidateInstances=m_candidateInstances.address;
+      m_sceneBuildShaderio.numCandidateRanges=uint32_t(ranges.size());
+      res.createBuffer(m_candidateControl,sizeof(shaderio::CandidateControl)*res.getFrameCycleCount(),VK_BUFFER_USAGE_STORAGE_BUFFER_BIT|VK_BUFFER_USAGE_INDIRECT_BUFFER_BIT);
+      std::vector<shaderio::CandidateControl> control(res.getFrameCycleCount(),{0,{0,1,1}});res.simpleUploadBuffer(m_candidateControl,control.data());
+      m_sceneBuildShaderio.candidateControl=m_candidateControl.address;
+      const size_t extra=m_candidateRanges.bufferSize+m_candidateMembers.bufferSize+m_candidateInstances.bufferSize+m_candidateControl.bufferSize;
+      m_resourceReservedUsage.operationsMemBytes+=extra;
+      LOGI("COMPACT_ASSEMBLY_LAYOUT,%u,%u,%u,%zu\n",activeAssemblies,uint32_t(ranges.size()),uint32_t(members.size()),extra);
+    }
     m_sceneBuildShaderio.maxRenderClusters = uint32_t(1u << config.numRenderClusterBits);
 
     m_sceneBuildShaderio.maxTraversalInfos = uint32_t(1u << config.numTraversalTaskBits);
@@ -411,6 +457,10 @@ bool RendererRasterClustersLod::init(Resources& res, RenderScene& rscene, const 
     }
 
 
+    if(config.useAssemblyCompact && config.useAssemblyPrefilter && !config.useSorting) {
+      shaderInfo=nvvkglsl::GlslCompiler::makeShaderModuleCreateInfo(m_shaders.computeAssemblyCandidates);
+      NVVK_CHECK(vkCreateComputePipelines(res.m_device,nullptr,1,&compInfo,nullptr,&m_pipelines.computeAssemblyCandidates));
+    }
     shaderInfo = nvvkglsl::GlslCompiler::makeShaderModuleCreateInfo(m_shaders.computeAssemblyVisibility);
 
     vkCreateComputePipelines(res.m_device, nullptr, 1, &compInfo, nullptr, &m_pipelines.computeAssemblyVisibility);
@@ -535,10 +585,22 @@ void RendererRasterClustersLod::render(VkCommandBuffer cmd, Resources& res, Rend
     m_sceneBuildShaderio.adaptiveMotionPixels=motion;
     m_sceneBuildShaderio.adaptiveAccumulatedPixels=decision.accumulatedPixels;
     m_sceneBuildShaderio.adaptiveRefreshAge=decision.age;
-    if(decision.bypassTemporal)
-      m_sceneBuildShaderio.cullViewProjMatrixLast=frame.cullViewProjMatrix;
   }
+  // Offline quality replay uses the decisions recorded in its paired timing
+  // run, so image transfer/compression cannot change the adaptive schedule.
+  if(res.benchmarkForcedTwoPass >= 0)
+  {
+    twoPassActive=res.benchmarkForcedTwoPass!=0;
+    m_sceneBuildShaderio.adaptiveTemporalBypass=res.benchmarkForcedBypass;
+    m_sceneBuildShaderio.adaptiveTriggerReason=res.benchmarkForcedReason;
+  }
+  if(m_sceneBuildShaderio.adaptiveTemporalBypass)
+    m_sceneBuildShaderio.cullViewProjMatrixLast=frame.cullViewProjMatrix;
   m_sceneBuildShaderio.twoPassCullingActive = twoPassActive ? 1u : 0u;
+  // The diagnostic reference keeps current-frustum and size/LOD rules while
+  // disabling every Hi-Z lookup through USE_HIZ_OCCLUSION.
+  if(!m_config.useHizOcclusion)
+    m_sceneBuildShaderio.cullViewProjMatrixLast = frame.cullViewProjMatrix;
   if(m_config.adaptiveTwoPassMode==2&&m_config.useRenderStats&&twoPassRequested
       &&m_config.useAdaptiveTwoPassCulling&&m_frameIndex%60==0)
     LOGI("COST_FEEDBACK_CSV,%u,%.6f,%.6f,%u,%u\n",m_frameIndex,m_adaptiveCost.singleCost(),
@@ -554,10 +616,15 @@ void RendererRasterClustersLod::render(VkCommandBuffer cmd, Resources& res, Rend
 
 
 
+  if(m_sceneBuildShaderio.numCandidateRanges) {
+    m_sceneBuildShaderio.candidateInstances=m_candidateInstances.address+VkDeviceSize(res.getFrameCycleIndex())*m_sceneBuildShaderio.numRenderInstances*sizeof(uint32_t);
+    m_sceneBuildShaderio.candidateControl=m_candidateControl.address+VkDeviceSize(res.getFrameCycleIndex())*sizeof(shaderio::CandidateControl);
+  }
   vkCmdUpdateBuffer(cmd, res.m_commonBuffers.frameConstants.buffer, 0, sizeof(shaderio::FrameConstants), (const uint32_t*)&frame.frameConstants);
   vkCmdUpdateBuffer(cmd, m_sceneBuildBuffer.buffer, 0, sizeof(shaderio::SceneBuilding), (const uint32_t*)&m_sceneBuildShaderio);
 
   vkCmdFillBuffer(cmd, res.m_commonBuffers.readBack.buffer, 0, sizeof(shaderio::Readback), 0);
+  if(m_sceneBuildShaderio.numCandidateRanges) vkCmdFillBuffer(cmd,m_candidateControl.buffer,VkDeviceSize(res.getFrameCycleIndex())*sizeof(shaderio::CandidateControl),2*sizeof(uint32_t),0);
 
 
   vkCmdFillBuffer(cmd, m_sceneTraversalBuffer.buffer, 0, m_sceneTraversalBuffer.bufferSize, ~0);
@@ -592,6 +659,8 @@ void RendererRasterClustersLod::render(VkCommandBuffer cmd, Resources& res, Rend
   const uint32_t lastPass  = passCount - 1;
   for(uint32_t pass = 0; pass < passCount; pass++)
   {
+    if(pass == 1) res.benchmarkTimestamp(cmd, 8);
+    res.benchmarkTimestamp(cmd, pass == 0 ? 2 : 4);
     {
 
       auto timerSection = profiler.cmdFrameSection(cmd, "Traversal Preparation");
@@ -624,7 +693,17 @@ void RendererRasterClustersLod::render(VkCommandBuffer cmd, Resources& res, Rend
 
       vkCmdBindDescriptorSets(cmd, VK_PIPELINE_BIND_POINT_COMPUTE, m_pipelineLayout, 0, 1, m_dsetPack.getSetPtr(), 0, nullptr);
 
-      if(m_sceneBuildShaderio.numAssemblyNodes)
+      res.benchmarkTimestamp(cmd, pass==0?12:16);
+      if(m_sceneBuildShaderio.numCandidateRanges)
+      {
+        vkCmdBindPipeline(cmd,VK_PIPELINE_BIND_POINT_COMPUTE,m_pipelines.computeAssemblyCandidates);
+        res.cmdLinearDispatch(cmd,m_sceneBuildShaderio.numCandidateRanges);
+        memBarrier.srcAccessMask=VK_ACCESS_SHADER_WRITE_BIT;
+        memBarrier.dstAccessMask=VK_ACCESS_SHADER_READ_BIT|VK_ACCESS_INDIRECT_COMMAND_READ_BIT;
+        vkCmdPipelineBarrier(cmd,VK_PIPELINE_STAGE_COMPUTE_SHADER_BIT,VK_PIPELINE_STAGE_COMPUTE_SHADER_BIT|VK_PIPELINE_STAGE_DRAW_INDIRECT_BIT,
+                             0,1,&memBarrier,0,nullptr,0,nullptr);
+      }
+      else if(m_config.useAssemblyPrefilter && m_sceneBuildShaderio.numAssemblyNodes)
       {
         vkCmdBindPipeline(cmd, VK_PIPELINE_BIND_POINT_COMPUTE, m_pipelines.computeAssemblyVisibility);
         res.cmdLinearDispatch(cmd, getWorkGroupCount(m_sceneBuildShaderio.numAssemblyNodes, ASSEMBLY_VISIBILITY_WORKGROUP));
@@ -635,8 +714,13 @@ void RendererRasterClustersLod::render(VkCommandBuffer cmd, Resources& res, Rend
                              VK_DEPENDENCY_BY_REGION_BIT, 1, &memBarrier, 0, nullptr, 0, nullptr);
       }
 
+      res.benchmarkTimestamp(cmd,pass==0?13:17);
+      res.benchmarkTimestamp(cmd,pass==0?14:18);
       vkCmdBindPipeline(cmd, VK_PIPELINE_BIND_POINT_COMPUTE, m_pipelines.computeTraversalInit);
-      res.cmdLinearDispatch(cmd, getWorkGroupCount(m_sceneBuildShaderio.numRenderInstances, TRAVERSAL_INIT_WORKGROUP));
+      if(m_sceneBuildShaderio.numCandidateRanges)
+        vkCmdDispatchIndirect(cmd,m_candidateControl.buffer,VkDeviceSize(res.getFrameCycleIndex())*sizeof(shaderio::CandidateControl)+offsetof(shaderio::CandidateControl,dispatch));
+      else
+        res.cmdLinearDispatch(cmd, getWorkGroupCount(m_sceneBuildShaderio.numRenderInstances, TRAVERSAL_INIT_WORKGROUP));
 
 
       memBarrier.srcAccessMask = VK_ACCESS_SHADER_WRITE_BIT;
@@ -644,6 +728,7 @@ void RendererRasterClustersLod::render(VkCommandBuffer cmd, Resources& res, Rend
       vkCmdPipelineBarrier(cmd, VK_PIPELINE_STAGE_COMPUTE_SHADER_BIT, VK_PIPELINE_STAGE_COMPUTE_SHADER_BIT,
                            VK_DEPENDENCY_BY_REGION_BIT, 1, &memBarrier, 0, nullptr, 0, nullptr);
 
+      res.benchmarkTimestamp(cmd,pass==0?15:19);
       uint32_t buildSetupID = BUILD_SETUP_TRAVERSAL_RUN;
 
       vkCmdBindPipeline(cmd, VK_PIPELINE_BIND_POINT_COMPUTE, m_pipelines.computeBuildSetup);
@@ -660,6 +745,7 @@ void RendererRasterClustersLod::render(VkCommandBuffer cmd, Resources& res, Rend
         auto timerSection = profiler.cmdFrameSection(cmd, "Traversal Run");
 
 
+        res.benchmarkTimestamp(cmd,pass==0?20:22);
         vkCmdBindPipeline(cmd, VK_PIPELINE_BIND_POINT_COMPUTE, m_pipelines.computeTraversalRun);
         res.cmdLinearDispatch(cmd, getWorkGroupCount(frame.traversalPersistentThreads, TRAVERSAL_RUN_WORKGROUP));
 
@@ -683,6 +769,7 @@ void RendererRasterClustersLod::render(VkCommandBuffer cmd, Resources& res, Rend
       vkCmdPipelineBarrier(cmd, VK_PIPELINE_STAGE_COMPUTE_SHADER_BIT, VK_PIPELINE_STAGE_COMPUTE_SHADER_BIT,
                            VK_DEPENDENCY_BY_REGION_BIT, 1, &memBarrier, 0, nullptr, 0, nullptr);
 
+      res.benchmarkTimestamp(cmd,pass==0?21:23);
       uint32_t buildSetupID = BUILD_SETUP_DRAW;
 
       vkCmdBindPipeline(cmd, VK_PIPELINE_BIND_POINT_COMPUTE, m_pipelines.computeBuildSetup);
@@ -698,6 +785,7 @@ void RendererRasterClustersLod::render(VkCommandBuffer cmd, Resources& res, Rend
                            VK_DEPENDENCY_BY_REGION_BIT, 1, &memBarrier, 0, nullptr, 0, nullptr);
     }
 
+    res.benchmarkTimestamp(cmd, pass == 0 ? 3 : 5);
     if(pass == lastPass && rscene.useStreaming)
     {
 
@@ -755,6 +843,8 @@ void RendererRasterClustersLod::render(VkCommandBuffer cmd, Resources& res, Rend
     }
 
 
+    if(pass == 1) res.benchmarkTimestamp(cmd, 9);
+    if(pass == 0 && twoPassActive) res.benchmarkTimestamp(cmd, 6);
     if(!frame.freezeCulling)
     {
       if(twoPassActive)
@@ -768,6 +858,7 @@ void RendererRasterClustersLod::render(VkCommandBuffer cmd, Resources& res, Rend
         res.cmdBuildHiz(cmd, frame, profiler, 0);
       }
     }
+    if(pass == 0 && twoPassActive) res.benchmarkTimestamp(cmd, 7);
   }
 
   if(passCount > 1)
@@ -849,6 +940,7 @@ void RendererRasterClustersLod::deinit(Resources& res)
   res.m_allocator.destroyBuffer(m_assemblyNodeBuffer);
 
   res.m_allocator.destroyBuffer(m_assemblyStateBuffer);
+  res.m_allocator.destroyBuffer(m_candidateRanges);res.m_allocator.destroyBuffer(m_candidateMembers);res.m_allocator.destroyBuffer(m_candidateInstances);res.m_allocator.destroyBuffer(m_candidateControl);
 
   res.m_allocator.destroyBuffer(m_sceneBuildBuffer);
 

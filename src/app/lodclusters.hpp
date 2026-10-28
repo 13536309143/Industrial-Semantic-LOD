@@ -18,6 +18,7 @@
 #include <nvvk/profiler_vk.hpp>
 #include <nvgui/enum_registry.hpp>
 #include "renderer.hpp"
+#include <fstream>
 
 
 namespace lodclusters {
@@ -219,6 +220,23 @@ public:
   void parameterSequenceCallback(const nvutils::ParameterSequencer::State& state);
 
 private:
+  std::string m_benchOutput;
+  std::string m_benchTrajectory;
+  std::string m_benchDecisionsFile;
+  struct BenchDecision { uint32_t dual, bypass, reason; };
+  std::vector<BenchDecision> m_benchDecisions;
+  uint32_t m_benchWarmup=150, m_benchFrames=600, m_benchCapture=0;
+  struct BenchCamera { glm::vec3 eye, center, up; float fov, nearPlane, farPlane; uint32_t segment; };
+  struct BenchSlot { bool pending=false, capture=false; int64_t frame=-1; uint32_t segment=0; nvvk::Buffer image; double cpuMs=0; };
+  std::vector<BenchCamera> m_benchCameras;
+  std::vector<BenchSlot> m_benchSlots;
+  std::ofstream m_benchCsv;
+  int64_t m_benchTick=0;
+  double m_benchPeriod=0, m_benchLastTime=0;
+  void benchmarkPrepare();
+  void benchmarkCapture(VkCommandBuffer cmd);
+  void benchmarkConsume(uint32_t slot);
+  void benchmarkFinish();
   VkExtent2D                 m_windowSize;
   Info                       m_info;
   nvutils::ProfilerTimeline* m_profilerTimeline{};

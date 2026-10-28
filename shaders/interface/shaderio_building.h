@@ -32,12 +32,36 @@ struct ClusterInfo
 
 BUFFER_REF_DECLARE_ARRAY(ClusterInfos_inout, ClusterInfo, , 8);
 
+// Each live instance occurs exactly once in the member array. Large assembly
+// buckets are split into bounded chunks; only their first chunk writes state.
+struct AssemblyCandidateRange
+{
+  uint32_t assemblyID;
+  uint32_t firstMember;
+  uint32_t memberCount;
+  uint32_t writeState;
+};
+BUFFER_REF_DECLARE_ARRAY(AssemblyCandidateRanges_in, AssemblyCandidateRange, readonly, 4);
+
+struct CandidateControl
+{
+  uint32_t instanceCount;
+  DispatchIndirectCommand dispatch;
+};
+BUFFER_REF_DECLARE_ARRAY(CandidateControls_inout, CandidateControl, , 4);
+
 struct SceneBuilding
 {
   mat4 traversalViewMatrix;
   mat4 cullViewProjMatrix;
   mat4 cullViewProjMatrixLast;
 
+  BUFFER_REF(AssemblyCandidateRanges_in) candidateRanges;
+  BUFFER_REF(uint32s_inout) candidateMembers;
+  BUFFER_REF(uint32s_inout) candidateInstances;
+  uint32_t numCandidateRanges;
+  uint32_t candidatePadding;
+  BUFFER_REF(CandidateControls_inout) candidateControl;
   uint32_t pass;
   uint32_t frameIndex;
   uint32_t twoPassCullingActive;

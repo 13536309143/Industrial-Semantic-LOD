@@ -81,19 +81,33 @@ layout(local_size_x=TRAVERSAL_INIT_WORKGROUP) in;
 void main()
 {
 
-  uint instanceID   = getGlobalInvocationIndex(gl_GlobalInvocationID);
-
-  uint instanceLoad = min(build.numRenderInstances-1, instanceID);
-  bool isValid      = instanceID == instanceLoad;
+  uint instanceID = getGlobalInvocationIndex(gl_GlobalInvocationID);
+#if USE_COMPACT_CANDIDATES
+  bool compactList = build.numCandidateRanges != 0u;
+  uint count = compactList ? build.candidateControl.d[0].instanceCount : build.numRenderInstances;
+  bool isValid = instanceID < count;
+  uint instanceLoad = compactList ? build.candidateInstances.d[min(instanceID,max(count,1u)-1u)]
+                                 : min(instanceID,build.numRenderInstances-1u);
+  instanceID=instanceLoad;
+  if(compactList && !isValid) return;
+#else
+  uint instanceLoad = min(build.numRenderInstances-1u, instanceID);
+  bool isValid = instanceID == instanceLoad;
+#endif
+#if USE_RENDER_STATS
+  if(isValid) atomicAdd(readback.numInitializedInstances,1u);
+#endif
 
 #if USE_SORTING
   instanceLoad = build.instanceSortValues.d[instanceLoad];
   instanceID   = instanceLoad;
 #endif
 
+#if USE_ASSEMBLY_EARLY_EXIT
+  // Invalid lanes must not participate in queue emission or touch scene memory.
+  if(!isValid) return;
+#endif
   RenderInstance instance = instances[instanceLoad];
-  uint geometryID = instance.geometryID;
-  Geometry geometry = geometries[geometryID];
 
   vec4 clipMin;
   vec4 clipMax;
@@ -102,12 +116,33 @@ void main()
   bool assemblyVisible = true;
   bool assemblyForceLowDetail = false;
 
-  if (isValid && instance.assemblyID != SHADERIO_INVALID_ASSEMBLY && instance.assemblyID < build.numAssemblyNodes)
+  if (USE_ASSEMBLY_PREFILTER != 0 && isValid && instance.assemblyID != SHADERIO_INVALID_ASSEMBLY && instance.assemblyID < build.numAssemblyNodes
+#if USE_COMPACT_CANDIDATES && QUALITY_BOUNDED_ASSEMBLY
+      && !compactList
+#endif
+     )
   {
     AssemblyState assemblyState = build.assemblyStates.d[instance.assemblyID];
     assemblyVisible = (assemblyState.flags & SHADERIO_ASSEMBLY_VISIBLE_BIT) != 0;
     assemblyForceLowDetail = (assemblyState.flags & SHADERIO_ASSEMBLY_LOD_COARSE_BIT) != 0;
   }
+
+#if USE_ASSEMBLY_EARLY_EXIT && USE_CULLING && (TARGETS_RASTERIZATION || USE_FORCED_INVISIBLE_CULLING)
+  // Reject before fetching Geometry and before traversal queue operations.
+  // Pass zero must clear visibility so stale state cannot suppress pass one.
+  if(!assemblyVisible)
+  {
+#if USE_RENDER_STATS
+    atomicAdd(readback.numAssemblyRejectedInstances, 1u);
+#endif
+#if USE_TWO_PASS_CULLING && TARGETS_RASTERIZATION
+    if(build.pass == 0) build.instanceVisibility.d[instanceID] = uint8_t(0);
+#endif
+    return;
+  }
+#endif
+  uint geometryID = instance.geometryID;
+  Geometry geometry = geometries[geometryID];
 
 #if USE_TWO_PASS_CULLING && TARGETS_RASTERIZATION
 
@@ -136,6 +171,9 @@ void main()
 #endif
 
   uint visibilityState = isVisible ? INSTANCE_VISIBLE_BIT : 0;
+#if USE_RENDER_STATS
+  if(isValid && !assemblyVisible) atomicAdd(readback.numAssemblyRejectedInstances, 1u);
+#endif
 
   bool isRenderable = isValid
   #if USE_CULLING && (TARGETS_RASTERIZATION || USE_FORCED_INVISIBLE_CULLING)
@@ -144,6 +182,7 @@ void main()
     ;
 
   bool traverseRootNode = isRenderable;
+  bool coarseSelected = false;
 
   if (isRenderable)
   {
@@ -177,7 +216,14 @@ void main()
 #else
     bool selectCoarse = assemblyForceLowDetail || errorAllowsCoarse;
 #endif
+    coarseSelected = selectCoarse;
     if (selectCoarse)
+    {
+#if USE_RENDER_STATS
+      atomicAdd(readback.numLowDetailInstances, 1u);
+#endif
+    }
+    if (selectCoarse && USE_LOW_DETAIL_FAST_PATH != 0)
     {
 
     #if TARGETS_RASTERIZATION
@@ -227,6 +273,15 @@ void main()
   if (traverseRootNode && offsetNodes < build.maxTraversalInfos)
   {
     uint rootNodePacked = geometry.nodes.d[0].packed;
+
+#if !USE_LOW_DETAIL_FAST_PATH
+    // Preserve exactly the selected coarse geometry, but process it through
+    // the ordinary task queue instead of emitting it during initialization.
+    if(coarseSelected) rootNodePacked = 0xfffffffeu;
+#endif
+#if USE_RENDER_STATS
+    atomicAdd(readback.numQueuedRootInstances, 1u);
+#endif
 
     TraversalInfo traversalInfo;
     traversalInfo.instanceID = instanceID;

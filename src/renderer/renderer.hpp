@@ -70,7 +70,7 @@ struct RendererConfig
   uint32_t numTraversalTaskBits = 22;
   uint32_t twoPassMinClusters   = 4096;
   float    twoPassMatrixDelta   = 0.0005f;
-  uint32_t adaptiveTwoPassMode  = 2; // 0: legacy matrix delta, 1: screen-motion scheduler
+  uint32_t adaptiveTwoPassMode  = 2; // 0: matrix delta, 1: screen motion, 2: GPU cost feedback
   float    twoPassMotionPixels  = 8.0f;
   float    twoPassFastPixels    = 24.0f;
   uint32_t twoPassMaxInterval   = 8;
@@ -78,6 +78,11 @@ struct RendererConfig
   float semanticRuntimePivot = 1.0f;
   bool useParallelGroups = true;
   bool boundAssemblyLod = true;
+  bool useAssemblyPrefilter = true;
+  bool useAssemblyCompact = false; // Fused assembly classification, candidate compaction, indirect initialization.
+  bool useAssemblyEarlyExit = false; // Optional early rejection before geometry fetch.
+  bool useLowDetailFastPath = true;
+  bool useHizOcclusion = true;
   uint32_t groupClusterLanes = 8;
   uint32_t twoPassCostProbeInterval = 16;
   float twoPassCostHysteresis = .05f;

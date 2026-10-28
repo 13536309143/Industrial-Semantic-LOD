@@ -71,6 +71,17 @@ LodClusters::LodClusters(const Info& info)
   m_info.parameterRegistry->add({"semanticruntimepivot"}, &m_rendererConfig.semanticRuntimePivot);
   m_info.parameterRegistry->add({"parallelgroups"}, &m_rendererConfig.useParallelGroups);
   m_info.parameterRegistry->add({"boundedassemblylod"}, &m_rendererConfig.boundAssemblyLod);
+  m_info.parameterRegistry->add({"assemblycompact"}, &m_rendererConfig.useAssemblyCompact);
+  m_info.parameterRegistry->add({"assemblyprefilter"}, &m_rendererConfig.useAssemblyPrefilter);
+  m_info.parameterRegistry->add({"assemblyearlyexit"}, &m_rendererConfig.useAssemblyEarlyExit);
+  m_info.parameterRegistry->add({"lowdetailfastpath"}, &m_rendererConfig.useLowDetailFastPath);
+  m_info.parameterRegistry->add({"hizocclusion"}, &m_rendererConfig.useHizOcclusion);
+  m_info.parameterRegistry->add({"benchoutput"}, &m_benchOutput);
+  m_info.parameterRegistry->add({"benchtrajectory"}, &m_benchTrajectory);
+  m_info.parameterRegistry->add({"benchdecisions"}, &m_benchDecisionsFile);
+  m_info.parameterRegistry->add({"benchwarmup"}, &m_benchWarmup);
+  m_info.parameterRegistry->add({"benchframes"}, &m_benchFrames);
+  m_info.parameterRegistry->add({"benchcapture"}, &m_benchCapture);
   m_info.parameterRegistry->add({"groupclusterlanes"}, &m_rendererConfig.groupClusterLanes);
   m_info.parameterRegistry->add({"floatdepth"}, &m_resources.preferFloatDepth);
   m_info.parameterRegistry->add({"twopasscostprobe"}, &m_rendererConfig.twoPassCostProbeInterval);

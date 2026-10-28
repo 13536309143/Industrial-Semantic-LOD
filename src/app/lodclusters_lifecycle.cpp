@@ -257,6 +257,7 @@ void LodClusters::onAttach(nvapp::Application* app)
 void LodClusters::onDetach()
 {
   NVVK_CHECK(vkDeviceWaitIdle(m_app->getDevice()));
+  benchmarkFinish();
 
 
   deinitRenderer();

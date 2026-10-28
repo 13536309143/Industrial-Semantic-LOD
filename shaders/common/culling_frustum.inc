@@ -17,7 +17,9 @@ bool intersectSize(vec4 clipMin, vec4 clipMax, float threshold)
 
 vec4 getClip(vec4 hPos, out bool valid) {
 
-  valid = !(-c_epsilon < hPos.w && hPos.w < c_epsilon);
+  // A box crossing the eye/near plane cannot use a corner-projected
+  // screen rectangle as a conservative Hi-Z bound. Keep it for clipping.
+  valid = hPos.w > c_epsilon && hPos.z <= hPos.w;
 
   return vec4(hPos.xyz / abs(hPos.w), hPos.w);
 }

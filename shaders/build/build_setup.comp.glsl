@@ -87,6 +87,8 @@ void setupSecondPass()
 {
 
   buildRW.pass = 1;
+  if(build.numCandidateRanges!=0u) {build.candidateControl.d[0].instanceCount = 0u;
+  build.candidateControl.d[0].dispatch.gridX = 0u;}
   buildRW.traversalTaskCounter = 0;
   buildRW.traversalGroupCounter = 0;
   buildRW.renderClusterCounter = 0;
@@ -107,6 +109,10 @@ void main()
 
 
     buildRW.traversalInfoWriteCounter = uint(traversalTaskCounter);
+#if USE_RENDER_STATS
+    uint initCount=build.numCandidateRanges!=0u?build.candidateControl.d[0].instanceCount:build.numRenderInstances;
+    readback.numInitializationInvocations+=((initCount+TRAVERSAL_INIT_WORKGROUP-1u)/TRAVERSAL_INIT_WORKGROUP)*TRAVERSAL_INIT_WORKGROUP;
+#endif
   }
 #if TARGETS_RASTERIZATION
   else if (push.setup == BUILD_SETUP_DRAW)

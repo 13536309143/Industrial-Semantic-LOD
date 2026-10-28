@@ -564,7 +564,7 @@ void Resources::updateFramebufferRenderSizeDependent(VkCommandBuffer cmd)
     dsImageInfo.arrayLayers       = 1;
     dsImageInfo.samples           = samplesUsed;
     dsImageInfo.tiling            = VK_IMAGE_TILING_OPTIMAL;
-    dsImageInfo.usage             = VK_IMAGE_USAGE_DEPTH_STENCIL_ATTACHMENT_BIT | VK_IMAGE_USAGE_SAMPLED_BIT;
+    dsImageInfo.usage             = VK_IMAGE_USAGE_DEPTH_STENCIL_ATTACHMENT_BIT | VK_IMAGE_USAGE_SAMPLED_BIT | VK_IMAGE_USAGE_TRANSFER_SRC_BIT;
     dsImageInfo.flags             = 0;
     dsImageInfo.initialLayout     = VK_IMAGE_LAYOUT_UNDEFINED;
 

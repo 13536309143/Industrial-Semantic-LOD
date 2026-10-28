@@ -74,6 +74,21 @@ bool ScenePreloaded::init(Resources* res, const Scene* scene, const Config& conf
 
     const Scene::GeometryView& sceneGeometry   = scene->getActiveGeometry(geometryIndex);
 
+    // Keep geometry IDs stable when a cache contains an empty mesh, but never
+    // allocate zero-byte Vulkan buffers or access an empty LOD array for it.
+    if(sceneGeometry.totalClustersCount == 0 || sceneGeometry.lodLevels.empty()
+       || sceneGeometry.lodNodes.empty() || sceneGeometry.groupInfos.empty())
+    {
+      shaderGeometry = {};
+      shaderGeometry.instancesOffset = instancesOffset;
+      if(sceneGeometry.instanceReferenceCount != 0)
+      {
+        LOGE("Empty cached geometry still has render instances\n");
+        return false;
+      }
+      continue;
+    }
+
 
     size_t groupDataSize = sceneGeometry.groupData.size_bytes();
 

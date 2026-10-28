@@ -519,15 +519,34 @@ void run()
     }
     if (subgroupAny(threadRunnable))
     {
+#if !USE_LOW_DETAIL_FAST_PATH
+      bool deferredCoarse = threadRunnable && nodeTraversalInfo.packedNode == 0xfffffffeu;
+      uvec4 coarseVote = subgroupBallot(deferredCoarse);
+      uint coarseCount = subgroupBallotBitCount(coarseVote);
+      uint coarseOffset = 0;
+      if(subgroupElect()) coarseOffset = atomicAdd(buildRW.renderClusterCounter, coarseCount);
+      coarseOffset = subgroupBroadcastFirst(coarseOffset) + subgroupBallotExclusiveBitCount(coarseVote);
+      if(deferredCoarse && coarseOffset < build.maxRenderClusters)
+      {
+        ClusterInfo info;
+        info.instanceID = nodeTraversalInfo.instanceID;
+        info.clusterID = geometries[instances[info.instanceID].geometryID].lowDetailClusterID;
+        build.renderClusterInfos.d[coarseOffset] = info;
+      }
+      bool regularTask = threadRunnable && !deferredCoarse;
+#else
+      bool regularTask = threadRunnable;
+#endif
       int threadSubCount = 0;
-      if (threadRunnable)
+      if (regularTask)
 
       {
         threadSubCount = int(setupTask(nodeTraversalInfo, threadReadIndex, pass));
       }
 
 
-      processAllSubTasks(nodeTraversalInfo, threadRunnable, threadSubCount, threadReadIndex, pass);
+      if(subgroupAny(regularTask))
+        processAllSubTasks(nodeTraversalInfo, regularTask, threadSubCount, threadReadIndex, pass);
     #if USE_TWO_PASS_CULLING && TARGETS_RASTERIZATION
 
       if (build.pass == 0 && threadRunnable) {

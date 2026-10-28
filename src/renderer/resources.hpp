@@ -175,6 +175,14 @@ struct QueueStateManager
 class Resources
 {
 public:
+  VkQueryPool benchmarkQueries = VK_NULL_HANDLE;
+  int32_t benchmarkForcedTwoPass = -1;
+  uint32_t benchmarkForcedBypass = 0, benchmarkForcedReason = 0;
+  void benchmarkTimestamp(VkCommandBuffer cmd, uint32_t index, VkPipelineStageFlagBits stage=VK_PIPELINE_STAGE_BOTTOM_OF_PIPE_BIT)
+  {
+    if(benchmarkQueries != VK_NULL_HANDLE)
+      vkCmdWriteTimestamp(cmd, stage, benchmarkQueries, m_cycleIndex*24+index);
+  }
   bool preferFloatDepth = true;
   uint32_t getFrameCycleIndex() const { return m_cycleIndex; }
   uint32_t getFrameCycleCount() const { return uint32_t(m_commonBuffers.readBackHost.bufferSize/sizeof(shaderio::Readback)); }
