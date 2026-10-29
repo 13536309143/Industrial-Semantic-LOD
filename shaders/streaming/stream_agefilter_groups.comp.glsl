@@ -71,9 +71,9 @@ void main()
   uint threadID = getGlobalInvocationIndex(gl_GlobalInvocationID);
 
 
-  uint residentID = streaming.resident.activeGroups.d[threadID];
   if (threadID < streaming.resident.activeGroupsCount)
   {
+    uint residentID = streaming.resident.activeGroups.d[threadID];
     Group_in groupRef = streaming.resident.groups.d[residentID].group;
     uint geometryID   = streaming.resident.groups.d[residentID].geometryID;
 

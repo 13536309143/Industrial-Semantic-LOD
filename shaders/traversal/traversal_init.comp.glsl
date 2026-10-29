@@ -216,6 +216,8 @@ void main()
 #else
     bool selectCoarse = assemblyForceLowDetail || errorAllowsCoarse;
 #endif
+    LodLevel coarsest=geometry.lodLevels.d[geometry.lodLevelsCount-1];
+    selectCoarse=selectCoarse && coarsest.groupCount==1 && coarsest.clusterCount==1;
     coarseSelected = selectCoarse;
     if (selectCoarse)
     {

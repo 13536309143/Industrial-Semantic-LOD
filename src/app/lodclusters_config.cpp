@@ -82,6 +82,8 @@ LodClusters::LodClusters(const Info& info)
   m_info.parameterRegistry->add({"benchwarmup"}, &m_benchWarmup);
   m_info.parameterRegistry->add({"benchframes"}, &m_benchFrames);
   m_info.parameterRegistry->add({"benchcapture"}, &m_benchCapture);
+  m_info.parameterRegistry->add({"benchcoldstreaming"}, &m_benchColdStreaming);
+  m_info.parameterRegistry->add({"benchpacems"}, &m_benchPaceMs);
   m_info.parameterRegistry->add({"groupclusterlanes"}, &m_rendererConfig.groupClusterLanes);
   m_info.parameterRegistry->add({"floatdepth"}, &m_resources.preferFloatDepth);
   m_info.parameterRegistry->add({"twopasscostprobe"}, &m_rendererConfig.twoPassCostProbeInterval);

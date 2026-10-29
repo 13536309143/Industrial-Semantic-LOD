@@ -96,7 +96,7 @@ private:
     nvvk::BufferTyped<shaderio::BBox>     nodeBboxes;
     nvvk::BufferTyped<shaderio::LodLevel> lodLevels;
     nvvk::BufferTyped<uint64_t>           groupAddresses;
-    nvvk::Buffer                          lowDetailGroupsData;
+    std::vector<nvvk::Buffer>             lowDetailGroupsData;
     uint32_t                              lodLevelsCount                                = 0;
     uint32_t                              lodLoadedGroupsCount[SHADERIO_MAX_LOD_LEVELS] = {};
     uint32_t                              lodGroupsCount[SHADERIO_MAX_LOD_LEVELS]       = {};

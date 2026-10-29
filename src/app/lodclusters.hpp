@@ -225,9 +225,11 @@ private:
   std::string m_benchDecisionsFile;
   struct BenchDecision { uint32_t dual, bypass, reason; };
   std::vector<BenchDecision> m_benchDecisions;
+  bool m_benchColdStreaming=false;
+  float m_benchPaceMs=0;
   uint32_t m_benchWarmup=150, m_benchFrames=600, m_benchCapture=0;
   struct BenchCamera { glm::vec3 eye, center, up; float fov, nearPlane, farPlane; uint32_t segment; };
-  struct BenchSlot { bool pending=false, capture=false; int64_t frame=-1; uint32_t segment=0; nvvk::Buffer image; double cpuMs=0; };
+  struct BenchSlot { bool pending=false, capture=false; int64_t frame=-1; uint32_t segment=0; nvvk::Buffer image; double cpuMs=0; StreamingStats stream{}; uint64_t geometryUsed=0, geometryReserved=0, operations=0; };
   std::vector<BenchCamera> m_benchCameras;
   std::vector<BenchSlot> m_benchSlots;
   std::ofstream m_benchCsv;

@@ -62,6 +62,8 @@ private:
 
 int main(int argc, char** argv)
 {
+  setvbuf(stdout, nullptr, _IONBF, 0);
+  setvbuf(stderr, nullptr, _IONBF, 0);
   nvapp::ApplicationCreateInfo appInfo;
   appInfo.name    = TARGET_NAME;
   appInfo.useMenu = true;

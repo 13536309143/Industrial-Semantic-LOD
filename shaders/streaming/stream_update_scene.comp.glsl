@@ -59,10 +59,9 @@ void main()
   uint threadID = getGlobalInvocationIndex(gl_GlobalInvocationID);
 
 
-  StreamingPatch spatch = streaming.update.patches.d[threadID];
-
   if (threadID < streaming.update.patchGroupsCount)
   {
+    StreamingPatch spatch = streaming.update.patches.d[threadID];
     uint oldResidentID = 0;
     if (threadID < streaming.update.patchUnloadGroupsCount)
     {

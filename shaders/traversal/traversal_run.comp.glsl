@@ -298,7 +298,7 @@ traversalMetric = Group_in(geometry.streamingGroupAddresses.d[clusterGeneratingG
           offsetRequested = subgroupBroadcastFirst(offsetRequested);
 
           offsetRequested += subgroupBallotExclusiveBitCount(voteRequested);
-          if (triggerRequest && offsetRequested <= streaming.request.maxLoads) {
+          if (triggerRequest && offsetRequested < streaming.request.maxLoads) {
 
 
                  streaming.request.loadGeometryGroups.d[offsetRequested] = uvec2(geometryID, groupIndex);
@@ -421,6 +421,7 @@ void processAllSubTasks(inout TraversalInfo traversalInfo, bool threadRunnable, 
   }
 
   memoryBarrierShared();
+  subgroupBarrier();
   uint sumEnqueues = 0;
 
   int taskBase = -1;
@@ -453,6 +454,8 @@ void processAllSubTasks(inout TraversalInfo traversalInfo, bool threadRunnable, 
 
     processSubTask(traversalInfo, taskID, min(taskSubID,taskSubCount-1), taskValid, taskReadIndex, pass);
   }
+  // Complete all shared-table reads before any lane reuses the table next iteration.
+  subgroupBarrier();
 }
 
 

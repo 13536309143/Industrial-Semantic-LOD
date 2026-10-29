@@ -159,16 +159,18 @@ void SceneStreaming::resetGeometryGroupAddresses(Resources::BatchedUploader& upl
 
     const Scene::GeometryView&          sceneGeometry      = m_scene->getActiveGeometry(geometryIndex);
 
-
+    if(sceneGeometry.totalClustersCount==0 || sceneGeometry.lodLevels.empty() || sceneGeometry.lodNodes.empty() || sceneGeometry.groupInfos.empty())
+      continue; // Empty IDs are retained in caches; no shader-visible render instances use them.
     shaderio::LodLevel lastLodLevel = sceneGeometry.lodLevels.back();
 
     uint64_t* groupAddresses = uploader.uploadBuffer(persistentGeometry.groupAddresses, (uint64_t*)nullptr);
-    for(uint32_t groupIndex = 0; groupIndex < lastLodLevel.groupOffset; groupIndex++)
+    for(uint32_t groupIndex = 0; groupIndex < sceneGeometry.groupInfos.size(); groupIndex++)
     {
       groupAddresses[groupIndex] = STREAMING_INVALID_ADDRESS_START;
     }
 
-    groupAddresses[lastLodLevel.groupOffset] = persistentGeometry.lowDetailGroupsData.address;
+    for(uint32_t g=0;g<lastLodLevel.groupCount;g++)
+      groupAddresses[lastLodLevel.groupOffset+g] = persistentGeometry.lowDetailGroupsData[g].address;
 
 
     uint32_t maxLodLevel = persistentGeometry.lodLevelsCount - 1;
@@ -176,7 +178,7 @@ void SceneStreaming::resetGeometryGroupAddresses(Resources::BatchedUploader& upl
     {
       persistentGeometry.lodLoadedGroupsCount[i] = 0;
     }
-    persistentGeometry.lodLoadedGroupsCount[maxLodLevel] = 1;
+    persistentGeometry.lodLoadedGroupsCount[maxLodLevel] = lastLodLevel.groupCount;
   }
 }
 
@@ -198,7 +200,12 @@ void SceneStreaming::initGeometries(Resources& res, const Scene* scene)
 
     const Scene::GeometryView&          sceneGeometry      = m_scene->getActiveGeometry(geometryIndex);
 
-
+    if(sceneGeometry.totalClustersCount==0 || sceneGeometry.lodLevels.empty() || sceneGeometry.lodNodes.empty() || sceneGeometry.groupInfos.empty())
+    {
+      if(sceneGeometry.instanceReferenceCount != 0) throw std::runtime_error("Empty streaming geometry has render instances");
+      shaderGeometry={};shaderGeometry.instancesOffset=instancesOffset;
+      continue;
+    }
     size_t numGroups = sceneGeometry.groupInfos.size();
 
     res.createBufferTyped(persistentGeometry.groupAddresses, numGroups, VK_BUFFER_USAGE_STORAGE_BUFFER_BIT);
@@ -225,6 +232,7 @@ void SceneStreaming::initGeometries(Resources& res, const Scene* scene)
     m_persistentGeometrySize += persistentGeometry.groupAddresses.bufferSize;
     m_persistentGeometrySize += persistentGeometry.nodes.bufferSize;
     m_persistentGeometrySize += persistentGeometry.nodeBboxes.bufferSize;
+    m_persistentGeometrySize += persistentGeometry.lodLevels.bufferSize;
 
 
     shaderGeometry                         = {};
@@ -253,43 +261,23 @@ void SceneStreaming::initGeometries(Resources& res, const Scene* scene)
 
 
     shaderio::LodLevel     lastLodLevel = sceneGeometry.lodLevels.back();
-    const Scene::GroupInfo groupInfo    = sceneGeometry.groupInfos[lastLodLevel.groupOffset];
-
-
-    Scene::GroupView       groupView(sceneGeometry.groupData, groupInfo);
-
-    assert(groupInfo.clusterCount == 1);
-
-    GeometryGroup geometryGroup     = {uint32_t(geometryIndex), lastLodLevel.groupOffset};
-    uint32_t      lastClustersCount = groupInfo.clusterCount;
-
-    uint64_t      lastGroupSize     = groupInfo.getDeviceSize();
-
-
-    res.createBuffer(persistentGeometry.lowDetailGroupsData, lastGroupSize, VK_BUFFER_USAGE_STORAGE_BUFFER_BIT);
-
-    NVVK_DBG_NAME(persistentGeometry.lowDetailGroupsData.buffer);
-    m_persistentGeometrySize += persistentGeometry.lowDetailGroupsData.bufferSize;
-
-
-    assert(lastClustersCount <= 0xFFFFFFFF);
-    assert(m_resident.canAllocateGroup(uint32_t(lastClustersCount)));
-
-
-    StreamingResident::Group* rgroup = m_resident.addGroup(geometryGroup, lastClustersCount);
-    rgroup->deviceAddress            = persistentGeometry.lowDetailGroupsData.address;
-    rgroup->lodLevel                 = groupInfo.lodLevel;
-
-    persistentGeometry.lodLoadedGroupsCount[groupInfo.lodLevel] = 1;
-
-
-    void* loGroupData = uploader.uploadBuffer(persistentGeometry.lowDetailGroupsData, (void*)nullptr);
-
-    Scene::fillGroupRuntimeData(groupInfo, groupView, geometryGroup.groupID, rgroup->groupResidentID,
-                                rgroup->clusterResidentID, loGroupData, persistentGeometry.lowDetailGroupsData.bufferSize);
-
-    shaderGeometry.lowDetailClusterID = rgroup->clusterResidentID;
-    shaderGeometry.lowDetailTriangles = groupInfo.triangleCount;
+    persistentGeometry.lowDetailGroupsData.resize(lastLodLevel.groupCount);
+    for(uint32_t g=0;g<lastLodLevel.groupCount;g++) {
+      const uint32_t groupID=lastLodLevel.groupOffset+g;
+      const Scene::GroupInfo groupInfo=sceneGeometry.groupInfos[groupID];
+      Scene::GroupView groupView(sceneGeometry.groupData,groupInfo);
+      GeometryGroup geometryGroup={uint32_t(geometryIndex),groupID};
+      auto& buffer=persistentGeometry.lowDetailGroupsData[g];
+      NVVK_CHECK(res.createBuffer(buffer,groupInfo.getDeviceSize(),VK_BUFFER_USAGE_STORAGE_BUFFER_BIT));
+      m_persistentGeometrySize+=buffer.bufferSize;
+      if(!m_resident.canAllocateGroup(groupInfo.clusterCount)) throw std::runtime_error("Insufficient permanent group or cluster slots");
+      StreamingResident::Group* rgroup=m_resident.addGroup(geometryGroup,groupInfo.clusterCount);
+      rgroup->deviceAddress=buffer.address;rgroup->lodLevel=groupInfo.lodLevel;
+      void* data=uploader.uploadBuffer(buffer,(void*)nullptr);
+      Scene::fillGroupRuntimeData(groupInfo,groupView,groupID,rgroup->groupResidentID,rgroup->clusterResidentID,data,buffer.bufferSize);
+      if(g==0) {shaderGeometry.lowDetailClusterID=rgroup->clusterResidentID;shaderGeometry.lowDetailTriangles=groupInfo.triangleCount;}
+    }
+    persistentGeometry.lodLoadedGroupsCount[numLodLevels-1]=lastLodLevel.groupCount;
   }
 
 
@@ -318,6 +306,10 @@ void SceneStreaming::cmdBeginFrame(VkCommandBuffer         cmd,
 {
 
 
+  // Frame deltas must be zero even when no request batch completes this frame.
+  m_stats.transferBytes=0; m_stats.transferCount=0; m_stats.loadCount=0; m_stats.unloadCount=0;
+  m_stats.geometryUploadBytes=0; m_stats.requestedDeviceBytes=0;
+  m_stats.uncompletedLoadCount=0; m_stats.couldNotTransfer=0; m_stats.couldNotStore=0; m_stats.couldNotAllocateGroup=0;
   auto     timerSection = profiler.cmdFrameSection(cmd, "Stream Begin");
   VkDevice device       = m_resources->m_device;
 
@@ -630,6 +622,7 @@ uint32_t SceneStreaming::handleCompletedRequest(VkCommandBuffer      cmd,
     }
 
     processedLoads++;
+    m_stats.requestedDeviceBytes += groupDeviceSize;
 
 
     StreamingResident::Group* residentGroup = m_resident.addGroup(geometryGroup, clusterCount);
@@ -672,7 +665,7 @@ uint32_t SceneStreaming::handleCompletedRequest(VkCommandBuffer      cmd,
     patch.lodLevel                  = groupInfo.lodLevel;
 
 
-    transferBytes += groupInfo.sizeBytes;
+
   }
 
 #if !STREAMING_DEBUG_FORCE_REQUESTS
@@ -703,6 +696,8 @@ uint32_t SceneStreaming::handleCompletedRequest(VkCommandBuffer      cmd,
     vkBeginCommandBuffer(cmd, &cmdInfo);
   }
 
+  m_stats.geometryUploadBytes = storageTask.usedMemory;
+  transferBytes = storageTask.usedMemory;
   uint32_t transferCount = 0;
 
 
@@ -714,12 +709,9 @@ uint32_t SceneStreaming::handleCompletedRequest(VkCommandBuffer      cmd,
   transferCount += 2;
 
 
-  if(processedLoads > 0) {
-
-    m_stats.transferBytes = transferBytes;
-    m_stats.transferCount = transferCount;
-    m_stats.loadCount = updateTask.loadCount;
-  }
+  m_stats.transferBytes = transferBytes;
+  m_stats.transferCount = transferCount;
+  m_stats.loadCount = updateTask.loadCount;
   if(updateTask.unloadCount > 0) {
     m_stats.unloadCount = updateTask.unloadCount;
   }
@@ -917,7 +909,7 @@ void SceneStreaming::deinit()
 
     res.m_allocator.destroyBuffer(it.lodLevels);
 
-    res.m_allocator.destroyBuffer(it.lowDetailGroupsData);
+    for(auto& buffer:it.lowDetailGroupsData) res.m_allocator.destroyBuffer(buffer);
   }
 
   m_persistentGeometries.clear();

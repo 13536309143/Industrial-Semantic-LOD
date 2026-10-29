@@ -562,7 +562,7 @@ size_t StreamingUpdates::cmdUploadTask(VkCommandBuffer cmd, uint32_t taskIndex)
   size_t transferSize = 0;
 
 
-  VkBufferCopy regions[2];
+  VkBufferCopy regions[2]{};
   uint32_t     regionCount = 0;
 
   uint32_t framePatchCount = m_shaderData.patchGroupsCount;
@@ -579,7 +579,7 @@ size_t StreamingUpdates::cmdUploadTask(VkCommandBuffer cmd, uint32_t taskIndex)
     regions[regionCount].srcOffset += 0;
 
 
-    regions[regionCount + 1].dstOffset = regions[regionCount].dstOffset + regions[regionCount].size;
+    regions[1].dstOffset = regions[0].dstOffset + regions[0].size;
 
     transferSize += regions[0].size;
 
@@ -594,7 +594,7 @@ size_t StreamingUpdates::cmdUploadTask(VkCommandBuffer cmd, uint32_t taskIndex)
     regions[regionCount].srcOffset += sizeof(shaderio::StreamingPatch) * m_shaderData.patchUnloadGroupsCount;
 
 
-    regions[regionCount + 1].dstOffset = regions[regionCount].dstOffset + regions[regionCount].size;
+
 
     transferSize += regions[regionCount].size;
 
@@ -651,7 +651,7 @@ void StreamingStorage::init(Resources& res, const StreamingConfig& config)
   m_maxTransferBytes = config.maxTransferMegaBytes * 1024 * 1024;
 
 
-  if(m_maxSceneBytes > 4 * 1024 * 1024 * 1024)
+  if(m_maxSceneBytes > size_t(4) * 1024 * 1024 * 1024)
     m_blockBytes = std::min(size_t(256) * 1024 * 1024, m_maxSceneBytes);
   else if(m_maxSceneBytes > 1 * 1024 * 1024 * 1024)
     m_blockBytes = std::min(size_t(128) * 1024 * 1024, m_maxSceneBytes);

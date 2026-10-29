@@ -61,6 +61,7 @@ struct StreamingStats
 
   uint64_t maxTransferBytes     = 0;
   uint64_t transferBytes        = 0;
+  uint64_t geometryUploadBytes=0, requestedDeviceBytes=0;
   uint32_t transferCount        = 0;
   uint32_t loadCount            = 0;
   uint32_t unloadCount          = 0;

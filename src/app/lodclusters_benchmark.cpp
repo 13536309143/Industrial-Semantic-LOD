@@ -6,6 +6,8 @@
 #include <iomanip>
 #include <algorithm>
 #include <stdexcept>
+#include <thread>
+#include <chrono>
 #include "lodclusters.hpp"
 
 namespace lodclusters {
@@ -69,7 +71,7 @@ void LodClusters::benchmarkPrepare()
         NVVK_CHECK(m_resources.m_allocator.createBuffer(slot.image, bytes, VK_BUFFER_USAGE_TRANSFER_DST_BIT,
             VMA_MEMORY_USAGE_AUTO_PREFER_HOST, VMA_ALLOCATION_CREATE_MAPPED_BIT|VMA_ALLOCATION_CREATE_HOST_ACCESS_RANDOM_BIT));
     m_benchCsv.open(std::filesystem::path(m_benchOutput)/"frames.csv");
-    m_benchCsv << "frame,segment,gpu_ms,traversal_ms,second_stage_ms,cpu_interval_ms,two_pass,temporal_bypass,trigger_reason,rendered_triangles,rendered_clusters,traversal_tasks,pass0_clusters,pass1_clusters,pass0_tasks,pass1_tasks,assembly_rejected_instances,low_detail_instances,queued_root_instances,motion_pixels,captured,assembly_ms,initialization_ms,hierarchy_ms,initialized_instances,compacted_candidates,initialization_invocations\n";
+    m_benchCsv << "frame,segment,gpu_ms,traversal_ms,second_stage_ms,cpu_interval_ms,two_pass,temporal_bypass,trigger_reason,rendered_triangles,rendered_clusters,traversal_tasks,pass0_clusters,pass1_clusters,pass0_tasks,pass1_tasks,assembly_rejected_instances,low_detail_instances,queued_root_instances,motion_pixels,captured,assembly_ms,initialization_ms,hierarchy_ms,initialized_instances,compacted_candidates,initialization_invocations,stream_geometry_upload_bytes,stream_all_upload_bytes,stream_loads,stream_unloads,stream_unserved_batch,stream_reject_transfer,stream_reject_capacity,stream_reject_slots,stream_used_bytes,stream_reserved_bytes,stream_capacity_bytes,stream_persistent_bytes,stream_resident_groups,geometry_used_bytes,geometry_reserved_bytes,operations_bytes\n";
     m_benchCsv << std::fixed << std::setprecision(9);
     std::ofstream meta(std::filesystem::path(m_benchOutput)/"scene.json");
     const auto& lo=m_scene->m_bbox.lo;const auto& hi=m_scene->m_bbox.hi;
@@ -86,6 +88,11 @@ void LodClusters::benchmarkPrepare()
   const uint32_t index=m_resources.getFrameCycleIndex();
   benchmarkConsume(index);
   const int64_t frame=m_benchTick-int64_t(m_benchWarmup);
+  if(frame==0 && m_benchColdStreaming && m_renderScene->useStreaming) {
+    m_renderScene->streamingReset();
+    m_benchLastTime=0;
+    LOGI("BENCHMARK_COLD_GPU_RESET\n");
+  }
   m_resources.benchmarkForcedTwoPass=-1;
   if(!m_benchDecisions.empty() && frame>=0 && frame<int64_t(m_benchFrames))
   {
@@ -100,6 +107,11 @@ void LodClusters::benchmarkPrepare()
   auto& slot=m_benchSlots[index];
   slot.frame=frame;slot.segment=camera.segment;
   double now=m_clock.getSeconds();
+  if(m_benchPaceMs>0 && m_benchLastTime>0) {
+    const double wait=m_benchLastTime+double(m_benchPaceMs)/1000.0-now;
+    if(wait>0) std::this_thread::sleep_for(std::chrono::duration<double>(wait));
+    now=m_clock.getSeconds();
+  }
   slot.cpuMs=m_benchLastTime>0 ? (now-m_benchLastTime)*1000 : 0;
   m_benchLastTime=now;
   if(m_benchTick>=int64_t(m_benchWarmup+m_benchFrames+m_benchSlots.size())) m_app->close();
@@ -109,9 +121,14 @@ void LodClusters::benchmarkCapture(VkCommandBuffer cmd)
 {
   auto& slot=m_benchSlots[m_resources.getFrameCycleIndex()];
   slot.pending=true;
+  if(m_renderScene->useStreaming) m_renderScene->sceneStreaming.getStats(slot.stream);
+  slot.geometryUsed=m_renderScene->getGeometrySize(false);
+  slot.geometryReserved=m_renderScene->getGeometrySize(true);
+  slot.operations=m_renderScene->getOperationsSize();
   bool measured=slot.frame>=0 && slot.frame<int64_t(m_benchFrames);
   bool checkpoint=measured && (slot.frame%50==0 || slot.frame==int64_t(m_benchFrames)-1);
-  slot.capture=measured && (m_benchCapture==2 || (m_benchCapture==1 && checkpoint));
+  bool recoveryWindow=slot.frame<60 || (slot.frame>=240 && slot.frame<360) || (slot.frame>=480 && slot.frame<600);
+  slot.capture=measured && (m_benchCapture==2 || (m_benchCapture==1 && checkpoint) || (m_benchCapture==3 && recoveryWindow));
   if(slot.capture)
   {
     auto& fb=m_resources.m_frameBuffer;
@@ -172,7 +189,11 @@ void LodClusters::benchmarkConsume(uint32_t index)
     << (m_rendererConfig.useAssemblyPrefilter?ms(12,13)+(readback.twoPassCullingActive?ms(16,17):0):0) << ','
     << ms(14,15)+(readback.twoPassCullingActive?ms(18,19):0) << ','
     << ms(20,21)+(readback.twoPassCullingActive?ms(22,23):0) << ','
-    << readback.numInitializedInstances << ',' << readback.numCompactedCandidates << ',' << readback.numInitializationInvocations << '\n';
+    << readback.numInitializedInstances << ',' << readback.numCompactedCandidates << ',' << readback.numInitializationInvocations << ','
+    << slot.stream.geometryUploadBytes << ',' << slot.stream.transferBytes << ',' << slot.stream.loadCount << ',' << slot.stream.unloadCount << ','
+    << slot.stream.uncompletedLoadCount << ',' << slot.stream.couldNotTransfer << ',' << slot.stream.couldNotStore << ',' << slot.stream.couldNotAllocateGroup << ','
+    << slot.stream.usedDataBytes << ',' << slot.stream.reservedDataBytes << ',' << slot.stream.maxDataBytes << ',' << slot.stream.persistentDataBytes << ','
+    << slot.stream.residentGroups << ',' << slot.geometryUsed << ',' << slot.geometryReserved << ',' << slot.operations << '\n';
   if(slot.capture)
   {
     NVVK_CHECK(m_resources.m_allocator.invalidateBuffer(slot.image));
