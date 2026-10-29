@@ -82,6 +82,8 @@ struct RendererConfig
   bool useAssemblyCompact = false; // Fused assembly classification, candidate compaction, indirect initialization.
   bool useAssemblyEarlyExit = false; // Optional early rejection before geometry fetch.
   bool useLowDetailFastPath = true;
+  bool useP1GeometryOmission = true;
+  float p1OmissionPixels = 2.0f; // Full projected AABB extent in render pixels.
   bool useHizOcclusion = true;
   uint32_t groupClusterLanes = 8;
   uint32_t twoPassCostProbeInterval = 16;

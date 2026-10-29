@@ -224,7 +224,9 @@ def main():
                     if str(r.get(field, '')).lower() != str(old.get(field, '')).lower():
                         raise ValueError(f'Changed semantic decision {scene}/{variant}/{key(r)}/{field}')
                 near, mid, far = [float(r['target_ratio_' + k]) for k in ('near', 'mid', 'far')]
-                if not 0 < far <= mid <= near <= 1 or yes(r['allow_cull']) or yes(r['allow_geometry_drop']):
+                if (not 0 < far <= mid <= near <= 1
+                        or yes(r['allow_cull']) != r['lod_priority'].startswith('P1_')
+                        or yes(r['allow_geometry_drop'])):
                     raise ValueError('Invalid schedule or node removal')
                 if float(r['simplify_error_relative']) <= 0 or not r['preserve_components']:
                     raise ValueError('Missing geometry guard')

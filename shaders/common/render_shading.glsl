@@ -62,34 +62,26 @@ vec3 colorizeID(uint clusterID)
   return vec3(unpackUnorm4x8(murmurHash(clusterID ^ view.colorXor)).xyz * 0.5 + 0.3);
 }
 
+#include "semantic_lod_palette.h"
 vec3 semanticLodColor(uint instanceID)
 {
   uint flags = instances[instanceID].lodPolicyFlags;
-  if((flags & SEMANTIC_LOD_VALID_BIT) == 0)
-  {
-    return vec3(0.42, 0.42, 0.42);
-  }
-
   uint priority = (flags >> SEMANTIC_LOD_PRIORITY_SHIFT) & SEMANTIC_LOD_PRIORITY_MASK;
-  if(priority <= 1)
-    return vec3(0.55, 0.55, 0.55);
-  if(priority == 2)
-    return vec3(0.72, 0.44, 0.22);
-  if(priority == 3)
-    return vec3(0.95, 0.67, 0.10);
-  if(priority == 4)
-    return vec3(0.92, 0.86, 0.18);
-  if(priority == 5)
-    return vec3(0.40, 0.78, 0.22);
-  if(priority == 6)
-    return vec3(0.08, 0.72, 0.58);
-  if(priority == 7)
-    return vec3(0.10, 0.66, 0.90);
-  if(priority == 8)
-    return vec3(0.20, 0.36, 1.00);
-  if(priority == 9)
-    return vec3(0.58, 0.24, 0.92);
-  return vec3(0.95, 0.14, 0.42);
+  if((flags & SEMANTIC_LOD_VALID_BIT) == 0 || priority < 1 || priority > 10)
+    return vec3(SEMANTIC_LOD_RGB_0);
+  const vec3 colors[11] = vec3[11](
+      vec3(SEMANTIC_LOD_RGB_0),
+      vec3(SEMANTIC_LOD_RGB_1),
+      vec3(SEMANTIC_LOD_RGB_2),
+      vec3(SEMANTIC_LOD_RGB_3),
+      vec3(SEMANTIC_LOD_RGB_4),
+      vec3(SEMANTIC_LOD_RGB_5),
+      vec3(SEMANTIC_LOD_RGB_6),
+      vec3(SEMANTIC_LOD_RGB_7),
+      vec3(SEMANTIC_LOD_RGB_8),
+      vec3(SEMANTIC_LOD_RGB_9),
+      vec3(SEMANTIC_LOD_RGB_10));
+  return colors[priority];
 }
 
 
@@ -123,6 +115,10 @@ vec4 shading(uint instanceID, vec3 wPos, vec3 wNormal, vec4 wTangent, vec2 oTexC
 float ambientOcclusion
 )
 {
+  // Policy IDs are categorical: lighting/AO must not alter their colors.
+  if(view.visualize == VISUALIZE_SEMANTIC_LOD)
+    return vec4(semanticLodColor(instanceID), 1.0f);
+
   const vec3 skyColor           = view.skyParams.skyColor;
   const vec3 groundColor        = view.skyParams.groundColor;
   const float materialRoughness = 0;

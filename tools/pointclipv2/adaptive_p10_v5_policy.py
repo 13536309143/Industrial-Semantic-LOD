@@ -13,7 +13,7 @@ from assembly_context_features import number
 from factorial_ablation_policy import classify
 
 
-VERSION = 'adaptive_p10_v5.0'
+VERSION = 'adaptive_p10_v5.1_p1_runtime_omission'
 NAMES = {
     1: 'micro_routine_repetition', 2: 'compact_low_contribution',
     3: 'simple_bulk_or_routine_connection', 4: 'surface_and_general_shape',
@@ -214,7 +214,8 @@ def reprofile(base, row, descriptor, context, repeats=1, geometry_enabled=True):
         feature_critical_threshold=.98, simplify_error_relative=tolerance,
         max_axis_shrink=shrink, preserve_components=True,
         screen_error_weight=weight, base_simplify_ratio=base_ratio,
-        base_error_relative=base_error, allow_cull=False, allow_geometry_drop=False,
+        base_error_relative=base_error, allow_cull=(p == 1), allow_geometry_drop=False,
+        runtime_geometry_omission=(p == 1), runtime_omission_requires_small_projection=True,
         visibility_status='unmeasured', measured_visibility_used=False,
         geometry_evidence_json=json.dumps(e, sort_keys=True, allow_nan=False),
         geometry_budget_priority=gp if geometry_enabled else '',

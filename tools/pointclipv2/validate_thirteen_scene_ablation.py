@@ -82,7 +82,9 @@ def main():
                         hist[tier]+=1;face_hist[tier]+=int(r['face_count'])
                         near,mid,far=[float(r['target_ratio_'+v]) for v in ('near','mid','far')]
                         assert 0<far<=mid<=near<=1
-                        assert r['allow_cull'].lower()=='false' and r['allow_geometry_drop'].lower()=='false'
+                        runtime_p1 = r.get('policy_version', '').startswith('adaptive_p10_v5.1_p1_runtime_omission')
+                        assert (r['allow_cull'].lower()=='true') == (runtime_p1 and tier==1)
+                        assert r['allow_geometry_drop'].lower()=='false'
                         assert math.isfinite(float(r['simplify_error_relative'])) and float(r['simplify_error_relative'])>0
                 assert seen==expected and n==len(pn)
                 for tier in range(1,11):

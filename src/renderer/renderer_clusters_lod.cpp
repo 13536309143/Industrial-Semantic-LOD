@@ -127,6 +127,11 @@ bool RendererRasterClustersLod::initShaders(Resources& res, RenderScene& rscene,
   options.AddMacroDefinition("USE_ASSEMBLY_PREFILTER", config.useAssemblyPrefilter ? "1" : "0");
   options.AddMacroDefinition("USE_ASSEMBLY_EARLY_EXIT", config.useAssemblyEarlyExit ? "1" : "0");
   options.AddMacroDefinition("USE_LOW_DETAIL_FAST_PATH", config.useLowDetailFastPath ? "1" : "0");
+  const float p1Pixels = config.p1OmissionPixels > 0.0f && config.p1OmissionPixels <= 16.0f
+                           ? config.p1OmissionPixels : 0.0f;
+  options.AddMacroDefinition("USE_P1_GEOMETRY_OMISSION",
+                            config.useCulling && config.useP1GeometryOmission && p1Pixels > 0.0f ? "1" : "0");
+  options.AddMacroDefinition("P1_OMISSION_PIXELS", fmt::format("{:.6f}", p1Pixels));
   options.AddMacroDefinition("USE_HIZ_OCCLUSION", config.useHizOcclusion ? "1" : "0");
   options.AddMacroDefinition("GROUP_CLUSTER_LANES",fmt::format("{}",std::clamp(config.groupClusterLanes,1u,32u)));
 

@@ -178,6 +178,7 @@ public:
   const std::filesystem::path& getFilePath() const { return m_filePath; }
   const std::filesystem::path& getCacheFilePath() const { return m_cacheFilePath; }
   bool hasSemanticLodPolicies() const { return !m_semanticLodPath.empty(); }
+  const std::filesystem::path& getSemanticLodPath() const { return m_semanticLodPath; }
 
 
   struct Range

@@ -308,6 +308,7 @@ struct FrameConstants
 // GPU-written counters, debug values, and packed picking results read back by the CPU.
 struct Readback
 {
+  uint     numP1OmittedInstances; // Pass-zero omissions only; runtime reversible.
   uint     numInitializedInstances;
   uint     numCompactedCandidates;
   uint     numInitializationInvocations;

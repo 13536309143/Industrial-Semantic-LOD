@@ -78,6 +78,36 @@ layout(local_size_x=TRAVERSAL_INIT_WORKGROUP) in;
 #include "traversal.glsl"
 
 
+
+// Use the current camera and UNCLIPPED projected bounds. A large off-screen
+// object with only a small visible sliver must not be treated as a tiny object.
+bool canOmitP1(RenderInstance instance, Geometry geometry)
+{
+#if USE_P1_GEOMETRY_OMISSION
+  uint flags = instance.lodPolicyFlags;
+  uint priority = (flags >> SEMANTIC_LOD_PRIORITY_SHIFT) & SEMANTIC_LOD_PRIORITY_MASK;
+  if((flags & (SEMANTIC_LOD_VALID_BIT | SEMANTIC_LOD_ALLOW_CULL_BIT))
+       != (SEMANTIC_LOD_VALID_BIT | SEMANTIC_LOD_ALLOW_CULL_BIT) || priority != 1)
+    return false;
+  mat4 transform = build.cullViewProjMatrix * toMat4(instance.worldMatrix);
+  vec2 lo = vec2(3.402823e38), hi = vec2(-3.402823e38);
+  for(int corner = 0; corner < 8; ++corner)
+  {
+    vec4 h = transform * getBoxCorner(geometry.bbox.lo, geometry.bbox.hi, corner);
+    // Keep boxes touching the eye, near or far plane; their projection is unsafe.
+    if(any(isnan(h)) || any(isinf(h)) || h.w <= c_epsilon || h.z < 0.0 || h.z >= h.w)
+      return false;
+    vec2 p = h.xy / h.w;
+    lo = min(lo, p); hi = max(hi, p);
+  }
+  vec2 extent = (hi - lo) * 0.5 * view.viewportf.xy;
+  return all(greaterThanEqual(extent, vec2(0.0)))
+      && all(lessThanEqual(extent, vec2(P1_OMISSION_PIXELS)));
+#else
+  return false;
+#endif
+}
+
 void main()
 {
 
@@ -170,6 +200,14 @@ void main()
   }
 #endif
 
+  // Before either direct coarse drawing or hierarchy traversal, in both passes.
+  if(isValid && isVisible && canOmitP1(instance, geometry))
+  {
+    isVisible = false;
+#if USE_RENDER_STATS
+    if(build.pass == 0) atomicAdd(readback.numP1OmittedInstances, 1u);
+#endif
+  }
   uint visibilityState = isVisible ? INSTANCE_VISIBLE_BIT : 0;
 #if USE_RENDER_STATS
   if(isValid && !assemblyVisible) atomicAdd(readback.numAssemblyRejectedInstances, 1u);

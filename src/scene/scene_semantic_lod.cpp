@@ -179,6 +179,9 @@ void derivePolicy(Scene::SemanticLodPolicy& policy)
   static const uint32_t partitionByPriority[] = {16u, 24u, 24u, 22u, 20u, 16u, 14u, 12u, 11u, 10u, 8u};
 
   const uint32_t priority = std::min<uint32_t>(std::max<uint32_t>(policy.priority, 1), 10);
+  // P1 permits reversible runtime omission, never permanent source deletion.
+  // Derive this template capability for older CSVs that predate the runtime path.
+  policy.allowCull = priority == 1;
   policy.flags = SEMANTIC_LOD_VALID_BIT | ((priority & SEMANTIC_LOD_PRIORITY_MASK) << SEMANTIC_LOD_PRIORITY_SHIFT);
   if(policy.allowCull)
     policy.flags |= SEMANTIC_LOD_ALLOW_CULL_BIT;

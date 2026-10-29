@@ -74,6 +74,8 @@ LodClusters::LodClusters(const Info& info)
   m_info.parameterRegistry->add({"assemblycompact"}, &m_rendererConfig.useAssemblyCompact);
   m_info.parameterRegistry->add({"assemblyprefilter"}, &m_rendererConfig.useAssemblyPrefilter);
   m_info.parameterRegistry->add({"assemblyearlyexit"}, &m_rendererConfig.useAssemblyEarlyExit);
+  m_info.parameterRegistry->add({"p1geometryomission"}, &m_rendererConfig.useP1GeometryOmission);
+  m_info.parameterRegistry->add({"p1omissionpixels"}, &m_rendererConfig.p1OmissionPixels);
   m_info.parameterRegistry->add({"lowdetailfastpath"}, &m_rendererConfig.useLowDetailFastPath);
   m_info.parameterRegistry->add({"hizocclusion"}, &m_rendererConfig.useHizOcclusion);
   m_info.parameterRegistry->add({"benchoutput"}, &m_benchOutput);

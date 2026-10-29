@@ -71,7 +71,7 @@ void LodClusters::benchmarkPrepare()
         NVVK_CHECK(m_resources.m_allocator.createBuffer(slot.image, bytes, VK_BUFFER_USAGE_TRANSFER_DST_BIT,
             VMA_MEMORY_USAGE_AUTO_PREFER_HOST, VMA_ALLOCATION_CREATE_MAPPED_BIT|VMA_ALLOCATION_CREATE_HOST_ACCESS_RANDOM_BIT));
     m_benchCsv.open(std::filesystem::path(m_benchOutput)/"frames.csv");
-    m_benchCsv << "frame,segment,gpu_ms,traversal_ms,second_stage_ms,cpu_interval_ms,two_pass,temporal_bypass,trigger_reason,rendered_triangles,rendered_clusters,traversal_tasks,pass0_clusters,pass1_clusters,pass0_tasks,pass1_tasks,assembly_rejected_instances,low_detail_instances,queued_root_instances,motion_pixels,captured,assembly_ms,initialization_ms,hierarchy_ms,initialized_instances,compacted_candidates,initialization_invocations,stream_geometry_upload_bytes,stream_all_upload_bytes,stream_loads,stream_unloads,stream_unserved_batch,stream_reject_transfer,stream_reject_capacity,stream_reject_slots,stream_used_bytes,stream_reserved_bytes,stream_capacity_bytes,stream_persistent_bytes,stream_resident_groups,geometry_used_bytes,geometry_reserved_bytes,operations_bytes\n";
+    m_benchCsv << "frame,segment,gpu_ms,traversal_ms,second_stage_ms,cpu_interval_ms,two_pass,temporal_bypass,trigger_reason,rendered_triangles,rendered_clusters,traversal_tasks,pass0_clusters,pass1_clusters,pass0_tasks,pass1_tasks,assembly_rejected_instances,low_detail_instances,queued_root_instances,motion_pixels,captured,assembly_ms,initialization_ms,hierarchy_ms,initialized_instances,compacted_candidates,initialization_invocations,stream_geometry_upload_bytes,stream_all_upload_bytes,stream_loads,stream_unloads,stream_unserved_batch,stream_reject_transfer,stream_reject_capacity,stream_reject_slots,stream_used_bytes,stream_reserved_bytes,stream_capacity_bytes,stream_persistent_bytes,stream_resident_groups,geometry_used_bytes,geometry_reserved_bytes,operations_bytes,p1_omitted_instances\n";
     m_benchCsv << std::fixed << std::setprecision(9);
     std::ofstream meta(std::filesystem::path(m_benchOutput)/"scene.json");
     const auto& lo=m_scene->m_bbox.lo;const auto& hi=m_scene->m_bbox.hi;
@@ -81,6 +81,9 @@ void LodClusters::benchmarkPrepare()
       m_rendererConfig.useAssemblyPrefilter,m_rendererConfig.useLowDetailFastPath,m_rendererConfig.boundAssemblyLod,
       m_rendererConfig.useHizOcclusion,m_rendererConfig.useTwoPassCulling,m_rendererConfig.useAdaptiveTwoPassCulling,
       m_rendererConfig.adaptiveTwoPassMode,m_frameConfig.lodPixelError,m_rendererConfig.semanticRuntimeStrength,m_tweak.useStreaming);
+    std::ofstream p1Meta(std::filesystem::path(m_benchOutput)/"p1_config.json");
+    p1Meta << fmt::format("{{\"enabled\":{},\"culling_enabled\":{},\"threshold_pixels\":{}}}\n",
+                         m_rendererConfig.useP1GeometryOmission, m_rendererConfig.useCulling, m_rendererConfig.p1OmissionPixels);
     std::ofstream compactMeta(std::filesystem::path(m_benchOutput)/"compact_config.json");
     compactMeta << fmt::format("{{\"assemblycompact\":{},\"assemblyearlyexit\":{},\"timestamp_count\":24}}\n",m_rendererConfig.useAssemblyCompact,m_rendererConfig.useAssemblyEarlyExit);
     LOGI("BENCHMARK_READY,%s,%u,%u\n",m_benchOutput.c_str(),m_benchWarmup,m_benchFrames);
@@ -193,7 +196,7 @@ void LodClusters::benchmarkConsume(uint32_t index)
     << slot.stream.geometryUploadBytes << ',' << slot.stream.transferBytes << ',' << slot.stream.loadCount << ',' << slot.stream.unloadCount << ','
     << slot.stream.uncompletedLoadCount << ',' << slot.stream.couldNotTransfer << ',' << slot.stream.couldNotStore << ',' << slot.stream.couldNotAllocateGroup << ','
     << slot.stream.usedDataBytes << ',' << slot.stream.reservedDataBytes << ',' << slot.stream.maxDataBytes << ',' << slot.stream.persistentDataBytes << ','
-    << slot.stream.residentGroups << ',' << slot.geometryUsed << ',' << slot.geometryReserved << ',' << slot.operations << '\n';
+    << slot.stream.residentGroups << ',' << slot.geometryUsed << ',' << slot.geometryReserved << ',' << slot.operations << ',' << readback.numP1OmittedInstances << '\n';
   if(slot.capture)
   {
     NVVK_CHECK(m_resources.m_allocator.invalidateBuffer(slot.image));

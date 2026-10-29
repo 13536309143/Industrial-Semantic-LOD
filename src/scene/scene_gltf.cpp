@@ -820,6 +820,16 @@ Scene::Result Scene::loadGLTF(ProcessingInfo& processingInfo, const std::filesys
       }
     }
   }
+  size_t semanticMatched = 0;
+  for(const auto& instance : m_instances)
+  {
+    const uint32_t p = (instance.lodPolicy >> SEMANTIC_LOD_PRIORITY_SHIFT) & SEMANTIC_LOD_PRIORITY_MASK;
+    if((instance.lodPolicy & SEMANTIC_LOD_VALID_BIT) && p >= 1 && p <= 10)
+      ++semanticMatched;
+  }
+  LOGI("Semantic LOD instance coverage: %zu / %zu matched\n", semanticMatched, m_instances.size());
+  if(hasSemanticLodPolicies() && semanticMatched == 0 && !m_instances.empty())
+    LOGW("Semantic LOD: loaded CSV matches no instances; check node/mesh indices against the current model\n");
   if(gltf->cameras_count > 0)
   {
     for(size_t nodeIdx = 0; nodeIdx < gltf->nodes_count; nodeIdx++)

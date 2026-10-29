@@ -256,7 +256,8 @@ def main():
                     contexts[tree][str(r['node_index'])],config,mode,tree,leaf,repeats[r['mesh_index']]) for r in pn]
                 assert [key(r) for r in rows]==[key(r) for r in pn]
                 for row in rows:
-                    assert not yes(row['allow_cull']) and not yes(row['allow_geometry_drop'])
+                    assert yes(row['allow_cull']) == row['lod_priority'].startswith('P1_')
+                    assert not yes(row['allow_geometry_drop'])
                     ratios=[float(row['target_ratio_'+a]) for a in ('near','mid','far')]
                     assert 0<ratios[2]<=ratios[1]<=ratios[0]<=1
                     assert float(row['simplify_error_relative'])>0 and math.isfinite(float(row['simplify_error_relative']))

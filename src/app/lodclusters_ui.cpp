@@ -19,10 +19,66 @@
 #include <nvgui/window.hpp>
 #include <nvgui/file_dialog.hpp>
 #include "lodclusters.hpp"
+#include "semantic_lod_palette.h"
 
 
 namespace lodclusters {
 
+
+
+static void showSemanticPolicyLegend(const Scene& scene)
+{
+  const ImVec4 colors[11] = {
+      ImVec4(SEMANTIC_LOD_RGB_0, 1.0f),
+      ImVec4(SEMANTIC_LOD_RGB_1, 1.0f),
+      ImVec4(SEMANTIC_LOD_RGB_2, 1.0f),
+      ImVec4(SEMANTIC_LOD_RGB_3, 1.0f),
+      ImVec4(SEMANTIC_LOD_RGB_4, 1.0f),
+      ImVec4(SEMANTIC_LOD_RGB_5, 1.0f),
+      ImVec4(SEMANTIC_LOD_RGB_6, 1.0f),
+      ImVec4(SEMANTIC_LOD_RGB_7, 1.0f),
+      ImVec4(SEMANTIC_LOD_RGB_8, 1.0f),
+      ImVec4(SEMANTIC_LOD_RGB_9, 1.0f),
+      ImVec4(SEMANTIC_LOD_RGB_10, 1.0f)};
+  const char* names[11] = {"Unmatched / invalid", "P1 micro repeated", "P2 standard part",
+      "P3 bulk silhouette", "P4 surface / support", "P5 balanced / unresolved",
+      "P6 thin / slender", "P7 interface", "P8 control / actuation",
+      "P9 precision / tooling", "P10 sensitive detail"};
+  std::array<size_t, 11> counts{};
+  for(const auto& instance : scene.m_instances)
+  {
+    const uint32_t p = (instance.lodPolicy >> SEMANTIC_LOD_PRIORITY_SHIFT) & SEMANTIC_LOD_PRIORITY_MASK;
+    counts[(instance.lodPolicy & SEMANTIC_LOD_VALID_BIT) && p >= 1 && p <= 10 ? p : 0]++;
+  }
+  ImGui::Text("Policy matched: %zu / %zu instances", scene.m_instances.size() - counts[0], scene.m_instances.size());
+  if(!scene.hasSemanticLodPolicies())
+  {
+    ImGui::TextColored(ImVec4(1.0f, 0.6f, 0.2f, 1.0f), "No policy CSV loaded. Grey means unmatched.");
+    const std::string stem = scene.getFilePath().stem().string();
+    ImGui::TextWrapped("Check the selected Semantic LOD mode and %s_lod_constraints_*.csv beside the model. Reload the scene after installing policies.", stem.c_str());
+  }
+  else
+  {
+    const std::string path = scene.getSemanticLodPath().string();
+    ImGui::TextWrapped("Policy file: %s", path.c_str());
+    if(counts[0])
+      ImGui::TextWrapped("Unmatched instances remain grey; check node_index and mesh_index against this model.");
+  }
+  ImGui::TextWrapped("Colors show assigned P1-P10 policies, not current LOD levels. P1 permits reversible small-projection omission when enabled. Policy colors are independent of lighting.");
+  if(ImGui::TreeNodeEx("Policy color legend", ImGuiTreeNodeFlags_DefaultOpen))
+  {
+    for(int p = 0; p <= 10; ++p)
+    {
+      ImGui::PushID(p);
+      ImGui::ColorButton("##policyColor", colors[p], ImGuiColorEditFlags_NoTooltip | ImGuiColorEditFlags_NoDragDrop,
+                         ImVec2(ImGui::GetTextLineHeight(), ImGui::GetTextLineHeight()));
+      ImGui::SameLine();
+      ImGui::Text("%s: %zu", names[p], counts[p]);
+      ImGui::PopID();
+    }
+    ImGui::TreePop();
+  }
+}
 
 #define MEMORY_WITH_BINARY_PREFIXES 1
 
@@ -379,6 +435,8 @@ void LodClusters::onUIRender()
       PE::Checkbox("Cluster BBoxes", &m_frameConfig.showClusterBboxes);
 
       PE::end();
+      if(m_scene && m_frameConfig.visualize == VISUALIZE_SEMANTIC_LOD)
+        showSemanticPolicyLegend(*m_scene);
     }
     if(ImGui::CollapsingHeader("Traversal", nullptr, ImGuiTreeNodeFlags_DefaultOpen))
     {
@@ -389,6 +447,12 @@ void LodClusters::onUIRender()
       PE::InputFloat("LoD pixel error", &m_frameConfig.lodPixelError, 0.25f, 0.25f, "%.3f", ImGuiInputTextFlags_EnterReturnsTrue);
 
       m_frameConfig.lodPixelError = std::max(0.000f, m_frameConfig.lodPixelError);
+      PE::Checkbox("P1 small-projection omission", &m_rendererConfig.useP1GeometryOmission,
+                   "Only P1 may disappear below the pixel threshold. Geometry returns on approach; disabled when Culling is off.");
+      PE::InputFloat("P1 omission pixels", &m_rendererConfig.p1OmissionPixels, 0.25f, 1.0f, "%.2f",
+                     ImGuiInputTextFlags_EnterReturnsTrue);
+      m_rendererConfig.p1OmissionPixels = std::clamp(m_rendererConfig.p1OmissionPixels, 0.0f, 16.0f);
+      PE::Text("P1 omitted instances", "%u", readback.numP1OmittedInstances);
       if(PE::treeNode("Other settings"))
       {
         PE::Checkbox("Separate Groups Kernel", &m_rendererConfig.useSeparateGroups,

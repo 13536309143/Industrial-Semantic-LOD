@@ -232,7 +232,9 @@ void main()
 
     uint triangleCountMinusOne = CLUSTER_TRIANGLE_COUNT-1;
     float relative = (float(gl_PrimitiveID) / float(triangleCountMinusOne)) * 0.25 + 0.75;
-    out_Color = vec4(colorizeID(visData) * relative, 1.0);
+    out_Color = view.visualize == VISUALIZE_SEMANTIC_LOD
+                    ? vec4(semanticLodColor(IN.instanceID), 1.0)
+                    : vec4(colorizeID(visData) * relative, 1.0);
   }
 #endif
 

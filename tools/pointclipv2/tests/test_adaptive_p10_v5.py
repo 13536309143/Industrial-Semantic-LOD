@@ -68,7 +68,9 @@ class BudgetV5Tests(unittest.TestCase):
         self.assertEqual(self.priority(result), 1)
         self.assertTrue(result['preserve_components'])
         self.assertGreater(result['simplify_error_relative'], 0.)
-        self.assertFalse(result['allow_cull'])
+        self.assertTrue(result['allow_cull'])
+        self.assertTrue(result['runtime_geometry_omission'])
+        self.assertFalse(result['allow_geometry_drop'])
 
     def test_large_or_conflicting_fastener_receives_no_routine_discount(self):
         for kwargs in [dict(context=dict(self.context, scene_size_ratio=.2)),
