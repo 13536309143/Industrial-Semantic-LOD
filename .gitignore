@@ -1,0 +1,86 @@
+# Renderer build and runtime output
+/build/
+/_bin/
+
+# Local datasets, downloaded scenes, and per-mesh analysis output
+/data/
+/analysis_reports/
+/outputs/
+/experiments/
+/_downloaded_resources/
+/lod_analysis_outputs/
+/datasets/
+
+# Training, evaluation captures, and local archives
+/.artifacts/
+/tools/pointnext_lod/PointNeXt/log/
+*.pth
+*.pt
+*.ckpt
+*.onnx
+*.safetensors
+events.out.tfevents.*
+*.log
+
+# Python caches and platform-specific extension output
+__pycache__/
+*.py[cod]
+*.pyd
+*.so
+*.dll
+*.exe
+*.egg
+*.egg-info/
+/tools/**/build/
+/tools/**/dist/
+*.obj
+*.o
+*.a
+*.pdb
+*.lib
+*.exp
+.ninja_deps
+.ninja_log
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+*.zippp
+*.zippp_partial
+
+# Editor/OS temporary files and legacy local scratch directory
+*.bak
+*.tmp
+*.swp
+.DS_Store
+Thumbs.db
+/1/
+
+# Keep source directories such as shaders/build/ and vendor generated headers.
+# Publication embargo: research data and manuscript artifacts stay local.
+/private/
+/docs/assets/thesis/
+/tools/maintenance/export_thesis_results.py
+*.csv
+*.tsv
+*.jsonl
+*.ndjson
+*.npy
+*.npz
+*.xlsx
+*.xls
+*.docx
+*.pptx
+*.pdf
+*.glb
+*.gltf
+*.bundle
+*.zip
+*.7z
+*.tar
+*.gz
+
+# Public upstream tokenizer/class-mapping resources are source dependencies.
+!tools/pointclipv2/PointCLIP_V2/zeroshot_cls/clip/bpe_simple_vocab_16e6.txt.gz
+!tools/pointclipv2/PointCLIP_V2/zeroshot_seg/clip/bpe_simple_vocab_16e6.txt.gz
+!tools/pointnext_lod/PointNeXt/openpoints/dataset/matterport3d/category_mapping.tsv

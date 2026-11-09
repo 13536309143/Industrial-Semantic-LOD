@@ -1,0 +1,2 @@
+#!/bin/sh
+exec python -s tools/maintenance/check_publication.py --pre-push

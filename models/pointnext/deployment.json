@@ -1,0 +1,9 @@
+{
+  "schema": 2,
+  "method": "pointnext_s",
+  "class_count": 14,
+  "input_points": 8192,
+  "checkpoint_relative_path": "models/pointnext/industrial-part-14class-best.pth",
+  "class_order_file": "tools/pointnext_lod/industrial_part_14classes.txt",
+  "weights_distributed": false
+}

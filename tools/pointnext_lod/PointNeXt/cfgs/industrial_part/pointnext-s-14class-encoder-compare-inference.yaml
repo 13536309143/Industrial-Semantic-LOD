@@ -1,0 +1,58 @@
+# Inference only. Training provenance: models/pointnext/deployment.json.
+# Uses the encoder_compare architecture; no legacy train/val/test recipe.
+use_amp: true
+num_points: 8192
+num_classes: 14
+feature_keys: pos
+dataset:
+  common:
+    data_dir: .
+criterion_args:
+  NAME: SmoothCrossEntropy
+  label_smoothing: 0.2
+model:
+  NAME: BaseCls
+  encoder_args:
+    NAME: PointNextEncoder
+    blocks:
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    - 1
+    strides:
+    - 1
+    - 2
+    - 2
+    - 2
+    - 2
+    - 1
+    width: 32
+    in_channels: 3
+    radius: 0.15
+    radius_scaling: 1.5
+    sa_layers: 2
+    sa_use_res: true
+    nsample: 32
+    expansion: 4
+    aggr_args:
+      feature_type: dp_fj
+      reduction: max
+    group_args:
+      NAME: ballquery
+      normalize_dp: true
+    conv_args:
+      order: conv-norm-act
+    act_args:
+      act: relu
+    norm_args:
+      norm: bn
+  cls_args:
+    NAME: ClsHead
+    num_classes: 14
+    mlps:
+    - 512
+    - 256
+    norm_args:
+      norm: bn1d

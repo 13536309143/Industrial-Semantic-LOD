@@ -1,0 +1,14 @@
+0	screws_bolts_studs
+1	nuts
+2	washers_rings_spacers
+3	pins_rivets_keys
+4	bearings_bushings_guides
+5	gears_pulleys_chains
+6	motors_gearmotors
+7	pipe_fittings_valves_nozzles
+8	joints_clamps_structural_connectors
+9	wheels_castors
+10	rotating_fluid_machinery
+11	plates_discs_shapes
+12	handles_controls
+13	springs

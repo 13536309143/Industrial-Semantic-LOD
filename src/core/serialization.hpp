@@ -1,0 +1,103 @@
+//==============================================================================
+// src/core/serialization.hpp
+// Provides small span serializers used by the scene cache format.
+// All helpers advance byte addresses explicitly and keep 64-bit alignment stable for memory-mapped reads.
+//==============================================================================
+#pragma once
+
+
+#include <cstdint>
+#include <cstring>
+#include <cassert>
+#include <span>
+
+
+namespace serialization {
+
+static constexpr uint64_t ALIGNMENT  = 16ULL;
+static constexpr uint64_t ALIGN_MASK = ALIGNMENT - 1;
+static_assert(ALIGNMENT >= sizeof(uint64_t));
+
+template <typename T>
+
+
+inline uint64_t getCachedSize(const std::span<T>& view)
+{
+
+  return ((view.size_bytes() + ALIGN_MASK) & ~ALIGN_MASK) + ALIGNMENT;
+}
+
+template <typename T>
+
+
+inline void storeAndAdvance(bool& isValid, uint64_t& dataAddress, uint64_t dataEnd, const std::span<const T>& view)
+{
+  assert(static_cast<uint64_t>(dataAddress) % ALIGNMENT == 0);
+
+  if(isValid && dataAddress + getCachedSize(view) <= dataEnd)
+  {
+    union
+    {
+      uint64_t count;
+      uint8_t  countData[ALIGNMENT];
+    };
+    memset(countData, 0, sizeof(countData));
+
+
+    count = view.size();
+
+
+    memcpy(reinterpret_cast<void*>(dataAddress), countData, ALIGNMENT);
+    dataAddress += ALIGNMENT;
+
+    if(view.size())
+    {
+
+      memcpy(reinterpret_cast<void*>(dataAddress), view.data(), view.size_bytes());
+      dataAddress += (view.size_bytes() + ALIGN_MASK) & ~ALIGN_MASK;
+    }
+  }
+  else
+  {
+    isValid = false;
+  }
+}
+
+template <typename T>
+
+
+inline void loadAndAdvance(bool& isValid, uint64_t& dataAddress, uint64_t dataEnd, std::span<const T>& view)
+{
+  union
+  {
+    const T* basePointer;
+    uint64_t baseRaw;
+  };
+  baseRaw = dataAddress;
+
+
+  assert(dataAddress % ALIGNMENT == 0);
+
+  uint64_t count = *reinterpret_cast<const uint64_t*>(basePointer);
+  baseRaw += ALIGNMENT;
+
+  if(isValid && count && (baseRaw + (sizeof(T) * count) <= dataEnd))
+  {
+
+    view = std::span<const T>(basePointer, count);
+  }
+  else
+  {
+    view = {};
+
+    isValid = isValid && count == 0;
+  }
+
+  baseRaw += sizeof(T) * count;
+
+  baseRaw = (baseRaw + ALIGN_MASK) & ~(ALIGN_MASK);
+
+  dataAddress = baseRaw;
+}
+
+}

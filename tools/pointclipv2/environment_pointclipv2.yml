@@ -1,0 +1,21 @@
+name: PointCLIPV2_LOD
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  - numpy<2
+  - pandas
+  - pillow
+  - tqdm
+  - scipy
+  - scikit-learn
+  - ftfy
+  - regex
+  - yacs
+  - pytorch=2.2.0
+  - torchvision=0.17.0
+  - pytorch-cuda=12.1

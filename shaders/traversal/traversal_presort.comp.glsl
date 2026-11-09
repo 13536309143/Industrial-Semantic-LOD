@@ -1,0 +1,103 @@
+//==============================================================================
+// shaders/traversal/traversal_presort.comp.glsl
+// Optionally sorts or classifies traversal inputs before the main traversal pass.
+// The pass improves coherence for later queue processing without changing LOD selection semantics.
+//==============================================================================
+#version 460
+#extension GL_GOOGLE_include_directive : enable
+#extension GL_EXT_shader_explicit_arithmetic_types_int8 : enable
+#extension GL_EXT_shader_explicit_arithmetic_types_int32 : enable
+#extension GL_EXT_shader_explicit_arithmetic_types_int16 : enable
+#extension GL_EXT_shader_explicit_arithmetic_types_int64 : enable
+#extension GL_EXT_buffer_reference : enable
+#extension GL_EXT_buffer_reference2 : enable
+#extension GL_EXT_scalar_block_layout : enable
+#extension GL_EXT_shader_atomic_int64 : enable
+#extension GL_EXT_control_flow_attributes : require
+#extension GL_KHR_shader_subgroup_vote : require
+#extension GL_KHR_shader_subgroup_ballot : require
+#extension GL_KHR_shader_subgroup_shuffle : require
+#extension GL_KHR_shader_subgroup_basic : require
+#extension GL_KHR_shader_subgroup_clustered : require
+#extension GL_KHR_shader_subgroup_arithmetic : require
+
+
+#include "shaderio.h"
+
+
+layout(scalar, binding = BINDINGS_FRAME_UBO, set = 0) uniform frameConstantsBuffer
+{
+  FrameConstants view;
+};
+
+
+layout(scalar, binding = BINDINGS_READBACK_SSBO, set = 0) buffer readbackBuffer
+{
+  Readback readback;
+};
+
+
+layout(scalar, binding = BINDINGS_RENDERINSTANCES_SSBO, set = 0) buffer renderInstancesBuffer
+{
+  RenderInstance instances[];
+};
+
+
+layout(scalar, binding = BINDINGS_GEOMETRIES_SSBO, set = 0) buffer geometryBuffer
+{
+  Geometry geometries[];
+};
+
+#if USE_TWO_PASS_CULLING
+
+
+layout(binding = BINDINGS_HIZ_TEX)  uniform sampler2D texHizFar[2];
+#else
+
+
+layout(binding = BINDINGS_HIZ_TEX)  uniform sampler2D texHizFar;
+#endif
+
+
+layout(scalar, binding = BINDINGS_SCENEBUILDING_UBO, set = 0) uniform buildBuffer
+{
+  SceneBuilding build;
+};
+
+
+layout(scalar, binding = BINDINGS_SCENEBUILDING_SSBO, set = 0) buffer buildBufferRW
+{
+  SceneBuilding buildRW;
+};
+
+
+layout(local_size_x=TRAVERSAL_PRESORT_WORKGROUP) in;
+
+
+void main()
+{
+
+  uint instanceID   = getGlobalInvocationIndex(gl_GlobalInvocationID);
+
+  uint instanceLoad = min(build.numRenderInstances-1, instanceID);
+
+  RenderInstance instance = instances[instanceLoad];
+  Geometry geometry = geometries[instance.geometryID];
+
+
+  vec3 oPos = instance.worldMatrixI * vec4(view.viewPos.xyz,1);
+
+  bool isInside = all(equal(greaterThanEqual(oPos, geometry.bbox.lo),lessThanEqual(oPos, geometry.bbox.hi)));
+
+  vec3 oPosClamp = isInside ? (geometry.bbox.lo + geometry.bbox.hi) * 0.5 :
+
+    clamp(oPos, geometry.bbox.lo, geometry.bbox.hi);
+
+
+  vec3 wPos = instance.worldMatrix * vec4(oPosClamp, 1);
+
+  if (instanceID == instanceLoad) {
+    build.instanceSortValues.d[instanceID] = instanceID;
+    build.instanceSortKeys.d[instanceID]   = floatBitsToUint(distance(wPos.xyz, view.viewPos.xyz));
+  }
+}

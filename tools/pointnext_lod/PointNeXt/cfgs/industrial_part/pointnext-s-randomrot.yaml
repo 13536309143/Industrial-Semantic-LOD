@@ -1,0 +1,88 @@
+# 90-class industrial part classification with random 3D orientation augmentation.
+num_points: 4096
+num_classes: 90
+dataset:
+  common:
+    NAME: IndustrialPartPointCloud
+    data_dir: ../pointcloud_data
+  train:
+    split: train
+    num_points: 4096
+  val:
+    split: test
+    num_points: 4096
+  test:
+    split: test
+    num_points: 4096
+
+feature_keys: pos
+
+datatransforms:
+  train: [RandomRotate, PointsToTensor, PointCloudScaleAndTranslate]
+  val: [PointsToTensor]
+  test: [PointsToTensor]
+  kwargs:
+    angle: [1, 1, 1]
+    shift: [0.2, 0.2, 0.2]
+
+batch_size: 16
+val_batch_size: 32
+dataloader:
+  num_workers: 4
+
+sched: cosine
+epochs: 300
+warmup_epochs: 0
+min_lr: null
+lr: 0.001
+optimizer:
+  NAME: adamw
+  weight_decay: 0.05
+grad_norm_clip: 1
+criterion_args:
+  NAME: SmoothCrossEntropy
+  label_smoothing: 0.2
+
+log_dir: industrial_part_randomrot
+print_freq: 10
+val_freq: 1
+pretrained_path: null
+
+wandb:
+  use_wandb: False
+  project: PointNeXt-IndustrialPart-RandomRot
+
+seed: null
+
+model:
+  NAME: BaseCls
+  encoder_args:
+    NAME: PointNextEncoder
+    blocks: [1, 1, 1, 1, 1, 1]
+    strides: [1, 2, 2, 2, 2, 1]
+    width: 32
+    in_channels: 3
+    radius: 0.15
+    radius_scaling: 1.5
+    sa_layers: 2
+    sa_use_res: True
+    nsample: 32
+    expansion: 4
+    aggr_args:
+      feature_type: dp_fj
+      reduction: max
+    group_args:
+      NAME: ballquery
+      normalize_dp: True
+    conv_args:
+      order: conv-norm-act
+    act_args:
+      act: relu
+    norm_args:
+      norm: bn
+  cls_args:
+    NAME: ClsHead
+    num_classes: 90
+    mlps: [512, 256]
+    norm_args:
+      norm: bn1d

@@ -1,0 +1,21 @@
+{
+  "schema": 2,
+  "num_points": 8192,
+  "seed": 2026,
+  "cloud_batch": 8,
+  "image_batch": 32,
+  "max_local_crops": 2,
+  "preprocess": "clip-rgb",
+  "family_temperature": 18.0,
+  "class_temperature": 30.0,
+  "family_direct_weight": 0.15,
+  "local_weight": 0.1,
+  "min_similarity": 0.20,
+  "min_null_margin": -0.015,
+  "min_family_margin": 0.005,
+  "min_family_agreement": 0.40,
+  "min_class_margin": 0.003,
+  "min_class_agreement": 0.5,
+  "min_valid_views": 4,
+  "threshold_scope": "Fixed engineering defaults; uncalibrated reliability, not verified probability of correctness."
+}
